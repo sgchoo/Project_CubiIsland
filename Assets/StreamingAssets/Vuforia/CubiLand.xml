@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+  <Tracking>
+    <ImageTarget name="image_img_snow" size="0.039158 0.039158" />
+    <ImageTarget name="image_img_sun" size="0.039158 0.039158" />
+    <ImageTarget name="image_img_tree" size="0.039158 0.039158" />
+    <ImageTarget name="image_img_snow_w" size="0.039158 0.039158" />
+    <ImageTarget name="image_img_sun_w" size="0.039158 0.039158" />
+    <ImageTarget name="image_tree_w_bg" size="0.039158 0.039158" />
+  </Tracking>
+</QCARConfig>
