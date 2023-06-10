@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerRotation : MonoBehaviour
 {
     // 구르는 속도, 최저 300으로 설정할 것(그게 제일 자연스러웠음)
-    public int speed = 400;
+    [SerializeField] int rollSpeed = 3;
 
     public Transform tr;
 
@@ -25,45 +25,38 @@ public class PlayerRotation : MonoBehaviour
     {
         if(isMove)return;
 
-        // if      (rb.velocity.x > 0)   StartCoroutine(Rolling(Vector3.right));
-        // else if (rb.velocity.x < 0)    StartCoroutine(Rolling(Vector3.left));
-        // else if (rb.velocity.z > 0)      StartCoroutine(Rolling(Vector3.forward));
-        // else if (rb.velocity.z < 0)    StartCoroutine(Rolling(Vector3.back));
-        StartCoroutine(Rolling(Vector3.left));
+        Assemble(Vector3.forward);
 
-        Physics.gravity = Vector3.Cross(this.transform.position, tr.position) * -9.8f;
+        void Assemble(Vector3 dir)
+        {
+            var anchor = transform.position + (Vector3.down + dir) * 0.5f;
+            var axis = Vector3.Cross(Vector3.up, dir);
+            StartCoroutine(Rolling(anchor, axis));
+        }
 
-        Debug.Log(Vector3.Cross(this.transform.position, tr.position));
+        Debug.Log(Physics.gravity);
     }
-
-    private IEnumerator Rolling(Vector3 dir)
+    private IEnumerator Rolling(Vector3 anchor, Vector3 axis)
     {
         
         isMove = true;
 
-        // 큐브 회전 각도
-        float angle = 90;
-
-        // 큐브 회전 중심 좌표
-        // (현재 위치) + (회전방향/2)*큐브의 스케일 + (회전축/2)*큐브의 스케일
-        // (현재 위치) + (회전축x,z좌표)           + (회전축y좌표)
-        Vector3 center = transform.position + (dir / 2) * transform.localScale.x + (Vector3.down / 2) * transform.localScale.x;
-        
-        // 큐브 회전 축 
-        // 두 벡터의 교차점에 수직 벡터 생성
-        Vector3 axis = Vector3.Cross(Vector3.up, dir);
-
-        // angle이 0보다 큰 동안 주어진 (회전중심점, 회전축)을 기준으로 회전각도만큼 회전시키기
-        // 회전 후 angle값은 회전한 값만큼 빼서 회전 각도 업데이트
-        // 다음 프레임까지 잠시 대기한 후 angle이 0이 될 때까지 회전 업데이트
-        while (angle > 0)
+        for (int i = 0; i < (90 / rollSpeed); i++)
         {
-            float rotationAngle = Time.deltaTime * speed;
-            transform.RotateAround(center, axis, rotationAngle);
-            angle -= rotationAngle;
-            yield return null;
+            transform.RotateAround(anchor, axis, rollSpeed);
+            yield return new WaitForSeconds(0.01f);
         }
 
         isMove = false;
+    }
+
+    private void OnCollisionEnter(Collision other) 
+    {
+             if(other.collider.CompareTag("Side1")) Physics.gravity = Vector3.down * 9.8f;
+        //else if(other.collider.CompareTag("Side2")) Physics.gravity = Vector3.left * 9.8f;
+        //else if(other.collider.CompareTag("Side3")) Physics.gravity = Vector3.back * 9.8f;
+        else if(other.collider.CompareTag("Side4")) Physics.gravity = Vector3.back * 9.8f;
+        //else if(other.collider.CompareTag("Side5")) Physics.gravity = Vector3.up * -9.8f;
+        //else if(other.collider.CompareTag("Side6")) Physics.gravity = Vector3.forward * -9.8f;
     }
 }
