@@ -7,6 +7,9 @@ public class PlayerRotation : MonoBehaviour
     [SerializeField] int rollSpeed = 3;
 
     public Transform tr;
+    private AudioSource audioSource;
+    public AudioClip rollSound;
+    public AudioClip landingSound;
 
     bool isMove = false;
 
@@ -15,6 +18,7 @@ public class PlayerRotation : MonoBehaviour
     void Start()
     {
         rb = this.GetComponent<Rigidbody>();
+        audioSource = this.GetComponent<AudioSource>();
     }
     void Update()
     {
@@ -28,13 +32,15 @@ public class PlayerRotation : MonoBehaviour
             var axis = Vector3.Cross(Vector3.up, dir);
             StartCoroutine(Rolling(anchor, axis));
         }
-
-        Debug.Log(Physics.gravity);
     }
     private IEnumerator Rolling(Vector3 anchor, Vector3 axis)
     {
         
         isMove = true;
+
+        // yield return new WaitForSeconds(0.2f);
+        // audioSource.clip = rollSound;
+        // audioSource.Play();
 
         for (int i = 0; i < (90 / rollSpeed); i++)
         {
@@ -42,16 +48,9 @@ public class PlayerRotation : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
+        audioSource.Stop();
+        audioSource.clip = landingSound;
+        audioSource.Play();
         isMove = false;
     }
-
-    // private void OnCollisionEnter(Collision other) 
-    // {
-    //          if(other.collider.CompareTag("Side1")) Physics.gravity = Vector3.down * 9.8f;
-    //     //else if(other.collider.CompareTag("Side2")) Physics.gravity = Vector3.left * 9.8f;
-    //     //else if(other.collider.CompareTag("Side3")) Physics.gravity = Vector3.back * 9.8f;
-    //     else if(other.collider.CompareTag("Side4")) Physics.gravity = Vector3.back * 9.8f;
-    //     //else if(other.collider.CompareTag("Side5")) Physics.gravity = Vector3.up * -9.8f;
-    //     //else if(other.collider.CompareTag("Side6")) Physics.gravity = Vector3.forward * -9.8f;
-    // }
 }

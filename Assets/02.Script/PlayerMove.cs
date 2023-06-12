@@ -2,38 +2,36 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-// <Summary>
-// 플레이어가 Cube위를 지속적으로 걸어다님
-// 현재 앞방향만 구현
-// </Summary>
-
 public class PlayerMove : MonoBehaviour
 {
+    [SerializeField] private float rollSpeed = 3.0f;
+
+    private bool isMoving;
+
     private void Update() 
-    {        
-        transform.Translate(Vector3.forward * Time.deltaTime * 3, Space.Self);
+    {
+        if(isMoving) return;
 
-        //새로운 중력 값 적용
-        Physics.gravity = -transform.up * 9.8f;
-
-        ChangeRotate();
+        Assemble(Vector3.forward);
     }
 
-    //플레이어 회전 함수
-    private void ChangeRotate()
+    void Assemble(Vector3 dir)
     {
-        RaycastHit hitInfo;
+        var anchor = transform.position + (Vector3.down + dir) * 0.5f;
+        var axis = Vector3.Cross(Vector3.up, dir);
+        StartCoroutine(Roll(anchor, axis));
+    }
 
-        Vector3 rayDirection = ((-transform.forward) + (-transform.up)).normalized;
+    IEnumerator Roll(Vector3 anchor, Vector3 axis)
+    {
+        isMoving = true;
 
-        // local포지션의 방향으로 레이 발사.
-        Ray ray = new Ray(transform.localPosition, rayDirection);
-
-        
-        if(Physics.Raycast(ray, out hitInfo, 5.0f))
+        for(int i = 0; i < (90 / rollSpeed); i++)
         {
-            // 내 현재 방향에서 hitInfo.normal(법선벡터) 방향으로 회전
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(Vector3.up, hitInfo.normal), 0.03f);
+            transform.RotateAround(anchor, axis, rollSpeed);
+            yield return new WaitForSeconds(0.01f);
         }
+
+        isMoving = false;
     }
 }
