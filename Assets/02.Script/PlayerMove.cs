@@ -4,34 +4,73 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    [SerializeField] private float rollSpeed = 3.0f;
+    public int speed = 200;
 
-    private bool isMoving;
+    bool isMove = false;
 
-    private void Update() 
+    bool isBorder;
+
+    Rigidbody rigid;
+
+    private void Start() 
     {
-        if(isMoving) return;
-
-        Assemble(Vector3.forward);
+        rigid = GetComponent<Rigidbody>();
     }
 
-    void Assemble(Vector3 dir)
+    void Update()
     {
-        var anchor = transform.position + (Vector3.down + dir) * 0.5f;
-        var axis = Vector3.Cross(Vector3.up, dir);
-        StartCoroutine(Roll(anchor, axis));
+        if(isMove)return;
+   
+        StartCoroutine(Rolling(Vector3.forward));
     }
 
-    IEnumerator Roll(Vector3 anchor, Vector3 axis)
+    private IEnumerator Rolling(Vector3 dir)
     {
-        isMoving = true;
+        
+        isMove = true;
 
-        for(int i = 0; i < (90 / rollSpeed); i++)
+        float angle = 90;
+
+        Vector3 center = transform.position + (dir / 2) * transform.localScale.x + (Vector3.down / 2) * transform.localScale.x;
+
+        Vector3 axis = Vector3.Cross(Vector3.up, dir);
+
+        while (angle > 0)
         {
-            transform.RotateAround(anchor, axis, rollSpeed);
-            yield return new WaitForSeconds(0.01f);
+            float rotationAngle = Time.deltaTime * speed;
+            transform.RotateAround(center, axis, rotationAngle);
+            angle -= rotationAngle;
+            yield return null;
         }
 
-        isMoving = false;
+        isMove = false;
+    }
+
+    private void OnTriggerEnter(Collider other) 
+    {
+        if(other.transform.CompareTag("Zone") && !isBorder)
+        {
+            StartCoroutine(PauseMove());
+        }
+    }
+
+    IEnumerator PauseMove()
+    {
+        yield return new WaitForSeconds(0.03f);
+
+        isBorder = true;
+        this.transform.SetParent(GameObject.FindGameObjectWithTag("World").transform);
+        this.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        speed = 0;
+
+        yield return new WaitForSeconds(1.5f);
+
+        speed = 40;
+
+        yield return new WaitForSeconds(1.0f);
+        this.transform.parent = null;
+        this.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        speed = 200;
+        isBorder = false;
     }
 }
