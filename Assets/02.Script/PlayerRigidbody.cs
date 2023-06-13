@@ -39,6 +39,6 @@ public class PlayerRigidbody : MonoBehaviour
 				floatDelay = 0f;
 			}
 		}
-		body.AddForce(CustomGravity.GetGravity(body.position), ForceMode.Impulse);
+		body.AddForce(CustomGravity.GetGravity(body.position), ForceMode.Acceleration);
 	}
 }

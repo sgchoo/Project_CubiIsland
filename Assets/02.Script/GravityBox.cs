@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GravityBox : GravitySource
 {
-    [SerializeField] float gravity = 5.0f;
+    [SerializeField] float gravity = 4f;
 
-	[SerializeField] Vector3 boundaryDistance = Vector3.one;
+	[SerializeField] Vector3 boundaryDistance = new Vector3(0.1f, 0.1f, 0.1f);
 
 	[SerializeField, Min(0f)] float innerDistance = 0f, innerFalloffDistance = 0f;
 
@@ -56,7 +56,7 @@ public class GravityBox : GravitySource
 			}
 			float g = gravity / distance;
 			if (distance > outerDistance) {
-				g *= 1f - (distance - outerDistance) * outerFalloffFactor;
+				g *= 0.1f - (distance - outerDistance) * outerFalloffFactor;
 			}
 			return transform.TransformDirection(g * vector);
 		}
@@ -88,7 +88,7 @@ public class GravityBox : GravitySource
 		}
 		float g = gravity;
 		if (distance > innerDistance) {
-			g *= 1f - (distance - innerDistance) * innerFalloffFactor;
+			g *= 0.1f - (distance - innerDistance) * innerFalloffFactor;
 		}
 		return coordinate > 0f ? -g : g;
 	}
@@ -107,8 +107,8 @@ public class GravityBox : GravitySource
 			Mathf.Max(Mathf.Min(innerFalloffDistance, maxInner), innerDistance);
 		outerFalloffDistance = Mathf.Max(outerFalloffDistance, outerDistance);
 
-		innerFalloffFactor = 1f / (innerFalloffDistance - innerDistance);
-		outerFalloffFactor = 1f / (outerFalloffDistance - outerDistance);
+		innerFalloffFactor = 0.1f / (innerFalloffDistance - innerDistance);
+		outerFalloffFactor = 0.1f / (outerFalloffDistance - outerDistance);
 	}
 
 	// void OnDrawGizmos () {

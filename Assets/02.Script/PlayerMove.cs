@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public int speed = 200;
+    public float speed = 200f;
 
     bool isMove = false;
 
@@ -61,16 +61,18 @@ public class PlayerMove : MonoBehaviour
         isBorder = true;
         this.transform.SetParent(GameObject.FindGameObjectWithTag("World").transform);
         this.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        this.transform.localScale = new Vector3(2f, 2f, 2f);
         speed = 0;
 
         yield return new WaitForSeconds(1.5f);
 
-        speed = 40;
+        this.transform.parent = null;
+        this.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        speed = 40f;
 
         yield return new WaitForSeconds(1.0f);
-        this.transform.parent = null;
-        this.transform.localRotation = Quaternion.Euler(Vector3.zero);
-        speed = 200;
+        //this.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        speed = 200f;
         isBorder = false;
     }
 }
