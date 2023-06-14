@@ -12,6 +12,11 @@ public class PlayerMove : MonoBehaviour
 
     Rigidbody rigid;
 
+    private void Awake() 
+    {
+        
+    }
+
     private void Start() 
     {
         rigid = GetComponent<Rigidbody>();
@@ -24,6 +29,12 @@ public class PlayerMove : MonoBehaviour
         if(isMove)return;
    
         StartCoroutine(Rolling(Vector3.forward));
+
+        MeshRenderer mesh = this.GetComponent<MeshRenderer>();
+        mesh.enabled = true;
+
+        BoxCollider coll = this.GetComponent<BoxCollider>();
+        coll.enabled = true;
     }
 
     void BoolValueInit()
