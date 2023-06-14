@@ -15,6 +15,8 @@ public class PlayerMove : MonoBehaviour
     private void Start() 
     {
         rigid = GetComponent<Rigidbody>();
+        isMove = true;
+        Invoke("BoolValueInit", 1f);
     }
 
     void Update()
@@ -22,6 +24,12 @@ public class PlayerMove : MonoBehaviour
         if(isMove)return;
    
         StartCoroutine(Rolling(Vector3.forward));
+    }
+
+    void BoolValueInit()
+    {
+        isMove = false;
+        this.transform.parent = null;
     }
 
     private IEnumerator Rolling(Vector3 dir)
@@ -71,7 +79,7 @@ public class PlayerMove : MonoBehaviour
         speed = 40f;
 
         yield return new WaitForSeconds(1.0f);
-        //this.transform.localRotation = Quaternion.Euler(Vector3.zero);
+        this.transform.localRotation = Quaternion.Euler(Vector3.zero);
         speed = 200f;
         isBorder = false;
     }
