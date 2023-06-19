@@ -12,11 +12,6 @@ public class CubeMove : MonoBehaviour
 
     // 움직임 상태를 표현하는 변수
     bool isMove = false;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // 움직이지 않는 상태라면, 방향키를 입력받아 그 방향으로 굴리기 
     // 움직이는 상태라면, update를 중단하기
