@@ -52,6 +52,11 @@ public class CubeMove : MonoBehaviour
         // 다음 프레임까지 잠시 대기한 후 angle이 0이 될 때까지 회전 업데이트
         while (angle > 0)
         {
+            // if(collideFlag) 
+            // {
+            //     angle = 0;
+            //     collideFlag = false;
+            // }
             float rotationAngle = Time.deltaTime * speed;
             transform.RotateAround(center, axis, rotationAngle);
             angle -= rotationAngle;
@@ -60,4 +65,14 @@ public class CubeMove : MonoBehaviour
 
         isMove = false;
     }
+
+    // private bool collideFlag = false;
+
+    // private void OnCollisionEnter(Collision other) {
+    //     if(other.gameObject.CompareTag("DoubleMove"))
+    //     {
+    //         collideFlag = true;
+    //         Debug.Log("Something Collide");
+    //     }
+    // }
 }
