@@ -11,9 +11,9 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     //구르는 속도
-    public float speed = 150f;
+    public float rollSpeed = 150f;
     //이동 속도
-    float moveSpeed = 2.0f;
+    public float moveSpeed = 2.0f;
     //굴러가는 이동 값 체크
     bool isMove = false;
     //Edge Collider 감지 ray 체크
@@ -44,7 +44,7 @@ public class PlayerMove : MonoBehaviour
         // 앞으로 이동
         this.transform.position += Vector3.forward * moveSpeed * Time.deltaTime;
         // player 로컬로테이션 고정
-        this.transform.localRotation = Quaternion.Euler(new Vector3(transform.rotation.x, 0.0f, 0.0f));
+        this.transform.localRotation = Quaternion.Euler(new Vector3(this.transform.localRotation.x, 0.0f, 0.0f));
     }
 
     //Edge 감지 ray 함수
@@ -83,7 +83,7 @@ public class PlayerMove : MonoBehaviour
 
         while (angle > 0)
         {
-            float rotationAngle = Time.deltaTime * speed;
+            float rotationAngle = Time.deltaTime * rollSpeed;
             transform.RotateAround(center, axis, rotationAngle);
             angle -= rotationAngle;
             yield return null;
