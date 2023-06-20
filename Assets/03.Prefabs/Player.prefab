@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3683916336065232339}
   - component: {fileID: 3468137255945566007}
   - component: {fileID: 7861285881581347826}
-  - component: {fileID: 4838347367969698866}
+  - component: {fileID: 8011048150058511325}
   - component: {fileID: 8803981380758395386}
   - component: {fileID: 3840870813394279997}
   m_Layer: 0
@@ -30,13 +30,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2236091608024618824}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.7, y: 2.7, z: 2.7}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1892685778214956700
 MeshFilter:
@@ -136,7 +136,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 2
---- !u!114 &4838347367969698866
+--- !u!114 &8011048150058511325
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f057d7469ada248967c09403ee3327, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 200
+  rollSpeed: 150
+  moveSpeed: 1
 --- !u!114 &8803981380758395386
 MonoBehaviour:
   m_ObjectHideFlags: 0

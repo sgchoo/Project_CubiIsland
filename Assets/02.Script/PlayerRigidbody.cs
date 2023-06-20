@@ -4,41 +4,36 @@ using UnityEngine;
 
 public class PlayerRigidbody : MonoBehaviour
 {
-    [SerializeField] bool floatToSleep = false;
+    [SerializeField]
+	bool floatToSleep = false;
 
 	Rigidbody body;
 
 	float floatDelay;
 
-	void Awake () 
-    {
+	void Awake () {
 		body = GetComponent<Rigidbody>();
 		body.useGravity = false;
 	}
 
-	void FixedUpdate () 
-    {
-		if (floatToSleep) 
-        {
-			if (body.IsSleeping()) 
-            {
+	void FixedUpdate () {
+		if (floatToSleep) {
+			if (body.IsSleeping()) {
 				floatDelay = 0f;
 				return;
 			}
 
-			if (body.velocity.sqrMagnitude < 0.0001f) 
-            {
+			if (body.velocity.sqrMagnitude < 0.0001f) {
 				floatDelay += Time.deltaTime;
-				if (floatDelay >= 1f) 
-                {
+				if (floatDelay >= 1f) {
 					return;
 				}
 			}
-			else 
-            {
+			else {
 				floatDelay = 0f;
 			}
 		}
-		body.AddForce(CustomGravity.GetGravity(body.position), ForceMode.Acceleration);
+        
+		body.AddForce(CustomGravity.GetGravity(body.position), ForceMode.Impulse);
 	}
 }
