@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DoubleMove
   - World
+  - Zone
   - Joint
   layers:
   - Default
