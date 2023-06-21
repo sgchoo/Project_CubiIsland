@@ -5,15 +5,10 @@ using UnityEngine;
 public class RotateScript : MonoBehaviour
 {
     public Transform target;
-    // Start is called before the first frame update
-    void Start()
-    {
-        this.transform.position = target.transform.position;
-    }
-
-    // Update is called once per frame
+    
     void Update()
     {
+        this.transform.position = target.transform.position;
         this.transform.rotation = target.transform.rotation;
     }
 }
