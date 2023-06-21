@@ -494,7 +494,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &373684285
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -508,10 +508,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   foundKeyCnt: 2
-  targetObj: {fileID: 2032930493}
-  glassCube: {fileID: 1810742116}
-  spawnPoint: {fileID: 910597090}
-  player: {fileID: 846299995}
 --- !u!4 &373684286
 Transform:
   m_ObjectHideFlags: 0
@@ -927,11 +923,6 @@ Camera:
 --- !u!1 &846299980 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2236091608024618824, guid: 2b4a1c0b8eef46040bdce9b90c46b0a3, type: 3}
-  m_PrefabInstance: {fileID: 255458575}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &846299995 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4109884310649211131, guid: 2b4a1c0b8eef46040bdce9b90c46b0a3, type: 3}
   m_PrefabInstance: {fileID: 255458575}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &846300010
