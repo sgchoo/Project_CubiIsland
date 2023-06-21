@@ -15,16 +15,6 @@ public class GameManager : MonoBehaviour
     // 찾아야할 열쇠 갯수
     [SerializeField] private float foundKeyCnt = 2;
 
-    public Transform targetObj;
-    public Transform glassCube;
-    public Transform spawnPoint;
-    public Transform player;
-
-    private void Awake() 
-    {
-        ObjectTranslate();
-    }
-
     private void Update() 
     {
         KeyCountCheck();
@@ -53,13 +43,5 @@ public class GameManager : MonoBehaviour
             // 월드 꾸미고 바꾸기
             GameObject.FindWithTag("Player").GetComponent<PlayerMove>().enabled = false;
         }
-    }
-
-    void ObjectTranslate()
-    {
-        glassCube.position = targetObj.position;
-        glassCube.rotation = targetObj.rotation;
-
-        player.position = spawnPoint.position;
     }
 }
