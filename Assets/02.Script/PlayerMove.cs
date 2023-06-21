@@ -30,9 +30,6 @@ public class PlayerMove : MonoBehaviour
 
     private Coords coords = new Coords(2,1);
 
-<<<<<<< HEAD
-    //이동 속도
-    public float moveSpeed = 0.01f;
     //굴러가는 이동 값 체크
     private Vector3 pos;
     private void Start() 
@@ -91,12 +88,6 @@ public class PlayerMove : MonoBehaviour
 
         //Move();
         //ChangeRotate();
-=======
-
-    void Update()
-    {
-        Move();
->>>>>>> b6911c3ce10d5cf3bf4f9de5ae5ba14b2786948e
     }
 
     // forward이동 및 로테이션 고정 함수
