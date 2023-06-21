@@ -20,10 +20,14 @@ public class GameManager : MonoBehaviour
     public Transform spawnPoint;
     public Transform player;
 
+    private void Awake() 
+    {
+        ObjectTranslate();
+    }
+
     private void Update() 
     {
         KeyCountCheck();
-        ObjectTranslate();
     }
 
     // Key의 갯수 파악해서 전개도를 펼친다
@@ -55,6 +59,7 @@ public class GameManager : MonoBehaviour
     {
         glassCube.position = targetObj.position;
         glassCube.rotation = targetObj.rotation;
+
         player.position = spawnPoint.position;
     }
 }

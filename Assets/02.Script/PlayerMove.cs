@@ -11,6 +11,11 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    //이동 속도
+    public float moveSpeed = 0.01f;
+    private Vector3 currentDir = Vector3.forward;
+    private Vector3 localScale = Vector3.zero;
+    private bool isMove = false;
     private struct Coords
     {
         public int x;
@@ -25,39 +30,21 @@ public class PlayerMove : MonoBehaviour
 
     private Coords coords = new Coords(2,1);
 
-    //이동 속도
-    public float moveSpeed = 0.01f;
-    //굴러가는 이동 값 체크
-
-    private void Start() 
-    {
-
-    }
 
     void Update()
     {
         Move();
-        //ChangeRotate();
     }
-
-
-    private Vector3 currentDir = Vector3.forward;
-    private Vector3 localScale = Vector3.zero;
-
 
     // forward이동 및 로테이션 고정 함수
     void Move()
     {
         // 앞으로 이동
-        //this.transform.position += transform.forward * moveSpeed * Time.deltaTime; 
         Debug.Log("This Transform Position : " + transform.position);
         Debug.Log("This Transform Local Position : " + transform.position);
         if(isMove)return;
         StartCoroutine(Rolling(currentDir));
     }
-
-    private bool isMove = false;
-
     
     private IEnumerator Rolling(Vector3 dir)
     {
@@ -104,26 +91,6 @@ public class PlayerMove : MonoBehaviour
             currentDir = ConvertVectorDown(currentDir);
         }
         isMove = false;
-    }
-
-
-    //플레이어 회전 함수
-    private void ChangeRotate()
-    {
-        RaycastHit hitInfo;
-
-        Vector3 rayDirection = ((-transform.up) + (-transform.forward)).normalized;
-
-        // local포지션의 방향으로 레이 발사.
-        Ray ray = new Ray(transform.position, rayDirection);
-
-        if(Physics.Raycast(ray, out hitInfo, 5f))
-        {
-            Debug.Log(hitInfo.transform.name);
-        
-            // 내 현재 방향에서 hitInfo.normal(법선벡터) 방향으로 회전
-            //this.transform.rotation = Quaternion.Lerp(this.transform.rotation, Quaternion.FromToRotation(Vector3.up, hitInfo.normal), 1f);
-        }
     }
     
     public Vector3 ConvertVectorDown(Vector3 input)
@@ -174,7 +141,6 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-
     private Vector3 GetCurrentPos()
     {
         if(this.transform.parent == null)
@@ -185,7 +151,6 @@ public class PlayerMove : MonoBehaviour
         else 
         {
             Debug.Log("실행은 안되고있는거니");
-            //return this.transform.parent.transform.InverseTransformPoint(this.transform.position);
             return this.transform.localPosition;
         }
     }
