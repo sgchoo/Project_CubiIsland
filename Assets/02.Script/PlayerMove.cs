@@ -47,9 +47,8 @@ public class PlayerMove : MonoBehaviour
 
         //transform.Translate(Vector3.right*0.01f);
         tempDir = GetDirectionByRotation();
-        Vector3 localForward = transform.TransformDirection(Vector3.forward);
-        transform.RotateAround(transform.position, localForward, 90f);
-        //transform.Translate(tempDir * 0.01f);
+        
+        transform.Translate(tempDir * 0.01f);
         if (tempDir == Vector3.forward) coords.y += 1;
         if (tempDir == Vector3.back)    coords.y -= 1;
         if (tempDir == Vector3.right)   coords.x += 1;
