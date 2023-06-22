@@ -28,8 +28,6 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     // Update is called once per frame
     void Update()
     {
-
-
         // 스와이프 스냅 
         // 자식 객체 갯수 배열로 가져오기
         pos = new float[rectTransform.childCount];
@@ -57,17 +55,17 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             }
         }
 
-
         for (int i = 0; i < pos.Length; i++)
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
+                Debug.Log("Current Selected Level" + i);
                 rectTransform.GetChild(i).localScale = Vector2.Lerp(rectTransform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
                     {
-                        rectTransform.GetChild(j).localScale = Vector2.Lerp(rectTransform.GetChild(j).localScale, new Vector2(0.5f, 0.5f), 0.1f);
+                        rectTransform.GetChild(j).localScale = Vector2.Lerp(rectTransform.GetChild(j).localScale, new Vector2(0.6f, 0.6f), 0.1f);
                     }
                 }
             }
