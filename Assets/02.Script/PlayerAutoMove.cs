@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 // <Summary>
 // 플레이어가 Cube위를 지속적으로 걸어다님
@@ -12,11 +13,12 @@ public class PlayerAutoMove : MonoBehaviour
     private void Update() 
     {        
         transform.Translate(Vector3.forward * Time.deltaTime * 3, Space.Self);
-
+        Vector3 dir = GetComponent<ParentConstraint>().GetTranslationOffset(0);
+        GetComponent<ParentConstraint>().SetTranslationOffset(0, Vector3.forward * Time.deltaTime * 3);
         //새로운 중력 값 적용
-        Physics.gravity = -transform.up * 9.8f;
+        //Physics.gravity = -transform.up * 9.8f;
 
-        ChangeRotate();
+        //ChangeRotate();
     }
 
     //플레이어 회전 함수
@@ -33,7 +35,7 @@ public class PlayerAutoMove : MonoBehaviour
         if(Physics.Raycast(ray, out hitInfo, 5.0f))
         {
             // 내 현재 방향에서 hitInfo.normal(법선벡터) 방향으로 회전
-            transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(Vector3.up, hitInfo.normal), 0.03f);
+            //transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.FromToRotation(Vector3.up, hitInfo.normal), 0.03f);
         }
     }
 }
