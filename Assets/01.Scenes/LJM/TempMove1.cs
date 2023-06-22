@@ -27,7 +27,7 @@ public class TempMove1 : MonoBehaviour
 
     private IEnumerator Rolling(Vector3 dir)
     {
-        
+        Debug.Log("키눌림");
         isMove = true;
 
         // 큐브 회전 각도
