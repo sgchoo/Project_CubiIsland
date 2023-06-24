@@ -5,24 +5,34 @@ using DG.Tweening;
 
 public class Test : MonoBehaviour
 {
-    float curTime;
-    float angle;
+    [SerializeField] private float rollSpeed = 3;
+
+    private bool isRoll;
 
     private void Update() 
     {
-        MoveEvent();
+        if(isRoll) return;
+
+        RollCube();
     }
 
-    void MoveEvent()
+    private void RollCube()
     {
-        curTime += Time.deltaTime;
+        var anchor = this.transform.position + (Vector3.down + Vector3.forward);
+        var axis = Vector3.Cross(Vector3.up, Vector3.forward);
+        StartCoroutine(Rolling(anchor, axis));
+    }
 
-        if(curTime > 1.5f)
+    IEnumerator Rolling(Vector3 anchor, Vector3 axis)
+    {
+        isRoll = true;
+
+        for(int i = 0; i < (90 / rollSpeed); i++)
         {
-            angle += 90.0f;
-            transform.DOLocalMove(Vector3.forward * 0.01f, 1.0f).SetRelative();
-            transform.DORotate(new Vector3(angle, 0, 0), 1.0f).SetEase(Ease.Unset);
-            curTime = 0;
+            transform.RotateAround(anchor, axis, rollSpeed);
+            yield return new WaitForSeconds(0.01f);
         }
+
+        isRoll = false;
     }
 }
