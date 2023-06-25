@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ButtonController_UI : MonoBehaviour
+public class CharListController : MonoBehaviour
 {
     //프리팹 연결하기
     //배열로 바꿔서 저장하기
@@ -12,7 +12,7 @@ public class ButtonController_UI : MonoBehaviour
 
     public GameObject[] Contents;
 
-    // GameOnject 배열 만들기
+    // GameObject 배열 만들기
     public GameObject[] CharPrefabs;
 
     
@@ -37,7 +37,7 @@ public class ButtonController_UI : MonoBehaviour
 
     }
 
-    public void OnBtnClick_00()
+    public void CharList_00()
     {
         // 버튼 클릭 시 프리팹 변경
         Debug.Log("Bear");
@@ -49,11 +49,10 @@ public class ButtonController_UI : MonoBehaviour
         newObject.transform.SetParent(CharPos.transform, false);
         CurrentObject = newObject;
     }
-
-    public void OnBtnClick_01()
+    public void CharList_01()
     {
         // 버튼 클릭 시 프리팹 변경
-        Debug.Log("Bear");
+        Debug.Log("Bull");
 
         // CurrentObject 지우기
         Destroy(CurrentObject);
@@ -62,11 +61,10 @@ public class ButtonController_UI : MonoBehaviour
         newObject.transform.SetParent(CharPos.transform, false);
         CurrentObject = newObject;
     }
-
-    public void OnBtnClick_02()
+    public void CharList_02()
     {
         // 버튼 클릭 시 프리팹 변경
-        Debug.Log("Bear");
+        Debug.Log("Deer");
 
         // CurrentObject 지우기
         Destroy(CurrentObject);
@@ -75,10 +73,10 @@ public class ButtonController_UI : MonoBehaviour
         newObject.transform.SetParent(CharPos.transform, false);
         CurrentObject = newObject;
     }
-    public void OnBtnClick_03()
+    public void CharList_03()
     {
         // 버튼 클릭 시 프리팹 변경
-        Debug.Log("Bear");
+        Debug.Log("Horse");
 
         // CurrentObject 지우기
         Destroy(CurrentObject);
@@ -87,10 +85,10 @@ public class ButtonController_UI : MonoBehaviour
         newObject.transform.SetParent(CharPos.transform, false);
         CurrentObject = newObject;
     }
-    public void OnBtnClick_04()
+    public void CharList_04()
     {
         // 버튼 클릭 시 프리팹 변경
-        Debug.Log("Bear");
+        Debug.Log("Leopard");
 
         // CurrentObject 지우기
         Destroy(CurrentObject);
@@ -99,10 +97,10 @@ public class ButtonController_UI : MonoBehaviour
         newObject.transform.SetParent(CharPos.transform, false);
         CurrentObject = newObject;
     }
-    public void OnBtnClick_05()
+    public void CharList_05()
     {
         // 버튼 클릭 시 프리팹 변경
-        Debug.Log("Bear");
+        Debug.Log("Lion");
 
         // CurrentObject 지우기
         Destroy(CurrentObject);
@@ -111,10 +109,10 @@ public class ButtonController_UI : MonoBehaviour
         newObject.transform.SetParent(CharPos.transform, false);
         CurrentObject = newObject;
     }
-    public void OnBtnClick_06()
+    public void CharList_06()
     {
         // 버튼 클릭 시 프리팹 변경
-        Debug.Log("Bear");
+        Debug.Log("Mouse");
 
         // CurrentObject 지우기
         Destroy(CurrentObject);
@@ -123,10 +121,10 @@ public class ButtonController_UI : MonoBehaviour
         newObject.transform.SetParent(CharPos.transform, false);
         CurrentObject = newObject;
     }
-    public void OnBtnClick_07()
+    public void CharList_07()
     {
         // 버튼 클릭 시 프리팹 변경
-        Debug.Log("Bear");
+        Debug.Log("Panda");
 
         // CurrentObject 지우기
         Destroy(CurrentObject);
@@ -135,18 +133,46 @@ public class ButtonController_UI : MonoBehaviour
         newObject.transform.SetParent(CharPos.transform, false);
         CurrentObject = newObject;
     }
-    public void OnBtnClick_08()
+    public void CharList_08()
     {
         // 버튼 클릭 시 프리팹 변경
-        Debug.Log("Bear");
-
+        Debug.Log("Pig");
         // CurrentObject 지우기
         Destroy(CurrentObject);
-
         GameObject newObject = Instantiate(CharPrefabs[8]) as GameObject;
         newObject.transform.SetParent(CharPos.transform, false);
         CurrentObject = newObject;
     }
-
+    public void CharList_09()
+    {
+        // 버튼 클릭 시 프리팹 변경
+        Debug.Log("Polarbear");
+        // CurrentObject 지우기
+        Destroy(CurrentObject);
+        GameObject newObject = Instantiate(CharPrefabs[9]) as GameObject;
+        newObject.transform.SetParent(CharPos.transform, false);
+        CurrentObject = newObject;
+    }
+    public void CharList_10()
+    {
+        // 버튼 클릭 시 프리팹 변경
+        Debug.Log("Rabbit");
+        // CurrentObject 지우기
+        Destroy(CurrentObject);
+        GameObject newObject = Instantiate(CharPrefabs[10]) as GameObject;
+        newObject.transform.SetParent(CharPos.transform, false);
+        CurrentObject = newObject;
+    }
+    public void CharList_11()
+    {
+        // 버튼 클릭 시 프리팹 변경
+        Debug.Log("wolf");
+        // CurrentObject 지우기
+        Destroy(CurrentObject);
+        GameObject newObject = Instantiate(CharPrefabs[11]) as GameObject;
+        newObject.transform.SetParent(CharPos.transform, false);
+        CurrentObject = newObject;
+    }
+    
 
 }
