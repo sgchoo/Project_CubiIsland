@@ -216,7 +216,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!81 &32049297
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2030,12 +2030,12 @@ GameObject:
   - component: {fileID: 1757583287}
   - component: {fileID: 1757583286}
   m_Layer: 5
-  m_Name: 001.PanelLoadFloor
+  m_Name: PanelLoadFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1757583285
 RectTransform:
   m_ObjectHideFlags: 0
