@@ -6,7 +6,13 @@ using UnityEngine.EventSystems;
 
 public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+    public Color[] colors;
+    private Button takeTheBtn;
+    int btnNumber;
     private RectTransform rectTransform;
+    public GameObject scrollbar, ButtonContent;
+    float scroll_pos = 0;
+    float[] pos;
     public void OnPointerDown(PointerEventData data)
     {
         Debug.Log("터치");
@@ -15,9 +21,6 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         Debug.Log("터치");
     }
-    public GameObject scrollbar;
-    float scroll_pos = 0;
-    float[] pos;
 
     // Start is called before the first frame update
     void Start()
@@ -71,5 +74,41 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             }
 
         }
+
+        for (int i = 0; i < pos.Length; i++)
+        {
+            if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
+            {
+                Debug.LogWarning("Current Selected Level" + i);
+                transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
+                ButtonContent.transform.GetChild(i).localScale = Vector2.Lerp(ButtonContent.transform.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
+                ButtonContent.transform.GetChild(i).GetComponent<Image>().color = colors[1];
+                for (int j = 0; j < pos.Length; j++)
+                {
+                    if (j != i)
+                    {
+                        ButtonContent.transform.GetChild(j).GetComponent<Image>().color = colors[0];
+                        ButtonContent.transform.GetChild(j).localScale = Vector2.Lerp(ButtonContent.transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
+                        transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
+                    }
+                }
+            }
+
+        }
+        
     }
+    //버튼 색상 바꾸기
+        public void WhichBtnClicked(Button btn)
+        {
+            btn.transform.name = "clicked";
+            for (int i = 0; i < btn.transform.parent.transform.childCount; i++)
+            {
+                if (btn.transform.parent.transform.GetChild(i).transform.name == "clicked")
+                {
+                    btnNumber = i;
+                    takeTheBtn = btn;
+                    scroll_pos = (pos[btnNumber]);
+                }
+            }
+        }
 }
