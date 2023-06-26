@@ -37,11 +37,22 @@ public class UIController : MonoBehaviour
         
     }
 
+    float timer = 0f;
+
+
     // Update is called once per frame
     void Update()
     {
         //if(num == 1){PanelGuideOpen();}
-        if(isOn == true){PanelGuideOpen();}
+        if(isOn == true)
+        {
+            if(timer < 0.01f)
+            {
+                timer += Time.deltaTime;
+                return;
+            }
+            PanelGuideOpen();
+        }
     }
 
     //01.GameGuide - 02.PanelGuide
@@ -83,7 +94,8 @@ public class UIController : MonoBehaviour
         GameObject objectD = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose");
         
 
-        //PanelGuide.SetActive(true); 이 코드가 되어야 하는데 안됨 ㅠㅠ null 뜸.. 왜인지를 모르겠음
+        PanelGuide.SetActive(true); //이 코드가 되어야 하는데 안됨 ㅠㅠ null 뜸.. 왜인지를 모르겠음
+        objectD.SetActive(false);
         //PanelGuide.SetActive(false);
     }
 
