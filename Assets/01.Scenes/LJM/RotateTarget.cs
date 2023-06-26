@@ -47,7 +47,7 @@ public class RotateTarget : MonoBehaviour
 
         if(moveCnt != 5)
         {
-            transform.localPosition += transform.forward * (transform.localScale.x / 2);
+            transform.localPosition += transform.forward * (transform.localScale.x) * 2;
         }
         else 
         {
