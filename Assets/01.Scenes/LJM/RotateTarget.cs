@@ -5,8 +5,10 @@ using UnityEngine;
 public class RotateTarget : MonoBehaviour
 {
     public Transform player;
+    public Transform yDir;
+    public Transform myDirection;
     public float moveSpeed;
-    // Start is called before the first frame update
+
     void Start()
     {
         this.transform.localPosition = player.localPosition + (-player.up * player.localScale.x)/2 + (player.forward * player.localScale.x)/2;
@@ -15,10 +17,10 @@ public class RotateTarget : MonoBehaviour
     private float timer = 0f;
 
     private int moveCnt = 1;
+    public int rollCnt;
 
     private float angle = 90f;
     private float hAngle = 0f;
-    // Update is called once per frame
     void Update()
     {
         player.parent = this.transform;
@@ -41,20 +43,16 @@ public class RotateTarget : MonoBehaviour
             hAngle += 90f;
         }
         
-        transform.localRotation = Quaternion.Euler(hAngle,0,0);
+        transform.localRotation = Quaternion.Euler(hAngle, 0, 0);
 
         if(moveCnt != 5)
         {
-            transform.localPosition += transform.forward * (transform.localScale.x)*2;
+            transform.localPosition += transform.forward * (transform.localScale.x / 2);
         }
         else 
         {
             moveCnt = -1;
+            rollCnt += 1;
         }
-        
-
-
-        
-        
     }
 }

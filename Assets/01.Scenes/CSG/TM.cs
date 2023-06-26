@@ -6,53 +6,50 @@ using DG.Tweening;
 
 public class TM : MonoBehaviour
 {
-    public Transform player;
-    [SerializeField] private float moveCnt;
-    [SerializeField] private float rotateCnt;
+    [SerializeField] private RotateTarget rotTarget;
+    public Transform arCamera;
 
-    public Ease ease;
     private void Start() 
     {
-        this.transform.position = player.position + (Vector3.down + Vector3.forward);
-
-        DOTween.Init();
-
-        DOTween.SetTweensCapacity(1250, 10);
-
-        StartCoroutine(RollCube());
+        rotTarget = GameObject.Find("RotationTargetForward").GetComponent<RotateTarget>();
     }
 
-
-    IEnumerator RollCube()
+    private void Update() 
     {
-        player.SetParent(this.transform);
-
-        if(moveCnt == 4)
+        if(rotTarget.rollCnt == 2)
         {
-            transform.DORotate(new Vector3(this.transform.eulerAngles.x + 180, 0, 0), 0.5f).SetEase(ease).SetLoops(1);
-            rotateCnt++;
-            moveCnt = 0;
+            this.transform.localRotation = Quaternion.Euler(90, 0, 0);
+        }
+        else if(rotTarget.rollCnt == 3)
+        {
+            this.transform.localRotation = Quaternion.Euler(180, 0, 0);
+        }
+        else if(rotTarget.rollCnt == 4)
+        {
+            this.transform.localRotation = Quaternion.Euler(270, 0, 0);
+        }
+        else if(rotTarget.rollCnt == 5)
+        {
+            this.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            rotTarget.rollCnt = 1;
         }
 
-        else
+        if(arCamera.localEulerAngles.z < 90 && arCamera.localEulerAngles.z > 0)
         {
-            transform.DORotate(new Vector3(this.transform.eulerAngles.x + 90, 0, 0), 0.5f).SetEase(ease).SetLoops(1);
+            this.transform.rotation = Quaternion.Lerp(this.transform.localRotation, Quaternion.Euler(0, 90, 0), 0.03f);
+        }
+        else if(arCamera.localEulerAngles.z < 180 && arCamera.localEulerAngles.z > 90)
+        {
+            this.transform.rotation = Quaternion.Lerp(this.transform.localRotation, Quaternion.Euler(0, 180, 0), 0.03f);
+        }
+        else if(arCamera.localEulerAngles.z < 270 && arCamera.localEulerAngles.z > 180)
+        {
+            this.transform.rotation = Quaternion.Lerp(this.transform.localRotation, Quaternion.Euler(0, 270, 0), 0.03f);
+        }
+        else if(arCamera.localEulerAngles.z < 360 && arCamera.localEulerAngles.z > 270)
+        {
+            this.transform.rotation = Quaternion.Lerp(this.transform.localRotation, Quaternion.Euler(0, 0, 0), 0.03f);
         }
 
-        yield return new WaitForSeconds(0.5f);
-
-        player.parent = null;
-
-        this.transform.rotation = Quaternion.Euler(this.transform.eulerAngles.x - 90, 0, 0);
-
-        yield return new WaitForSeconds(0.5f);
-
-        this.transform.position = player.position + new Vector3(0, -1, 1);
-
-        moveCnt += 1;
-
-        yield return new WaitForSeconds(0.5f);
-
-        StartCoroutine(RollCube());
     }
 }
