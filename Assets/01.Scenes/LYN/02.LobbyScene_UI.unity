@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 119947766}
   - component: {fileID: 119947765}
   m_Layer: 5
-  m_Name: PanelGuide
+  m_Name: PanelGuide01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -971,7 +971,7 @@ GameObject:
   - component: {fileID: 546598053}
   - component: {fileID: 546598052}
   m_Layer: 5
-  m_Name: PanelChoose
+  m_Name: PanelChoose02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

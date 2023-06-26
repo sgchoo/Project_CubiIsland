@@ -4,52 +4,60 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
-    [Header("PanelGuide")]
-    public GameObject PanelGuide;
-    [Header("PanelChoose")]
-    public GameObject PanelChoose;
+    
+    public GameObject PanelGuide, PanelChoose;
 
     [SerializeField]
     public static UIController instance;
+    public Scene CurrentScene;
 
-    //static int num = 0;
+    static int PanelNum = 0;
 
-    static bool isOn = false;
+    public bool SceneLoad;
 
+    // UIController 프리팹 만들기
     void Awake()
     {
-        // 인스턴스가 이미 있는지 확인, 이 상태로 설정
         if (instance == null)
+        {
             instance = this;
-
-        // 인스턴스가 이미 있는 경우 오브젝트 제거
-        else if (instance != this)
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
             Destroy(gameObject);
-
-        // 다음 scene으로 넘어가도 오브젝트 유지
-        DontDestroyOnLoad(gameObject);
+        }
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        //if(num == 1){PanelGuideOpen();}
-        if(isOn == true){PanelGuideOpen();}
+        if (SceneLoad == true)
+        {
+            print("씬 로드된 것을 UIController가 확인");
+            CurrentScene = SceneManager.GetActiveScene();
+            if (CurrentScene.name == "02.LobbyScene_UI" || PanelNum == 1)
+            {
+                PanelGuideOpen();
+            }
+        }
     }
+
+
 
     //01.GameGuide - 02.PanelGuide
     public void btnGameGuide()
     {
         Debug.Log("게임안내");
-        isOn = true;
-        //num++;
+        PanelNum = 1;
         SceneManager.LoadScene("02.LobbyScene_UI");
     }
 
@@ -57,10 +65,8 @@ public class UIController : MonoBehaviour
     public void btnGameStart()
     {
         Debug.Log("게임시작");
+        PanelNum = 2;
         SceneManager.LoadScene("02.LobbyScene_UI");
-        
-        //PanelChoose로 연결
-
     }
 
     //02. Panelchoose - 01.TitleScene
@@ -78,13 +84,25 @@ public class UIController : MonoBehaviour
 
     private void PanelGuideOpen()
     {
-        GameObject objectC = GameObject.Find("Canvas02/PanelSafeArea/PanelGuide");
-        PanelGuide = objectC;
-        GameObject objectD = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose");
-        
+        if (CurrentScene.name == "02.LobbyScene_UI" || PanelNum == 1)
+        {
+            print("패널가이드 오픈 됨");
+            
+            GameObject PanelGuide = GameObject.Find("Canvas02/PanelSafeArea/PanelGuide");
+            GameObject PanelChoose = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose");
+            
+        }
+    }
 
-        //PanelGuide.SetActive(true); 이 코드가 되어야 하는데 안됨 ㅠㅠ null 뜸.. 왜인지를 모르겠음
-        //PanelGuide.SetActive(false);
+    private void PanelChooseOpen()
+    {
+        if (CurrentScene.name == "02.LobbyScene_UI" || PanelNum == 2)
+        {
+            GameObject PanelGuide = GameObject.Find("Canvas02/PanelSafeArea/PanelGuide");
+            GameObject PanelChoose = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose");
+            PanelGuide.SetActive(false);
+            PanelChoose.SetActive(true);
+        }
     }
 
 }
