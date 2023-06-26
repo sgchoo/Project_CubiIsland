@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 119947766}
   - component: {fileID: 119947765}
   m_Layer: 5
-  m_Name: PanelGuide
+  m_Name: PanelGuide01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -650,7 +650,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 306342751}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3541856115930556520, guid: 437a0f75481db44429db2901808473e3, type: 3}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: btnCreatePlaza
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &306342751
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,7 +983,7 @@ GameObject:
   - component: {fileID: 546598053}
   - component: {fileID: 546598052}
   m_Layer: 5
-  m_Name: PanelChoose
+  m_Name: PanelChoose02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1940,7 +1952,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 803745813}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3541856115930556520, guid: 437a0f75481db44429db2901808473e3, type: 3}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: btnGameStart
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &803745813
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2711,7 +2735,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1100638892}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3541856115930556520, guid: 437a0f75481db44429db2901808473e3, type: 3}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: btnOption
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1100638892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3106,7 +3142,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d078c72a549bcc2499e0e83bb909131d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  count: 0
 --- !u!1 &1262265505
 GameObject:
   m_ObjectHideFlags: 0
@@ -3460,7 +3495,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1422830456}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3541856115930556520, guid: 437a0f75481db44429db2901808473e3, type: 3}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: btnLobby
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1422830456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3812,7 +3859,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 232126350450023568, guid: 437a0f75481db44429db2901808473e3, type: 3}
+      - m_Target: {fileID: 3541856115930556520, guid: 437a0f75481db44429db2901808473e3, type: 3}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: btnGoBack
         m_Mode: 1
@@ -4150,7 +4197,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1884345501}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!4 &1884345504
 Transform:
   m_ObjectHideFlags: 0

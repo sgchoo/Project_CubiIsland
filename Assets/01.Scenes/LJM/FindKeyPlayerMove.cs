@@ -30,6 +30,9 @@ public class FindKeyPlayerMove : MonoBehaviour
         {
             currentRot = transform.rotation;
         }
+
+        //GetCameraAxis();
+
     }
 
 
@@ -45,52 +48,52 @@ public class FindKeyPlayerMove : MonoBehaviour
     //     isMove = false;
     // }
 
-    // private Quaternion GetCameraAxis()
-    // {
-    //     Debug.Log("GetAxis");
-    //     string debugString = "";
-    //     Quaternion returnValue = default(Quaternion);
+    private Quaternion GetCameraAxis()
+    {
+        string debugString = "";
+        Quaternion returnValue = default(Quaternion);
 
-    //     float rotAngle =  currentRot.eulerAngles.x;
-    //     switch(DetectArea.axis)
-    //     {
-    //         case Axis.x  : rotAngle =  currentRot.eulerAngles.x; debugString += "x축";  break;
-    //         case Axis.y  : rotAngle =  currentRot.eulerAngles.y; debugString += "y축";  break;
-    //         case Axis.z  : rotAngle =  currentRot.eulerAngles.z; debugString += "z축";  break;
-    //         case Axis.mx : rotAngle = -currentRot.eulerAngles.x; debugString += "-x축"; break;
-    //         case Axis.my : rotAngle = -currentRot.eulerAngles.y; debugString += "-y축"; break;
-    //         case Axis.mz : rotAngle = -currentRot.eulerAngles.z; debugString += "-z축"; break;
-    //     }
         
-    //     switch((int)rotAngle/90f)
-    //     {
-    //         case 0 : 
-    //             //Debug.Log(debugString + "정면" + rotAngle + ", " + (int)rotAngle/90f); 
-    //             returnValue = Quaternion.Euler(0,0,0);
-    //             this.transform.localRotation = returnValue;
-    //             break;
-    //         case 1 : 
-    //             //Debug.Log(debugString + "오른면"); 
-    //             returnValue = Quaternion.Euler(0,90,0);
-    //             this.transform.localRotation = returnValue;
-    //             break;
-    //         case 2 : 
-    //             //Debug.Log(debugString + "뒷면"); 
-    //             returnValue = Quaternion.Euler(0,180,0);
-    //             this.transform.localRotation = returnValue;
-    //             break;
-    //         case 3 : 
-    //             //Debug.Log(debugString + "왼면"); 
-    //             returnValue = Quaternion.Euler(0,270,0);
-    //             this.transform.localRotation = returnValue;
-    //             break;
+        float rotAngle =  currentRot.eulerAngles.x;
+        switch(DetectArea.axis)
+        {
+            case Axis.x  : rotAngle =  arCamera.eulerAngles.x; debugString += "x축";  break;
+            case Axis.y  : rotAngle =  arCamera.eulerAngles.y; debugString += "y축";  break;
+            case Axis.z  : rotAngle =  arCamera.eulerAngles.z; debugString += "z축";  break;
+            case Axis.mx : rotAngle = -arCamera.eulerAngles.x; debugString += "-x축"; break;
+            case Axis.my : rotAngle = -arCamera.eulerAngles.y; debugString += "-y축"; break;
+            case Axis.mz : rotAngle = -arCamera.eulerAngles.z; debugString += "-z축"; break;
+        }
+        
+        switch((int)rotAngle/90f)
+        {
+            case 0 : 
+                //Debug.Log(debugString + "정면 : " + rotAngle + ", " + (int)rotAngle/90f); 
+                returnValue = Quaternion.Euler(0,0,0);
+                this.transform.localRotation = returnValue;
+                break;
+            case 1 : 
+                //Debug.Log(debugString + "오른면 : " + rotAngle + ", " + (int)rotAngle/90f); 
+                returnValue = Quaternion.Euler(0,90,0);
+                this.transform.localRotation = returnValue;
+                break;
+            case 2 : 
+                //Debug.Log(debugString + "뒷면" + rotAngle + ", " + (int)rotAngle/90f); 
+                returnValue = Quaternion.Euler(0,180,0);
+                this.transform.localRotation = returnValue;
+                break;
+            case 3 : 
+                //Debug.Log(debugString + "왼면" + rotAngle + ", " + (int)rotAngle/90f); 
+                returnValue = Quaternion.Euler(0,270,0);
+                this.transform.localRotation = returnValue;
+                break;
 
-    //     }
+        }
         
         
 
-    //     return returnValue;
+        return returnValue;
 
-    // }
+    }
 
 }

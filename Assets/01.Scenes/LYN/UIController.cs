@@ -4,87 +4,102 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
-    [Header("PanelGuide")]
-    public GameObject PanelGuide;
-    [Header("PanelChoose")]
-    public GameObject PanelChoose;
+    
+    public GameObject PanelGuide, PanelChoose;
 
     [SerializeField]
     public static UIController instance;
+    public Scene CurrentScene;
 
-    //static int num = 0;
+    static int PanelNum = 0;
 
-    static bool isOn = false;
+    //private SceneCheck_UI sceneCheck;
 
+    // UIController 프리팹 만들기
     void Awake()
     {
-        // 인스턴스가 이미 있는지 확인, 이 상태로 설정
         if (instance == null)
+        {
             instance = this;
-
-        // 인스턴스가 이미 있는 경우 오브젝트 제거
-        else if (instance != this)
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
             Destroy(gameObject);
+        }
 
-        // 다음 scene으로 넘어가도 오브젝트 유지
-        DontDestroyOnLoad(gameObject);
+        // SceneCheck_UI의 인스턴스를 참조 하기 위한 함수, 애초에 static으로 해버리면 안써도 됨
+        //sceneCheck = FindObjectOfType<SceneCheck_UI>();
     }
-
 
     // Start is called before the first frame update
     void Start()
     {
-        
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        //if(num == 1){PanelGuideOpen();}
-        if(isOn == true){PanelGuideOpen();}
+        if (SceneCheck_UI.SceneLoad == true)
+        {
+            CurrentScene = SceneManager.GetActiveScene();
+            Debug.Log("씬 " + CurrentScene.name + " / 패널" + PanelNum );
+            
+            if (CurrentScene.name == "02.LobbyScene_UI")
+            {
+                switch(PanelNum)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        PanelGuideOpen();
+                        break;
+                    case 2:
+                        PanelChooseOpen();
+                        break;
+                }
+            }
+            SceneCheck_UI.SceneLoad = false;
+        }
     }
 
-    //01.GameGuide - 02.PanelGuide
-    public void btnGameGuide()
-    {
-        Debug.Log("게임안내");
-        isOn = true;
-        //num++;
-        SceneManager.LoadScene("02.LobbyScene_UI");
-    }
+    public void btnGuide(){PanelNum = 1;    SceneManager.LoadScene("02.LobbyScene_UI");}
 
-    //01.GameStart - 02. PanelChoose
-    public void btnGameStart()
-    {
-        Debug.Log("게임시작");
-        SceneManager.LoadScene("02.LobbyScene_UI");
-        
-        //PanelChoose로 연결
+    public void btnLobby(){PanelNum = 2;    SceneManager.LoadScene("02.LobbyScene_UI");}
 
-    }
+    public void btnGoBack(){                SceneManager.LoadScene("01.TitleScene_UI");}
 
-    //02. Panelchoose - 01.TitleScene
-    public void btnGoBack()
-    {
-        Debug.Log("뒤로가기");
-        SceneManager.LoadScene("01.TitleScene_UI");
-    }
+    public void btnOption(){                SceneManager.LoadScene("99.OptionScene_UI");}
+    public void btnCreatePlaza(){           SceneManager.LoadScene("03.DetectFloorScene_UI");}
+    public void btnPlaza(){                 SceneManager.LoadScene("04.PlazaScene_UI");}
+   
+    public void btnGameStart(){                  SceneManager.LoadScene("06.MapListScene_UI");}
 
-    public void btnOption()
-    {
-        Debug.Log("옵션창");
-        SceneManager.LoadScene("99.OptionScene_UI");
-    }
+    public void btnChar(){                  SceneManager.LoadScene("05.CharScene_UI");}
 
     private void PanelGuideOpen()
     {
-        GameObject objectC = GameObject.Find("Canvas02/PanelSafeArea/PanelGuide");
-        PanelGuide = objectC;
-        GameObject objectD = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose");
-        
+        if (CurrentScene.name == "02.LobbyScene_UI" || PanelNum == 1)
+        {
+            Debug.Log(PanelNum + "번 PanelGuide");
+            GameObject PanelGuide = GameObject.Find("Canvas02/PanelSafeArea/PanelGuide01");
+            GameObject PanelChoose = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose02");
+            PanelGuide.SetActive(true);
+            PanelChoose.SetActive(false);
+        }
+    }
 
-        //PanelGuide.SetActive(true); 이 코드가 되어야 하는데 안됨 ㅠㅠ null 뜸.. 왜인지를 모르겠음
-        //PanelGuide.SetActive(false);
+    private void PanelChooseOpen()
+    {
+        if (CurrentScene.name == "02.LobbyScene_UI" || PanelNum == 2)
+        {
+            Debug.Log(PanelNum + "번 PanelChoose");
+            GameObject PanelGuide = GameObject.Find("Canvas02/PanelSafeArea/PanelGuide01");
+            GameObject PanelChoose = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose02");
+            PanelGuide.SetActive(false);
+            PanelChoose.SetActive(true);
+        }
     }
 
 }
