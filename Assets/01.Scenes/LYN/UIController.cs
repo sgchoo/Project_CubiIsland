@@ -13,7 +13,7 @@ public class UIController : MonoBehaviour
 
     static int PanelNum = 0;
 
-    public bool SceneLoad;
+    //private SceneCheck_UI sceneCheck;
 
     // UIController 프리팹 만들기
     void Awake()
@@ -27,70 +27,66 @@ public class UIController : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
+        // SceneCheck_UI의 인스턴스를 참조 하기 위한 함수, 애초에 static으로 해버리면 안써도 됨
+        //sceneCheck = FindObjectOfType<SceneCheck_UI>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (SceneLoad == true)
+        if (SceneCheck_UI.SceneLoad == true)
         {
-            print("씬 로드된 것을 UIController가 확인");
             CurrentScene = SceneManager.GetActiveScene();
-            if (CurrentScene.name == "02.LobbyScene_UI" || PanelNum == 1)
+            Debug.Log("씬 " + CurrentScene.name + " / 패널" + PanelNum );
+            
+            if (CurrentScene.name == "02.LobbyScene_UI")
             {
-                PanelGuideOpen();
+                switch(PanelNum)
+                {
+                    case 0:
+                        break;
+                    case 1:
+                        PanelGuideOpen();
+                        break;
+                    case 2:
+                        PanelChooseOpen();
+                        break;
+                }
             }
+            SceneCheck_UI.SceneLoad = false;
         }
     }
 
+    public void btnGuide(){PanelNum = 1;    SceneManager.LoadScene("02.LobbyScene_UI");}
 
+    public void btnLobby(){PanelNum = 2;    SceneManager.LoadScene("02.LobbyScene_UI");}
 
-    //01.GameGuide - 02.PanelGuide
-    public void btnGameGuide()
-    {
-        Debug.Log("게임안내");
-        PanelNum = 1;
-        SceneManager.LoadScene("02.LobbyScene_UI");
-    }
+    public void btnGoBack(){                SceneManager.LoadScene("01.TitleScene_UI");}
 
-    //01.GameStart - 02. PanelChoose
-    public void btnGameStart()
-    {
-        Debug.Log("게임시작");
-        PanelNum = 2;
-        SceneManager.LoadScene("02.LobbyScene_UI");
-    }
+    public void btnOption(){                SceneManager.LoadScene("99.OptionScene_UI");}
+    public void btnCreatePlaza(){           SceneManager.LoadScene("03.DetectFloorScene_UI");}
+    public void btnPlaza(){                 SceneManager.LoadScene("04.PlazaScene_UI");}
+   
+    public void btnGameStart(){                  SceneManager.LoadScene("06.MapListScene_UI");}
 
-    //02. Panelchoose - 01.TitleScene
-    public void btnGoBack()
-    {
-        Debug.Log("뒤로가기");
-        SceneManager.LoadScene("01.TitleScene_UI");
-    }
-
-    public void btnOption()
-    {
-        Debug.Log("옵션창");
-        SceneManager.LoadScene("99.OptionScene_UI");
-    }
+    public void btnChar(){                  SceneManager.LoadScene("05.CharScene_UI");}
 
     private void PanelGuideOpen()
     {
         if (CurrentScene.name == "02.LobbyScene_UI" || PanelNum == 1)
         {
-            print("패널가이드 오픈 됨");
-            
-            GameObject PanelGuide = GameObject.Find("Canvas02/PanelSafeArea/PanelGuide");
-            GameObject PanelChoose = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose");
-            
+            Debug.Log(PanelNum + "번 PanelGuide");
+            GameObject PanelGuide = GameObject.Find("Canvas02/PanelSafeArea/PanelGuide01");
+            GameObject PanelChoose = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose02");
+            PanelGuide.SetActive(true);
+            PanelChoose.SetActive(false);
         }
     }
 
@@ -98,8 +94,9 @@ public class UIController : MonoBehaviour
     {
         if (CurrentScene.name == "02.LobbyScene_UI" || PanelNum == 2)
         {
-            GameObject PanelGuide = GameObject.Find("Canvas02/PanelSafeArea/PanelGuide");
-            GameObject PanelChoose = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose");
+            Debug.Log(PanelNum + "번 PanelChoose");
+            GameObject PanelGuide = GameObject.Find("Canvas02/PanelSafeArea/PanelGuide01");
+            GameObject PanelChoose = GameObject.Find("Canvas02/PanelSafeArea/PanelChoose02");
             PanelGuide.SetActive(false);
             PanelChoose.SetActive(true);
         }
