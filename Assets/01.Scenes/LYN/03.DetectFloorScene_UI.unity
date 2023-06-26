@@ -1379,7 +1379,7 @@ GameObject:
   - component: {fileID: 839705212}
   - component: {fileID: 839705211}
   m_Layer: 5
-  m_Name: 03.Canvas
+  m_Name: Canvas03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2030,7 +2030,7 @@ GameObject:
   - component: {fileID: 1757583287}
   - component: {fileID: 1757583286}
   m_Layer: 5
-  m_Name: PanelLoadFloor
+  m_Name: PanelLoadFloor03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

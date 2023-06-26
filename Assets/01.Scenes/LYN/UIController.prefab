@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4053931171341629572}
   - component: {fileID: 3541856115930556520}
+  - component: {fileID: -441569565528779663}
   m_Layer: 0
   m_Name: UIController
   m_TagString: Untagged
@@ -46,3 +47,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PanelGuide: {fileID: 0}
   PanelChoose: {fileID: 0}
+  CurrentScene:
+    m_Handle: 0
+  SceneLoad: 0
+--- !u!114 &-441569565528779663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3940280028592370928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc24b16d0f7ebb04997833f745a0458b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneLoad: 0
