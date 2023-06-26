@@ -24,4 +24,9 @@ public class DetectArea : MonoBehaviour
         }
         
     }
+
+    public Axis GetChangeAxis()
+    {
+        return changeAxis;
+    }
 }
