@@ -11,7 +11,7 @@ public class RotateTarget : MonoBehaviour
 
     void Start()
     {
-        this.transform.localPosition = player.localPosition + (-player.up * player.localScale.x)/2 + (player.right * player.localScale.x)/2;
+        
     }
 
     private float timer = 0f;
@@ -21,8 +21,41 @@ public class RotateTarget : MonoBehaviour
 
     private float angle = 90f;
     private float hAngle = 0f;
+
+    private bool isRotateChanged = false;
     void Update()
     {
+        
+        if(!isRotateChanged)
+        {
+            switch(DrawRay.direction)
+            {
+                case Direction.forward  : 
+                    // this.transform.localPosition = player.localPosition + ((-Vector3.up) * player.localScale.x/2f) + (Vector3.forward * player.localScale.x/2f); 
+                    // this.transform.localRotation = Quaternion.Euler(0,0,0);
+                    SetDirection(Vector3.forward, 0f);
+                    break;
+                case Direction.left     : 
+                    // this.transform.localPosition = player.localPosition + ((-Vector3.up) * player.localScale.x/2f) + (Vector3.left * player.localScale.x/2f); 
+                    // this.transform.localRotation = Quaternion.Euler(0,-90,0);
+                    SetDirection(Vector3.left, -90f);
+                    break;
+                case Direction.back     : 
+                    // this.transform.localPosition = player.localPosition + ((-Vector3.up) * player.localScale.x/2f) + (Vector3.back * player.localScale.x/2f); 
+                    // this.transform.localRotation = Quaternion.Euler(0,180,0);
+                    SetDirection(Vector3.back, 180f);
+                    break;
+                case Direction.right    : 
+                    // this.transform.localPosition = player.localPosition + ((-Vector3.up) * player.localScale.x/2f) + (Vector3.right * player.localScale.x/2f); 
+                    // this.transform.localRotation = Quaternion.Euler(0,90,0);
+                    SetDirection(Vector3.right, 90f);
+                    break;
+            }
+            isRotateChanged = true;
+        }
+        
+        
+
         player.parent = this.transform;
 
         if (angle > 0f)
@@ -54,5 +87,13 @@ public class RotateTarget : MonoBehaviour
             moveCnt = -1;
             rollCnt += 1;
         }
+
+        isRotateChanged = false;
+    }
+
+    private void SetDirection(Vector3 dir, float y)
+    {
+        this.transform.localPosition = player.localPosition + ((-Vector3.up) * player.localScale.x/2f) + (dir * player.localScale.x/2f); 
+        this.transform.localRotation = Quaternion.Euler(0,y,0);
     }
 }
