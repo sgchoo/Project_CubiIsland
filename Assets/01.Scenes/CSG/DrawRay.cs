@@ -16,9 +16,11 @@ public class DrawRay : MonoBehaviour
         {
             Vector3 offset = hit.point - player.position;
 
-            var dir = Mathf.Atan2(player.position.y - offset.y, player.position.x - offset.x) * Mathf.Rad2Deg;
+            var dir = Mathf.Atan2(player.position.y - offset.y, player.position.x - offset.x);
 
-            Debug.Log(dir);
+            // Debug.Log("hit.point : " + hit.point);
+            // Debug.Log("ATAN2's degree : " + dir);
+            Debug.Log("offset : " + offset);
         }
     }
 
@@ -31,7 +33,7 @@ public class DrawRay : MonoBehaviour
         if(Physics.Raycast(gizmoRay, out hitInfo))
         {
             Gizmos.color = Color.red;
-            Gizmos.DrawSphere(hitInfo.point, 0.005f);
+            Gizmos.DrawSphere(hitInfo.point, 0.003f);
         }
     }
 }
