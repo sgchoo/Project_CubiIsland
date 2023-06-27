@@ -8,10 +8,7 @@ public class RotateTarget : MonoBehaviour
 
     public float moveSpeed;
 
-    private float timer = 0f;
-
     private int moveCnt = 1;
-
 
     private float angle = 90f;
     private float hAngle = 0f;

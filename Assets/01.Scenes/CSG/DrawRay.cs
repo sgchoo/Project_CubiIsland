@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,7 +9,6 @@ public class DrawRay : MonoBehaviour
     public Transform player;
     public static Direction direction = Direction.forward;
     
-    
     private void Update() 
     {
         Ray ray = new Ray(this.transform.position, this.transform.forward);
@@ -18,12 +18,6 @@ public class DrawRay : MonoBehaviour
         if(Physics.Raycast(ray, out hit))
         {
             Vector3 offset = hit.point - player.position;
-
-            //var dir = Mathf.Atan2(player.position.y - offset.y, player.position.x - offset.x) * Mathf.Rad2Deg;
-            
-            //var dir = Mathf.Atan2(offset.x, offset.z) * Mathf.Rad2Deg;
-
-            //Debug.Log("offset : " + offset + "\n dir : " + dir);
 
             // 제1분면 +,+
             if(offset.x > 0 && offset.y > 0) 
