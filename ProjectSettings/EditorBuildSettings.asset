@@ -14,31 +14,31 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/01.Scenes/LYN/02.LobbyScene_UI.unity
     guid: 624b22a2ef377d749bd869dc039bd3fd
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN/03.DetectFloorScene_UI.unity
     guid: 25f23bfb97fab1b43938c7dca1013502
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN/04.PlazaScene_UI.unity
     guid: 98deec9cdd02e374fa08c81103f47fe8
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN/05.CharScene_UI.unity
     guid: 47e9f38a16558514f9a2ce65b19e0c64
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN/06.MapListScene_UI.unity
     guid: be9c53f3736b9754caa39000f4befdd1
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN/07.DetectImageScene_UI.unity
     guid: 30b2fff8acaeb8e48a54c918f92a1513
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN/08.FindKeyScene_UI.unity
     guid: 6d78020ec89e44e4f8cdb0368a4387ee
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN/09.FindRoadScene_UI.unity
     guid: 9d299bdf2188f5249985c3bf1b2eacac
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN/10.ClearScene_UI.unity
     guid: ae46bd125d0c4fd49b7aaf5a9dedba15
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN/99.OptionScene_UI.unity
     guid: 17374d7a47f9f684aa34f4a4ed248bb0
   - enabled: 1
