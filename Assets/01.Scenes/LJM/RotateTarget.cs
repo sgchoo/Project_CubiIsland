@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class RotateTarget : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private int moveCnt = 1;
+    private int moveCnt = 1;
+    public float moveSpeed;
     private float angle = 90f;
     private float hAngle = 0f;
     private bool isRotateChanged = false;
-    private bool isDetect;
     public Transform player;
+    private bool isDetect;
     public Transform detectRayDir;
 
     void Update()
