@@ -8,7 +8,7 @@ public class CharListController : MonoBehaviour
     //프리팹 연결하기
     //배열로 바꿔서 저장하기
     public GameObject CharPos;
-    public GameObject CurrentObject; // 바꿀 오브젝트
+    public static GameObject CurrentObject; // 바꿀 오브젝트
 
     public GameObject[] Contents;
 

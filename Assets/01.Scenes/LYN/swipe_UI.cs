@@ -62,12 +62,12 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
-                rectTransform.GetChild(i).localScale = Vector2.Lerp(rectTransform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
+                rectTransform.GetChild(i).localScale = Vector2.Lerp(rectTransform.GetChild(i).localScale, new Vector2(1.1f, 1.1f), 0.1f);
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
                     {
-                        rectTransform.GetChild(j).localScale = Vector2.Lerp(rectTransform.GetChild(j).localScale, new Vector2(0.7f, 0.7f), 0.1f);
+                        rectTransform.GetChild(j).localScale = Vector2.Lerp(rectTransform.GetChild(j).localScale, new Vector2(0.65f, 0.65f), 0.1f);
                     }
                 }
             }

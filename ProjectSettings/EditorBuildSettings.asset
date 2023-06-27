@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/01.Scenes/CSG/TestSceneCSG.unity
     guid: dbf85cbb97e8dd84c8104589d44829c7
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LYN/01.TitleScene_UI.unity
     guid: cac1aa2f59989484aa1e4feb4fd8e6a1
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LYN/02.LobbyScene_UI.unity
     guid: 624b22a2ef377d749bd869dc039bd3fd
   - enabled: 1

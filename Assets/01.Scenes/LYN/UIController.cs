@@ -5,13 +5,17 @@ using UnityEngine.SceneManagement;
 public class UIController : MonoBehaviour
 {
     
-    public GameObject PanelGuide, PanelChoose;
+    //public GameObject PanelGuide, PanelChoose;
 
     [SerializeField]
     public static UIController instance;
     public Scene CurrentScene;
 
     static int PanelNum = 0;
+
+    [SerializeField]
+    [Header("선택한 최종 큐비 캐릭터")]
+    public static GameObject CubiChar;
 
     //private SceneCheck_UI sceneCheck;
 
@@ -74,9 +78,12 @@ public class UIController : MonoBehaviour
     public void btnCreatePlaza(){           SceneManager.LoadScene("03.DetectFloorScene_UI");}
     public void btnPlaza(){                 SceneManager.LoadScene("04.PlazaScene_UI");}
    
-    public void btnGameStart(){                  SceneManager.LoadScene("06.MapListScene_UI");}
+    public void btnGameStart(){             SceneManager.LoadScene("06.MapListScene_UI");}
 
     public void btnChar(){                  SceneManager.LoadScene("05.CharScene_UI");}
+    public void btnCubiChoose() {           CubiChar = CharListController.CurrentObject;
+                                            Debug.Log("최종 선택" + CubiChar.name);
+                                            SceneManager.LoadScene("04.PlazaScene_UI");}
 
     private void PanelGuideOpen()
     {

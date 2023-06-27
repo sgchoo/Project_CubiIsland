@@ -16,7 +16,7 @@ public class TouchCheck_UI : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             // PC 클릭 동작 처리
-            Debug.Log("PC 클릭 발생");
+            Debug.Log("터치");
         }
 
         // 모바일 터치 체크
@@ -32,7 +32,7 @@ public class TouchCheck_UI : MonoBehaviour
             {
                 touchStarted = false;
                 // 모바일 터치 동작 처리
-                Debug.Log("모바일 터치 발생");
+                //Debug.Log("모바일 터치 발생");
             }
         }
     }
