@@ -290,9 +290,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1340390607}
+      - m_Target: {fileID: 3541856115930556520, guid: 437a0f75481db44429db2901808473e3, type: 3}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: btnGameStart
+        m_MethodName: btnLobby
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -834,9 +834,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1340390607}
+      - m_Target: {fileID: 3541856115930556520, guid: 437a0f75481db44429db2901808473e3, type: 3}
         m_TargetAssemblyTypeName: UIController, Assembly-CSharp
-        m_MethodName: btnGameGuide
+        m_MethodName: btnGuide
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1003,7 +1003,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1261391956}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &1261391958
 Camera:
   m_ObjectHideFlags: 0
@@ -1070,17 +1070,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1340390607 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3541856115930556520, guid: 437a0f75481db44429db2901808473e3, type: 3}
-  m_PrefabInstance: {fileID: 6228569592466731466}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4dd612f61b375d445aad6d65ebd7d430, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1386594437
 GameObject:
   m_ObjectHideFlags: 0

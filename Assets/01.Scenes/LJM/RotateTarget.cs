@@ -11,7 +11,7 @@ public class RotateTarget : MonoBehaviour
 
     void Start()
     {
-        this.transform.localPosition = player.localPosition + (-player.up * player.localScale.x)/2 + (player.forward * player.localScale.x)/2;
+        this.transform.localPosition = player.localPosition + (-player.up * player.localScale.x)/2 + (player.right * player.localScale.x)/2;
     }
 
     private float timer = 0f;
