@@ -2,10 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Direction {forward, left, back, right};
 public class DrawRay : MonoBehaviour
 {
     public Transform player;
-
+    public static Direction direction = Direction.forward;
+    
+    
     private void Update() 
     {
         Ray ray = new Ray(this.transform.position, this.transform.forward);
@@ -16,11 +19,36 @@ public class DrawRay : MonoBehaviour
         {
             Vector3 offset = hit.point - player.position;
 
-            var dir = Mathf.Atan2(player.position.y - offset.y, player.position.x - offset.x);
+            //var dir = Mathf.Atan2(player.position.y - offset.y, player.position.x - offset.x) * Mathf.Rad2Deg;
+            
+            //var dir = Mathf.Atan2(offset.x, offset.z) * Mathf.Rad2Deg;
 
-            // Debug.Log("hit.point : " + hit.point);
-            // Debug.Log("ATAN2's degree : " + dir);
-            Debug.Log("offset : " + offset);
+            //Debug.Log("offset : " + offset + "\n dir : " + dir);
+
+            // 제1분면 +,+
+            if(offset.x > 0 && offset.y > 0) 
+            {   
+                direction = Direction.forward;
+            }
+            // 제2분면 -,+
+            else if(offset.x < 0 && offset.y > 0) 
+            {
+                direction = Direction.left;
+            }
+            // 제3분면 -,-
+            else if(offset.x < 0 && offset.y < 0) 
+            {
+                direction = Direction.back;
+            }
+            // 제4분면 +,-
+            else if(offset.x > 0 && offset.y < 0) 
+            {
+                direction = Direction.right;
+            }
+            else 
+            {
+
+            }
         }
     }
 
