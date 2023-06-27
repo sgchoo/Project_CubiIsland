@@ -5,27 +5,20 @@ using UnityEngine;
 public class RotateTarget : MonoBehaviour
 {
     public Transform player;
-    public Transform yDir;
-    public Transform myDirection;
-    public float moveSpeed;
 
-    void Start()
-    {
-        
-    }
+    public float moveSpeed;
 
     private float timer = 0f;
 
     private int moveCnt = 1;
-    public int rollCnt;
+
 
     private float angle = 90f;
     private float hAngle = 0f;
 
     private bool isRotateChanged = false;
     void Update()
-    {
-        
+    {  
         if(!isRotateChanged)
         {
             switch(DrawRay.direction)
@@ -82,18 +75,17 @@ public class RotateTarget : MonoBehaviour
         {
             transform.localPosition += transform.forward * (transform.localScale.x) * 2;
         }
-        else 
+        else
         {
             moveCnt = -1;
-            rollCnt += 1;
         }
 
         isRotateChanged = false;
     }
 
-    private void SetDirection(Vector3 dir, float y)
+    private void SetDirection(Vector3 dir, float yAngle)
     {
         this.transform.localPosition = player.localPosition + ((-Vector3.up) * player.localScale.x/2f) + (dir * player.localScale.x/2f); 
-        this.transform.localRotation = Quaternion.Euler(0,y,0);
+        this.transform.localRotation = Quaternion.Euler(0,yAngle,0);
     }
 }

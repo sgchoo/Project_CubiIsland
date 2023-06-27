@@ -45,10 +45,6 @@ public class DrawRay : MonoBehaviour
             {
                 direction = Direction.right;
             }
-            else 
-            {
-
-            }
         }
     }
 
