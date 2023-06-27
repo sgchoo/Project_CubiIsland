@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateTarget : MonoBehaviour
 {
-    private int moveCnt = 1;
+    [SerializeField] private int moveCnt = 1;
     public float moveSpeed;
     private float angle = 90f;
     private float hAngle = 0f;
