@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class FindKeyPlayerMove : MonoBehaviour
 {
+    private float timer = 0f;
+    private float angle = 90f;
+    private float elapsedTime;
+    private float duration;
+    private bool isMove = false;
+    public Transform rotTarget;
+    public Transform cube;
     public Transform arCamera;
-    
     public Transform multiTarget;
-
-
     private Quaternion currentRot;
 
     void Start()
@@ -16,44 +20,21 @@ public class FindKeyPlayerMove : MonoBehaviour
         currentRot = transform.rotation;
     }
 
-    private float timer = 0f;
-
-    public Transform rotTarget;
-    public Transform cube;
-    private float angle = 90f;
-
-
     void Update()
     {
         if (isMove) return;
+        
         if (DetectArea.changes)
         {
             currentRot = transform.rotation;
         }
-
-        //GetCameraAxis();
-
     }
-
-
-    private float elapsedTime;
-    private float duration;
-    private bool isMove = false;
-    // private IEnumerator Rolling()
-    // {
-    //     isMove = true;
-        
-        
-
-    //     isMove = false;
-    // }
 
     private Quaternion GetCameraAxis()
     {
         string debugString = "";
         Quaternion returnValue = default(Quaternion);
 
-        
         float rotAngle =  currentRot.eulerAngles.x;
         switch(DetectArea.axis)
         {
@@ -87,13 +68,7 @@ public class FindKeyPlayerMove : MonoBehaviour
                 returnValue = Quaternion.Euler(0,270,0);
                 this.transform.localRotation = returnValue;
                 break;
-
         }
-        
-        
-
         return returnValue;
-
     }
-
 }
