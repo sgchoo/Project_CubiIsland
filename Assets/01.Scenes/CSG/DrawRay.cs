@@ -6,9 +6,6 @@ using UnityEngine;
 public enum Direction {forward, left, back, right};
 public class DrawRay : MonoBehaviour
 {
-    // ???
-    public static bool isBlockZone;
-
     // 현재 플레이어 위치를 저장할 변수
     public Transform player;
 
