@@ -128,7 +128,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8759040528209349731, guid: e0157bb9974afc54686e42cd697ee11b, type: 3}
   m_PrefabInstance: {fileID: 1789648586}
   m_PrefabAsset: {fileID: 0}
---- !u!43 &327609231
+--- !u!43 &222868354
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -823,6 +823,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8626698694612168641, guid: e0157bb9974afc54686e42cd697ee11b, type: 3}
   m_PrefabInstance: {fileID: 1789648586}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &743145342 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2266138044326778886, guid: e0157bb9974afc54686e42cd697ee11b, type: 3}
+  m_PrefabInstance: {fileID: 1789648586}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &948991005
 GameObject:
   m_ObjectHideFlags: 0
@@ -1110,10 +1115,58 @@ MonoBehaviour:
     m_RotationOrder: 4
   OnTargetFound:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 743145342}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1377667946}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   OnTargetLost:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 743145342}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1377667946}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1202935344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1171,7 +1224,7 @@ MonoBehaviour:
   mTargetName: CubeIsland_ver2
   mDatasetName: Vuforia/MultiTarget.xml
   mCastedBehaviour: {fileID: 1202935344}
-  mBaseMesh: {fileID: 327609231}
+  mBaseMesh: {fileID: 222868354}
 --- !u!1 &1239269139
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1274,7 @@ MonoBehaviour:
   m_Script: {fileID: -1826476478, guid: 8a9a760f95896c34689febc965510927, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mWorldCenterMode: 2
+  mWorldCenterMode: 1
   mWorldCenter: {fileID: 0}
 --- !u!114 &1239269142
 MonoBehaviour:
@@ -1549,6 +1602,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1330418784}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1377667946 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4912600001932984753, guid: 894c0eae657bc4449a86cc370d6e20e0, type: 3}
+  m_PrefabInstance: {fileID: 2000238152609663355}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1444331655
 GameObject:
   m_ObjectHideFlags: 0
@@ -1820,7 +1878,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5132659593097660188, guid: e0157bb9974afc54686e42cd697ee11b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.14
+      value: 0.0104
       objectReference: {fileID: 0}
     - target: {fileID: 5132659593097660188, guid: e0157bb9974afc54686e42cd697ee11b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1942,15 +2000,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6897888500704287439, guid: 894c0eae657bc4449a86cc370d6e20e0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 0.02025
       objectReference: {fileID: 0}
     - target: {fileID: 6897888500704287439, guid: 894c0eae657bc4449a86cc370d6e20e0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6.79
+      value: 0.04340003
       objectReference: {fileID: 0}
     - target: {fileID: 6897888500704287439, guid: 894c0eae657bc4449a86cc370d6e20e0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 4
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 6897888500704287439, guid: 894c0eae657bc4449a86cc370d6e20e0, type: 3}
       propertyPath: m_LocalRotation.w

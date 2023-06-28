@@ -49,7 +49,7 @@ public class CubeMove : MonoBehaviour
             float rotationAngle = Time.deltaTime * speed;
             if(rotationAngle >= angle) rotationAngle = angle;
             Debug.Log(TempDetect.doubleMove);
-            if(TempDetect.doubleMove == DoubleMoveState.Moving && transform.position.y < 8.2f) 
+            if(TempDetect.doubleMove == DoubleMoveState.Moving && transform.localPosition.y < 0.05f) 
             {
                 //angle = dir == Vector3.left || dir == Vector3.up
                 transform.RotateAround(center, axis, -(90f - angle));
