@@ -52,7 +52,7 @@ public class RotateTarget : MonoBehaviour
             
             Debug.Log("Direction : " + direction); 
             // 만약 카메라가 바라보는 면과 플레이어가 서있는 면이 다르면 함수를 종료해라
-            if(DrawRay.hitAxis != player.GetComponent<CollideAxis>().axis) return;
+            if(DrawRay.hitAxis != CollideAxis.axis) return;
 
             // 가져온 단위벡터로 회전 축을 이동, 회전시킨다.
             switch(DrawRay.direction)
@@ -173,6 +173,7 @@ public class RotateTarget : MonoBehaviour
             transform.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
             playerAxis.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
         }
+
         
 
 
@@ -184,59 +185,125 @@ public class RotateTarget : MonoBehaviour
     {
         // this.transform.localPosition = player.localPosition + ((-Vector3.up) * player.localScale.x/2f) + (dir * player.localScale.x/2f); 
         // this.transform.localRotation = Quaternion.Euler(0,yAngle,0);
-        Vector3 downAxis = default(Vector3);
-        Axis axis = DrawRay.hitAxis;
-        if (axis == Axis.x)
+        Vector3 down = default(Vector3);
+        if (DrawRay.hitAxis == Axis.x)
         {
-            downAxis = Vector3.left;
+            if(dir == Vector3.forward)
+            {
+
+            }
+            else if (dir == Vector3.left)
+            {
+
+            }
+            else if (dir == Vector3.back)
+            {
+
+            }
+            else if (dir == Vector3.right)
+            {
+                
+            }
         }
-        else if (axis == Axis.y)
+        else if (DrawRay.hitAxis == Axis.y)
         {
-            downAxis = Vector3.down;
+            down = Vector3.down;
+            if(dir == Vector3.forward)
+            {
+                dir = Vector3.forward;
+            }
+            else if (dir == Vector3.left)
+            {
+                dir = Vector3.left;
+            }
+            else if (dir == Vector3.back)
+            {
+                dir = Vector3.back;
+            }
+            else if (dir == Vector3.right)
+            {
+                dir = Vector3.right;
+            }
         }
-        else if (axis == Axis.z)
+        else if (DrawRay.hitAxis == Axis.z)
         {
-            downAxis = Vector3.back;
+            down = Vector3.back;
             if(dir == Vector3.forward)
             {
                 dir = Vector3.down;
+            }
+            else if (dir == Vector3.left)
+            {
+                dir = Vector3.left;
             }
             else if (dir == Vector3.back)
             {
                 dir = Vector3.up;
             }
+            else if (dir == Vector3.right)
+            {
+                dir = Vector3.right;
+            }
         }
-        else if (axis == Axis.mx)
+        else if (DrawRay.hitAxis == Axis.mx)
         {
-            downAxis = Vector3.right;
+            if(dir == Vector3.forward)
+            {
+
+            }
+            else if (dir == Vector3.left)
+            {
+
+            }
+            else if (dir == Vector3.back)
+            {
+
+            }
+            else if (dir == Vector3.right)
+            {
+                
+            }
         }
-        else if (axis == Axis.my)
+        else if (DrawRay.hitAxis == Axis.my)
         {
-            downAxis = Vector3.up;
+            if(dir == Vector3.forward)
+            {
+
+            }
+            else if (dir == Vector3.left)
+            {
+
+            }
+            else if (dir == Vector3.back)
+            {
+
+            }
+            else if (dir == Vector3.right)
+            {
+                
+            }
         }
-        else if (axis == Axis.mz)
+        else if (DrawRay.hitAxis == Axis.mz)
         {
-            downAxis = Vector3.forward;
+            if(dir == Vector3.forward)
+            {
+
+            }
+            else if (dir == Vector3.left)
+            {
+
+            }
+            else if (dir == Vector3.back)
+            {
+
+            }
+            else if (dir == Vector3.right)
+            {
+                
+            }
         }
 
-        if(direction == Direction.forward)
-        {
-
-        }
-        else if (direction == Direction.left)
-        {
-            
-        }
-        else if (direction == Direction.back)
-        {
-
-        }
-        else if (direction == Direction.right)
-        {
-
-        }
-
-        this.transform.localPosition = player.localPosition + (downAxis * (player.localScale.x/2f)) + (dir * (player.localScale.x/2f)); 
+        this.transform.localPosition = player.localPosition + (down * (player.localScale.x/2f)) + (dir * (player.localScale.x/2f)); 
         this.transform.localRotation = Quaternion.Euler(hAngle, y + vAngle,0);
         // this.transform.localPosition = player.localPosition + (downAxis * (player.localScale.x/2f)) + (forwardAxis * (player.localScale.x/2f)); 
         // this.transform.localRotation = Quaternion.Euler(hAngle, y + vAngle,0);
