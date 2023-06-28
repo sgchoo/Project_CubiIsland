@@ -50,6 +50,7 @@ public class RotateTarget : MonoBehaviour
             // 카메라가 바라보는 위치와 면의 정중앙 좌표를 이용해 상하좌우 단위벡터 가져오기
             direction = arCamera.GetComponent<DrawRay>().RayForDirection(); 
             
+            Debug.Log("Direction : " + direction); 
             // 만약 카메라가 바라보는 면과 플레이어가 서있는 면이 다르면 함수를 종료해라
             if(DrawRay.hitAxis != player.GetComponent<CollideAxis>().axis) return;
 
@@ -78,8 +79,25 @@ public class RotateTarget : MonoBehaviour
             isRotateChanged = true;
         }
         //ObstacleDetect();
-        //CubeRoll();
+        Ray ray = new Ray(detectRayDir.position, detectRayDir.forward);
 
+        RaycastHit hitInfo;
+
+        if(Physics.Raycast(ray, out hitInfo))
+        {
+            if(hitInfo.collider.CompareTag("Zone"))
+            {
+                isDetect = true;
+                isRotateChanged = false;
+                return;
+            }
+            else
+            {
+                isDetect = false;
+            }
+        }
+
+        //CubeRoll();
         // 플레이어를 현재 오브젝트인 rotateTarget에 넣는다.
         // rotateTarget을 돌리면 플레이어도 같이 돌아갈 것이다.
         player.parent = this.transform;
@@ -150,165 +168,80 @@ public class RotateTarget : MonoBehaviour
         // 회전 각도를 90f로 초기화한다.
         angle = 90f;
 
-        // 
-        transform.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
-        playerAxis.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
-        Debug.Log("Hio");
+        if(!isTurn)
+        {
+            transform.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
+            playerAxis.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
+        }
+        
 
-        // if(!isTurn)
-        // {
-        //     transform.localPosition = player.position + (Vector3.down * player.localScale.x/2f) + (Vector3.forward * player.localScale.x/2f);
-        //     Debug.Log("Hello World!");
-        // }
 
         isRotateChanged = false;
     }
 
-    
-
-    private void GetDirection()
-    {
-        direction = arCamera.GetComponent<DrawRay>().RayForDirection(); 
-        Debug.Log(player.GetComponent<CollideAxis>().axis);
-        if(DrawRay.hitAxis != player.GetComponent<CollideAxis>().axis) return;  
-        switch(DrawRay.direction)
-        {
-            case Direction.forward  :
-                SetDirection(Vector3.forward, 0f);
-            break;
-
-            case Direction.left     :
-                SetDirection(Vector3.left, -90f);
-            break;
-
-            case Direction.back     :
-                SetDirection(Vector3.back, 180f);
-            break;
-
-            case Direction.right    :
-                SetDirection(Vector3.right, 90f);
-            break;
-        }
-        isRotateChanged = true;
-    }
 
     private void SetDirection(Vector3 dir, float y)
     {
         // this.transform.localPosition = player.localPosition + ((-Vector3.up) * player.localScale.x/2f) + (dir * player.localScale.x/2f); 
         // this.transform.localRotation = Quaternion.Euler(0,yAngle,0);
-        this.transform.localPosition = player.localPosition + (Vector3.down * (player.localScale.x/2f)) + (dir * (player.localScale.x/2f)); 
+        Vector3 downAxis = default(Vector3);
+        Axis axis = DrawRay.hitAxis;
+        if (axis == Axis.x)
+        {
+            downAxis = Vector3.left;
+        }
+        else if (axis == Axis.y)
+        {
+            downAxis = Vector3.down;
+        }
+        else if (axis == Axis.z)
+        {
+            downAxis = Vector3.back;
+            if(dir == Vector3.forward)
+            {
+                dir = Vector3.down;
+            }
+            else if (dir == Vector3.back)
+            {
+                dir = Vector3.up;
+            }
+        }
+        else if (axis == Axis.mx)
+        {
+            downAxis = Vector3.right;
+        }
+        else if (axis == Axis.my)
+        {
+            downAxis = Vector3.up;
+        }
+        else if (axis == Axis.mz)
+        {
+            downAxis = Vector3.forward;
+        }
+
+        if(direction == Direction.forward)
+        {
+
+        }
+        else if (direction == Direction.left)
+        {
+            
+        }
+        else if (direction == Direction.back)
+        {
+
+        }
+        else if (direction == Direction.right)
+        {
+
+        }
+
+        this.transform.localPosition = player.localPosition + (downAxis * (player.localScale.x/2f)) + (dir * (player.localScale.x/2f)); 
         this.transform.localRotation = Quaternion.Euler(hAngle, y + vAngle,0);
-        Debug.Log("Fuck Cube!");
+        // this.transform.localPosition = player.localPosition + (downAxis * (player.localScale.x/2f)) + (forwardAxis * (player.localScale.x/2f)); 
+        // this.transform.localRotation = Quaternion.Euler(hAngle, y + vAngle,0);
 
     }
 
-    private void CubeRoll()
-    {
-        if(isDetect) return;
-
-        player.parent = this.transform;
-
-        if (angle > 0f)
-        {
-            float rotateAngle = Time.deltaTime * moveSpeed;
-            if (angle < rotateAngle) rotateAngle = angle;
-            transform.Rotate(Vector3.right, rotateAngle, Space.Self);
-            angle -= rotateAngle;
-            return;
-        }
-        
-        player.parent = this.transform.parent;
-
-        switch(direction)
-        {
-            case Direction.forward  : 
-                y+=1;
-                break;
-            case Direction.left     : 
-                x-=1;
-                break;
-            case Direction.back     : 
-                y-=1;
-                break;
-            case Direction.right    : 
-                x+=1;
-                break;
-        }
-
-        isTurn = false;
-        if(x == 5)
-        {
-            isTurn = true;
-            vAngle += 90f;
-            x = -1;
-        }
-        else if(x == -1)
-        {
-            isTurn = true;
-            vAngle -= 90f;
-            x = 5;
-        }
-        else if(y == 5)
-        {
-            isTurn = true;
-            hAngle += 90f;
-            y = -1;
-        }
-        else if(y == -1)
-        {
-            isTurn = true;
-            hAngle -= 90f;
-            y = 5;
-        }
-
-        // moveCnt += 1;
-        angle = 90f;
-        // if(moveCnt == 5)
-        // {
-        //     hAngle += 90f;
-        // }
-        
-        transform.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
-        playerAxis.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
-
-
-        // if(moveCnt != 5)
-        // {
-        //     transform.localPosition += transform.forward * (transform.localScale.x) * 2;
-        // }
-        // else
-        // {
-        //     moveCnt = -1;
-        // }
-
-        if(!isTurn)
-        {
-            transform.localPosition += transform.TransformDirection(-transform.up) * (transform.localScale.x) * 2;
-            Debug.Log("Hello World!");
-        }
-
-        isRotateChanged = false;
-
-    }
-
-    private void ObstacleDetect()
-    {
-        Ray ray = new Ray(detectRayDir.position, detectRayDir.forward);
-
-        RaycastHit hitInfo;
-
-        if(Physics.Raycast(ray, out hitInfo))
-        {
-            if(hitInfo.collider.CompareTag("Zone"))
-            {
-                isDetect = true;
-                isRotateChanged = false;
-                GetDirection();
-            }
-            else
-            {
-                isDetect = false;
-            }
-        }
-    }
+    
 }

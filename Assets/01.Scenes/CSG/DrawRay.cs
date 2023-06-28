@@ -19,7 +19,7 @@ public class DrawRay : MonoBehaviour
     
     private void Update() 
     {
-        //RayForDirection();
+        RayForDirection();
     }
 
     public Direction RayForDirection()
@@ -32,32 +32,102 @@ public class DrawRay : MonoBehaviour
         {
             if (hit.collider == null) return Direction.forward;
             Vector3 offset = hit.point - hit.collider.transform.position;
+            
             hitAxis = hit.collider.transform.GetComponent<DetectArea>().changeAxis;
             
-            // 제1분면 +,+
-            if(offset.x > 0.0f && offset.z > 0.0f) 
-            {   
-                direction = Direction.forward;
-            }
-            // 제2분면 -,+
-            else if(offset.x < 0.0f && offset.z > 0.0f) 
+            if (hitAxis == Axis.x)
             {
-                direction = Direction.left;
+                // 제1분면 
+                if      (offset.y < 0.0f && offset.z > 0.0f) { direction = Direction.forward;   }
+                // 제2분면 
+                else if (offset.y < 0.0f && offset.z < 0.0f) { direction = Direction.left;      }
+                // 제3분면 
+                else if (offset.y > 0.0f && offset.z < 0.0f) { direction = Direction.back;      }
+                // 제4분면 
+                else if (offset.y < 0.0f && offset.z < 0.0f) { direction = Direction.right;     }
             }
-            // 제3분면 -,-
-            else if(offset.x < 0.0f && offset.z < 0.0f) 
+            else if (hitAxis == Axis.y)
             {
-                direction = Direction.back;
+                // 제1분면 
+                if      (offset.x > 0.0f && offset.z > 0.0f) { direction = Direction.forward; }
+                // 제2분면 
+                else if(offset.x < 0.0f && offset.z > 0.0f)  { direction = Direction.left; }
+                // 제3분면 -,-
+                else if(offset.x < 0.0f && offset.z < 0.0f)  { direction = Direction.back; }
+                // 제4분면 +,-
+                else if(offset.x > 0.0f && offset.z < 0.0f)  { direction = Direction.right; }
             }
-            // 제4분면 +,-
-            else if(offset.x > 0.0f && offset.z < 0.0f) 
+            else if (hitAxis == Axis.z)
             {
-                direction = Direction.right;
+                // 제1분면 
+                if      (offset.x > 0.0f && offset.y < 0.0f) { direction = Direction.forward; }
+                // 제2분면 
+                else if (offset.x < 0.0f && offset.y < 0.0f) { direction = Direction.left; }
+                // 제3분면 
+                else if (offset.x < 0.0f && offset.y > 0.0f) { direction = Direction.back; }
+                // 제4분면 
+                else if (offset.x > 0.0f && offset.y > 0.0f) { direction = Direction.right; }
             }
-            else 
+            else if (hitAxis == Axis.mx)
             {
-                direction = Direction.forward;
+                // 제1분면 
+                if(offset.y > 0.0f && offset.z > 0.0f) { direction = Direction.forward; }
+                // 제2분면 
+                else if(offset.y < 0.0f && offset.z > 0.0f) { direction = Direction.left; }
+                // 제3분면 
+                else if(offset.y < 0.0f && offset.z < 0.0f) { direction = Direction.back; }
+                // 제4분면 
+                else if(offset.y > 0.0f && offset.z < 0.0f) { direction = Direction.right; }
             }
+            else if (hitAxis == Axis.my)
+            {
+                // 제1분면 +,+
+                if(offset.x > 0.0f && offset.z < 0.0f) { direction = Direction.forward; }
+                // 제2분면 -,+
+                else if(offset.x < 0.0f && offset.z < 0.0f) { direction = Direction.left; }
+                // 제3분면 -,-
+                else if(offset.x < 0.0f && offset.z > 0.0f) { direction = Direction.back; }
+                // 제4분면 +,-
+                else if(offset.x > 0.0f && offset.z > 0.0f) { direction = Direction.right; }
+            }
+            else if (hitAxis == Axis.mz)
+            {
+                // 제1분면 +,+
+                if(offset.x > 0.0f && offset.y > 0.0f) { direction = Direction.forward; }
+                // 제2분면 -,+
+                else if(offset.x < 0.0f && offset.y > 0.0f) { direction = Direction.left; }
+                // 제3분면 -,-
+                else if(offset.x < 0.0f && offset.y < 0.0f) { direction = Direction.back; }
+                // 제4분면 +,-
+                else if(offset.x > 0.0f && offset.y < 0.0f) { direction = Direction.right; }
+            }
+
+            Debug.Log( hitAxis + " " + offset + " " + direction );
+
+            // // 제1분면 +,+
+            // if(offset.x > 0.0f && offset.z > 0.0f) 
+            // {   
+            //     direction = Direction.forward;
+            // }
+            // // 제2분면 -,+
+            // else if(offset.x < 0.0f && offset.z > 0.0f) 
+            // {
+            //     direction = Direction.left;
+            // }
+            // // 제3분면 -,-
+            // else if(offset.x < 0.0f && offset.z < 0.0f) 
+            // {
+            //     direction = Direction.back;
+            // }
+            // // 제4분면 +,-
+            // else if(offset.x > 0.0f && offset.z < 0.0f) 
+            // {
+            //     direction = Direction.right;
+            // }
+            // else 
+            // {
+            //     direction = Direction.forward;
+            // }
         }
         return direction;
     }
