@@ -87,9 +87,12 @@ public class RotateTarget : MonoBehaviour
         {
             if(hitInfo.collider.CompareTag("Zone"))
             {
-                isDetect = true;
-                isRotateChanged = false;
-                return;
+                if (Vector3.Distance(this.transform.position, hitInfo.collider.transform.position) < 0.02f)
+                {
+                    isDetect = true;
+                    isRotateChanged = false;
+                    return;
+                }
             }
             else
             {
@@ -132,6 +135,11 @@ public class RotateTarget : MonoBehaviour
                 break;
         }
 
+        if(isTurn)
+        {
+            playerAxis.GetComponent<BoxCollider>().enabled = false;
+            playerAxis.GetComponent<BoxCollider>().enabled = true;
+        }
         // isTurn 변수를 false로 초기화한다. 
         // isTurn 변수는 true가 되면 플레이어가 모서리에서 한번 더 회전할 수 있도록 한다.
         isTurn = false;
@@ -172,9 +180,7 @@ public class RotateTarget : MonoBehaviour
         {
             transform.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
             playerAxis.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
-        }
-
-        
+        }       
 
 
         isRotateChanged = false;
