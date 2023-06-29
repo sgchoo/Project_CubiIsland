@@ -214,9 +214,9 @@ public class RotateTarget : MonoBehaviour
         else if ( CollideAxis.axis == Axis.z )
         {
             down = Vector3.back;
-            if(dir == Direction.forward)    { forward = Vector3.down;   _x = -90f;              }
-            else if (dir == Direction.left) { forward = Vector3.left;   _x = 180f; _z = 90f;   }
-            else if (dir == Direction.back) { forward = Vector3.up;     _x = 90f;               }
+            if(dir == Direction.forward)     { forward = Vector3.down;   _x = -90f;              }
+            else if (dir == Direction.left)  { forward = Vector3.left;   _x = 180f; _z = 90f;    } 
+            else if (dir == Direction.back)  { forward = Vector3.up;     _x = 90f;  _z = -180f;  }
             else if (dir == Direction.right) { forward = Vector3.right; _x = 180f; _z = -90f;    }
         }
         else if ( CollideAxis.axis == Axis.mx )
