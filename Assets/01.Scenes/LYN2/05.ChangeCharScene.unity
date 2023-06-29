@@ -209,13 +209,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: CharList_02
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 4321445}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -592,13 +592,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: CharList_03
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 137995812}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -805,13 +805,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: CharList_09
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 200265709}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 210178326}
   - component: {fileID: 210178325}
   m_Layer: 5
-  m_Name: PanelChar
+  m_Name: PanelCharGroup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1120,13 +1120,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 215953974}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2024,7 +2024,7 @@ GameObject:
   - component: {fileID: 370802138}
   - component: {fileID: 370802140}
   m_Layer: 5
-  m_Name: PanelCubiChar
+  m_Name: PanelPreviewChar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3783,13 +3783,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 879497306}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4343,11 +4343,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1399716445}
         m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
-        m_MethodName: CharList_00
-        m_Mode: 1
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 977148653}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5129,13 +5129,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: CharList_06
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1091125041}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6111,9 +6111,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8badd93b2ee8374bac986580520271d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UIScript: {fileID: 0}
   Char_05: {fileID: 1528209543}
-  Contents: []
+  Contents:
+  - {fileID: 977148653}
+  - {fileID: 1425792567}
+  - {fileID: 4321445}
+  - {fileID: 137995812}
+  - {fileID: 2105697568}
+  - {fileID: 879497306}
+  - {fileID: 1091125041}
+  - {fileID: 215953974}
+  - {fileID: 2143734819}
+  - {fileID: 200265709}
+  - {fileID: 2003259275}
+  - {fileID: 1491189930}
   CharPrefabs:
   - {fileID: 7958428679398752027, guid: 1486112fe7401a64a80c6bf9708cce85, type: 3}
   - {fileID: 6361882699475610393, guid: c48a9fc9b6b93a745817b8e98951a1ee, type: 3}
@@ -6341,13 +6352,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1425792567}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6531,13 +6542,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: CharList_11
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 1491189930}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7299,7 +7310,7 @@ GameObject:
   - component: {fileID: 1588657799}
   - component: {fileID: 1588657801}
   m_Layer: 5
-  m_Name: PanelCubiList
+  m_Name: PanelCharList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8737,13 +8748,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: CharList_10
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2003259275}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9147,13 +9158,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2105697568}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -9597,13 +9608,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: CharListController, Assembly-CSharp
-        m_MethodName: CharList_08
-        m_Mode: 1
+      - m_Target: {fileID: 1399716445}
+        m_TargetAssemblyTypeName: ChangeController_UI, Assembly-CSharp
+        m_MethodName: ButtonClicked
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 2143734819}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
