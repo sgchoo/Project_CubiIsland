@@ -2970,7 +2970,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC778\uC2DD\uD558\uAE30"
+  m_text: "\uC120\uD0DD\uD558\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2652dd1e172db8643868e141bcb3b6d9, type: 2}
   m_sharedMaterial: {fileID: 7281960617835360520, guid: 2652dd1e172db8643868e141bcb3b6d9, type: 2}
@@ -4794,7 +4794,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Contents: {fileID: 1294567393}
-  ContentNum: 0
   MapSourceList:
   - {fileID: 21300000, guid: 8a0af834e55480947bb600e32b735e39, type: 3}
   - {fileID: 21300000, guid: d26b5e9f900f1a640b7ea1bb969464df, type: 3}
@@ -4809,6 +4808,13 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fd7395c26cff1fd43919d4632c141100, type: 3}
   - {fileID: 21300000, guid: 99ec7cabe294f0f40ba2694c15fe0bee, type: 3}
   - {fileID: 21300000, guid: d1a1a6d89187dfa4396d87615f00ae6b, type: 3}
+  MapPrefabs:
+  - {fileID: 466777957695273434, guid: 72f08191b6755a44a9197ddf60aa8845, type: 3}
+  - {fileID: 2266138044326778886, guid: e0157bb9974afc54686e42cd697ee11b, type: 3}
+  - {fileID: 2430662879693425889, guid: 26ddffebe32ca724b9362675a818ad9a, type: 3}
+  - {fileID: 2430662879693425889, guid: fd248721780f1da4e8391dcb720cab8e, type: 3}
+  - {fileID: 2430662879693425889, guid: a7ee36dbc1a4afc4a9e751909cc05125, type: 3}
+  - {fileID: 2430662879693425889, guid: 06de307ec6841fd46b3f552c660e7432, type: 3}
 --- !u!4 &1269147191
 Transform:
   m_ObjectHideFlags: 0
@@ -4865,7 +4871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -635.0009, y: 0}
+  m_AnchoredPosition: {x: -635.00305, y: 0}
   m_SizeDelta: {x: 2110, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294567395
@@ -4993,8 +4999,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3998435199983456131, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
-        m_TargetAssemblyTypeName: UIController2_UI, Assembly-CSharp
+      - m_Target: {fileID: 1269147190}
+        m_TargetAssemblyTypeName: MapListController_UI, Assembly-CSharp
         m_MethodName: btnFinalMap
         m_Mode: 1
         m_Arguments:
@@ -6967,8 +6973,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1879720556}
   m_HandleRect: {fileID: 1879720555}
   m_Direction: 0
-  m_Value: 0.9999986
-  m_Size: 0.39810565
+  m_Value: 1.0000045
+  m_Size: 0.39808875
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

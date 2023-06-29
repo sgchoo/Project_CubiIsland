@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 
 public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+
     public static GameObject CurrentMap;
     public Color[] colors;
     private Button takeTheBtn;
@@ -48,7 +49,6 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             //스크롤 위치는 스크롤바 컴포넌트의 값
             scroll_pos = scrollbar.GetComponent<Scrollbar>().value;
             
-
         }
         else
         {
@@ -67,6 +67,7 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 rectTransform.GetChild(i).localScale = Vector2.Lerp(rectTransform.GetChild(i).localScale, new Vector2(1.1f, 1.1f), 0.1f);
                 CurrentMap = rectTransform.GetChild(i).gameObject;
+                // Debug.Log(CurrentMap.name);
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
