@@ -30,10 +30,8 @@ public class PlazaController_UI : MonoBehaviour
     {
         if (UIController2_UI.FinalChar == null)
         {
-            Debug.Log("UI프리팹 소실, Plaza 데이터로 대체");
-            GameObject newObject = Instantiate(ChangeController_UI.CurrentChar) as GameObject;
-            newObject.transform.SetParent(Char_04.transform, false);
-            PreviewChar = newObject;
+            Debug.Log("UI프리팹 소실");
+            
         }
         else
         { 

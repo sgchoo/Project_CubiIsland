@@ -18,14 +18,14 @@ public class UIController2_UI : MonoBehaviour
 
     //public GameObject[] Chars;
 
-    
-    
+
+
     [Header("선택 캐릭터")]
-    [SerializeField] private string Char; 
+    [SerializeField] private string Char;
 
     [Header("선택 맵")]
-    [SerializeField] private string Map; 
-    
+    [SerializeField] private string Map;
+
 
 
 
@@ -41,28 +41,38 @@ public class UIController2_UI : MonoBehaviour
         else
         {
             print("UI컨트롤러 다시 만들게");
-            Destroy(gameObject);
+            if (FinalChar != null)
+            {
+                Destroy(gameObject);
+                FinalChar = ChangeController_UI.CurrentChar;
+            }
+
         }
-
         DefaultSet();
-
-        
-
     }
 
     // Update is called once per frame
     void Update()
     {
-        //유니티에서 보여주기
+        //유니티 창에 보여주기 위한 용도
         Char = FinalChar.name;
         Map = FinalMap.name;
     }
 
     private void DefaultSet()
     {
-        //게임 시작 시 기본 캐릭터와 맵을 설정합니다.
-        FinalMap = Resources.Load<GameObject>("Map01_Grass");
-        FinalChar = Resources.Load<GameObject>("Char_PolarBear");
+        if (FinalChar != null)
+        {
+            FinalChar = ChangeController_UI.CurrentChar;
+        }
+        else
+        {
+            //게임 시작 시 기본 캐릭터와 맵을 설정합니다.
+            FinalMap = Resources.Load<GameObject>("Map01_Grass");
+            FinalChar = Resources.Load<GameObject>("Char_PolarBear");
+        }
+
+        
     }
 
     //타이틀로 이동
@@ -75,15 +85,15 @@ public class UIController2_UI : MonoBehaviour
     // 시작 전 큐브 체크 패널로 이동
     public void btnStartCheck() { SceneManager.LoadScene("07.StartCheckScene"); }
 
-    public void btnPlaza() {  SceneManager.LoadScene("04.PlazaScene"); }
+    public void btnPlaza() { SceneManager.LoadScene("04.PlazaScene"); }
 
     public void btnStart() { SceneManager.LoadScene("08.FindKeyScene"); }
 
     public void btnGameRoad() { SceneManager.LoadScene("09.FindRoadScene"); }
-    
+
     public void btnOption() { }
 
-    
 
-    
+
+
 }

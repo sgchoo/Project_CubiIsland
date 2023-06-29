@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class MapListController_UI : MonoBehaviour
 {
     public GameObject Contents;
-    public int ContentNum;
+    private int ContentNum;
     //맵 관련
     //[SerializeField]
     private GameObject[] MapList;
