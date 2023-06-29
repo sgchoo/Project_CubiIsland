@@ -6,6 +6,8 @@ using UnityEngine.EventSystems;
 
 public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
+
+    public static GameObject CurrentMap;
     public Color[] colors;
     private Button takeTheBtn;
     int btnNumber;
@@ -46,6 +48,7 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             //스크롤 위치는 스크롤바 컴포넌트의 값
             scroll_pos = scrollbar.GetComponent<Scrollbar>().value;
+            
         }
         else
         {
@@ -63,6 +66,8 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
             {
                 rectTransform.GetChild(i).localScale = Vector2.Lerp(rectTransform.GetChild(i).localScale, new Vector2(1.1f, 1.1f), 0.1f);
+                CurrentMap = rectTransform.GetChild(i).gameObject;
+                // Debug.Log(CurrentMap.name);
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
@@ -74,39 +79,20 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
         }
 
-        // for (int i = 0; i < pos.Length; i++)
-        // {
-        //     if (scroll_pos < pos[i] + (distance / 2) && scroll_pos > pos[i] - (distance / 2))
-        //     {
-        //         transform.GetChild(i).localScale = Vector2.Lerp(transform.GetChild(i).localScale, new Vector2(1f, 1f), 0.1f);
-        //         ButtonContent.transform.GetChild(i).localScale = Vector2.Lerp(ButtonContent.transform.GetChild(i).localScale, new Vector2(1.2f, 1.2f), 0.1f);
-        //         ButtonContent.transform.GetChild(i).GetComponent<Image>().color = colors[1];
-        //         for (int j = 0; j < pos.Length; j++)
-        //         {
-        //             if (j != i)
-        //             {
-        //                 ButtonContent.transform.GetChild(j).GetComponent<Image>().color = colors[0];
-        //                 ButtonContent.transform.GetChild(j).localScale = Vector2.Lerp(ButtonContent.transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
-        //                 transform.GetChild(j).localScale = Vector2.Lerp(transform.GetChild(j).localScale, new Vector2(0.8f, 0.8f), 0.1f);
-        //             }
-        //         }
-        //     }
-
-        // }
         
     }
-    //버튼 색상 바꾸기
-        public void WhichBtnClicked(Button btn)
-        {
-            btn.transform.name = "clicked";
-            for (int i = 0; i < btn.transform.parent.transform.childCount; i++)
-            {
-                if (btn.transform.parent.transform.GetChild(i).transform.name == "clicked")
-                {
-                    btnNumber = i;
-                    takeTheBtn = btn;
-                    scroll_pos = (pos[btnNumber]);
-                }
-            }
-        }
+    // //버튼 색상 바꾸기
+    //     public void WhichBtnClicked(Button btn)
+    //     {
+    //         btn.transform.name = "clicked";
+    //         for (int i = 0; i < btn.transform.parent.transform.childCount; i++)
+    //         {
+    //             if (btn.transform.parent.transform.GetChild(i).transform.name == "clicked")
+    //             {
+    //                 btnNumber = i;
+    //                 takeTheBtn = btn;
+    //                 scroll_pos = (pos[btnNumber]);
+    //             }
+    //         }
+    //     }
 }

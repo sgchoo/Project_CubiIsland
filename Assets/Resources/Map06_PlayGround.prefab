@@ -268,7 +268,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7006182348463110951}
   m_Layer: 0
-  m_Name: CubeWorld_SnowLand
+  m_Name: Map06_PlayGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -222,7 +222,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5132659593097660188}
   m_Layer: 0
-  m_Name: CubeWorld_GrassLand
+  m_Name: Map02_Snow
   m_TagString: World
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1256,7 +1256,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 47a986e3951da0a48af5fa63c69dd6d6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -72,3 +72,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CurrentScene:
     m_Handle: 0
+  Chars:
+  - {fileID: 7958428679398752027, guid: 1486112fe7401a64a80c6bf9708cce85, type: 3}
+  - {fileID: 6361882699475610393, guid: c48a9fc9b6b93a745817b8e98951a1ee, type: 3}
+  - {fileID: 6403195650908741626, guid: deb95c56b280e0844ab9b26a1b75e4e3, type: 3}
+  - {fileID: 1861836319908876241, guid: bec02e09f58e7da49acce8faf567b920, type: 3}
+  - {fileID: 3287637884569980747, guid: 0883d837fded17d468a2a1cba5baf2d0, type: 3}
+  - {fileID: 6022774185448057379, guid: 8700052148392d449b5aad60d1bda7d8, type: 3}
+  - {fileID: 8687333877458613358, guid: 2f67affba1d693f4fbabc213426020fd, type: 3}
+  - {fileID: 8390417179775610968, guid: 5c7e40a0c532522438bba25f7214c8cd, type: 3}
+  - {fileID: 9102898583058772777, guid: 66865e56d12a7674abc8e5749ed30ddd, type: 3}
+  - {fileID: 7014728878657084425, guid: e7aa718d4b8a50e47b2c98c537376a02, type: 3}
+  - {fileID: 3055745442512637545, guid: b5c287bddd75cab459d81bc21cf17895, type: 3}
+  - {fileID: 2908920801070298115, guid: 8c5d49ddbb7e3c246b7f1348036a72ad, type: 3}
+  Char: 
+  Map: 

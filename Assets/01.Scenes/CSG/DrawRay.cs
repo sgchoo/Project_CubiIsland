@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Direction {forward, left, back, right};
+public enum Direction {forward, left, back, right, none};
 public class DrawRay : MonoBehaviour
 {
     // 현재 플레이어 위치를 저장할 변수
@@ -16,7 +16,7 @@ public class DrawRay : MonoBehaviour
     
     private void Update() 
     {
-        RayForDirection();
+        //RayForDirection();
     }
 
     public Direction RayForDirection()
@@ -27,9 +27,10 @@ public class DrawRay : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit))
         {
-            if (hit.collider == null) return Direction.forward;
+            if (hit.collider == null) return Direction.none;
             Vector3 offset = hit.point - hit.collider.transform.position;
             
+            if (hit.collider.transform.GetComponent<DetectArea>() == null) return Direction.none;
             hitAxis = hit.collider.transform.GetComponent<DetectArea>().changeAxis;
             
             if (hitAxis == Axis.x)

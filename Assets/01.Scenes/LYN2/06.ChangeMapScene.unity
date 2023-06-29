@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 43158370}
   m_Layer: 5
   m_Name: MapIcon
-  m_TagString: Untagged
+  m_TagString: MAPICON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1550,7 +1550,7 @@ GameObject:
   - component: {fileID: 494875455}
   m_Layer: 5
   m_Name: MapIcon
-  m_TagString: Untagged
+  m_TagString: MAPICON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2036,7 +2036,7 @@ GameObject:
   - component: {fileID: 557022590}
   m_Layer: 5
   m_Name: MapImage
-  m_TagString: Untagged
+  m_TagString: MAPIMG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2492,7 +2492,7 @@ GameObject:
   - component: {fileID: 815882011}
   m_Layer: 5
   m_Name: MapImage
-  m_TagString: Untagged
+  m_TagString: MAPIMG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2568,7 +2568,7 @@ GameObject:
   - component: {fileID: 827665871}
   m_Layer: 5
   m_Name: MapIcon
-  m_TagString: Untagged
+  m_TagString: MAPICON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2849,7 +2849,7 @@ GameObject:
   - component: {fileID: 835718374}
   m_Layer: 5
   m_Name: MapImage
-  m_TagString: Untagged
+  m_TagString: MAPIMG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2970,7 +2970,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC778\uC2DD\uD558\uAE30"
+  m_text: "\uC120\uD0DD\uD558\uAE30"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2652dd1e172db8643868e141bcb3b6d9, type: 2}
   m_sharedMaterial: {fileID: 7281960617835360520, guid: 2652dd1e172db8643868e141bcb3b6d9, type: 2}
@@ -4104,7 +4104,7 @@ GameObject:
   - component: {fileID: 1123692967}
   m_Layer: 5
   m_Name: MapImage
-  m_TagString: Untagged
+  m_TagString: MAPIMG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4764,6 +4764,72 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195620177}
   m_CullTransparentMesh: 1
+--- !u!1 &1269147189
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1269147191}
+  - component: {fileID: 1269147190}
+  m_Layer: 0
+  m_Name: MapListController_UI
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1269147190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269147189}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2d1f7f7abe84e4e8acb6b32959d0e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Contents: {fileID: 1294567393}
+  MapSourceList:
+  - {fileID: 21300000, guid: 8a0af834e55480947bb600e32b735e39, type: 3}
+  - {fileID: 21300000, guid: d26b5e9f900f1a640b7ea1bb969464df, type: 3}
+  - {fileID: 21300000, guid: 90c02d5c74395a74b839a252f6727de9, type: 3}
+  - {fileID: 21300000, guid: 375a95a4aa5a14e44b584bfd580c8000, type: 3}
+  - {fileID: 21300000, guid: 9a02f22290f392c408bdd6c3a7015222, type: 3}
+  - {fileID: 21300000, guid: 3743332c5151fad41adb8225925bed65, type: 3}
+  IconSourceList:
+  - {fileID: 21300000, guid: fd7395c26cff1fd43919d4632c141100, type: 3}
+  - {fileID: 21300000, guid: 99ec7cabe294f0f40ba2694c15fe0bee, type: 3}
+  - {fileID: 21300000, guid: d1a1a6d89187dfa4396d87615f00ae6b, type: 3}
+  - {fileID: 21300000, guid: fd7395c26cff1fd43919d4632c141100, type: 3}
+  - {fileID: 21300000, guid: 99ec7cabe294f0f40ba2694c15fe0bee, type: 3}
+  - {fileID: 21300000, guid: d1a1a6d89187dfa4396d87615f00ae6b, type: 3}
+  MapPrefabs:
+  - {fileID: 466777957695273434, guid: 72f08191b6755a44a9197ddf60aa8845, type: 3}
+  - {fileID: 2266138044326778886, guid: e0157bb9974afc54686e42cd697ee11b, type: 3}
+  - {fileID: 2430662879693425889, guid: 26ddffebe32ca724b9362675a818ad9a, type: 3}
+  - {fileID: 2430662879693425889, guid: fd248721780f1da4e8391dcb720cab8e, type: 3}
+  - {fileID: 2430662879693425889, guid: a7ee36dbc1a4afc4a9e751909cc05125, type: 3}
+  - {fileID: 2430662879693425889, guid: 06de307ec6841fd46b3f552c660e7432, type: 3}
+--- !u!4 &1269147191
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1269147189}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1294567393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4805,7 +4871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -635.03625, y: 0}
+  m_AnchoredPosition: {x: -635.00305, y: 0}
   m_SizeDelta: {x: 2110, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294567395
@@ -4933,8 +4999,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3998435199983456131, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
-        m_TargetAssemblyTypeName: UIController2_UI, Assembly-CSharp
+      - m_Target: {fileID: 1269147190}
+        m_TargetAssemblyTypeName: MapListController_UI, Assembly-CSharp
         m_MethodName: btnFinalMap
         m_Mode: 1
         m_Arguments:
@@ -6907,7 +6973,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1879720556}
   m_HandleRect: {fileID: 1879720555}
   m_Direction: 0
-  m_Value: 1.000028
+  m_Value: 1.0000045
   m_Size: 0.39808875
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -7659,7 +7725,7 @@ GameObject:
   - component: {fileID: 1987712664}
   m_Layer: 5
   m_Name: MapIcon
-  m_TagString: Untagged
+  m_TagString: MAPICON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7735,7 +7801,7 @@ GameObject:
   - component: {fileID: 1992347814}
   m_Layer: 5
   m_Name: MapIcon
-  m_TagString: Untagged
+  m_TagString: MAPICON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7811,7 +7877,7 @@ GameObject:
   - component: {fileID: 2030568516}
   m_Layer: 5
   m_Name: MapImage
-  m_TagString: Untagged
+  m_TagString: MAPIMG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8069,7 +8135,7 @@ GameObject:
   - component: {fileID: 2091709352}
   m_Layer: 5
   m_Name: MapImage
-  m_TagString: Untagged
+  m_TagString: MAPIMG
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8145,7 +8211,7 @@ GameObject:
   - component: {fileID: 2137494844}
   m_Layer: 5
   m_Name: MapIcon
-  m_TagString: Untagged
+  m_TagString: MAPICON
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

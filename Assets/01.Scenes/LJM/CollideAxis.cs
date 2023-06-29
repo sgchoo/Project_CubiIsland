@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CollideAxis : MonoBehaviour
 {
-    public Axis axis;
+    public static Axis axis;
 
     private void OnTriggerEnter(Collider other) 
     {

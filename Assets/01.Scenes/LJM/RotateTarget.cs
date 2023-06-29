@@ -49,53 +49,58 @@ public class RotateTarget : MonoBehaviour
         {
             // 카메라가 바라보는 위치와 면의 정중앙 좌표를 이용해 상하좌우 단위벡터 가져오기
             direction = arCamera.GetComponent<DrawRay>().RayForDirection(); 
-            
+            if(direction == Direction.none) return;
             Debug.Log("Direction : " + direction); 
             // 만약 카메라가 바라보는 면과 플레이어가 서있는 면이 다르면 함수를 종료해라
-            if(DrawRay.hitAxis != player.GetComponent<CollideAxis>().axis) return;
+            if(DrawRay.hitAxis != CollideAxis.axis) return;
 
             // 가져온 단위벡터로 회전 축을 이동, 회전시킨다.
-            switch(DrawRay.direction)
-            {
-                case Direction.forward  :
-                    SetDirection(Vector3.forward, 0f);
-                break;
 
-                case Direction.left     :
-                    SetDirection(Vector3.left, -90f);
-                break;
+            SetDirection(DrawRay.direction);
+            // switch(DrawRay.direction)
+            // {
+            //     case Direction.forward  :
+            //         SetDirection(Vector3.forward, 0f);
+            //     break;
 
-                case Direction.back     :
-                    SetDirection(Vector3.back, 180f);
-                break;
+            //     case Direction.left     :
+            //         SetDirection(Vector3.left, -90f);
+            //     break;
 
-                case Direction.right    :
-                    SetDirection(Vector3.right, 90f);
-                break;
-            }
+            //     case Direction.back     :
+            //         SetDirection(Vector3.back, 180f);
+            //     break;
+
+            //     case Direction.right    :
+            //         SetDirection(Vector3.right, 90f);
+            //     break;
+            // }
 
             // 회전이 시작되었음을 알리는 isRotateChanged를 true로 만든다.
             // isRotateChanged가 true인 동안에는, 단위 벡터를 연산하지 않는다.
             isRotateChanged = true;
         }
         //ObstacleDetect();
-        Ray ray = new Ray(detectRayDir.position, detectRayDir.forward);
+        // Ray ray = new Ray(detectRayDir.position, detectRayDir.forward);
 
-        RaycastHit hitInfo;
+        // RaycastHit hitInfo;
 
-        if(Physics.Raycast(ray, out hitInfo))
-        {
-            if(hitInfo.collider.CompareTag("Zone"))
-            {
-                isDetect = true;
-                isRotateChanged = false;
-                return;
-            }
-            else
-            {
-                isDetect = false;
-            }
-        }
+        // if(Physics.Raycast(ray, out hitInfo))
+        // {
+        //     if(hitInfo.collider.CompareTag("Zone"))
+        //     {
+        //         if (Vector3.Distance(this.transform.position, hitInfo.collider.transform.position) < 0.02f)
+        //         {
+        //             isDetect = true;
+        //             isRotateChanged = false;
+        //             return;
+        //         }
+        //     }
+        //     else
+        //     {
+        //         isDetect = false;
+        //     }
+        // }
 
         //CubeRoll();
         // 플레이어를 현재 오브젝트인 rotateTarget에 넣는다.
@@ -132,6 +137,11 @@ public class RotateTarget : MonoBehaviour
                 break;
         }
 
+        if(isTurn)
+        {
+            playerAxis.GetComponent<BoxCollider>().enabled = false;
+            playerAxis.GetComponent<BoxCollider>().enabled = true;
+        }
         // isTurn 변수를 false로 초기화한다. 
         // isTurn 변수는 true가 되면 플레이어가 모서리에서 한번 더 회전할 수 있도록 한다.
         isTurn = false;
@@ -168,80 +178,205 @@ public class RotateTarget : MonoBehaviour
         // 회전 각도를 90f로 초기화한다.
         angle = 90f;
 
-        if(!isTurn)
-        {
-            transform.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
-            playerAxis.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
-        }
-        
+        // if(!isTurn)
+        // {
+        //     transform.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
+        //     playerAxis.localRotation = Quaternion.Euler(hAngle, vAngle, 0);
+        // }       
 
 
         isRotateChanged = false;
     }
 
-
-    private void SetDirection(Vector3 dir, float y)
+    private void SetDirection(Direction dir)
     {
-        // this.transform.localPosition = player.localPosition + ((-Vector3.up) * player.localScale.x/2f) + (dir * player.localScale.x/2f); 
-        // this.transform.localRotation = Quaternion.Euler(0,yAngle,0);
-        Vector3 downAxis = default(Vector3);
-        Axis axis = DrawRay.hitAxis;
-        if (axis == Axis.x)
+        Vector3 down = default(Vector3);
+        Vector3 forward = default(Vector3);
+
+        float _x = 0f, _y = 0f,_z = 0f;
+
+        if ( CollideAxis.axis == Axis.x )
         {
-            downAxis = Vector3.left;
+            down = Vector3.left;
+            if(dir == Direction.forward) {}
+            else if (dir == Direction.left) {}
+            else if (dir == Direction.back) {}
+            else if (dir == Direction.right) {}
         }
-        else if (axis == Axis.y)
+        else if ( CollideAxis.axis == Axis.y )
         {
-            downAxis = Vector3.down;
+            down = Vector3.down;
+            if(dir == Direction.forward) { forward = Vector3.forward; _y = 0; }
+            else if (dir == Direction.left) { forward = Vector3.left; _y = -90f; }
+            else if (dir == Direction.back) { forward = Vector3.back; _y = 180f; }
+            else if (dir == Direction.right) { forward = Vector3.right; _y = 90f; }
         }
-        else if (axis == Axis.z)
+        else if ( CollideAxis.axis == Axis.z )
         {
-            downAxis = Vector3.back;
-            if(dir == Vector3.forward)
-            {
-                dir = Vector3.down;
-            }
-            else if (dir == Vector3.back)
-            {
-                dir = Vector3.up;
-            }
+            down = Vector3.back;
+            if(dir == Direction.forward)     { forward = Vector3.down;   _x = -90f;              }
+            else if (dir == Direction.left)  { forward = Vector3.left;   _x = 180f; _z = 90f;    } 
+            else if (dir == Direction.back)  { forward = Vector3.up;     _x = 90f;  _z = -180f;  }
+            else if (dir == Direction.right) { forward = Vector3.right; _x = 180f; _z = -90f;    }
         }
-        else if (axis == Axis.mx)
+        else if ( CollideAxis.axis == Axis.mx )
         {
-            downAxis = Vector3.right;
+            down = Vector3.right;
+            if(dir == Direction.forward) {}
+            else if (dir == Direction.left) {}
+            else if (dir == Direction.back) {}
+            else if (dir == Direction.right) {}
         }
-        else if (axis == Axis.my)
+        else if ( CollideAxis.axis == Axis.my )
         {
-            downAxis = Vector3.up;
+            down = Vector3.up;
+            if(dir == Direction.forward) {}
+            else if (dir == Direction.left) {}
+            else if (dir == Direction.back) {}
+            else if (dir == Direction.right) {}
         }
-        else if (axis == Axis.mz)
+        else if ( CollideAxis.axis == Axis.mz )
         {
-            downAxis = Vector3.forward;
+            down = Vector3.forward;
+            if(dir == Direction.forward) {}
+            else if (dir == Direction.left) {}
+            else if (dir == Direction.back) {}
+            else if (dir == Direction.right) {}
         }
 
-        if(direction == Direction.forward)
-        {
-
-        }
-        else if (direction == Direction.left)
-        {
-            
-        }
-        else if (direction == Direction.back)
-        {
-
-        }
-        else if (direction == Direction.right)
-        {
-
-        }
-
-        this.transform.localPosition = player.localPosition + (downAxis * (player.localScale.x/2f)) + (dir * (player.localScale.x/2f)); 
-        this.transform.localRotation = Quaternion.Euler(hAngle, y + vAngle,0);
-        // this.transform.localPosition = player.localPosition + (downAxis * (player.localScale.x/2f)) + (forwardAxis * (player.localScale.x/2f)); 
-        // this.transform.localRotation = Quaternion.Euler(hAngle, y + vAngle,0);
-
+        this.transform.localPosition = player.localPosition + (down * player.localScale.x/2f) + (forward * player.localScale.x/2f);
+        this.transform.localRotation = Quaternion.Euler(_x, _y, _z);
     }
+
+
+    // private void SetDirection(Vector3 dir, float y)
+    // {
+    //     // this.transform.localPosition = player.localPosition + ((-Vector3.up) * player.localScale.x/2f) + (dir * player.localScale.x/2f); 
+    //     // this.transform.localRotation = Quaternion.Euler(0,yAngle,0);
+    //     Vector3 down = default(Vector3);
+    //     if (DrawRay.hitAxis == Axis.x)
+    //     {
+    //         if(dir == Vector3.forward)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.left)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.back)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.right)
+    //         {
+                
+    //         }
+    //     }
+    //     else if (DrawRay.hitAxis == Axis.y)
+    //     {
+    //         down = Vector3.down;
+    //         if(dir == Vector3.forward)
+    //         {
+    //             dir = Vector3.forward;
+    //         }
+    //         else if (dir == Vector3.left)
+    //         {
+    //             dir = Vector3.left;
+    //         }
+    //         else if (dir == Vector3.back)
+    //         {
+    //             dir = Vector3.back;
+    //         }
+    //         else if (dir == Vector3.right)
+    //         {
+    //             dir = Vector3.right;
+    //         }
+    //     }
+    //     else if (DrawRay.hitAxis == Axis.z)
+    //     {
+    //         down = Vector3.back;
+    //         if(dir == Vector3.forward)
+    //         {
+    //             dir = Vector3.down;
+    //         }
+    //         else if (dir == Vector3.left)
+    //         {
+    //             dir = Vector3.left;
+    //         }
+    //         else if (dir == Vector3.back)
+    //         {
+    //             dir = Vector3.up;
+    //         }
+    //         else if (dir == Vector3.right)
+    //         {
+    //             dir = Vector3.right;
+    //         }
+    //     }
+    //     else if (DrawRay.hitAxis == Axis.mx)
+    //     {
+    //         if(dir == Vector3.forward)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.left)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.back)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.right)
+    //         {
+                
+    //         }
+    //     }
+    //     else if (DrawRay.hitAxis == Axis.my)
+    //     {
+    //         if(dir == Vector3.forward)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.left)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.back)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.right)
+    //         {
+                
+    //         }
+    //     }
+    //     else if (DrawRay.hitAxis == Axis.mz)
+    //     {
+    //         if(dir == Vector3.forward)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.left)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.back)
+    //         {
+
+    //         }
+    //         else if (dir == Vector3.right)
+    //         {
+                
+    //         }
+    //     }
+
+    //     this.transform.localPosition = player.localPosition + (down * (player.localScale.x/2f)) + (dir * (player.localScale.x/2f)); 
+    //     this.transform.localRotation = Quaternion.Euler(hAngle, y + vAngle,0);
+    //     // this.transform.localPosition = player.localPosition + (downAxis * (player.localScale.x/2f)) + (forwardAxis * (player.localScale.x/2f)); 
+    //     // this.transform.localRotation = Quaternion.Euler(hAngle, y + vAngle,0);
+
+    // }
 
     
 }
