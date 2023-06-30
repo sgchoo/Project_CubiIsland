@@ -1,36 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig>
     <Tracking>
-        <ImageTarget name="cube.Top" size="0.040000 0.040000"/>
+        <ImageTarget name="CubiIsland_ver3.Left" size="0.040000 0.039841"/>
+        <ImageTarget name="CubiIsland_ver3.Bottom" size="0.040000 0.040000"/>
+        <ImageTarget name="CubiIsland_ver3.Front" size="0.040000 0.040000"/>
+        <ImageTarget name="CubiIsland_ver3.Right" size="0.040000 0.040160"/>
+        <ImageTarget name="CubiIsland_ver3.Back" size="0.040000 0.040160"/>
+        <ImageTarget name="CubiIsland_ver3.Top" size="0.040000 0.040000"/>
+        <ImageTarget name="cube.Left" size="0.040000 0.040000"/>
         <ImageTarget name="cube.Bottom" size="0.040000 0.040000"/>
         <ImageTarget name="cube.Front" size="0.040000 0.040000"/>
-        <ImageTarget name="cube.Back" size="0.040000 0.040000"/>
         <ImageTarget name="cube.Right" size="0.040000 0.040000"/>
-        <ImageTarget name="cube.Left" size="0.040000 0.040000"/>
-        <ImageTarget name="asdqwr.Top" size="0.040000 0.040000"/>
+        <ImageTarget name="cube.Back" size="0.040000 0.040000"/>
+        <ImageTarget name="cube.Top" size="0.040000 0.040000"/>
+        <ImageTarget name="asdqwr.Left" size="0.040000 0.040000"/>
         <ImageTarget name="asdqwr.Bottom" size="0.040000 0.040000"/>
         <ImageTarget name="asdqwr.Front" size="0.040000 0.040000"/>
-        <ImageTarget name="asdqwr.Back" size="0.040000 0.040000"/>
         <ImageTarget name="asdqwr.Right" size="0.040000 0.040000"/>
-        <ImageTarget name="asdqwr.Left" size="0.040000 0.040000"/>
-        <ImageTarget name="NewImage.Top" size="9.000000 9.000000"/>
+        <ImageTarget name="asdqwr.Back" size="0.040000 0.040000"/>
+        <ImageTarget name="asdqwr.Top" size="0.040000 0.040000"/>
+        <ImageTarget name="NewImage.Left" size="9.000000 9.000000"/>
         <ImageTarget name="NewImage.Bottom" size="9.000000 9.000000"/>
         <ImageTarget name="NewImage.Front" size="9.000000 9.000000"/>
-        <ImageTarget name="NewImage.Back" size="9.000000 9.000000"/>
         <ImageTarget name="NewImage.Right" size="9.000000 9.000000"/>
-        <ImageTarget name="NewImage.Left" size="9.000000 9.000000"/>
-        <ImageTarget name="forTest.Top" size="9.000000 9.000000"/>
+        <ImageTarget name="NewImage.Back" size="9.000000 9.000000"/>
+        <ImageTarget name="NewImage.Top" size="9.000000 9.000000"/>
+        <ImageTarget name="forTest.Left" size="9.000000 9.000000"/>
         <ImageTarget name="forTest.Bottom" size="9.000000 9.000000"/>
         <ImageTarget name="forTest.Front" size="9.000000 9.000000"/>
-        <ImageTarget name="forTest.Back" size="9.000000 9.000000"/>
         <ImageTarget name="forTest.Right" size="9.000000 9.000000"/>
-        <ImageTarget name="forTest.Left" size="9.000000 9.000000"/>
-        <ImageTarget name="SizeTest.Top" size="0.045000 0.045000"/>
+        <ImageTarget name="forTest.Back" size="9.000000 9.000000"/>
+        <ImageTarget name="forTest.Top" size="9.000000 9.000000"/>
+        <ImageTarget name="SizeTest.Left" size="0.045000 0.045000"/>
         <ImageTarget name="SizeTest.Bottom" size="0.045000 0.045000"/>
         <ImageTarget name="SizeTest.Front" size="0.045000 0.045000"/>
-        <ImageTarget name="SizeTest.Back" size="0.045000 0.045000"/>
         <ImageTarget name="SizeTest.Right" size="0.045000 0.045000"/>
-        <ImageTarget name="SizeTest.Left" size="0.045000 0.045000"/>
+        <ImageTarget name="SizeTest.Back" size="0.045000 0.045000"/>
+        <ImageTarget name="SizeTest.Top" size="0.045000 0.045000"/>
+        <MultiTarget name="CubiIsland_ver3">
+            <Part name="CubiIsland_ver3.Left" translation="-0.019999999552965164 0 0" rotation="AD: 0 1 0 -90"/>
+            <Part name="CubiIsland_ver3.Right" translation="0.019999999552965164 0 0" rotation="AD: 0 1 0 90"/>
+            <Part name="CubiIsland_ver3.Front" translation="0 0 0.019999999552965164" rotation="AD: 1 0 0 0"/>
+            <Part name="CubiIsland_ver3.Back" translation="0 0 -0.019999999552965164" rotation="AD: 0 1 0 180"/>
+            <Part name="CubiIsland_ver3.Top" translation="0 0.019999999552965164 0" rotation="AD: 1 0 0 -90"/>
+            <Part name="CubiIsland_ver3.Bottom" translation="0 -0.019999999552965164 0" rotation="AD: 1 0 0 90"/>
+        </MultiTarget>
         <MultiTarget name="CubeIsland_ver2">
             <Part name="cube.Left" translation="-0.019999999552965164 0 0" rotation="AD: 0 1 0 -90"/>
             <Part name="cube.Right" translation="0.019999999552965164 0 0" rotation="AD: 0 1 0 90"/>
