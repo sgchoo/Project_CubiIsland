@@ -81,7 +81,7 @@ public class UIController : MonoBehaviour
     public void btnGameStart(){             SceneManager.LoadScene("06.MapListScene_UI");}
 
     public void btnChar(){                  SceneManager.LoadScene("05.CharScene_UI");}
-    public void btnCubiChoose() {           CubiChar = CharListController.CurrentObject;
+    public void btnCubiChoose() {           CubiChar = CharListController.CurrentChar;
                                             Debug.Log("최종 선택" + CubiChar.name);
                                             SceneManager.LoadScene("04.PlazaScene_UI");}
 

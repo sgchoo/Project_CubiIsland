@@ -3,19 +3,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Direction {forward, left, back, right};
+public enum Direction {forward, left, back, right, none};
 public class DrawRay : MonoBehaviour
 {
+    // ???
     public static bool isBlockZone;
+
+    // 현재 플레이어 위치를 저장할 변수
     public Transform player;
+
+    // 카메라의 Ray와 그에 맞닿은 cube를 이용해 플레이어의 진행 방향을 저장할 변수
     public static Direction direction = Direction.forward;
+
+    public static Axis hitAxis;
     
     private void Update() 
     {
-        RayForDirection();
+        //RayForDirection();
     }
 
-    private void RayForDirection()
+    public Direction RayForDirection()
     {
         Ray ray = new Ray(this.transform.position, this.transform.forward);
 
@@ -23,29 +30,107 @@ public class DrawRay : MonoBehaviour
 
         if(Physics.Raycast(ray, out hit))
         {
-            Vector3 offset = hit.point - player.position;
+            if (hit.collider == null) return Direction.none;
+            Vector3 offset = hit.point - hit.collider.transform.position;
+            
+            if (hit.collider.transform.GetComponent<DetectArea>() == null) return Direction.none;
+            hitAxis = hit.collider.transform.GetComponent<DetectArea>().changeAxis;
+            
+            if (hitAxis == Axis.x)
+            {
+                // 제1분면 
+                if      (offset.y < 0.0f && offset.z > 0.0f) { direction = Direction.forward;   }
+                // 제2분면 
+                else if (offset.y < 0.0f && offset.z < 0.0f) { direction = Direction.left;      }
+                // 제3분면 
+                else if (offset.y > 0.0f && offset.z < 0.0f) { direction = Direction.back;      }
+                // 제4분면 
+                else if (offset.y < 0.0f && offset.z < 0.0f) { direction = Direction.right;     }
+            }
+            else if (hitAxis == Axis.y)
+            {
+                // 제1분면 
+                if      (offset.x > 0.0f && offset.z > 0.0f) { direction = Direction.forward; }
+                // 제2분면 
+                else if(offset.x < 0.0f && offset.z > 0.0f)  { direction = Direction.left; }
+                // 제3분면 -,-
+                else if(offset.x < 0.0f && offset.z < 0.0f)  { direction = Direction.back; }
+                // 제4분면 +,-
+                else if(offset.x > 0.0f && offset.z < 0.0f)  { direction = Direction.right; }
+            }
+            else if (hitAxis == Axis.z)
+            {
+                // 제1분면 
+                if      (offset.x > 0.0f && offset.y < 0.0f) { direction = Direction.forward; }
+                // 제2분면 
+                else if (offset.x < 0.0f && offset.y < 0.0f) { direction = Direction.left; }
+                // 제3분면 
+                else if (offset.x < 0.0f && offset.y > 0.0f) { direction = Direction.back; }
+                // 제4분면 
+                else if (offset.x > 0.0f && offset.y > 0.0f) { direction = Direction.right; }
+            }
+            else if (hitAxis == Axis.mx)
+            {
+                // 제1분면 
+                if(offset.y > 0.0f && offset.z > 0.0f) { direction = Direction.forward; }
+                // 제2분면 
+                else if(offset.y < 0.0f && offset.z > 0.0f) { direction = Direction.left; }
+                // 제3분면 
+                else if(offset.y < 0.0f && offset.z < 0.0f) { direction = Direction.back; }
+                // 제4분면 
+                else if(offset.y > 0.0f && offset.z < 0.0f) { direction = Direction.right; }
+            }
+            else if (hitAxis == Axis.my)
+            {
+                // 제1분면 +,+
+                if(offset.x > 0.0f && offset.z < 0.0f) { direction = Direction.forward; }
+                // 제2분면 -,+
+                else if(offset.x < 0.0f && offset.z < 0.0f) { direction = Direction.left; }
+                // 제3분면 -,-
+                else if(offset.x < 0.0f && offset.z > 0.0f) { direction = Direction.back; }
+                // 제4분면 +,-
+                else if(offset.x > 0.0f && offset.z > 0.0f) { direction = Direction.right; }
+            }
+            else if (hitAxis == Axis.mz)
+            {
+                // 제1분면 +,+
+                if(offset.x > 0.0f && offset.y > 0.0f) { direction = Direction.forward; }
+                // 제2분면 -,+
+                else if(offset.x < 0.0f && offset.y > 0.0f) { direction = Direction.left; }
+                // 제3분면 -,-
+                else if(offset.x < 0.0f && offset.y < 0.0f) { direction = Direction.back; }
+                // 제4분면 +,-
+                else if(offset.x > 0.0f && offset.y < 0.0f) { direction = Direction.right; }
+            }
 
-            // 제1분면 +,+
-            if(offset.x > 0 && offset.z > 0) 
-            {   
-                direction = Direction.forward;
-            }
-            // 제2분면 -,+
-            else if(offset.x < 0 && offset.z > 0) 
-            {
-                direction = Direction.left;
-            }
-            // 제3분면 -,-
-            else if(offset.x < 0 && offset.z < 0) 
-            {
-                direction = Direction.back;
-            }
-            // 제4분면 +,-
-            else if(offset.x > 0 && offset.z < 0) 
-            {
-                direction = Direction.right;
-            }
+            Debug.Log( hitAxis + " " + offset + " " + direction );
+
+            // // 제1분면 +,+
+            // if(offset.x > 0.0f && offset.z > 0.0f) 
+            // {   
+            //     direction = Direction.forward;
+            // }
+            // // 제2분면 -,+
+            // else if(offset.x < 0.0f && offset.z > 0.0f) 
+            // {
+            //     direction = Direction.left;
+            // }
+            // // 제3분면 -,-
+            // else if(offset.x < 0.0f && offset.z < 0.0f) 
+            // {
+            //     direction = Direction.back;
+            // }
+            // // 제4분면 +,-
+            // else if(offset.x > 0.0f && offset.z < 0.0f) 
+            // {
+            //     direction = Direction.right;
+            // }
+            // else 
+            // {
+            //     direction = Direction.forward;
+            // }
         }
+        return direction;
     }
 
     private void OnDrawGizmosSelected() 

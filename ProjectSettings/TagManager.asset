@@ -8,6 +8,8 @@ TagManager:
   - World
   - Zone
   - Joint
+  - MAPICON
+  - MAPIMG
   layers:
   - Default
   - TransparentFX

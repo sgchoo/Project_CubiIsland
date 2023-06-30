@@ -8,7 +8,7 @@ public class DetectArea : MonoBehaviour
 {   
     public static Axis axis;
     public static bool changes = false;
-    public Axis changeAxis;
+    public Axis changeAxis = Axis.y;
     // Start is called before the first frame update
     void Start()
     {
