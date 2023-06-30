@@ -94,14 +94,14 @@ public class PlayerMoveManager : MonoBehaviour
             if      (zAxisRoller.index == 0) rotateTarget = xAxisRoller.axis[xAxisRoller.index];
             else if (zAxisRoller.index == 1) rotateTarget = yAxisRoller.axis[yAxisRoller.index];
             else if (zAxisRoller.index == 2) rotateTarget = xAxisRoller.axis[xAxisRoller.rotateIndex];
-            else if (zAxisRoller.index == 3) rotateTarget = yAxisRoller.axis[yAxisRoller.rotateIndex];
+            else if (zAxisRoller.index == 3) rotateTarget = yAxisRoller.axis[yAxisRoller.lastIndex];
 
             if(coords.y == 4) { angle += 90f; }
         }
         else if(dir == Vector3.back)
         {
             if      (zAxisRoller.index == 0) rotateTarget = xAxisRoller.axis[xAxisRoller.lastIndex];
-            else if (zAxisRoller.index == 1) rotateTarget = yAxisRoller.axis[yAxisRoller.lastIndex];
+            else if (zAxisRoller.index == 1) rotateTarget = yAxisRoller.axis[yAxisRoller.rotateIndex];
             else if (zAxisRoller.index == 2) rotateTarget = xAxisRoller.axis[xAxisRoller.rotateLastIndex];
             else if (zAxisRoller.index == 3) rotateTarget = yAxisRoller.axis[yAxisRoller.rotateLastIndex];
             if(coords.y == 0) { angle += 90f; }
@@ -229,17 +229,17 @@ public class PlayerMoveManager : MonoBehaviour
         if (dir == Vector3.forward)
         {
             if (zAxisRoller.index == 0) UpIndexSet(ref xAxisRoller);
-            else if (zAxisRoller.index == 1) UpIndexSet(ref yAxisRoller);
+            else if (zAxisRoller.index == 1) DownIndexSet(ref yAxisRoller);
             else if (zAxisRoller.index == 2) DownIndexSet(ref xAxisRoller);
-            else if (zAxisRoller.index == 3) DownIndexSet(ref yAxisRoller);
+            else if (zAxisRoller.index == 3) UpIndexSet(ref yAxisRoller);
             coords.y += 1;
         }
         else if (dir == Vector3.back)
         {
             if (zAxisRoller.index == 0) DownIndexSet(ref xAxisRoller);
-            else if (zAxisRoller.index == 1) DownIndexSet(ref yAxisRoller);
+            else if (zAxisRoller.index == 1) UpIndexSet(ref yAxisRoller);
             else if (zAxisRoller.index == 2) UpIndexSet(ref xAxisRoller);
-            else if (zAxisRoller.index == 3) UpIndexSet(ref yAxisRoller);
+            else if (zAxisRoller.index == 3) DownIndexSet(ref yAxisRoller);
             coords.y -= 1;
         }
         else if (dir == Vector3.right)
