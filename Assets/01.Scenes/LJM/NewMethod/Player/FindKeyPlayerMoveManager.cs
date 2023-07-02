@@ -207,26 +207,17 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
 
     private void SetDirection()
     {
-        if      (Input.GetKeyDown(KeyCode.UpArrow))     StartCoroutine(Rolling(Vector3.forward));
-        else if (Input.GetKeyDown(KeyCode.RightArrow))  StartCoroutine(Rolling(Vector3.right));
-        else if (Input.GetKeyDown(KeyCode.DownArrow))   StartCoroutine(Rolling(Vector3.down));
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))   StartCoroutine(Rolling(Vector3.left));
-
-        /*
-        direction = arCamera.GetComponent<DrawRay>().RayForDirection(); 
-        Debug.Log(direction);
+        direction = arCamera.GetComponent<PlayerDirectionManager>().RayForDirection(); 
         if(direction == Direction.none) return;
-        // 만약 카메라가 바라보는 면과 플레이어가 서있는 면이 다르면 함수를 종료해라
-        //if(DrawRay.hitAxis != CollideAxis.axis) return;
 
         switch(direction) 
         {
             case Direction.forward : StartCoroutine(Rolling(Vector3.forward)); break;
-            //case Direction.right : StartCoroutine(Rolling(Vector3.right)); break;
+            case Direction.right : StartCoroutine(Rolling(Vector3.right)); break;
             case Direction.back : StartCoroutine(Rolling(Vector3.down)); break;
-            //case Direction.left : StartCoroutine(Rolling(Vector3.left)); break;
+            case Direction.left : StartCoroutine(Rolling(Vector3.left)); break;
         }
-        */
+        
     }
 
     private bool CalculateCoords()
