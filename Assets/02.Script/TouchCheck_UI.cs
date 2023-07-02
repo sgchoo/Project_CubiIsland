@@ -17,6 +17,7 @@ public class TouchCheck_UI : MonoBehaviour
         {
             // PC 클릭 동작 처리
             Debug.Log("터치");
+            touchStarted = true;
         }
 
         // 모바일 터치 체크
