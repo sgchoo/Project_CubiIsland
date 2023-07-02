@@ -57,8 +57,6 @@ public class PlayerMoveManager : MonoBehaviour
     {
         coords = new Vector2(2,1);
 
-        
-
         parent = this.transform.parent;
 
         axis = Axis.y;
@@ -72,11 +70,9 @@ public class PlayerMoveManager : MonoBehaviour
             if(child == this.transform || child == axisObject) continue;
             childList.Add(child);
         }
-    }
+    }    
 
-
-    
-
+    private float timer = 0f;
     void Update()
     {
         if(isRolling) return;
@@ -133,17 +129,13 @@ public class PlayerMoveManager : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.name == "Cube")
-        {
-            axis = other.gameObject.GetComponent<DetectArea>().changeAxis;
-        }    
+            axis = other.gameObject.GetComponent<DetectArea>().changeAxis; 
         if (other.gameObject.name == "Ground")
-        {
-            Debug.Log("Ground:" + other.gameObject.GetComponent<CoordsInfo>().GetCoords());
             detectCoords = other.gameObject.GetComponent<CoordsInfo>().GetCoords();
-        }
     }
 
     public Transform axisObject;
+    
     private IEnumerator Rolling(Vector3 dir)
     {
         isRolling = true;
@@ -151,44 +143,59 @@ public class PlayerMoveManager : MonoBehaviour
         float angle = 90f;
     
         int idx = -1;
-        if      (dir == Vector3.forward){ idx = 0; coords.y += 1; }
-        else if (dir == Vector3.right)  { idx = 1; coords.x += 1; }
-        else if (dir == Vector3.down)   { idx = 2; coords.y -= 1; }
-        else if (dir == Vector3.left)   { idx = 3; coords.x -= 1; }
-        
-        if(idx == -1) { Debug.Log("Error!!!"); yield return null; }
+        if      (dir == Vector3.forward){ idx = 0; }
+        else if (dir == Vector3.right)  { idx = 1; }
+        else if (dir == Vector3.down)   { idx = 2; }
+        else if (dir == Vector3.left)   { idx = 3; }
 
         // 회전 타겟 지정
         Transform rotateTarget = roller[idx];
 
-        // 이전 회전정보 저장
-        Quaternion prevRot = rotateTarget.localRotation;
-
-        // 회전축에 player 넣기
-        this.transform.parent = rotateTarget;
-
-        bool isTurn = CalculateCoords();
-        if(isTurn) angle += 90f;
-
-        while (angle > 0)
+        
+        yield return null;
+        if(rotateTarget.GetComponent<CollisionCheck>().collide)
         {
-            float rotateAngle = Time.deltaTime * rotateSpeed;
-            if(rotateAngle >= angle) rotateAngle = angle;
+            Debug.Log("막힘");
+        }
+        else 
+        {
+            if      (dir == Vector3.forward){ coords.y += 1; }
+            else if (dir == Vector3.right)  { coords.x += 1; }
+            else if (dir == Vector3.down)   { coords.y -= 1; }
+            else if (dir == Vector3.left)   { coords.x -= 1; }
 
-            rotateTarget.Rotate(rotateAxis, rotateAngle, Space.Self);
-            angle -= rotateAngle;
-            yield return null;
+
+            // 이전 회전정보 저장
+            Quaternion prevRot = rotateTarget.localRotation;
+
+            // 회전축에 player 넣기
+            this.transform.parent = rotateTarget;
+
+            bool isTurn = CalculateCoords();
+            if(isTurn) angle += 90f;
+
+            while (angle > 0)
+            {
+                float rotateAngle = Time.deltaTime * rotateSpeed;
+                if(rotateAngle >= angle) rotateAngle = angle;
+
+                rotateTarget.Rotate(rotateAxis, rotateAngle, Space.Self);
+                angle -= rotateAngle;
+                yield return null;
+            }
+
+            // Player 부모 초기화
+            this.transform.parent = parent;
+
+            // 회전타겟 회전 정상화
+            rotateTarget.rotation = prevRot;  
+
+            SetAxis(prevRot);
+            
+            isChangeAxis = isTurn;
         }
 
-        // Player 부모 초기화
-        this.transform.parent = parent;
 
-        // 회전타겟 회전 정상화
-        rotateTarget.rotation = prevRot;  
-
-        SetAxis(prevRot);
-        
-        isChangeAxis = isTurn;
         isRolling = false;
     }
 

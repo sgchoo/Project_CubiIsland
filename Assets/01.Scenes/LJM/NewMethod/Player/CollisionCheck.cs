@@ -4,23 +4,28 @@ using UnityEngine;
 
 public class CollisionCheck : MonoBehaviour
 {
-    public static bool collide = false;
+    public bool collide = false;
+
+    public void Check()
+    {
+        this.GetComponent<BoxCollider>().enabled = false;
+        this.GetComponent<BoxCollider>().enabled = true;
+    }
 
 
-
-    private void OnCollisionEnter(Collision other) 
+    private void OnTriggerStay(Collider other)
     {
         if(other.gameObject.CompareTag("Zone"))
         {
             collide = true;
-        }    
+        }
     }
 
-    private void OnCollisionExit(Collision other) 
+    private void OnTriggerExit(Collider other)
     {
         if(other.gameObject.CompareTag("Zone"))
         {
             collide = false;
-        }    
+        }
     }
 }
