@@ -50,15 +50,21 @@ public class PlayerMoveManager : MonoBehaviour
 
     private Vector2 detectCoords;
 
+    public ActivateDirArea activateArea;
+
 
     void Start()
     {
         coords = new Vector2(2,1);
 
+        
+
         parent = this.transform.parent;
 
         axis = Axis.y;
         rotateAxis = Vector3.right;
+
+        activateArea.ActivateArea(axis);
 
         childList = new List<Transform>();
         foreach(Transform child in parent)
@@ -77,6 +83,7 @@ public class PlayerMoveManager : MonoBehaviour
         if(isChangeAxis) 
         { 
             ChangeMoveAxis();
+            activateArea.ActivateArea(axis);
             coords = detectCoords;
             isChangeAxis = false;
         }
