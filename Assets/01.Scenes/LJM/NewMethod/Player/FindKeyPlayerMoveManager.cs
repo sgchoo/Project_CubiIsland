@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum Axis { x, y, z, mx, my, mz };
-public class PlayerMoveManager : MonoBehaviour
+public class FindKeyPlayerMoveManager : MonoBehaviour
 {
     // 각 면의 Roller를 저장해둘 배열
     public Transform[] upArea;
@@ -72,7 +72,6 @@ public class PlayerMoveManager : MonoBehaviour
         }
     }    
 
-    private float timer = 0f;
     void Update()
     {
         if(isRolling) return;
@@ -153,11 +152,7 @@ public class PlayerMoveManager : MonoBehaviour
 
         
         yield return null;
-        if(rotateTarget.GetComponent<CollisionCheck>().collide)
-        {
-            Debug.Log("막힘");
-        }
-        else 
+        if(!rotateTarget.GetComponent<CollisionCheck>().collide)
         {
             if      (dir == Vector3.forward){ coords.y += 1; }
             else if (dir == Vector3.right)  { coords.x += 1; }
