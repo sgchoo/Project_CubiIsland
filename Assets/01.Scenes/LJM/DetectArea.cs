@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Axis { x, y, z, mx, my, mz };
 
 public class DetectArea : MonoBehaviour
 {   
