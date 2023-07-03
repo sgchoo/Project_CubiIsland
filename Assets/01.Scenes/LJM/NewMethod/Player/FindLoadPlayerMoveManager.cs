@@ -35,6 +35,8 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
         else if (Input.GetKeyDown(KeyCode.LeftArrow))   StartCoroutine(Rolling(Vector3.left));
     }
 
+    private bool doubleMoveFlag = false;
+    private bool flag = false;
     private IEnumerator Rolling(Vector3 dir)
     {
         isRolling = true;
@@ -49,12 +51,37 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
 
         // 회전 타겟 지정
         Transform rotateTarget = roller[idx];
+        Vector3 rotateAxis = Vector3.right;
 
         yield return null;
         if(!rotateTarget.GetComponent<CollisionCheck>().collide)
         {
+            bool isDoubleMove = rotateTarget.GetComponent<CollisionCheck>().isDoubleMove;
+            
+            if(!doubleMoveFlag && isDoubleMove)
+            {
+                rotateTarget = roller[idx+4];
+                angle += 90f;
+                doubleMoveFlag = true;
+                
+                rotateAxis = Vector3.left;
+            }
+            else if (doubleMoveFlag) 
+            {
+                flag = true;
+                doubleMoveFlag = false;
+                rotateTarget = axisObject;
+                if      (dir == Vector3.forward){ rotateAxis = Vector3.right; }
+                else if (dir == Vector3.right)  { rotateAxis = Vector3.back; }
+                else if (dir == Vector3.down)   { rotateAxis = Vector3.left; }
+                else if (dir == Vector3.left)   { rotateAxis = Vector3.forward; }
+            }
             // 이전 회전정보 저장
             Quaternion prevRot = rotateTarget.localRotation;
+            Vector3 prevPos = rotateTarget.localPosition;
+
+            if(flag) rotateTarget.localPosition -= new Vector3(0, this.transform.localScale.x, 0);
+            
 
             // 회전축에 player 넣기
             this.transform.parent = rotateTarget;
@@ -64,7 +91,7 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
                 float rotateAngle = Time.deltaTime * rotateSpeed;
                 if(rotateAngle >= angle) rotateAngle = angle;
 
-                rotateTarget.Rotate(Vector3.right, rotateAngle, Space.Self);
+                rotateTarget.Rotate(rotateAxis, rotateAngle, Space.Self);
                 angle -= rotateAngle;
                 yield return null;
             }
@@ -74,7 +101,14 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
 
             // 회전타겟 회전 정상화
             rotateTarget.rotation = prevRot;  
+            if(flag)
+            {
+                rotateTarget.localPosition = prevPos;
+                flag = false;
+            }
+            
 
+            
             SetAxis(prevRot);
         }
         else

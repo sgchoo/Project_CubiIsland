@@ -5,6 +5,7 @@ using UnityEngine;
 public class CollisionCheck : MonoBehaviour
 {
     public bool collide = false;
+    public bool isDoubleMove = false;
 
     public void Check()
     {
@@ -19,6 +20,10 @@ public class CollisionCheck : MonoBehaviour
         {
             collide = true;
         }
+        if(other.gameObject.CompareTag("DoubleMove"))
+        {
+            isDoubleMove = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -26,6 +31,10 @@ public class CollisionCheck : MonoBehaviour
         if(other.gameObject.CompareTag("Zone"))
         {
             collide = false;
+        }
+        if(other.gameObject.CompareTag("DoubleMove"))
+        {
+            isDoubleMove = false;
         }
     }
 }
