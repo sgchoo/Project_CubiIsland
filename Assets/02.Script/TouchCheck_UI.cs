@@ -8,7 +8,7 @@ public class TouchCheck_UI : MonoBehaviour
     void Start()
     {
     }
-    public static bool touchStarted = false;
+    public static bool isTouch = false;
 
     void Update()
     {
@@ -17,7 +17,7 @@ public class TouchCheck_UI : MonoBehaviour
         {
             // PC 클릭 동작 처리
             Debug.Log("터치");
-            touchStarted = true;
+            isTouch = true;
         }
 
         // 모바일 터치 체크
@@ -27,11 +27,11 @@ public class TouchCheck_UI : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                touchStarted = true;
+                isTouch = true;
             }
-            else if (touch.phase == TouchPhase.Ended && touchStarted)
+            else if (touch.phase == TouchPhase.Ended && isTouch)
             {
-                touchStarted = false;
+                isTouch = false;
                 // 모바일 터치 동작 처리
                 //Debug.Log("모바일 터치 발생");
             }
