@@ -7,18 +7,13 @@ using UnityEngine.UI;
 
 public class PanelLoading_UI : MonoBehaviour
 {
-    private bool isTouch;
-
 
     public GameObject TouchMotion;
     float timer = 0f;
 
     void Start()
     {
-        Debug.Log(SceneCheck_UI.SceneLoad);
         gameObject.SetActive(true);
-        isTouch = false;
-
     }
 
     // Update is called once per frame
@@ -30,15 +25,17 @@ public class PanelLoading_UI : MonoBehaviour
     
     public void ActTouch()
     {
+        // 씬 로드 3초 후
         if (timer >= 3f)
         {
+            // 터치 모션 켜짐
             TouchMotion.SetActive(true);
-            if(TouchCheck_UI.touchStarted == true)
+            // 터치가 되고 있다면
+            if(TouchCheck_UI.isTouch == true)
             {
                 gameObject.SetActive(false);
             }
         }
-        
     }
 
 
