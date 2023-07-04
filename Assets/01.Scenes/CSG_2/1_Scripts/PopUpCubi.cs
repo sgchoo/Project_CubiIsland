@@ -6,8 +6,7 @@ public class PopUpCubi : MonoBehaviour
 {
     Rigidbody rigid;
 
-    int a;
-    int b;
+    public float jumpPower = 2.5f;
 
     private void Start() 
     {
@@ -19,7 +18,7 @@ public class PopUpCubi : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
 
-        rigid.AddForce((transform.up + transform.forward) * 3.7f, ForceMode.Impulse);
+        rigid.AddForce((transform.up + transform.forward) * jumpPower, ForceMode.Impulse);
     }
 
     private void OnTriggerEnter(Collider other) 

@@ -4,16 +4,7 @@ using UnityEngine;
 
 public class DisableSurface : MonoBehaviour
 {
-    //GameObject Surfaces;
-
     bool isInside;
-
-    float curTime;
-
-    private void Update() 
-    {
-        curTime += Time.deltaTime;
-    }
 
     private void OnTriggerEnter(Collider other) 
     {
