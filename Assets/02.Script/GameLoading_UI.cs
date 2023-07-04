@@ -21,6 +21,9 @@ public class GameLoading_UI : MonoBehaviour
     private int currentText;
     private float displayTime;
 
+    // 하단 텍스트가 변경되는 시간(기본 3f)
+    public float textChangeTime;
+
 
     void Start()
     {
@@ -64,11 +67,17 @@ public class GameLoading_UI : MonoBehaviour
     
      private void ActText()
     {
-        //texts[currentText].gameObject.SetActive(false);
-        if (timer >= (currentText + 1) * displayTime)
+        if (timer % textChangeTime <= 0.01f)
         {
             texts[currentText].gameObject.SetActive(false);
             currentText = (currentText + 1) % texts.Length;
+            // 1 % 3 => 1
+            // 2 % 3 => 2
+            // 3 % 3 => 0
+            // 4 % 3 => 1
+        }
+        else 
+        {
             texts[currentText].gameObject.SetActive(true);
         }
     }
