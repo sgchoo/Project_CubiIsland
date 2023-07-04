@@ -74,7 +74,7 @@ public class ChangeController_UI : MonoBehaviour
 
         SceneManager.LoadScene("04.PlazaScene");
     }
-    
+
     // 버튼 하나씩 메서드 만들기 싫어서 만든 코드
     public void ButtonClicked(GameObject clickedBtn)
     {
@@ -90,11 +90,11 @@ public class ChangeController_UI : MonoBehaviour
                 // 일치하는 버튼을 찾았을 때 인덱스 기록
                 selectedIndex = i;
                 break;
-                
+
             }
         }
         CharChange();
-        
+
     }
 
     public void CharChange()
@@ -104,59 +104,4 @@ public class ChangeController_UI : MonoBehaviour
         newObject.transform.SetParent(Char_05.transform, false);
         CurrentChar = newObject;
     }
-
-
-
-
-        // public void btnFinalMap()
-        // {
-        //     SetFinalMap();
-        //     Debug.Log("최종 선택" + UIController2_UI.FinalMap);
-        //     SceneManager.LoadScene("04.PlazaScene");
-        // }
-        //  private void SetFinalMap()
-        // {
-        //     if (swipe_UI.CurrentMap.name == "Map01")
-        //     {
-        //         GameObject prefab = Resources.Load<GameObject>("Map01_Grass");
-        //         UIController2_UI.FinalChar = Instantiate(prefab);
-        //     }
-        // if (swipe_UI.CurrentMap.name == "Map02")
-        // {
-        //     GameObject prefab = Resources.Load<GameObject>("Map02_Snow");
-        //     GameObject instantiatedPrefab = Instantiate(prefab);
-        //     Debug.Log("선택한 맵 :" + prefab.name);
-        // }
-        // if (swipe_UI.CurrentMap.name == "Map03")
-        // {
-        //     GameObject prefab = Resources.Load<GameObject>("Map03_Desert");
-        //     GameObject instantiatedPrefab = Instantiate(prefab);
-        //     Debug.Log("선택한 맵 :" + prefab.name);
-        // }
-        // if (swipe_UI.CurrentMap.name == "Map04")
-        // {
-        //     GameObject prefab = Resources.Load<GameObject>("Map04_Beach");
-        //     GameObject instantiatedPrefab = Instantiate(prefab);
-        //     Debug.Log("선택한 맵 :" + prefab.name);
-        // }
-        // if (swipe_UI.CurrentMap.name == "Map05")
-        // {
-        //     GameObject prefab = Resources.Load<GameObject>("Map05_City");
-        //     GameObject instantiatedPrefab = Instantiate(prefab);
-        //     Debug.Log("선택한 맵 :" + prefab.name);
-        // }
-        // if (swipe_UI.CurrentMap.name == "Map06")
-        // {
-        //     GameObject prefab = Resources.Load<GameObject>("Map06_PlayGround");
-        //     GameObject instantiatedPrefab = Instantiate(prefab);
-        //     Debug.Log("선택한 맵 :" + prefab.name);
-        // }
-        //     else
-        //     {
-        //         Debug.LogError("Aprefab을 찾을 수 없습니다.");
-        //     }
-
-        // }
-
-
-    }
+}

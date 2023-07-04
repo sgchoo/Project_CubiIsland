@@ -49,19 +49,24 @@ public class MapListController_UI : MonoBehaviour
 
     public void btnFinalMap()
     {
-        // <리스트에 커진 객체를 UI_FinalMap에 프리팹으로 저장하기>
-        // 1. Swipe_UI의 CurrentMap(GameObject)값 받아오기
-        // 2. Map03이면, 프리팹 객체 리소스 ("") / 6개 만들기
-        // 3. 프리팹 오브젝트를 FinalMap,CurrentMap에 할당
+        // 현재 선택된 맵 가져오기
         CurrentMap = swipe_UI.CurrentMap;
-        if(CurrentMap.name == "Map01"){CurrentMap = MapPrefabs[0];}
-        if(CurrentMap.name == "Map02"){CurrentMap = MapPrefabs[1];}
-        if(CurrentMap.name == "Map03"){CurrentMap = MapPrefabs[2];}
-        if(CurrentMap.name == "Map04"){CurrentMap = MapPrefabs[3];}
-        if(CurrentMap.name == "Map05"){CurrentMap = MapPrefabs[4];}
-        if(CurrentMap.name == "Map06"){CurrentMap = MapPrefabs[5];}
 
-        UIController2_UI.FinalMap = CurrentMap;
+        // 현재 선택된 맵의 이름 저장
+        string currentMapName = CurrentMap.name;
+
+        foreach (GameObject prefab in MapPrefabs)
+        {
+            if (prefab.name == currentMapName)
+            {
+                UIController2_UI.FinalMap = prefab; // 맵 프리팹을 UIController_UI.FinalMap에 저장
+                break;
+                
+            }
+        }
+        //데이터 백업하기
+        CurrentMap = UIController2_UI.FinalMap;
+        
         Debug.Log("현재 선택한 맵 : " + CurrentMap.name);
         Debug.Log("FinalMap : " + UIController2_UI.FinalMap.name);
 
