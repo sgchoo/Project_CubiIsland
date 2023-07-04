@@ -3,13 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - DoubleMove
-  - World
-  - Zone
-  - Joint
-  - MAPICON
-  - MAPIMG
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -21,6 +15,7 @@ TagManager:
   - 
   - 
   - 
+  - Override
   - 
   - 
   - 
@@ -38,11 +33,10 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - OutsidePortal
+  - InsidePortal
+  - Mask
+  - Overrides
   m_SortingLayers:
   - name: Default
     uniqueID: 0
