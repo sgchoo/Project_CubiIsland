@@ -231,5 +231,6 @@ public class OptionManager_LYN : MonoBehaviour
     {
         // ImageDownloadManager downloadManager = new ImageDownloadManager();
         // downloadManager.DownloadImage();
+        new ImageDownloadManager().DownloadObject();
     }
 }
