@@ -42,6 +42,7 @@ public class GameLoading_UI : MonoBehaviour
 
     private void ActSlider()
     {
+        // 터치했거나, 로딩시간이 10초가 지났을 경우 패널 비활성화
         if (TouchCheck_UI.isTouch == true || timer >= 10f)
         {
             gameObject.SetActive(false);
@@ -60,7 +61,7 @@ public class GameLoading_UI : MonoBehaviour
             LoadingSlider.value = currentValue;
         }
     }
-
+    
      private void ActText()
     {
         //texts[currentText].gameObject.SetActive(false);
