@@ -13,7 +13,11 @@ public class DrawRay : MonoBehaviour
     public static Direction direction = Direction.forward;
 
     public static Axis hitAxis;
-    
+    private void Start() 
+    {
+        direction = Direction.none;    
+    }
+
     private void Update() 
     {
         //RayForDirection();

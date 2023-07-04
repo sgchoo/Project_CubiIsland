@@ -10146,6 +10146,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CubeWorld_Desert
       objectReference: {fileID: 0}
+    - target: {fileID: 2353117579802278713, guid: 5f4dadd195617f9489a1400cd240543a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3709182000256474606, guid: 5f4dadd195617f9489a1400cd240543a, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -10189,6 +10193,22 @@ PrefabInstance:
     - target: {fileID: 3709182000256474606, guid: 5f4dadd195617f9489a1400cd240543a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3731541225513239553, guid: 5f4dadd195617f9489a1400cd240543a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4710969562558678098, guid: 5f4dadd195617f9489a1400cd240543a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124315563894285521, guid: 5f4dadd195617f9489a1400cd240543a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9166717344786895177, guid: 5f4dadd195617f9489a1400cd240543a, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
