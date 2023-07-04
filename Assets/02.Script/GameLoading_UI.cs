@@ -21,6 +21,7 @@ public class GameLoading_UI : MonoBehaviour
     private int currentText;
     private float displayTime;
 
+    // 하단 텍스트가 변경되는 시간(기본 3f)
     public float textChangeTime;
 
 

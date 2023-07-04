@@ -791,6 +791,7 @@ MonoBehaviour:
   - {fileID: 1989827099}
   - {fileID: 663652787}
   - {fileID: 1501887431}
+  textChangeTime: 3
 --- !u!1 &253015939
 GameObject:
   m_ObjectHideFlags: 0
