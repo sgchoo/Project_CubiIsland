@@ -163,6 +163,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1541825809361153942, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: rollSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1798866234628465213, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: rollSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3095909072288698890, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -207,9 +215,65 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4665699018284251702, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665699018284251702, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4665699018284251702, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 135
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850615814447511011, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850615814447511011, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 4850615814447511011, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -135
+      objectReference: {fileID: 0}
+    - target: {fileID: 5625050009380768347, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: rollSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6488471324854770276, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
       propertyPath: m_Name
       value: CubiWorld_Final
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942656636538646290, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942656636538646290, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942656636538646290, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044596399918322634, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.92387956
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044596399918322634, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.38268343
+      objectReference: {fileID: 0}
+    - target: {fileID: 8044596399918322634, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8752691896109933248, guid: 6bb1dccfd1f3ef348a3465fa2f505052, type: 3}
+      propertyPath: rollSpeed
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -233,7 +297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &140916874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,7 +359,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &335869359
 MonoBehaviour:
   m_ObjectHideFlags: 0
