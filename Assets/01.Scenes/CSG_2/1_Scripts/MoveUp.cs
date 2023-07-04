@@ -14,7 +14,7 @@ public class MoveUp : MonoBehaviour
     {
         yield return new WaitForSeconds(2.0f);
 
-        transform.DOMoveY(3f, 1.0f).SetEase(Ease.Unset).SetLoops(1).SetRelative();
+        transform.DOMoveY(0.35f, 1.0f).SetEase(Ease.Unset).SetLoops(1).SetRelative();
     }
 
     private void OnTriggerEnter(Collider other) 
