@@ -5,7 +5,6 @@ using UnityEngine;
 public class PopUpCubi : MonoBehaviour
 {
     Rigidbody rigid;
-
     public float jumpPower = 2.5f;
 
     private void Start() 

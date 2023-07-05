@@ -1,79 +1,68 @@
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubiDirection
-{
-    public int directionNum = -2;
-}
-
 public class CubiMove : MonoBehaviour
 {
-    CubiDirection cubiDir = new CubiDirection();
-    
-    [SerializeField] int rollSpeed = 1;
-    bool isMoving;
+    public Transform cubiDirection;
+    public Transform[] cubis;
+    public WorldCubiRay cubiRay;
+
+
+    [SerializeField] private float moveSpeed;
+    public static bool isMoving;
+
+    private void Start() 
+    {
+        moveSpeed = 0.0f;
+    }
 
     private void Update()
     {
-        CubiRolling();
+        if(isMoving) return;
+
+        StartCoroutine(cubis[0].GetComponent<CubiMove>().Roll(cubiDirection.forward));
+        StartCoroutine(cubis[1].GetComponent<CubiMove>().Roll(cubiDirection.forward));
+        StartCoroutine(cubis[2].GetComponent<CubiMove>().Roll(cubiDirection.forward));
+        StartCoroutine(cubis[3].GetComponent<CubiMove>().Roll(cubiDirection.forward));
     }
 
-    private void OnCollisionEnter(Collision other) 
+    private void OnCollisionEnter(Collision other)
     {
         if(other.collider.name == "Floor")
         {
-            this.transform.eulerAngles = Vector3.zero;
-        }
-    }
-    void RandomDirection()
-    {
-        cubiDir.directionNum = UnityEngine.Random.Range(-1, 4);
-    }
-
-    private void CubiRolling()
-    {
-        if(isMoving) return;
-
-        switch(cubiDir.directionNum)
-        {
-            case -1:
-                RollDirection(Vector3.left);
-                break;
-
-            case 0:
-                //RollDirection(Vector3.zero);
-                break;
-
-            case 1:
-                RollDirection(Vector3.forward);
-                break;
-
-            case 2:
-                RollDirection(Vector3.right);
-                break;
-
-            case 3:
-                RollDirection(Vector3.back);
-                break;
+            StartCoroutine(ChangeRot());
         }
     }
 
-    private void RollDirection(Vector3 dir)
+    IEnumerator ChangeRot()
     {
-        var anchor = this.transform.localPosition + (Vector3.down + dir) * 0.02f;
-        var axis = Vector3.Cross(Vector3.up, dir);
-        StartCoroutine(Rolling(anchor, axis));
+        yield return new WaitForSeconds(1.0f);
+
+        this.transform.eulerAngles = Vector3.zero;
+        cubiDirection.eulerAngles = Vector3.zero;
+
+        yield return new WaitForSeconds(0.5f);
+
+        cubiRay.enabled = true;
+
+        moveSpeed = 1.5f;
     }
 
-    IEnumerator Rolling(Vector3 anchor, Vector3 axis)
+    public IEnumerator Roll(Vector3 dir)
     {
         isMoving = true;
 
-        for(int i = 0; i < (90 / rollSpeed); i++)
+        float angle = 90;
+        Vector3 anchor = this.transform.localPosition + dir * (this.transform.localScale.x) + (-cubiDirection.up) * (this.transform.localScale.x);
+        Vector3 axis = Vector3.Cross(cubiDirection.up, dir);
+
+        if (angle > 0f)
         {
-            this.transform.RotateAround(anchor, axis, rollSpeed);
+            float rotateAngle = Time.deltaTime * moveSpeed;
+            if (angle < rotateAngle) rotateAngle = angle;
+            transform.RotateAround(anchor, axis, moveSpeed);
+            angle -= rotateAngle;
             yield return new WaitForSeconds(0.01f);
         }
 
