@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 169109639}
   - component: {fileID: 169109638}
   m_Layer: 5
-  m_Name: Map01
+  m_Name: Map01_Forest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 217903375}
   - component: {fileID: 217903374}
   m_Layer: 5
-  m_Name: Map03
+  m_Name: Map03_Desert
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1208,7 +1208,7 @@ GameObject:
   - component: {fileID: 464023095}
   - component: {fileID: 464023094}
   m_Layer: 5
-  m_Name: Map05
+  m_Name: Map05_City
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4008,7 +4008,7 @@ GameObject:
   - component: {fileID: 1006218775}
   - component: {fileID: 1006218774}
   m_Layer: 5
-  m_Name: Map06
+  m_Name: Map06_PlayGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4802,12 +4802,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 9a02f22290f392c408bdd6c3a7015222, type: 3}
   - {fileID: 21300000, guid: 3743332c5151fad41adb8225925bed65, type: 3}
   IconSourceList:
-  - {fileID: 21300000, guid: fd7395c26cff1fd43919d4632c141100, type: 3}
-  - {fileID: 21300000, guid: 99ec7cabe294f0f40ba2694c15fe0bee, type: 3}
-  - {fileID: 21300000, guid: d1a1a6d89187dfa4396d87615f00ae6b, type: 3}
-  - {fileID: 21300000, guid: fd7395c26cff1fd43919d4632c141100, type: 3}
-  - {fileID: 21300000, guid: 99ec7cabe294f0f40ba2694c15fe0bee, type: 3}
-  - {fileID: 21300000, guid: d1a1a6d89187dfa4396d87615f00ae6b, type: 3}
+  - {fileID: -1524528758, guid: 806cb508eda06a94490af05c38c01960, type: 3}
+  - {fileID: -636223016, guid: 806cb508eda06a94490af05c38c01960, type: 3}
+  - {fileID: -1412483525, guid: 806cb508eda06a94490af05c38c01960, type: 3}
+  - {fileID: 1202415305, guid: 806cb508eda06a94490af05c38c01960, type: 3}
+  - {fileID: 1096852406, guid: 806cb508eda06a94490af05c38c01960, type: 3}
+  - {fileID: -585881028, guid: 806cb508eda06a94490af05c38c01960, type: 3}
   MapPrefabs:
   - {fileID: 466777957695273434, guid: 72f08191b6755a44a9197ddf60aa8845, type: 3}
   - {fileID: 2266138044326778886, guid: e0157bb9974afc54686e42cd697ee11b, type: 3}
@@ -4871,7 +4871,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -635.00305, y: 0}
+  m_AnchoredPosition: {x: -634.997, y: 0}
   m_SizeDelta: {x: 2110, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294567395
@@ -5062,7 +5062,7 @@ GameObject:
   - component: {fileID: 1369888685}
   - component: {fileID: 1369888684}
   m_Layer: 5
-  m_Name: Map02
+  m_Name: Map02_Snow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5315,7 +5315,7 @@ GameObject:
   - component: {fileID: 1419471547}
   - component: {fileID: 1419471546}
   m_Layer: 5
-  m_Name: Map04
+  m_Name: Map04_Beach
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6973,8 +6973,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1879720556}
   m_HandleRect: {fileID: 1879720555}
   m_Direction: 0
-  m_Value: 1.0000045
-  m_Size: 0.39808875
+  m_Value: 0.9999986
+  m_Size: 0.39810565
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:

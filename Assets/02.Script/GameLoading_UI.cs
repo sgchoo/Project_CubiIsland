@@ -19,7 +19,6 @@ public class GameLoading_UI : MonoBehaviour
     private float currentValue;
     private float targetValue;
     private int currentText;
-    private float displayTime;
 
     // 하단 텍스트가 변경되는 시간(기본 3f)
     public float textChangeTime;
@@ -30,7 +29,6 @@ public class GameLoading_UI : MonoBehaviour
         gameObject.SetActive(true);
 
         targetValue = 3.5f;
-        displayTime = 3f;
         currentValue = LoadingSlider.value;
         currentText = 0;
     }
@@ -45,9 +43,11 @@ public class GameLoading_UI : MonoBehaviour
 
     private void ActSlider()
     {
+        // 터치했거나, 로딩시간이 10초가 지났을 경우 패널 비활성화
         if (TouchCheck_UI.isTouch == true || timer >= 10f)
         {
             gameObject.SetActive(false);
+
         }
 
         // 슬라이더 채우기
@@ -63,8 +63,7 @@ public class GameLoading_UI : MonoBehaviour
             LoadingSlider.value = currentValue;
         }
     }
-
-
+    
      private void ActText()
     {
         if (timer % textChangeTime <= 0.01f)

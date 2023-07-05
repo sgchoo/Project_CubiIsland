@@ -1132,6 +1132,8 @@ GameObject:
   - component: {fileID: 723589649}
   - component: {fileID: 723589648}
   - component: {fileID: 723589647}
+  - component: {fileID: 723589650}
+  - component: {fileID: 723589651}
   m_Layer: 5
   m_Name: PanelLoadFloor
   m_TagString: Untagged
@@ -1175,6 +1177,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8399f0853f915744ba6afd1a8ea635e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MapIcons: []
+  MapTitle: {fileID: 0}
   TouchMotion: {fileID: 536185401}
 --- !u!114 &723589648
 MonoBehaviour:
@@ -1214,6 +1218,39 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 723589645}
   m_CullTransparentMesh: 1
+--- !u!95 &723589650
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723589645}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0240b53355ab9024fbc4ed1f1433750c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!225 &723589651
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 723589645}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &837567969
 GameObject:
   m_ObjectHideFlags: 0
