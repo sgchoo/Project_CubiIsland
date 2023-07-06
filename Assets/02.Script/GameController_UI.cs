@@ -65,7 +65,7 @@ public class GameController_UI : MonoBehaviour
         // 게임 시작하면 타임 표시하기
 
         //
-        
+
     }
 
     // Update is called once per frame
@@ -85,7 +85,7 @@ public class GameController_UI : MonoBehaviour
         // XRSettings.enabled = true;
 
         int len = arrayImageTarget.transform.childCount;
-        for(int idx = 0; idx < len; idx++)
+        for (int idx = 0; idx < len; idx++)
         {
             Transform target = arrayImageTarget.transform.GetChild(idx);
             if (target.name == UIController2_UI.FinalMap.name)
@@ -98,15 +98,15 @@ public class GameController_UI : MonoBehaviour
         {
             Debug.Log("Error!!");
         }
-        
+
     }
 
-    
+
 
     public void FocusedImage()
     {
         Debug.Log(imageTarget.GetComponentInParent<ObserverBehaviour>().TargetName + ",  " + UIController2_UI.FinalMap.name);
-        if(imageTarget.GetComponentInParent<ObserverBehaviour>().TargetName == UIController2_UI.FinalMap.name)
+        if (imageTarget.GetComponentInParent<ObserverBehaviour>().TargetName == UIController2_UI.FinalMap.name)
         {
             Invoke("DelayLoadScene", 1f);
             
@@ -115,7 +115,7 @@ public class GameController_UI : MonoBehaviour
             // // cube.gameObject.SetActive(true);
             // isDetect = true;
         }
-        
+
     }
 
     private void DelayLoadScene()
