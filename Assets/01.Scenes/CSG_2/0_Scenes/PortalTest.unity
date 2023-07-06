@@ -287,11 +287,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827f18e7047ce1e4aa33c13b935a9f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubisTr:
-  - {fileID: 4850615814494763359}
-  - {fileID: 6942656636577637294}
-  - {fileID: 8044596399948930934}
-  - {fileID: 4665699018245650058}
 --- !u!1 &335869358
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,11 +784,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827f18e7047ce1e4aa33c13b935a9f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubisTr:
-  - {fileID: 4850615814494763359}
-  - {fileID: 6942656636577637294}
-  - {fileID: 8044596399948930934}
-  - {fileID: 4665699018245650058}
 --- !u!1773428102 &761443865
 ParentConstraint:
   m_ObjectHideFlags: 0
@@ -1116,11 +1106,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827f18e7047ce1e4aa33c13b935a9f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubisTr:
-  - {fileID: 4850615814494763359}
-  - {fileID: 6942656636577637294}
-  - {fileID: 8044596399948930934}
-  - {fileID: 4665699018245650058}
 --- !u!1 &1386773531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,11 +1246,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827f18e7047ce1e4aa33c13b935a9f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubisTr:
-  - {fileID: 4850615814494763359}
-  - {fileID: 6942656636577637294}
-  - {fileID: 8044596399948930934}
-  - {fileID: 4665699018245650058}
 --- !u!1 &2023604352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1573,7 @@ MonoBehaviour:
   - {fileID: 4665699018245650058}
   cubiRay: {fileID: 761443864}
   moveSpeed: 3
+  isMoving: 0
 --- !u!223 &1546824424321446395
 Canvas:
   m_ObjectHideFlags: 0
@@ -1640,6 +1621,7 @@ MonoBehaviour:
   - {fileID: 4665699018245650058}
   cubiRay: {fileID: 206244036}
   moveSpeed: 3
+  isMoving: 0
 --- !u!33 &1843911638184024390
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -2151,6 +2133,7 @@ MonoBehaviour:
   - {fileID: 4665699018245650058}
   cubiRay: {fileID: 1519798664}
   moveSpeed: 3
+  isMoving: 0
 --- !u!114 &5647189860779628967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2959,6 +2942,7 @@ MonoBehaviour:
   - {fileID: 4665699018245650058}
   cubiRay: {fileID: 1231765908}
   moveSpeed: 3
+  isMoving: 0
 --- !u!33 &8770339136943503380
 MeshFilter:
   m_ObjectHideFlags: 0

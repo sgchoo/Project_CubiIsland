@@ -18,7 +18,7 @@ public class CubiMove : MonoBehaviour
 
 
     [SerializeField] private float moveSpeed;
-    public static bool isMoving;
+    public bool isMoving;
 
     private void Start() 
     {
@@ -29,6 +29,11 @@ public class CubiMove : MonoBehaviour
     private void Update()
     {
         if(isMoving) return;
+
+        StartCoroutine(cubis[0].GetComponent<CubiMove>().Roll(direction, cubiDirections[0].localPosition));
+        StartCoroutine(cubis[1].GetComponent<CubiMove>().Roll(direction, cubiDirections[1].localPosition));
+        StartCoroutine(cubis[2].GetComponent<CubiMove>().Roll(direction, cubiDirections[2].localPosition));
+        StartCoroutine(cubis[3].GetComponent<CubiMove>().Roll(direction, cubiDirections[3].localPosition));
 
         switch(ran.random)
         {
@@ -45,11 +50,6 @@ public class CubiMove : MonoBehaviour
                 direction = Vector3.back;
                 break;
         }
-
-        StartCoroutine(cubis[0].GetComponent<CubiMove>().Roll(direction, cubiDirections[0].localPosition));
-        StartCoroutine(cubis[1].GetComponent<CubiMove>().Roll(direction, cubiDirections[1].localPosition));
-        StartCoroutine(cubis[2].GetComponent<CubiMove>().Roll(direction, cubiDirections[2].localPosition));
-        StartCoroutine(cubis[3].GetComponent<CubiMove>().Roll(direction, cubiDirections[3].localPosition));
     }
 
     private void RandomValue()
@@ -82,7 +82,7 @@ public class CubiMove : MonoBehaviour
 
         cubiRay.enabled = true;
 
-        moveSpeed = 3f;
+        moveSpeed = 1.5f;
     }
 
     public IEnumerator Roll(Vector3 dir, Vector3 position)
@@ -103,8 +103,6 @@ public class CubiMove : MonoBehaviour
         }
 
         isMoving = false;
-
-        yield return new WaitForSeconds(1.5f);
     }
 
     
