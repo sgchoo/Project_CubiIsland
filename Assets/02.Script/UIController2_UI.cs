@@ -93,7 +93,8 @@ public class UIController2_UI : MonoBehaviour
 
     public void btnPlaza() {        SceneManager.LoadScene("04.PlazaScene"); }
 
-    public void btnStart() {        SceneManager.LoadScene("08.FindKeyScene"); }
+    // public void btnStart() {        SceneManager.LoadScene("08.FindKeyScene"); }
+    public void btnStart() {        SceneManager.LoadScene("07_2.LoadScene"); }
 
     public void btnGameRoad() {     SceneManager.LoadScene("09.FindRoadScene"); }
 

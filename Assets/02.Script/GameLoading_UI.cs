@@ -47,7 +47,6 @@ public class GameLoading_UI : MonoBehaviour
         if (TouchCheck_UI.isTouch == true || timer >= 10f)
         {
             gameObject.SetActive(false);
-
         }
 
         // 슬라이더 채우기

@@ -36,7 +36,8 @@ public class PanelLoading_UI : MonoBehaviour
         ActAR = false;
 
         // 현재씬 이름 가져오기
-        if (SceneManager.GetActiveScene().name == "08.FindKeyScene")
+        // if (SceneManager.GetActiveScene().name == "08.FindKeyScene")
+        if (SceneManager.GetActiveScene().name == "07_2.LoadScene")
         {
             // 교체할 맵 아이콘 받아오기
             MapIcon = GameObject.Find("ImageIcon").GetComponent<Image>();
