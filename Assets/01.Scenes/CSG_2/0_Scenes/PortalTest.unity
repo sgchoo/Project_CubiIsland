@@ -287,7 +287,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827f18e7047ce1e4aa33c13b935a9f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubiTr: {fileID: 6942656636577637294}
+  cubisTr:
+  - {fileID: 4850615814494763359}
+  - {fileID: 6942656636577637294}
+  - {fileID: 8044596399948930934}
+  - {fileID: 4665699018245650058}
 --- !u!1 &335869358
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,7 +789,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827f18e7047ce1e4aa33c13b935a9f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubiTr: {fileID: 4850615814494763359}
+  cubisTr:
+  - {fileID: 4850615814494763359}
+  - {fileID: 6942656636577637294}
+  - {fileID: 8044596399948930934}
+  - {fileID: 4665699018245650058}
 --- !u!1773428102 &761443865
 ParentConstraint:
   m_ObjectHideFlags: 0
@@ -1108,7 +1116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827f18e7047ce1e4aa33c13b935a9f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubiTr: {fileID: 8044596399948930934}
+  cubisTr:
+  - {fileID: 4850615814494763359}
+  - {fileID: 6942656636577637294}
+  - {fileID: 8044596399948930934}
+  - {fileID: 4665699018245650058}
 --- !u!1 &1386773531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1249,7 +1261,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 827f18e7047ce1e4aa33c13b935a9f13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubiTr: {fileID: 4665699018245650058}
+  cubisTr:
+  - {fileID: 4850615814494763359}
+  - {fileID: 6942656636577637294}
+  - {fileID: 8044596399948930934}
+  - {fileID: 4665699018245650058}
 --- !u!1 &2023604352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,7 +1581,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe82afc84953804381662040c545330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubiDirection: {fileID: 761443863}
+  cubiDirections:
+  - {fileID: 761443863}
+  - {fileID: 206244034}
+  - {fileID: 1231765906}
+  - {fileID: 1519798662}
   cubis:
   - {fileID: 4850615814494763359}
   - {fileID: 6942656636577637294}
@@ -1608,7 +1628,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe82afc84953804381662040c545330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubiDirection: {fileID: 206244034}
+  cubiDirections:
+  - {fileID: 761443863}
+  - {fileID: 206244034}
+  - {fileID: 1231765906}
+  - {fileID: 1519798662}
   cubis:
   - {fileID: 4850615814494763359}
   - {fileID: 6942656636577637294}
@@ -2033,7 +2057,7 @@ Transform:
   m_GameObject: {fileID: 497796460248836920}
   m_LocalRotation: {x: -0, y: 0.92387956, z: -0, w: 0.38268343}
   m_LocalPosition: {x: 0.0434, y: -0.153, z: -0.044}
-  m_LocalScale: {x: 0.039999995, y: 0.04, z: 0.039999995}
+  m_LocalScale: {x: 0.039999988, y: 0.04, z: 0.039999988}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2023604353}
@@ -2048,7 +2072,7 @@ Transform:
   m_GameObject: {fileID: 834726294755984315}
   m_LocalRotation: {x: -0, y: -0.92387956, z: -0, w: 0.38268343}
   m_LocalPosition: {x: -0.0418, y: -0.153, z: -0.0455}
-  m_LocalScale: {x: 0.039999995, y: 0.04, z: 0.039999995}
+  m_LocalScale: {x: 0.039999988, y: 0.04, z: 0.039999988}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2023604353}
@@ -2115,7 +2139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe82afc84953804381662040c545330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubiDirection: {fileID: 1519798662}
+  cubiDirections:
+  - {fileID: 761443863}
+  - {fileID: 206244034}
+  - {fileID: 1231765906}
+  - {fileID: 1519798662}
   cubis:
   - {fileID: 4850615814494763359}
   - {fileID: 6942656636577637294}
@@ -2919,7 +2947,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8fe82afc84953804381662040c545330, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cubiDirection: {fileID: 1231765906}
+  cubiDirections:
+  - {fileID: 761443863}
+  - {fileID: 206244034}
+  - {fileID: 1231765906}
+  - {fileID: 1519798662}
   cubis:
   - {fileID: 4850615814494763359}
   - {fileID: 6942656636577637294}
