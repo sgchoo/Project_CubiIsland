@@ -57,18 +57,10 @@ public class GameController_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (PanelLoading_UI.ActAR = true)
-        {
-            ActImageTarget();
-        }
+        
     }
 
-    private void ActImageTarget()
-    {
-        // 이미지 타겟 켜기
-        // XROrigin.SetActive(true);
-        // XRSettings.enabled = true;
-    }
+    
 
     private void FindKeyControl()
     {
