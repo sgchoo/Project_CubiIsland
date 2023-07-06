@@ -9,6 +9,12 @@ EditorBuildSettings:
     path: Assets/01.Scenes/CSG/TestSceneCSG.unity
     guid: dbf85cbb97e8dd84c8104589d44829c7
   - enabled: 0
+    path: Assets/01.Scenes/LJM/PortalTest.unity
+    guid: bb0eaf62d74555d4394df57d2558b346
+  - enabled: 0
+    path: Assets/01.Scenes/LJM/TestScene.unity
+    guid: 58a0b446545392042a001f1e69390f4f
+  - enabled: 0
     path: Assets/01.Scenes/LJM/Trash/TestSceneCSG_LJM.unity
     guid: d9cb4919da6a54c4d8010eae24f13199
   - enabled: 0
