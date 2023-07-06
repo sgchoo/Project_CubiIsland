@@ -56,7 +56,9 @@ public class PlaceOnPlane : MonoBehaviour
 
             if ((spawnedObject == null))
             {
-                spawnedObject = Instantiate(m_PlacedPrefab, hitPose.position, hitPose.rotation);
+                spawnedObject = Instantiate(m_PlacedPrefab);
+                spawnedObject.transform.position = hitPose.position;
+                spawnedObject.transform.rotation = Quaternion.identity;
                 DontDestroyOnLoad(spawnedObject);
                 
                 planeManager.enabled = false;
