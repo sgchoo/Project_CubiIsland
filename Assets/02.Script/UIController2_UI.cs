@@ -64,6 +64,11 @@ public class UIController2_UI : MonoBehaviour
         Map = FinalMap.name;
     }
 
+    public bool PlayerAssetCheck()
+    {
+        return FinalChar != null && FinalMap != null;
+    }
+
     private void DefaultSet()
     {
         if (FinalChar != null || FinalMap != null)
@@ -77,8 +82,6 @@ public class UIController2_UI : MonoBehaviour
             FinalMap = Resources.Load<GameObject>("Map01_Forest");
             FinalChar = Resources.Load<GameObject>("Char_PolarBear");
         }
-
-        
     }
 
     //타이틀로 이동

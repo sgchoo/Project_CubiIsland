@@ -65,7 +65,7 @@ public class PlaceOnPlane : MonoBehaviour
                 {
                     plane.gameObject.SetActive(false);
                 }
-                Invoke("DelayLoadScene", 3.5f);
+                //Invoke("DelayLoadScene", 3.5f);
             }
             else
             {
