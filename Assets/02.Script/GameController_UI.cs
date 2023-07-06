@@ -108,13 +108,19 @@ public class GameController_UI : MonoBehaviour
         Debug.Log(imageTarget.GetComponentInParent<ObserverBehaviour>().TargetName + ",  " + UIController2_UI.FinalMap.name);
         if (imageTarget.GetComponentInParent<ObserverBehaviour>().TargetName == UIController2_UI.FinalMap.name)
         {
-            SceneManager.LoadScene("08.FindKeyScene");
+            Invoke("DelayLoadScene", 1f);
+            
             // imageTarget.SetActive(false);
             // arrayImageTarget.SetActive(false);
             // // cube.gameObject.SetActive(true);
             // isDetect = true;
         }
 
+    }
+
+    private void DelayLoadScene()
+    {
+        SceneManager.LoadScene("08.FindKeyScene");
     }
 
     // public void FocusedMultiTarget()
