@@ -98,8 +98,20 @@ public class OptionManager_LYN : MonoBehaviour
     // 볼륨 설정(슬라이더) ----
     public void SetVolume(Slider slider)
     {
-        if(slider.name == "SFXSlider")       SFXSliderVol = slider.value;
-        else if (slider.name == "BGMSlider") BGMSliderVol = slider.value;
+        if(slider.name == "SFXSlider")       
+        {
+            SFXSliderVol = slider.value;
+        }
+        else if (slider.name == "BGMSlider") 
+        {
+            BGMSliderVol = slider.value;
+        }
+        if(!isSFXPlaying)
+        {
+            isSFXPlaying = true;
+            SFXTouch.PlayOneShot(SFXTouchClip);
+            StartCoroutine(WaitForClipEnd(SFXTouchClip.length));
+        }
     }
 
     // 볼륨 설정(토글) ----
@@ -108,12 +120,20 @@ public class OptionManager_LYN : MonoBehaviour
         if(toggle.name == "SFXToggle")       
         {
             SFXMute = toggle.isOn;
-            SFXTouch.PlayOneShot(SFXTouchClip);
         }
         else if (toggle.name == "BGMToggle")
         {
             BGMMute = toggle.isOn;
         } 
+
+        SFXTouch.PlayOneShot(SFXTouchClip);
+ 
+    }
+
+    private IEnumerator WaitForClipEnd(float clipLength)
+    {
+        yield return new WaitForSeconds(clipLength);
+        isSFXPlaying = false;
     }
 
     // 볼륨 가져오기(SFX)
@@ -205,5 +225,12 @@ public class OptionManager_LYN : MonoBehaviour
         //SFXOnOff();
         // Debug.Log("SFX Mute : " + SFXMute + " || value : " + SFXSliderVol +
         //           "\nBGM Mute : " + BGMMute + " || value : " + BGMSliderVol);
+    }
+
+    public void GoLink()
+    {
+        // ImageDownloadManager downloadManager = new ImageDownloadManager();
+        // downloadManager.DownloadImage();
+        new ImageDownloadManager().DownloadObject();
     }
 }
