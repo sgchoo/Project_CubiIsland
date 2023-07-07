@@ -33,13 +33,15 @@ public class PlayAssetManager : MonoBehaviour
             currentCharacter.parent = character;
             currentCharacter.position = character.position;
             currentCharacter.localRotation = Quaternion.Euler(0,0,0);
-            currentCharacter.localScale = new Vector3(0.5f,0.5f,0.5f);
+            currentCharacter.localScale = new Vector3(0.4f,0.4f,0.4f);
+            currentCharacter.gameObject.layer = 29;
 
             Transform currentWorld = Instantiate(GameData.Instance.currentWorld).transform;
             currentWorld.parent = world;
             currentWorld.position = world.position;
             currentWorld.localRotation = Quaternion.Euler(0,0,0);
-            currentWorld.localScale = new Vector3(0.45f,0.45f,0.45f);
+            currentWorld.localScale = new Vector3(0.08f,0.08f,0.08f);
+            currentWorld.gameObject.layer = 29;
             Debug.Log("인식완료");
         }    
     }
