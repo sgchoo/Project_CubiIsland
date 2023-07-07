@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class ranValue
 {
@@ -9,116 +10,109 @@ public class ranValue
 
 public class CubiMove : MonoBehaviour
 {
-    public Transform[] cubiDirections;
-    public Transform[] cubis;
-    public WorldCubiRay cubiRay;
-
-    ranValue ran = new ranValue();
-    Vector3 direction;
-
-
-    [SerializeField] private float moveSpeed;
-    public bool isMoving;
+    public Transform cubiDirection;
+    ranValue ranNum = new ranValue();
+    private bool isMoving;
+    private int hAngle;
+    private int vAngle;
+    private int rot;
+    private float curTime;
 
     private void Start() 
     {
-        moveSpeed = 0.0f;
-        Invoke("RandomValue", 5.0f);
+        RandomValue();
+
+        DOTween.Init();
+        DOTween.SetTweensCapacity(50000, 50);
     }
 
-    private void Update()
+    private void Update() 
     {
-        if(isMoving) return;
+        //DetectFall();
+        if(!isMoving) return;
 
-        StartCoroutine(cubis[0].GetComponent<CubiMove>().Roll(direction, cubiDirections[0].localPosition));
-        StartCoroutine(cubis[1].GetComponent<CubiMove>().Roll(direction, cubiDirections[1].localPosition));
-        StartCoroutine(cubis[2].GetComponent<CubiMove>().Roll(direction, cubiDirections[2].localPosition));
-        StartCoroutine(cubis[3].GetComponent<CubiMove>().Roll(direction, cubiDirections[3].localPosition));
+        Roll(cubiDirection.forward);
 
-        switch(ran.random)
+        curTime += Time.deltaTime;
+        if(curTime > 0.9f)
         {
-            case 0:
-                direction = Vector3.forward;
-                break;
-            case 1:
-                direction = Vector3.right;
-                break;
-            case 2:
-                direction = Vector3.left;
-                break;
-            case 3:
-                direction = Vector3.back;
-                break;
+            if(ranNum.random == 0) hAngle += 90;
+            else if(ranNum.random == 1) hAngle -= 90;
+            else if(ranNum.random == 2) hAngle += 90;
+            else if(ranNum.random == 3) hAngle -= 90;
+            curTime = 0;
         }
+    }
+
+    private void Roll(Vector3 dir)
+    {
+        transform.DOMove(dir * this.transform.localScale.x, 2.0f).SetRelative().SetEase(Ease.Unset).SetLoops(1);
+
+
+        transform.DOLocalRotate(new Vector3(hAngle, 0, this.transform.localRotation.z), 1.0f).SetEase(Ease.Unset).SetLoops(1);
+        
+        
+        cubiDirection.localRotation = Quaternion.Euler(0, rot, 0);
     }
 
     private void RandomValue()
     {
-        ran.random = UnityEngine.Random.Range(0, 4);
+        ranNum.random = UnityEngine.Random.Range(0, 4);
+        
+        switch(ranNum.random)
+        {
+            case 0:
+                rot += 90;
+                break;
+
+            case 1:
+                rot -= 90;
+                break;
+
+            case 2:
+                rot += 90;
+                break;
+
+            case 3:
+                rot -= 90;
+                break;
+        }
 
         Invoke("RandomValue", 5.0f);
     }
 
-
     private void OnCollisionEnter(Collision other)
     {
-        if(other.collider.name == "Floor")
+        if(other.transform.name == "Floor")
         {
             StartCoroutine(ChangeRot());
         }
     }
 
-    IEnumerator ChangeRot()
+    public IEnumerator ChangeRot()
     {
         yield return new WaitForSeconds(1.0f);
 
         this.transform.eulerAngles = Vector3.zero;
-        cubiDirections[0].eulerAngles = Vector3.zero;
-        cubiDirections[1].eulerAngles = Vector3.zero;
-        cubiDirections[2].eulerAngles = Vector3.zero;
-        cubiDirections[3].eulerAngles = Vector3.zero;
+        cubiDirection.eulerAngles = Vector3.zero;
 
         yield return new WaitForSeconds(0.5f);
 
-        cubiRay.enabled = true;
-
-        moveSpeed = 1.5f;
-    }
-
-    public IEnumerator Roll(Vector3 dir, Vector3 position)
-    {
         isMoving = true;
-
-        float angle = 90;
-        Vector3 anchor = position + dir * (this.transform.localScale.x) + Vector3.down * (this.transform.localScale.x);
-        Vector3 axis = Vector3.Cross(Vector3.up, dir);
-
-        if (angle > 0f)
-        {
-            float rotateAngle = Time.deltaTime * moveSpeed;
-            if (angle < rotateAngle) rotateAngle = angle;
-            transform.RotateAround(anchor, axis, moveSpeed);
-            angle -= rotateAngle;
-            yield return new WaitForSeconds(0.01f);
-        }
-
-        isMoving = false;
     }
 
-    
     private void DetectFall()
     {
         RaycastHit hitInfo;
 
-        Ray ray = new Ray(this.transform.position + (direction * this.transform.localScale.x * 2), Vector3.down);
+        Ray ray = new Ray(this.transform.position + (cubiDirection.forward * this.transform.localScale.x * 2), Vector3.down);
 
-        if(Physics.Raycast(ray, out hitInfo, 0.05f))
+        if(Physics.Raycast(ray, out hitInfo))
         {
             if(hitInfo.transform.name != "Floor")
             {
-                if(isMoving) return;
-
-                ran.random = UnityEngine.Random.Range(0, 4);
+                if(!isMoving) return;
+                cubiDirection.localRotation = Quaternion.Euler(0, -rot, 0);
             }
         }
     }
