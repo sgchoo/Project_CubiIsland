@@ -45,11 +45,11 @@ public class PortalTouchBehaviour : MonoBehaviour
             {
                 if(hit.collider.name == character.name)
                 {
-                    SceneManager.LoadScene("05.ChangeCharScene");
+                    SceneManager.LoadScene(KeyStore.characterSelectScene);
                 }
                 else if (hit.collider.name == world.name)
                 {
-                    SceneManager.LoadScene("06.ChangeMapScene");
+                    SceneManager.LoadScene(KeyStore.worldSelectScene);
                 }
             }
         }    

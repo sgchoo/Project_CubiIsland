@@ -1145,8 +1145,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3998435199983456131, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
-        m_TargetAssemblyTypeName: UIController2_UI, Assembly-CSharp
+      - m_Target: {fileID: 8620966083692781069, guid: f4261987559efeb469e21ded97ba481b, type: 3}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
         m_MethodName: btnPlaza
         m_Mode: 1
         m_Arguments:
@@ -3784,9 +3784,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3998435199983456131, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
-        m_TargetAssemblyTypeName: UIController2_UI, Assembly-CSharp
-        m_MethodName: btnOption
+      - m_Target: {fileID: 8620966083692781069, guid: f4261987559efeb469e21ded97ba481b, type: 3}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: btnOptionLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4895,7 +4895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -635.0016, y: 0}
+  m_AnchoredPosition: {x: -634.9966, y: 0}
   m_SizeDelta: {x: 2110, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294567395
@@ -7010,8 +7010,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1879720556}
   m_HandleRect: {fileID: 1879720555}
   m_Direction: 0
-  m_Value: 0.9999986
-  m_Size: 0.39810294
+  m_Value: 1.0000007
+  m_Size: 0.3980946
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
