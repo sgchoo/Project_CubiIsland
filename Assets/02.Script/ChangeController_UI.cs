@@ -119,8 +119,7 @@ public class ChangeController_UI : MonoBehaviour
     {
         //EventSystem 클래스 내 현재 선택된(클릭한) 오브젝트를 가져와서 변수에 저장한다.
         selectedObject = EventSystem.current.currentSelectedGameObject;
+        //저장된 변수의 이름을 TMP_Text에 출력한다.
         tmpText.text = "" + selectedObject.name;
-
-        Debug.Log(selectedObject.name);
     }
 }
