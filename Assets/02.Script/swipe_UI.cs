@@ -83,8 +83,6 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             }
 
         }
-
-        
     }
     // //버튼 색상 바꾸기
     //     public void WhichBtnClicked(Button btn)
