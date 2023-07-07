@@ -19,7 +19,17 @@ public class GameData : MonoBehaviour
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }    
+        else 
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnDisable() 
+    {
+        
     }
 
     public GameObject currentCharacter;
