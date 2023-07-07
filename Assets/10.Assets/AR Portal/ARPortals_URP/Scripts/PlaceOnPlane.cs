@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -66,12 +67,18 @@ public class PlaceOnPlane : MonoBehaviour
                 {
                     plane.gameObject.SetActive(false);
                 }
+                //Invoke("DelayLoadScene", 3.5f);
             }
             else
             {
                 // Destroy(spawnedObject);
             }
         }
+    }
+
+    private void DelayLoadScene()
+    {
+        SceneManager.LoadScene("04.PlazaScene");
     }
 
     bool TryGetTouchPosition(out Vector2 touchPosition)
