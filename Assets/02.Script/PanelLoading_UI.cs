@@ -9,13 +9,16 @@ using UnityEngine.XR;
 
 public class PanelLoading_UI : MonoBehaviour
 {
+    // 7-2 LoadScene 인식 타겟 이미지 아이콘
     [Header("맵 아이콘, 직접연결")]
     public Sprite[] MapIcons;
 
+    // 7-2 LoadScene 인식 타겟 월드 타이틀
     [Header("맵 이름, 직접연결")]
     public TextMeshProUGUI MapTitle;
 
-    public static bool ActAR;
+    // AR On/Off를 위한 변수
+    public static bool ActAR = false;
 
     // 터치 모션 활성화
     public GameObject TouchMotion;
@@ -26,9 +29,15 @@ public class PanelLoading_UI : MonoBehaviour
     // 알파값 변하는 속도
     private float fadeDuration;
 
+    // 알파 값을 변화시켜 fadeout시키기위한 변수
     private CanvasGroup DisappearObject;
+
+    // ??
     private Image MapIcon;
 
+    private bool fadeOut = false;
+
+    
     void Start()
     {
         fadeDuration = 1f;
@@ -37,18 +46,18 @@ public class PanelLoading_UI : MonoBehaviour
 
         // 현재씬 이름 가져오기
         // if (SceneManager.GetActiveScene().name == "08.FindKeyScene")
-        if (SceneManager.GetActiveScene().name == "07_2.LoadScene")
-        {
-            // 교체할 맵 아이콘 받아오기
-            MapIcon = GameObject.Find("ImageIcon").GetComponent<Image>();
-            SetMapIcon();
-        }
+
+        // if (SceneManager.GetActiveScene().name == "07_2.LoadScene")
+        // {
+        //     // 교체할 맵 아이콘 받아오기
+        //     MapIcon = GameObject.Find("ImageIcon").GetComponent<Image>();
+        //     SetMapIcon();
+        // }
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
         ActTouch();
     }
 
@@ -56,16 +65,19 @@ public class PanelLoading_UI : MonoBehaviour
     private void ActTouch()
     {
         // 터치모션 2초 뒤 켜기
-        if (timer >= 2f)
+        if (!fadeOut && timer <= 2f)
         {
-            TouchMotion.SetActive(true);
-            // 터치하면
-            if (TouchCheck_UI.isTouch == true)
-            {
-                StartCoroutine(FadeOutIcon());
-            }
+            timer += Time.deltaTime;
+            return;
         }
+        fadeOut = true;
         // 터치하면 이미지 서서히 사라지고 AR카메라 활성화 하기
+        TouchMotion.SetActive(true);
+        if (TouchManager.isTouch)
+        {
+            StartCoroutine(FadeOutIcon());
+        }
+        
     }
     private IEnumerator FadeOutIcon()
     {
@@ -83,41 +95,40 @@ public class PanelLoading_UI : MonoBehaviour
             yield return null;
         }
         
-        
         // Transition 효과 종료 후, 패널 창 완전히 비활성화
         gameObject.SetActive(false);
         ActAR = true;
     }
     
 
-    private void SetMapIcon()
-    {
-        if (UIController2_UI.FinalMap.name == "Map01_Forest")
-        {
-            // 선택한 맵의 아이콘 출력
-            MapIcon.sprite = MapIcons[0];
+    // private void SetMapIcon()
+    // {
+    //     if (UIController2_UI.FinalMap.name == "Map01_Forest")
+    //     {
+    //         // 선택한 맵의 아이콘 출력
+    //         MapIcon.sprite = MapIcons[0];
 
-            // 선택한 맵의 이름 출력
-            MapTitle.text = "FOREST";
-        }
+    //         // 선택한 맵의 이름 출력
+    //         MapTitle.text = "FOREST";
+    //     }
 
-        if (UIController2_UI.FinalMap.name == "Map02_Snow")
-        {
-            // 선택한 맵의 아이콘 출력
-            MapIcon.sprite = MapIcons[1];
+    //     if (UIController2_UI.FinalMap.name == "Map02_Snow")
+    //     {
+    //         // 선택한 맵의 아이콘 출력
+    //         MapIcon.sprite = MapIcons[1];
 
-            // 선택한 맵의 이름 출력
-            MapTitle.text = "SNOW";
-        }
+    //         // 선택한 맵의 이름 출력
+    //         MapTitle.text = "SNOW";
+    //     }
 
-        if (UIController2_UI.FinalMap.name == "Map03_Desert")
-        {
-            // 선택한 맵의 아이콘 출력
-            MapIcon.sprite = MapIcons[2];
+    //     if (UIController2_UI.FinalMap.name == "Map03_Desert")
+    //     {
+    //         // 선택한 맵의 아이콘 출력
+    //         MapIcon.sprite = MapIcons[2];
 
-            // 선택한 맵의 이름 출력
-            MapTitle.text = "DESERT";
-        }
-    }
+    //         // 선택한 맵의 이름 출력
+    //         MapTitle.text = "DESERT";
+    //     }
+    // }
 
 }

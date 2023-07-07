@@ -7,6 +7,7 @@ public static class KeyStore
     public const string titleScene = "01.TitleScene";
     public const string lobbyScene = "02.LobbyScene";
     public const string createPlazaScene = "03.CreatePlazaScene";
+    public const string plazaScene = "04.PlazaScene";
     public const string startCheckScene = "07.StartCheckScene";
     public const string optionScene = "99.OptionScene";
 

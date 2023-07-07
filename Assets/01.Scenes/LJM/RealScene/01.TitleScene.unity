@@ -869,6 +869,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 985542068}
+  - component: {fileID: 985542070}
   - component: {fileID: 985542069}
   m_Layer: 0
   m_Name: SFX
@@ -902,7 +903,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: abfb5cf0710f2b04fb32ea16f08deafa, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -988,6 +989,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &985542070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985542067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 706e3508a5dbc0f45b48556cd63927f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  touchSound: {fileID: 8300000, guid: abfb5cf0710f2b04fb32ea16f08deafa, type: 3}
 --- !u!1 &1014680470
 GameObject:
   m_ObjectHideFlags: 0
@@ -1460,6 +1474,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1608085313}
   - component: {fileID: 1608085312}
+  - component: {fileID: 1608085314}
   m_Layer: 0
   m_Name: GameDataController
   m_TagString: Untagged
@@ -1500,6 +1515,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1608085314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608085311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed4e7d820ef50e8408ac0f65c610d5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxSoundManager: {fileID: 985542070}
 --- !u!1 &2023664906
 GameObject:
   m_ObjectHideFlags: 0
