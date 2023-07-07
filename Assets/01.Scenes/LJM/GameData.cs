@@ -34,5 +34,7 @@ public class GameData : MonoBehaviour
 
     public GameObject currentCharacter;
     public GameObject currentWorld;
+    
+    public string currentGameScene;
 
 }
