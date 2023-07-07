@@ -65,5 +65,9 @@ public class GameData : MonoBehaviour
         sfxAudio.volume = sfx.mute ? 0 : sfx.volume / 100f;
     }
     
-
+    public bool CheckAssets()
+    {
+        Debug.Log(currentCharacter != null && currentWorld != null);
+        return currentCharacter != null && currentWorld != null;
+    }
 }
