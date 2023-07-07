@@ -6,6 +6,7 @@ public class PlayAssetManager : MonoBehaviour
 {
     public Transform character;
     public Transform world;
+    public int targetLayer;
 
     public static bool isSet = false;
 
@@ -16,6 +17,7 @@ public class PlayAssetManager : MonoBehaviour
     private void Start() 
     {
         isSet = false;    
+        targetLayer = 29;
     }
 
     
@@ -44,7 +46,7 @@ public class PlayAssetManager : MonoBehaviour
             for(int idx = 0; idx < count; idx++)
             {
                 Debug.Log("D : " + target.GetChild(idx).name + " 삭제");
-                Destroy(target.GetChild(idx));
+                Destroy(target.GetChild(idx).gameObject);
             }
         }
     }
@@ -52,7 +54,7 @@ public class PlayAssetManager : MonoBehaviour
     public void SetAsset()
     {
         Debug.Log("D : " + "에셋설정시작");
-        if (UIController2_UI.instance.PlayerAssetCheck())
+        if (GameData.Instance.CheckAssets())
         {
             Debug.Log("D : " + "실행됨" + GameData.Instance.currentCharacter.name);
             isSet = true;
@@ -71,7 +73,7 @@ public class PlayAssetManager : MonoBehaviour
             // currentWorld.localScale = new Vector3(0.08f,0.08f,0.08f);
             // currentWorld.gameObject.layer = 29;
             Settnigs(currentWorld, world, new Vector3(0.08f,0.08f,0.08f));
-
+            targetLayer = 0;
         }    
     }
 
@@ -81,6 +83,6 @@ public class PlayAssetManager : MonoBehaviour
         obj.position = parent.position;
         obj.localRotation = Quaternion.Euler(0,0,0);
         obj.localScale = localScale;
-        obj.gameObject.layer = 29;
+        obj.gameObject.layer = targetLayer;
     }
 }

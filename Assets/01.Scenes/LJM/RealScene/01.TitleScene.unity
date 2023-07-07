@@ -1495,7 +1495,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCharacter: {fileID: 7958428679398752027, guid: 1486112fe7401a64a80c6bf9708cce85, type: 3}
-  currentWorld: {fileID: 9192816081977421549, guid: b679ffd1b0466b244bbe74ea3d436bca, type: 3}
+  currentWorld: {fileID: 8386837563681720637, guid: b679ffd1b0466b244bbe74ea3d436bca, type: 3}
   bgmAudio: {fileID: 1178895585}
   sfxAudio: {fileID: 985542069}
 --- !u!4 &1608085313
