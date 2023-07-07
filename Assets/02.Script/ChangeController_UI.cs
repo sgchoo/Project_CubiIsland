@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using TMPro;
 
 public class ChangeController_UI : MonoBehaviour
 
@@ -12,7 +15,9 @@ public class ChangeController_UI : MonoBehaviour
 
     [Header("선택 된 캐릭터")]
     public static GameObject CurrentChar;
-
+    private GameObject selectedObject;      // 선택한 캐릭터 오브젝트 담을 변수
+    [Header("선택 된 캐릭터 이름")]
+    public TMP_Text tmpText;                // 선택한 캐릭터 오브젝트 이름 Text 출력변수
 
     [Header("캐릭터 리스트, 직접 연결")]
     public GameObject[] Contents;
@@ -36,6 +41,8 @@ public class ChangeController_UI : MonoBehaviour
         {
             Debug.Log("Update : UI프리팹 소실");
         }
+
+        ChooseCharacter();
     }
 
 
@@ -105,5 +112,14 @@ public class ChangeController_UI : MonoBehaviour
         GameObject newObject = Instantiate(CharPrefabs[selectedIndex]) as GameObject;
         newObject.transform.SetParent(Char_05.transform, false);
         CurrentChar = newObject;
+    }
+
+    //캐릭터 선택 시 오브젝트 이름 가져오는 함수
+    private void ChooseCharacter()
+    {
+        //EventSystem 클래스 내 현재 선택된(클릭한) 오브젝트를 가져와서 변수에 저장한다.
+        selectedObject = EventSystem.current.currentSelectedGameObject;
+        //저장된 변수의 이름을 TMP_Text에 출력한다.
+        tmpText.text = "" + selectedObject.name;
     }
 }
