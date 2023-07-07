@@ -43,16 +43,22 @@ public class GameData : MonoBehaviour
     public AudioSource bgmAudio;
     public AudioSource sfxAudio;
 
+    // current Game => 0 : FindKeyGame
+    // current Game => 1 : FindLoadGame
+    public int currentGame;
+
     
     private void Start() 
     {
-        sfx = new Sound();
-        bgm = new Sound();
+        currentGame = 0;
+
         SetSound();
     }
 
     private void SetSound()
     {
+        sfx = new Sound();
+        bgm = new Sound();
         sfx.LoadSound(KeyStore.sfxMuteKey, KeyStore.sfxVolumeKey);
         bgm.LoadSound(KeyStore.bgmMuteKey, KeyStore.bgmVolumeKey);
 

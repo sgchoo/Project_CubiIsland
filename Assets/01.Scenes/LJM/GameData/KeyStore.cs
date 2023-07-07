@@ -13,6 +13,7 @@ public static class KeyStore
     public const string startCheckScene = "07.StartCheckScene";
     public const string loadScene = "07_2.LoadScene";
     public const string findKeyScene = "08.FindKeyScene";
+    public const string findLoadScene = "09.FindLoadScene";
     public const string optionScene = "99.OptionScene";
 
 
