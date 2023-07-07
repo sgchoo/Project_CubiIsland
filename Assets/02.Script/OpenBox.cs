@@ -29,7 +29,7 @@ public class OpenBox : MonoBehaviour
     {
         timer += Time.deltaTime;
         if(timer < depth) return;
-        transform.rotation = Quaternion.Lerp(transform.rotation, target, 0.01f);
+        transform.rotation = Quaternion.Lerp(transform.rotation, target, 0.13f);
     }
 
 }

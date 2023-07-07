@@ -13,6 +13,7 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     int btnNumber;
     private RectTransform rectTransform;
     public GameObject scrollbar, ButtonContent;
+    public GameObject[] listBtns;               // 맵 리스트 표시 버튼 배열
     float scroll_pos = 0;
     float[] pos;
     public void OnPointerDown(PointerEventData data)
@@ -67,19 +68,21 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 rectTransform.GetChild(i).localScale = Vector2.Lerp(rectTransform.GetChild(i).localScale, new Vector2(1.1f, 1.1f), 0.1f);
                 CurrentMap = rectTransform.GetChild(i).gameObject;
+                // 확대된 자식 객체 위치와 같은 위치(i)에 버튼 색상(yellow) 변경
+                listBtns[i].GetComponent<Image>().color = Color.yellow;
                 // Debug.Log(CurrentMap.name);
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
                     {
                         rectTransform.GetChild(j).localScale = Vector2.Lerp(rectTransform.GetChild(j).localScale, new Vector2(0.65f, 0.65f), 0.1f);
+                        // 확대되지 않은 부분은 버튼 색상(white)로 변경
+                        listBtns[j].GetComponent<Image>().color = Color.white;
                     }
                 }
             }
 
         }
-
-        
     }
     // //버튼 색상 바꾸기
     //     public void WhichBtnClicked(Button btn)

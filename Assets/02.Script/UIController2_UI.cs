@@ -64,6 +64,11 @@ public class UIController2_UI : MonoBehaviour
         Map = FinalMap.name;
     }
 
+    public bool PlayerAssetCheck()
+    {
+        return FinalChar != null && FinalMap != null;
+    }
+
     private void DefaultSet()
     {
         if (FinalChar != null || FinalMap != null)
@@ -74,11 +79,9 @@ public class UIController2_UI : MonoBehaviour
         else
         {
             //게임 시작 시 기본 캐릭터와 맵을 설정합니다.
-            FinalMap = Resources.Load<GameObject>("Map01_Grass");
+            FinalMap = Resources.Load<GameObject>("Map01_Forest");
             FinalChar = Resources.Load<GameObject>("Char_PolarBear");
         }
-
-        
     }
 
     //타이틀로 이동
@@ -93,11 +96,12 @@ public class UIController2_UI : MonoBehaviour
 
     public void btnPlaza() {        SceneManager.LoadScene("04.PlazaScene"); }
 
-    public void btnStart() {        SceneManager.LoadScene("08.FindKeyScene"); }
+    // public void btnStart() {        SceneManager.LoadScene("08.FindKeyScene"); }
+    public void btnStart() {        SceneManager.LoadScene("07_2.LoadScene"); }
 
     public void btnGameRoad() {     SceneManager.LoadScene("09.FindRoadScene"); }
 
-    // 지금은 씬이 로드 되도록 했지만. 아마 패널로 처리해서 껐다 켰다를 할 수 있도록 해야할 듯 합니다.
+    // 옵션씬 가져오기. 공부해야함.
     public void btnOption() {       SceneManager.LoadScene("99.OptionScene");}
     public void GoBack() {          SceneManager.LoadScene(previousSceneName);}
 

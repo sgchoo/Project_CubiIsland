@@ -2,18 +2,29 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class cubiDirection
+{
+    public int ranVal;
+}
+
+
 public class FindLoadPlayerMoveManager : MonoBehaviour
 {
     public Transform[] roller;
     public float rotateSpeed;
     private Transform parent;
     private bool isRolling = false;
+    private float jumpPower;
+    Rigidbody rigid;
 
     private List<Transform> childList;
 
     public Transform axisObject;
 
-    // Start is called before the first frame update
+    cubiDirection random = new cubiDirection();
+
+    Vector3 rayDir;
+
     void Start()
     {
         parent = this.transform.parent;
@@ -23,16 +34,21 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
             if(child == this.transform || child == axisObject) continue;
             childList.Add(child);
         }
+
+        SetDirection();
     }
 
     // Update is called once per frame
     void Update()
     {
+        FallingZoneRay();
+
         if(isRolling) return;
-        if      (Input.GetKeyDown(KeyCode.UpArrow))     StartCoroutine(Rolling(Vector3.forward));
-        else if (Input.GetKeyDown(KeyCode.RightArrow))  StartCoroutine(Rolling(Vector3.right));
-        else if (Input.GetKeyDown(KeyCode.DownArrow))   StartCoroutine(Rolling(Vector3.down));
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))   StartCoroutine(Rolling(Vector3.left));
+
+        if      (random.ranVal == 0)     StartCoroutine(Rolling(Vector3.forward));
+        else if (random.ranVal == 1)     StartCoroutine(Rolling(Vector3.right));
+        else if (random.ranVal == 2)     StartCoroutine(Rolling(Vector3.down));
+        else if (random.ranVal == 3)     StartCoroutine(Rolling(Vector3.left));
     }
 
     private bool doubleMoveFlag = false;
@@ -44,10 +60,10 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
         float angle = 90f;
 
         int idx = -1;
-        if      (dir == Vector3.forward){ idx = 0; }
-        else if (dir == Vector3.right)  { idx = 1; }
-        else if (dir == Vector3.down)   { idx = 2; }
-        else if (dir == Vector3.left)   { idx = 3; }
+        if      (dir == Vector3.forward)    { idx = 0; }
+        else if (dir == Vector3.right)      { idx = 1; }
+        else if (dir == Vector3.down)       { idx = 2; }
+        else if (dir == Vector3.left)       { idx = 3; }
 
         // 회전 타겟 지정
         Transform rotateTarget = roller[idx];
@@ -127,5 +143,45 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
         axisObject.localPosition = this.transform.localPosition;
         // 회전축들의 parent를 parentObject로 변경
         foreach(Transform child in childList) { child.parent = parent; }
+    }
+
+    private void SetDirection()
+    {
+        random.ranVal = UnityEngine.Random.Range(0, 4);
+        Invoke("SetDirection", 3f);
+    }
+
+    private void FallingZoneRay()
+    {
+        switch(random.ranVal)
+        {
+            case 0:
+                rayDir = Vector3.forward;
+                break;
+
+            case 1:
+                rayDir = Vector3.right;
+                break;
+
+            case 2:
+                rayDir = Vector3.back;
+                break;
+
+            case 3:
+                rayDir = Vector3.left;
+                break;
+        }
+
+        Ray ray = new Ray(this.transform.position, rayDir);
+
+        RaycastHit hitInfo;
+
+        if(Physics.Raycast(ray, out hitInfo, 0.02f))
+        {
+            if(hitInfo.collider.CompareTag("Zone"))
+            {
+                random.ranVal = UnityEngine.Random.Range(0, 4);
+            }
+        }
     }
 }
