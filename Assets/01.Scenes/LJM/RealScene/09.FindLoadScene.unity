@@ -486,9 +486,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3998435199983456131, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
-        m_TargetAssemblyTypeName: UIController2_UI, Assembly-CSharp
-        m_MethodName: btnLobby
+      - m_Target: {fileID: 8620966083692781069, guid: f4261987559efeb469e21ded97ba481b, type: 3}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: btnLoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -546,6 +546,7 @@ GameObject:
   m_Component:
   - component: {fileID: 492606338}
   - component: {fileID: 492606337}
+  - component: {fileID: 492606339}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -630,6 +631,29 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &492606339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 492606336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 3
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_RenderingLayers: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_ShadowRenderingLayers: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
+  m_SoftShadowQuality: 0
 --- !u!1 &504365144
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,9 +1600,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3998435199983456131, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
-        m_TargetAssemblyTypeName: UIController2_UI, Assembly-CSharp
-        m_MethodName: btnOption
+      - m_Target: {fileID: 8620966083692781069, guid: f4261987559efeb469e21ded97ba481b, type: 3}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: btnOptionLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
