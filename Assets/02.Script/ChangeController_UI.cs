@@ -71,6 +71,8 @@ public class ChangeController_UI : MonoBehaviour
 
         //UIController_UI.FianlChar 선택 백업
         CurrentChar = selectedPrefab;
+        GameData.Instance.currentCharacter = selectedPrefab;
+        PlayAssetManager.isSet = false;
 
         SceneManager.LoadScene("04.PlazaScene");
     }
