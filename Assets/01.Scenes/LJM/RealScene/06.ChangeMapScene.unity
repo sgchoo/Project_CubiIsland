@@ -4895,7 +4895,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -635.01385, y: 0}
+  m_AnchoredPosition: {x: -634.995, y: 0}
   m_SizeDelta: {x: 2110, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1294567395
@@ -4915,6 +4915,13 @@ MonoBehaviour:
   - {r: 0, g: 0, b: 0, a: 0}
   scrollbar: {fileID: 1814948181}
   ButtonContent: {fileID: 1411892073}
+  listBtns:
+  - {fileID: 1684200091}
+  - {fileID: 1608015626}
+  - {fileID: 100375003}
+  - {fileID: 1865233372}
+  - {fileID: 1849341813}
+  - {fileID: 2048952622}
 --- !u!114 &1294567396
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6998,8 +7005,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1879720556}
   m_HandleRect: {fileID: 1879720555}
   m_Direction: 0
-  m_Value: 1.000009
-  m_Size: 0.39809403
+  m_Value: 0.99999666
+  m_Size: 0.39810312
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
