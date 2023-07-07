@@ -77,7 +77,14 @@ public class GameLoadingManager : MonoBehaviour
 
     private void DelayLoadScene()
     {
-        Debug.Log("8번씬너머로");
-        SceneManager.LoadScene(KeyStore.findKeyScene);
+        string target = "";
+
+        switch(GameData.Instance.currentGame) 
+        {
+            case 0 : target = KeyStore.findKeyScene; break;
+            case 1 : target = KeyStore.findLoadScene; break;
+            default : Debug.Log("Error!"); target = KeyStore.findKeyScene; break;
+        }        
+        SceneManager.LoadScene(target);
     }
 }
