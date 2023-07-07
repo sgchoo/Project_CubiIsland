@@ -12,6 +12,7 @@ public static class KeyStore
     public const string worldSelectScene = "06.ChangeMapScene";
     public const string startCheckScene = "07.StartCheckScene";
     public const string loadScene = "07_2.LoadScene";
+    public const string findKeyScene = "08.FindKeyScene";
     public const string optionScene = "99.OptionScene";
 
 

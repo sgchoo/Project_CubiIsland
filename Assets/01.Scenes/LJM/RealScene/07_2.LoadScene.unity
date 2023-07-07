@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -562,6 +562,7 @@ MonoBehaviour:
   - {fileID: -585881028, guid: 806cb508eda06a94490af05c38c01960, type: 3}
   MapTitle: {fileID: 170573914}
   TouchMotion: {fileID: 1683824450}
+  imageIcon: {fileID: 779423944}
 --- !u!114 &147783901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1533,9 +1534,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3998435199983456131, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
-        m_TargetAssemblyTypeName: UIController2_UI, Assembly-CSharp
-        m_MethodName: btnOption
+      - m_Target: {fileID: 8620966083692781069, guid: f4261987559efeb469e21ded97ba481b, type: 3}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: btnOptionLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2190,9 +2191,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3998435199983456131, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
-        m_TargetAssemblyTypeName: UIController2_UI, Assembly-CSharp
-        m_MethodName: btnLobby
+      - m_Target: {fileID: 8620966083692781069, guid: f4261987559efeb469e21ded97ba481b, type: 3}
+        m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+        m_MethodName: btnStartCheck
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3061,6 +3062,11 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!1 &1461611055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8156015855548910308, guid: f7b426c7903a039458df7c25790b7a4e, type: 3}
+  m_PrefabInstance: {fileID: 115248300976247563}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1463663283
 GameObject:
   m_ObjectHideFlags: 0
@@ -4880,12 +4886,27 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3684103340519774551, guid: f7b426c7903a039458df7c25790b7a4e, type: 3}
   m_PrefabInstance: {fileID: 115248300976247563}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1461611055}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75722c52c8a757946ac51ba9a69dfde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1936536151
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461611055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44be1099490bfa24b839243723e3b0cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sliderLoadingPanel: {fileID: 250499799}
+  imageLoadingPanel: {fileID: 147783898}
+  arrayImageTarget: {fileID: 60424083}
 --- !u!1 &1989827097
 GameObject:
   m_ObjectHideFlags: 0
@@ -5292,6 +5313,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1675810294}
     - target: {fileID: 3684103340519774551, guid: f7b426c7903a039458df7c25790b7a4e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3684103340519774551, guid: f7b426c7903a039458df7c25790b7a4e, type: 3}
       propertyPath: imageTarget
       value: 
       objectReference: {fileID: 1525608287}
@@ -5318,5 +5343,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8156015855548910308, guid: f7b426c7903a039458df7c25790b7a4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1936536151}
   m_SourcePrefab: {fileID: 100100000, guid: f7b426c7903a039458df7c25790b7a4e, type: 3}

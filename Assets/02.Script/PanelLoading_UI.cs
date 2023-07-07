@@ -37,6 +37,8 @@ public class PanelLoading_UI : MonoBehaviour
 
     private bool fadeOut = false;
 
+    public GameObject imageIcon;
+
     
     void Start()
     {
@@ -44,15 +46,12 @@ public class PanelLoading_UI : MonoBehaviour
         DisappearObject = GetComponent<CanvasGroup>();
         ActAR = false;
 
-        // 현재씬 이름 가져오기
-        // if (SceneManager.GetActiveScene().name == "08.FindKeyScene")
-
-        // if (SceneManager.GetActiveScene().name == "07_2.LoadScene")
-        // {
-        //     // 교체할 맵 아이콘 받아오기
-        //     MapIcon = GameObject.Find("ImageIcon").GetComponent<Image>();
-        //     SetMapIcon();
-        // }
+        if (SceneManager.GetActiveScene().name == KeyStore.loadScene)
+        {
+            // 교체할 맵 아이콘 받아오기
+            MapIcon = imageIcon.GetComponent<Image>();
+            SetMapIcon();
+        }
     }
 
     // Update is called once per frame
@@ -100,35 +99,47 @@ public class PanelLoading_UI : MonoBehaviour
         ActAR = true;
     }
     
+    private void UpdateMapInfo(Sprite sprite, string text)
+    {
+        MapIcon.sprite = sprite;
+        MapTitle.text = text;
+    }
 
-    // private void SetMapIcon()
-    // {
-    //     if (UIController2_UI.FinalMap.name == "Map01_Forest")
-    //     {
-    //         // 선택한 맵의 아이콘 출력
-    //         MapIcon.sprite = MapIcons[0];
+    private void SetMapIcon()
+    {
+        switch(GameData.Instance.currentWorld.name)
+        {
+            case "Map01_Forest" : UpdateMapInfo(MapIcons[0], "FOREST"); break;
+            case "Map02_Snow" :   UpdateMapInfo(MapIcons[1], "SNOW");   break;
+            case "Map03_Desert" : UpdateMapInfo(MapIcons[2], "DESERT"); break;
+            
+        }
+        // if (GameData.Instance.currentWorld.name == "Map01_Forest")
+        // {
+        //     // 선택한 맵의 아이콘 출력
+        //     MapIcon.sprite = MapIcons[0];
 
-    //         // 선택한 맵의 이름 출력
-    //         MapTitle.text = "FOREST";
-    //     }
+        //     // 선택한 맵의 이름 출력
+        //     MapTitle.text = "FOREST";
+        // }
 
-    //     if (UIController2_UI.FinalMap.name == "Map02_Snow")
-    //     {
-    //         // 선택한 맵의 아이콘 출력
-    //         MapIcon.sprite = MapIcons[1];
+        // if (GameData.Instance.currentWorld.name == "Map02_Snow")
+        // {
+        //     // 선택한 맵의 아이콘 출력
+        //     MapIcon.sprite = MapIcons[1];
 
-    //         // 선택한 맵의 이름 출력
-    //         MapTitle.text = "SNOW";
-    //     }
+        //     // 선택한 맵의 이름 출력
+        //     MapTitle.text = "SNOW";
+        // }
 
-    //     if (UIController2_UI.FinalMap.name == "Map03_Desert")
-    //     {
-    //         // 선택한 맵의 아이콘 출력
-    //         MapIcon.sprite = MapIcons[2];
+        // if (GameData.Instance.currentWorld.name == "Map03_Desert")
+        // {
+        //     // 선택한 맵의 아이콘 출력
+        //     MapIcon.sprite = MapIcons[2];
 
-    //         // 선택한 맵의 이름 출력
-    //         MapTitle.text = "DESERT";
-    //     }
-    // }
+        //     // 선택한 맵의 이름 출력
+        //     MapTitle.text = "DESERT";
+        // }
+    }
 
 }
