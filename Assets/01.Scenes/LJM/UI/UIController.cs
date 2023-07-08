@@ -54,6 +54,13 @@ public class UIController : MonoBehaviour
     }
     // 옵션 씬 관련 끝
 
+    public void GoLink()
+    {
+        Debug.Log("Go");
+        // ImageDownloadManager downloadManager = new ImageDownloadManager();
+        // downloadManager.DownloadImage();
+        new ImageDownloadManager().DownloadObject();
+    }
 
     // 씬 이동 로직
     private void SceneMove(string sceneName)

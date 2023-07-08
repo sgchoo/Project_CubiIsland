@@ -1786,6 +1786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 5990183754785702362}
   world: {fileID: 5531374036580836720}
+  targetLayer: 0
 --- !u!1 &2211786124010739666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,6 +2669,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7908239531098704531}
   - component: {fileID: 3696713158489578971}
+  - component: {fileID: 8598394016896638996}
   m_Layer: 0
   m_Name: CubiWorld_Lastest
   m_TagString: Untagged
@@ -2715,6 +2717,27 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8598394016896638996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994669182123708780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 697333272, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreviewVisible: 1
+  RuntimeOcclusion: 0
+  RuntimeCollider: 0
+  mTrackableName: 
+  mInitializedInEditor: 0
+  mSelectedStageType: 1
+  mPlaneReference: {fileID: 0}
+  mMidAirReference: {fileID: 0}
+  mPreview: {fileID: 0}
 --- !u!1 &3008040183043737595
 GameObject:
   m_ObjectHideFlags: 0
