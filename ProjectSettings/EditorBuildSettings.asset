@@ -9,47 +9,77 @@ EditorBuildSettings:
     path: Assets/01.Scenes/CSG/TestSceneCSG.unity
     guid: dbf85cbb97e8dd84c8104589d44829c7
   - enabled: 0
-    path: Assets/01.Scenes/LJM/Trash/TestSceneCSG_LJM.unity
-    guid: d9cb4919da6a54c4d8010eae24f13199
-  - enabled: 0
     path: Assets/01.Scenes/CSG/ARFoundation.unity
     guid: e9f9d0e02f9ae1f46b682a3328482e34
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/01.TitleScene.unity
     guid: d2a02a900eb1596449133fa676ea2b2d
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/02.LobbyScene.unity
     guid: a5bcd62a0db400540b860986a60ac5b9
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/03.CreatePlazaScene.unity
     guid: 26dacae6a95366944baef24d6b483e45
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/04.PlazaScene.unity
     guid: 09e943aa81dbef8458140ab64a17280b
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/05.ChangeCharScene.unity
     guid: 251ec8281889f2c498b73052fdd50647
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/06.ChangeMapScene.unity
     guid: 0ffdc388703659241886b8318549862a
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/07.StartCheckScene.unity
     guid: 84131c35e7777284c82450cbb6dfcf9e
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/07_2.LoadScene.unity
     guid: 4a7697800d7f0be44b011e210546cee2
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/08.FindKeyScene.unity
     guid: fabaf9cfa3f16ed4480a2de542fdd9ea
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/09.FindRoadScene.unity
     guid: 3872595d98375a046b37a9a68ca3bb07
-  - enabled: 1
+  - enabled: 0
     path: Assets/01.Scenes/LYN2/99.OptionScene.unity
     guid: 2998cfbc3bb50a4498eb5c3eb5869a5f
   - enabled: 0
     path: Assets/01.Scenes/CSG_2/0_Scenes/PortalTest.unity
     guid: c3cd5e8dbf191e64b912fe860f1d5960
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/01.TitleScene.unity
+    guid: 8232544014de9db40888f47f00bf5e3f
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/02.LobbyScene.unity
+    guid: a6834eb12a33aa0458fdfda621029a08
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/03.CreatePlazaScene.unity
+    guid: 936225b2c5a05d94fa0f5989ce14b168
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/04.PlazaScene.unity
+    guid: 131115531c69fc54e9d3ff96243db3f5
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/05.ChangeCharScene.unity
+    guid: c397ee049b22b8e4ebcc09ba043e24f2
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/06.ChangeMapScene.unity
+    guid: 3102452bd6710f248b323bcdefffb902
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/07.StartCheckScene.unity
+    guid: f3a07fb199dcb9b498dca4e66a7b6723
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/07_2.LoadScene.unity
+    guid: 7a6f3a6d0c324b6419fcd4f9d331e125
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/08.FindKeyScene.unity
+    guid: c66a46888b6c7ad4592d9203b1c618e1
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/09.FindRoadScene.unity
+    guid: 3d179104e58f2984facfa2c9ea69685d
+  - enabled: 1
+    path: Assets/01.Scenes/LJM/RealScene/99.OptionScene.unity
+    guid: 48abecd9e1d720e4e831b3f855a8e340
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 8887d2e68c626bf44b148e0c8d5f142e, type: 2}
     UnityEditor.XR.ARKit.ARKitSettings: {fileID: 11400000, guid: b3b8c83298e5252429076eac98b3e6a6, type: 2}
