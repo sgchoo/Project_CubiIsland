@@ -50,6 +50,19 @@ public class ChangeController_UI : MonoBehaviour
         GameObject newObject = Instantiate(GameData.Instance.currentCharacter) as GameObject;
         newObject.transform.SetParent(Char_05.transform, false);
         CurrentChar = newObject;
+        string compareName = CurrentChar.name.Split("(Clone)")[0];
+        Debug.Log("ChangeController::"+compareName);
+        int count = CharPrefabs.Length;
+        for(int idx = 0; idx < count; idx++)
+        {
+            if(CharPrefabs[idx].name == compareName)
+            {
+                tmpText.text = "" + Contents[idx].name;
+                break;
+            }
+
+        }
+
     }
 
 
