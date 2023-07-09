@@ -11,6 +11,8 @@ public class FindLoadGameManager : MonoBehaviour
     public GameObject missionPanel;
     public GameObject multiTarget;
     public bool startTimer = false;
+    public GameObject successScene;
+    private bool gameOver = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,9 +23,11 @@ public class FindLoadGameManager : MonoBehaviour
     void Update()
     {
         if(startTimer) return;
-        if(DestinationManager.clear)
+        if(!gameOver && DestinationManager.clear)
         {
             Debug.Log("클리어!!");
+            successScene.SetActive(true);
+            gameOver = true;
         }
     }
 
