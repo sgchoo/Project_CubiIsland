@@ -59,6 +59,7 @@ public class ChangeController_UI : MonoBehaviour
         GameObject selectedPrefab = CharPrefabs[selectedIndex];
         // FinalChar에 선택한 프리팹 할당
         GameData.Instance.currentCharacter = selectedPrefab;
+        Debug.Log("B : " + GameData.Instance.currentCharacter.name);
         PlayAssetManager.isSet = false;
     }
 
@@ -93,12 +94,14 @@ public class ChangeController_UI : MonoBehaviour
     //캐릭터 선택 시 오브젝트 이름 가져오는 함수
     private void ChooseCharacter()
     {
+        if(EventSystem.current.currentSelectedGameObject == null) return;
+        string checkBtnName = EventSystem.current.currentSelectedGameObject.name;
+        if(checkBtnName == "ButtonChoose") return;    
+        if(checkBtnName == "ButtonBack") return;    
+        if(checkBtnName == "ButtonOption") return;    
         //EventSystem 클래스 내 현재 선택된(클릭한) 오브젝트를 가져와서 변수에 저장한다.
         selectedObject = EventSystem.current.currentSelectedGameObject;
-        if(selectedObject.name == "ButtonChoose") return;    
-        if(selectedObject.name == "ButtonBack") return;    
-        if(selectedObject.name == "ButtonOption") return;    
         //저장된 변수의 이름을 TMP_Text에 출력한다.
-        tmpText.text = "" + selectedObject.name;
+        tmpText.text = "" + checkBtnName;
     }
 }
