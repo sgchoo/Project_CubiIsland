@@ -1147,6 +1147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1178895584}
   - component: {fileID: 1178895585}
+  - component: {fileID: 1178895586}
   m_Layer: 0
   m_Name: BGM
   m_TagString: Untagged
@@ -1265,6 +1266,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1178895586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178895583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1ffde2a8d406b04886a243eb7aac8a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  titleBGM: {fileID: 8300000, guid: c87d5de36866a4e52807a649a18f2064, type: 3}
+  plazaBGM: {fileID: 8300000, guid: ce666ef06985246658701e8b581d94ba, type: 3}
+  gameBGM: {fileID: 8300000, guid: 04f95ddf886752448bbf6f6e35fa756f, type: 3}
 --- !u!1 &1284098778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1498,6 +1514,8 @@ MonoBehaviour:
   currentWorld: {fileID: 8386837563681720637, guid: b679ffd1b0466b244bbe74ea3d436bca, type: 3}
   bgmAudio: {fileID: 1178895585}
   sfxAudio: {fileID: 985542069}
+  currentGame: 0
+  plazaWorld: {fileID: 0}
 --- !u!4 &1608085313
 Transform:
   m_ObjectHideFlags: 0
