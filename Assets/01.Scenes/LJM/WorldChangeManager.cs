@@ -27,6 +27,12 @@ public class WorldChangeManager : MonoBehaviour
         surfaces.Find("MoveArea").Find("Player").GetComponent<FindKeyPlayerMoveManager>().enabled=true;
         surfaces.Find("CameraRayDetectArea").gameObject.SetActive(true);
 
+        KeyObjectBehaviour[] keys = player.GetComponentsInChildren<KeyObjectBehaviour>(true);
+        foreach(var key in keys)
+        {
+            key.gameObject.SetActive(true);
+        }
+
         //GetComponent<DefaultObserverEventHandler>().OnTargetFound = a();
     }
 

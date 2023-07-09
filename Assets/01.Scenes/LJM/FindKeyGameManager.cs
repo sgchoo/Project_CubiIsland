@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class FindKeyGameManager : MonoBehaviour
 {
     public int keyToFind = 0;
-    public int currentKeyCount = 0;
+    public static int currentKeyCount = 0;
 
     public FindKeyPlayerMoveManager player;
     public GameObject successPanel;
@@ -17,7 +17,6 @@ public class FindKeyGameManager : MonoBehaviour
     {        
         if (keyToFind == 0) keyToFind = 2;
         currentKeyCount = 0;
-
         gameOver = false;
     }
 
@@ -31,5 +30,10 @@ public class FindKeyGameManager : MonoBehaviour
             GameData.Instance.currentGame = 1;
             gameOver = true;
         }
+    }
+
+    public static void GetKey()
+    {
+        currentKeyCount+=1;
     }
 }

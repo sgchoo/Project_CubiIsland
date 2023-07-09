@@ -7,6 +7,9 @@ TagManager:
   - Zone
   - World
   - DoubleMove
+  - MAPICON
+  - MAPIMG
+  - Key
   layers:
   - Default
   - TransparentFX
