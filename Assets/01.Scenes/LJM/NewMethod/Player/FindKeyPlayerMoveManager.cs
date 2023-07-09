@@ -57,6 +57,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
     {
         coords = new Vector2(2,1);
 
+        arCamera = Camera.main.transform;
         parent = this.transform.parent;
 
         axis = Axis.y;
