@@ -28,6 +28,12 @@ public class FindKeyGameManager : MonoBehaviour
             player.enabled = false;
             successPanel.SetActive(true);
             GameData.Instance.currentGame = 1;
+            int count = GameData.Instance.characterLockList.Count;
+            int randomCount = Random.Range(0, count);
+
+            Transform target = GameData.Instance.characterLockList[randomCount].transform;
+            target.Find("locked").gameObject.SetActive(false);
+
             gameOver = true;
         }
     }

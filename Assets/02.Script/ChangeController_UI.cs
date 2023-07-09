@@ -30,6 +30,24 @@ public class ChangeController_UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        int count = Contents.Length;
+        int lockIdx = 0;
+        for(int idx = 0; idx < count; idx++)
+        {
+            GameObject target = Contents[idx].transform.Find("locked").gameObject;
+            if(target.activeSelf)
+            {
+                if(!GameData.Instance.characterLockList[lockIdx].transform.Find("locked").gameObject.activeSelf)
+                {
+                    target.SetActive(false);
+                    GameData.Instance.characterLockList.RemoveAt(lockIdx);
+                }
+                else
+                {
+                    lockIdx+=1;
+                }
+            }
+        }
         PreviewChar();
     }
 

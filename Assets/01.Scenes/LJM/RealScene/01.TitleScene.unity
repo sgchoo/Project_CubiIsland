@@ -1516,6 +1516,10 @@ MonoBehaviour:
   sfxAudio: {fileID: 985542069}
   currentGame: 0
   plazaWorld: {fileID: 0}
+  characterPref: {fileID: 54871425594421225, guid: ab5704b3fe10af84c83cfa89b1d84cdd, type: 3}
+  mapPref: {fileID: 3372669391436050778, guid: 58bf73bcb7a32094d9ec0cbab2f02177, type: 3}
+  characterLockList: []
+  mapLockList: []
 --- !u!4 &1608085313
 Transform:
   m_ObjectHideFlags: 0
