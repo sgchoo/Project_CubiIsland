@@ -41,11 +41,11 @@ public class GameLoadingManager : MonoBehaviour
         }
         else if(isCameraOn)
         {
-            FocusedImage();
+            //FocusedImage();
         }
     }
 
-    
+
     private void ActImageTarget()
     {
         int len = arrayImageTarget.transform.childCount;
@@ -68,10 +68,14 @@ public class GameLoadingManager : MonoBehaviour
 
     public void FocusedImage()
     {
-        if (imageTarget.GetComponentInParent<ObserverBehaviour>().TargetName == GameData.Instance.currentWorld.name)
+        if (isCameraOn)
         {
             Invoke("DelayLoadScene", 1f);
         }
+        // if (imageTarget.GetComponentInParent<ObserverBehaviour>().TargetName == GameData.Instance.currentWorld.name)
+        // {
+        //     Invoke("DelayLoadScene", 1f);
+        // }
 
     }
 
@@ -79,12 +83,12 @@ public class GameLoadingManager : MonoBehaviour
     {
         string target = "";
 
-        switch(GameData.Instance.currentGame) 
+        switch(GameData.Instance.currentGame)
         {
             case 0 : target = KeyStore.findKeyScene; break;
             case 1 : target = KeyStore.findLoadScene; break;
             default : Debug.Log("Error!"); target = KeyStore.findKeyScene; break;
-        }        
+        }
         SceneManager.LoadScene(target);
     }
 }

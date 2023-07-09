@@ -47,6 +47,7 @@ public class GameData : MonoBehaviour
     // current Game => 1 : FindLoadGame
     public int currentGame;
 
+    public GameObject plazaWorld;
     
     private void Start() 
     {

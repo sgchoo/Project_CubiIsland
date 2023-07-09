@@ -14,7 +14,7 @@ public class FindKeyGameManager : MonoBehaviour
     private bool gameOver = false;
 
     private void Start()
-    {
+    {        
         if (keyToFind == 0) keyToFind = 2;
         currentKeyCount = 0;
 

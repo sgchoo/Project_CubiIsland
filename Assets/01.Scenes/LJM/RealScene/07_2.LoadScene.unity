@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1003,8 +1003,8 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1936536149}
-        m_TargetAssemblyTypeName: GameController_UI, Assembly-CSharp
+      - m_Target: {fileID: 1936536151}
+        m_TargetAssemblyTypeName: GameLoadingManager, Assembly-CSharp
         m_MethodName: FocusedImage
         m_Mode: 1
         m_Arguments:
@@ -1856,6 +1856,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663652785}
   m_CullTransparentMesh: 1
+--- !u!1 &694270867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 694270869}
+  - component: {fileID: 694270868}
+  m_Layer: 0
+  m_Name: LoadSceneManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &694270868
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694270867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e24f95565aa16345bf9519892f5efaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &694270869
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 694270867}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &760874654
 GameObject:
   m_ObjectHideFlags: 0
@@ -3341,8 +3385,8 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1936536149}
-        m_TargetAssemblyTypeName: GameController_UI, Assembly-CSharp
+      - m_Target: {fileID: 1936536151}
+        m_TargetAssemblyTypeName: GameLoadingManager, Assembly-CSharp
         m_MethodName: FocusedImage
         m_Mode: 1
         m_Arguments:
@@ -3496,8 +3540,8 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1936536149}
-        m_TargetAssemblyTypeName: GameController_UI, Assembly-CSharp
+      - m_Target: {fileID: 1936536151}
+        m_TargetAssemblyTypeName: GameLoadingManager, Assembly-CSharp
         m_MethodName: FocusedImage
         m_Mode: 1
         m_Arguments:
@@ -4171,8 +4215,8 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1936536149}
-        m_TargetAssemblyTypeName: GameController_UI, Assembly-CSharp
+      - m_Target: {fileID: 1936536151}
+        m_TargetAssemblyTypeName: GameLoadingManager, Assembly-CSharp
         m_MethodName: FocusedImage
         m_Mode: 1
         m_Arguments:
@@ -4824,8 +4868,8 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1936536149}
-        m_TargetAssemblyTypeName: GameController_UI, Assembly-CSharp
+      - m_Target: {fileID: 1936536151}
+        m_TargetAssemblyTypeName: GameLoadingManager, Assembly-CSharp
         m_MethodName: FocusedImage
         m_Mode: 1
         m_Arguments:
@@ -4881,17 +4925,6 @@ Transform:
   m_Father: {fileID: 60424084}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1936536149 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3684103340519774551, guid: f7b426c7903a039458df7c25790b7a4e, type: 3}
-  m_PrefabInstance: {fileID: 115248300976247563}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461611055}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75722c52c8a757946ac51ba9a69dfde0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1936536151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5154,8 +5187,8 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1936536149}
-        m_TargetAssemblyTypeName: GameController_UI, Assembly-CSharp
+      - m_Target: {fileID: 1936536151}
+        m_TargetAssemblyTypeName: GameLoadingManager, Assembly-CSharp
         m_MethodName: FocusedImage
         m_Mode: 1
         m_Arguments:
