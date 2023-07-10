@@ -26,8 +26,17 @@ public class UIController : MonoBehaviour
     // 광장 생성 Scene 이동 버튼 로직
     public void btnCreatePlaza() { SceneMove(KeyStore.createPlazaScene); }
 
+    // 광장 Scene 이동 버튼 로직
+    public void btnPlaza() { SceneMove(KeyStore.plazaScene); }
+
     // 본 게임 시작 전 큐브 체크 Scene 이동 버튼 로직
-    public void btnStartCheck() { SceneMove(KeyStore.startCheckScene); }
+    public void btnStartCheck() { SceneMove(KeyStore.startCheckScene); } 
+
+    // FindKeyGame Scene 이동 버튼 로직
+    public void btnLoadScene() { SceneMove(KeyStore.loadScene); } 
+
+    // 튜토리얼 출력 버튼 로직
+    public void btnTutorial() { Debug.Log("튜토리얼 출력"); }
 
 
 
@@ -45,6 +54,13 @@ public class UIController : MonoBehaviour
     }
     // 옵션 씬 관련 끝
 
+    public void GoLink()
+    {
+        Debug.Log("Go");
+        // ImageDownloadManager downloadManager = new ImageDownloadManager();
+        // downloadManager.DownloadImage();
+        new ImageDownloadManager().DownloadObject();
+    }
 
     // 씬 이동 로직
     private void SceneMove(string sceneName)

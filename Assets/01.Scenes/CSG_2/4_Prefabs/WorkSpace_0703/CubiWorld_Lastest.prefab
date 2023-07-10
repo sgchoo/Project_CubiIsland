@@ -1786,6 +1786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   character: {fileID: 5990183754785702362}
   world: {fileID: 5531374036580836720}
+  targetLayer: 0
 --- !u!1 &2211786124010739666
 GameObject:
   m_ObjectHideFlags: 0
@@ -2668,6 +2669,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7908239531098704531}
   - component: {fileID: 3696713158489578971}
+  - component: {fileID: 8598394016896638996}
+  - component: {fileID: 2904001397502175874}
+  - component: {fileID: 8912054754538158414}
+  - component: {fileID: 688982499494457046}
   m_Layer: 0
   m_Name: CubiWorld_Lastest
   m_TagString: Untagged
@@ -2715,6 +2720,69 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &8598394016896638996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994669182123708780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 697333272, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PreviewVisible: 1
+  RuntimeOcclusion: 0
+  RuntimeCollider: 0
+  mTrackableName: 
+  mInitializedInEditor: 0
+  mSelectedStageType: 1
+  mPlaneReference: {fileID: 0}
+  mMidAirReference: {fileID: 0}
+  mPreview: {fileID: 0}
+--- !u!114 &2904001397502175874
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994669182123708780}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bb6d9b0c3fc93854a9aef32b54f46d95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1818360608 &8912054754538158414
+PositionConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994669182123708780}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_TranslationAtRest: {x: 0, y: 0, z: 0}
+  m_TranslationOffset: {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 1
+  m_Active: 0
+  m_IsLocked: 0
+  m_Sources: []
+--- !u!114 &688982499494457046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994669182123708780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773320d53dda5394480d37c2324972b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3008040183043737595
 GameObject:
   m_ObjectHideFlags: 0
@@ -3060,8 +3128,8 @@ Transform:
   m_GameObject: {fileID: 3352048153762202293}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: -0.288, z: 0}
-  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.24, y: 0.24, z: 0.24}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8999830818628657210}
   m_RootOrder: -1
@@ -3135,7 +3203,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 1, z: 1.5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3121147304367012933
 Rigidbody:
@@ -5300,8 +5368,8 @@ Transform:
   m_GameObject: {fileID: 5687926932084268802}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: -0.188, z: 0}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8999830818628657210}
   m_RootOrder: -1
@@ -5376,7 +5444,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0.5, z: 0}
 --- !u!54 &6600118510769004919
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8253,9 +8321,17 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 5990183754785702362}
+    - target: {fileID: 1560208971474868429, guid: 20d3b7cc5cce25f4a9b4ddfd2170f7ca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5116395362563653951, guid: 20d3b7cc5cce25f4a9b4ddfd2170f7ca, type: 3}
       propertyPath: m_Name
       value: TouchDetector
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116395362563653951, guid: 20d3b7cc5cce25f4a9b4ddfd2170f7ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6992109132433307827, guid: 20d3b7cc5cce25f4a9b4ddfd2170f7ca, type: 3}
       propertyPath: m_RootOrder

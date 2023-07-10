@@ -12,14 +12,15 @@ public class PlazaController_UI : MonoBehaviour
     private GameObject PreviewMap;
 
 
-
-
-
     void Start()
     {
-        Debug.Log("4번씬");
-        SetChar();
-        SetMap();
+        if(GameData.Instance.plazaWorld != null)
+        {
+            GameData.Instance.plazaWorld.SetActive(true);
+        }
+        // Debug.Log("4번씬");
+        // SetChar();
+        // SetMap();
     }
 
     // Update is called once per frame
@@ -34,7 +35,7 @@ public class PlazaController_UI : MonoBehaviour
             Debug.Log("UI프리팹 소실");
         }
         else
-        { 
+        {
             Debug.Log("UI컨트롤러 프리팹임");
             GameObject newObject = Instantiate(UIController2_UI.FinalChar) as GameObject;
             newObject.transform.SetParent(Char_04.transform, false);
@@ -49,7 +50,7 @@ public class PlazaController_UI : MonoBehaviour
             Debug.Log("UI프리팹 소실");
         }
         else
-        { 
+        {
             Debug.Log("UI컨트롤러 프리팹임");
             GameObject newObject = Instantiate(UIController2_UI.FinalMap) as GameObject;
             newObject.transform.SetParent(Map_04.transform, false);
@@ -58,7 +59,7 @@ public class PlazaController_UI : MonoBehaviour
     }
 
     // 임시로 버튼 누르면 씬 로드하게 넣어놨음 -> 오브젝트 충돌 시 넘어가도록 수정 요망
-    public void btnTempChar() { SceneManager.LoadScene("05.ChangeCharScene");}
-    public void btnTempMap() { SceneManager.LoadScene("06.ChangeMapScene");}
+    public void btnTempChar() { SceneManager.LoadScene(KeyStore.characterSelectScene);}
+    public void btnTempMap() { SceneManager.LoadScene(KeyStore.worldSelectScene);}
 
 }

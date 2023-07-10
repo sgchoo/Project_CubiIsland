@@ -60,6 +60,9 @@ public class PlaceOnPlane : MonoBehaviour
                 spawnedObject = Instantiate(m_PlacedPrefab);
                 spawnedObject.transform.position = hitPose.position;
                 spawnedObject.transform.rotation = Quaternion.identity;
+                
+                spawnedObject.GetComponent<FixObjectRotation>().enabled = true;
+                GameData.Instance.plazaWorld = spawnedObject;
                 DontDestroyOnLoad(spawnedObject);
                 
                 planeManager.enabled = false;

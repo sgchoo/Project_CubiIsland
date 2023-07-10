@@ -27,12 +27,14 @@ public class MapListController_UI : MonoBehaviour
     // 맵 아이콘 리스트
     private GameObject[] IconList;
 
+    //
+    private GameObject BG;
+
     [Header("선택 된 맵")]
     public static GameObject CurrentMap;
 
     void Start()
     {
-        CurrentMap = UIController2_UI.FinalMap;
         SetMapList_Image();
         SetIconList_Image();
     }
@@ -40,7 +42,7 @@ public class MapListController_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (UIController2_UI.FinalMap == null)
+        if (GameData.Instance.currentWorld == null)
         {
             Debug.Log("Update : UI프리팹 소실");
         }
@@ -59,83 +61,96 @@ public class MapListController_UI : MonoBehaviour
         {
             if (prefab.name == currentMapName)
             {
-                UIController2_UI.FinalMap = prefab; // 맵 프리팹을 UIController_UI.FinalMap에 저장
+                GameData.Instance.currentWorld = prefab; // 맵 프리팹을 UIController_UI.FinalMap에 저장
                 break;
-                
             }
         }
-        //데이터 백업하기
-        CurrentMap = UIController2_UI.FinalMap;
-        
-        Debug.Log("현재 선택한 맵 : " + CurrentMap.name);
-        Debug.Log("FinalMap : " + UIController2_UI.FinalMap.name);
-
-        SceneManager.LoadScene("04.PlazaScene");
-
+        PlayAssetManager.isSet = false;
     }
 
-
-    // 맵 이미지, 아이콘 바꾸기 
-    // (굳이 이렇게 안하고 직접 오브젝트의 이미지소스를 바꿔도 되지만..)
-    private void SetMapList_Image()
+    // 맵 이미지, 아이콘 이미지 바꾸기 메인 기능
+    private void Settings(ref GameObject[] list, int childIdx, string currentTag, Sprite[] sourceList)
     {
-        //컨텐츠 연결이 해제 된 경우
         if (Contents == null) { Debug.Log("Contents 오브젝트를 찾을 수 없습니다."); }
-
         else
         {
-            // Content 자식의 갯수로 배열 만들기
+             // Content 자식의 갯수로 배열 만들기
             ContentNum = Contents.transform.childCount;
-
-            //MapList 객체 받아오기
-            MapList = new GameObject[ContentNum];
-
+            list = new GameObject[ContentNum];  
+            
             for (int i = 0; i < ContentNum; i++)
             {
                 //Content의 순서대로 MapList오브젝트 받아오기
-                MapList[i] = Contents.transform.GetChild(i).gameObject;
-                GameObject IconImage = MapList[i].transform.GetChild(0).gameObject;
+                list[i] = Contents.transform.GetChild(i).transform.Find("BG").gameObject;
+                GameObject img = list[i].transform.GetChild(childIdx).gameObject;
+                //BG = list[i].transform.GetChild(0).gameObject;
+                //GameObject img = BG.transform.GetChild(i).gameObject;
                 //MapList의 이미지 컴포넌트를 받아오기
-                if (IconImage.tag == "MAPIMG")
+                if (img.tag == currentTag)
                 {
-                    IconImage.GetComponent<Image>().sprite = MapSourceList[i];
+                    img.GetComponent<Image>().sprite = sourceList[i];
                 }
-                //자식의 여러 tag 확인하기
-                //GameObject[] childObject = GameObject.FindGameObjectsWithTag("MAPIMG");
             }
         }
+    }
+
+    // 맵 이미지, 아이콘 바꾸기 
+    private void SetMapList_Image()
+    {
+        Settings(ref MapList, 1, "MAPIMG", MapSourceList);
+        // //컨텐츠 연결이 해제 된 경우
+        // if (Contents == null) { Debug.Log("Contents 오브젝트를 찾을 수 없습니다."); }
+        // else
+        // {
+            
+        //     // Content 자식의 갯수로 배열 만들기
+        //     ContentNum = Contents.transform.childCount;
+
+        //     //MapList 객체 받아오기
+        //     MapList = new GameObject[ContentNum];
+
+        //     for (int i = 0; i < ContentNum; i++)
+        //     {
+        //         //Content의 순서대로 MapList오브젝트 받아오기
+        //         MapList[i] = Contents.transform.GetChild(i).gameObject;
+        //         GameObject IconImage = MapList[i].transform.GetChild(0).gameObject;
+        //         //MapList의 이미지 컴포넌트를 받아오기
+        //         if (IconImage.tag == "MAPIMG")
+        //         {
+        //             IconImage.GetComponent<Image>().sprite = MapSourceList[i];
+        //         }
+        //         //자식의 여러 tag 확인하기
+        //         //GameObject[] childObject = GameObject.FindGameObjectsWithTag("MAPIMG");
+        //     }
+        // }
 
     }
     private void SetIconList_Image()
-        {
-            //컨텐츠 연결이 해제 된 경우
-            if (Contents == null) { Debug.Log("Contents 오브젝트를 찾을 수 없습니다."); }
+    {
+        Settings(ref IconList, 0, "MAPICON", IconSourceList);
 
-            else
-            {
-                // Content 자식의 갯수로 배열 만들기
-                ContentNum = Contents.transform.childCount;
+        // //컨텐츠 연결이 해제 된 경우
+        // if (Contents == null) { Debug.Log("Contents 오브젝트를 찾을 수 없습니다."); }
 
-                //MapList 객체 받아오기
-                IconList = new GameObject[ContentNum];
+        // else
+        // {
+        //     // Content 자식의 갯수로 배열 만들기
+        //     ContentNum = Contents.transform.childCount;
 
-                for (int i = 0; i < ContentNum; i++)
-                {
-                    //Content의 순서대로 IconList오브젝트 받아오기
-                    IconList[i] = Contents.transform.GetChild(i).gameObject;
-                    GameObject IconImage = IconList[i].transform.GetChild(3).gameObject;
-                    //MapList의 이미지 컴포넌트를 받아오기
-                    if (IconImage.tag == "MAPICON")
-                    {
-                        IconImage.GetComponent<Image>().sprite = IconSourceList[i];
-                    }
-                    //자식의 여러 tag 확인하기
-                    //GameObject[] childObject = GameObject.FindGameObjectsWithTag("MAPIMG");
-                }
-            }
+        //     //MapList 객체 받아오기
+        //     IconList = new GameObject[ContentNum];
 
-
-
-
-        }
+        //     for (int i = 0; i < ContentNum; i++)
+        //     {
+        //         //Content의 순서대로 IconList오브젝트 받아오기
+        //         IconList[i] = Contents.transform.GetChild(i).gameObject;
+        //         GameObject IconImage = IconList[i].transform.GetChild(3).gameObject;
+        //         //MapList의 이미지 컴포넌트를 받아오기
+        //         if (IconImage.tag == "MAPICON")
+        //         {
+        //             IconImage.GetComponent<Image>().sprite = IconSourceList[i];
+        //         }
+        //     }
+        // }
+    }
 }

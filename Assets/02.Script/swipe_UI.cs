@@ -29,6 +29,7 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        Color[] colors = new Color[2];
     }
 
     // Update is called once per frame
@@ -69,7 +70,7 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 rectTransform.GetChild(i).localScale = Vector2.Lerp(rectTransform.GetChild(i).localScale, new Vector2(1.1f, 1.1f), 0.1f);
                 CurrentMap = rectTransform.GetChild(i).gameObject;
                 // 확대된 자식 객체 위치와 같은 위치(i)에 버튼 색상(yellow) 변경
-                listBtns[i].GetComponent<Image>().color = Color.yellow;
+                listBtns[i].GetComponent<Image>().color = colors[0];
                 // Debug.Log(CurrentMap.name);
                 for (int j = 0; j < pos.Length; j++)
                 {
@@ -77,7 +78,7 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                     {
                         rectTransform.GetChild(j).localScale = Vector2.Lerp(rectTransform.GetChild(j).localScale, new Vector2(0.65f, 0.65f), 0.1f);
                         // 확대되지 않은 부분은 버튼 색상(white)로 변경
-                        listBtns[j].GetComponent<Image>().color = Color.white;
+                        listBtns[j].GetComponent<Image>().color = colors[1];
                     }
                 }
             }
