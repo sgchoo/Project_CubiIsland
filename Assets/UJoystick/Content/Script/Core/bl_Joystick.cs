@@ -87,6 +87,8 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             isFree = false;
             StickRect.position = DeathArea;
         }
+
+        Debug.Log("GetThumbDirection()::" + GetThumbDirection());
     }
 
     /// <summary>
@@ -232,4 +234,29 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             return (StickRect.position.y - DeathArea.y) / Radio;
         }
     }
+
+    private Vector3 GetThumbDirection()
+{
+    Vector3 direction = (StickRect.position - DeathArea).normalized;
+    float angle = Vector3.Angle(Vector3.right, direction);
+
+    if (angle <= 45f || angle >= 315f) // 오른쪽 방향
+    {
+        return Vector3.right;
+    }
+    else if (angle > 45f && angle <= 135f) // 위쪽 방향
+    {
+        return Vector3.up;
+    }
+    else if (angle > 135f && angle <= 225f) // 왼쪽 방향
+    {
+        return Vector3.left;
+    }
+    else if (angle > 225f && angle < 315f) // 아래쪽 방향
+    {
+        return Vector3.down;
+    }
+
+    return Vector3.zero;
+}
 }
