@@ -32,6 +32,24 @@ public class MapListController_UI : MonoBehaviour
 
     void Start()
     {
+        int count = Contents.transform.childCount;
+        int lockIdx = 0;
+        for(int idx = 0; idx < count; idx++)
+        {
+            GameObject target = Contents.transform.GetChild(idx).transform.Find("Locked").gameObject;
+            if(target.activeSelf)
+            {
+                if(!GameData.Instance.mapLockList[lockIdx].transform.Find("Locked").gameObject.activeSelf)
+                {
+                    target.SetActive(false);
+                    GameData.Instance.mapLockList.RemoveAt(lockIdx);
+                }
+                else
+                {
+                    lockIdx+=1;
+                }
+            }
+        }
         SetMapList_Image();
         SetIconList_Image();
     }

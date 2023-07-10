@@ -11,7 +11,7 @@ public class FindLoadGameManager : MonoBehaviour
     public GameObject missionPanel;
     public GameObject multiTarget;
     public bool startTimer = false;
-    public GameObject successScene;
+    public GameObject successPanel;
     private bool gameOver = false;
     // Start is called before the first frame update
     void Start()
@@ -26,7 +26,16 @@ public class FindLoadGameManager : MonoBehaviour
         if(!gameOver && DestinationManager.clear)
         {
             Debug.Log("클리어!!");
-            successScene.SetActive(true);
+            successPanel.SetActive(true);
+            GameData.Instance.currentGame = 0;
+            int count = GameData.Instance.mapLockList.Count;
+            Debug.Log("Count : " + count);
+            int randomCount = Random.Range(0, count);
+            Debug.Log("RandomCount : " + randomCount);
+            Transform target = GameData.Instance.mapLockList[randomCount].transform;
+            Debug.Log("target : " + target.name);
+            target.Find("Locked").gameObject.SetActive(false);
+
             gameOver = true;
         }
     }
