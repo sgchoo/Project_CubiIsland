@@ -41,8 +41,6 @@ public class GameLoadingManager : MonoBehaviour
         //         isAct = true;
         //     }
         // }
-
-
         if(isDetectPanel && !PanelLoading_UI.ActAR)
         {
             sliderLoadingPanel.SetActive(false);
