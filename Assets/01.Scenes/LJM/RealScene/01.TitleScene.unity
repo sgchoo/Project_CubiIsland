@@ -1367,7 +1367,7 @@ Canvas:
   m_GameObject: {fileID: 1284098778}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 338856746}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -1394,9 +1394,9 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2023664907}
-  - {fileID: 1530535279}
   - {fileID: 2126997705}
   - {fileID: 906934394}
+  - {fileID: 1530535279}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1673,8 +1673,6 @@ MonoBehaviour:
   plazaWorld: {fileID: 0}
   characterPref: {fileID: 54871425594421225, guid: ab5704b3fe10af84c83cfa89b1d84cdd, type: 3}
   mapPref: {fileID: 3372669391436050778, guid: 58bf73bcb7a32094d9ec0cbab2f02177, type: 3}
-  characterLockList: []
-  mapLockList: []
 --- !u!4 &1608085313
 Transform:
   m_ObjectHideFlags: 0

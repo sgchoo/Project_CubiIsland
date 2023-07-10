@@ -8308,9 +8308,17 @@ PrefabInstance:
       propertyPath: character
       value: 
       objectReference: {fileID: 5990183754785702362}
+    - target: {fileID: 1560208971474868429, guid: 20d3b7cc5cce25f4a9b4ddfd2170f7ca, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5116395362563653951, guid: 20d3b7cc5cce25f4a9b4ddfd2170f7ca, type: 3}
       propertyPath: m_Name
       value: TouchDetector
+      objectReference: {fileID: 0}
+    - target: {fileID: 5116395362563653951, guid: 20d3b7cc5cce25f4a9b4ddfd2170f7ca, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6992109132433307827, guid: 20d3b7cc5cce25f4a9b4ddfd2170f7ca, type: 3}
       propertyPath: m_RootOrder

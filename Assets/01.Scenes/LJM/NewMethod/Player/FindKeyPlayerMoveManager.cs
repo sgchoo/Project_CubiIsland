@@ -75,6 +75,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
 
     void Update()
     {
+        if(FindKeyGameManager.gameOver) return;
         if(isRolling) return;
         if(isChangeAxis) 
         { 

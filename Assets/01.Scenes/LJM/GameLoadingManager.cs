@@ -27,9 +27,22 @@ public class GameLoadingManager : MonoBehaviour
         imageLoadingPanel.SetActive(false);
     }
 
+    private bool isAct = false;
     // Update is called once per frame
     void Update()
     {
+        // if(sliderLoadingPanel.activeSelf) return; 
+        // if(!isAct && imageLoadingPanel.activeSelf)
+        // {
+        //     if(!TouchManager.isTouch) return;
+        //     else 
+        //     {
+        //         ActImageTarget();
+        //         isAct = true;
+        //     }
+        // }
+
+
         if(isDetectPanel && !PanelLoading_UI.ActAR)
         {
             sliderLoadingPanel.SetActive(false);

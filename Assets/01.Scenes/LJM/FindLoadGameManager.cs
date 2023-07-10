@@ -27,14 +27,14 @@ public class FindLoadGameManager : MonoBehaviour
         {
             Debug.Log("클리어!!");
             successPanel.SetActive(true);
-            GameData.Instance.currentGame = 0;
-            int count = GameData.Instance.mapLockList.Count;
-            Debug.Log("Count : " + count);
-            int randomCount = Random.Range(0, count);
-            Debug.Log("RandomCount : " + randomCount);
-            Transform target = GameData.Instance.mapLockList[randomCount].transform;
-            Debug.Log("target : " + target.name);
-            target.Find("Locked").gameObject.SetActive(false);
+            // GameData.Instance.currentGame = 0;
+            // // int count = GameData.Instance.mapLockList.Count;
+            // Debug.Log("Count : " + count);
+            // int randomCount = Random.Range(0, count);
+            // Debug.Log("RandomCount : " + randomCount);
+            // // Transform target = GameData.Instance.mapLockList[randomCount].transform;
+            // Debug.Log("target : " + target.name);
+            // target.Find("Locked").gameObject.SetActive(false);
 
             gameOver = true;
         }

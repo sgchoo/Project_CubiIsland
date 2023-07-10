@@ -31,6 +31,7 @@ public class GameLoading_UI : MonoBehaviour
         targetValue = 3.5f;
         currentValue = LoadingSlider.value;
         currentText = 0;
+        timer = 0f;
     }
 
     // Update is called once per frame
@@ -43,6 +44,7 @@ public class GameLoading_UI : MonoBehaviour
 
     private void ActSlider()
     {
+        Debug.Log("GameLoading_UI::ActSlider");
         // 터치했거나, 로딩시간이 10초가 지났을 경우 패널 비활성화
         if (TouchManager.isTouch || timer >= 10f)
         {
