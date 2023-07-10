@@ -42,11 +42,11 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
     }
     void Start()
     {
-        Transform uiTarget = GameObject.Find("Canvas09").transform.Find("PanelSafeArea").transform.Find("Buttons").transform;
-        uiTarget.Find("Front").GetComponent<Button>().onClick.AddListener(FrontButton);
-        uiTarget.Find("right").GetComponent<Button>().onClick.AddListener(RightButton);
-        uiTarget.Find("Back").GetComponent<Button>().onClick.AddListener(BackButton);
-        uiTarget.Find("left").GetComponent<Button>().onClick.AddListener(LeftButton);
+        // Transform uiTarget = GameObject.Find("Canvas09").transform.Find("PanelSafeArea").transform.Find("Buttons").transform;
+        // uiTarget.Find("Front").GetComponent<Button>().onClick.AddListener(FrontButton);
+        // uiTarget.Find("right").GetComponent<Button>().onClick.AddListener(RightButton);
+        // uiTarget.Find("Back").GetComponent<Button>().onClick.AddListener(BackButton);
+        // uiTarget.Find("left").GetComponent<Button>().onClick.AddListener(LeftButton);
 
         parent = this.transform.parent;
         childList = new List<Transform>();
@@ -61,10 +61,14 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
     void Update()
     {
         if(isRolling) return;
-        if      (Input.GetKeyDown(KeyCode.UpArrow))     StartCoroutine(Rolling(Vector3.forward));
-        else if (Input.GetKeyDown(KeyCode.RightArrow))  StartCoroutine(Rolling(Vector3.right));
-        else if (Input.GetKeyDown(KeyCode.DownArrow))   StartCoroutine(Rolling(Vector3.down));
-        else if (Input.GetKeyDown(KeyCode.LeftArrow))   StartCoroutine(Rolling(Vector3.left));
+        Vector3 getDir = bl_Joystick.Instance.GetThumbDirection();
+
+        if(getDir == Vector3.zero) return;
+        StartCoroutine(Rolling(getDir));
+        // if      (Input.GetKeyDown(KeyCode.UpArrow))     StartCoroutine(Rolling(Vector3.forward));
+        // else if (Input.GetKeyDown(KeyCode.RightArrow))  StartCoroutine(Rolling(Vector3.right));
+        // else if (Input.GetKeyDown(KeyCode.DownArrow))   StartCoroutine(Rolling(Vector3.down));
+        // else if (Input.GetKeyDown(KeyCode.LeftArrow))   StartCoroutine(Rolling(Vector3.left));
     }
 
 

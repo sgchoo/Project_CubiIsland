@@ -2672,6 +2672,7 @@ GameObject:
   - component: {fileID: 8598394016896638996}
   - component: {fileID: 2904001397502175874}
   - component: {fileID: 8912054754538158414}
+  - component: {fileID: 688982499494457046}
   m_Layer: 0
   m_Name: CubiWorld_Lastest
   m_TagString: Untagged
@@ -2770,6 +2771,18 @@ PositionConstraint:
   m_Active: 0
   m_IsLocked: 0
   m_Sources: []
+--- !u!114 &688982499494457046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994669182123708780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 773320d53dda5394480d37c2324972b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3008040183043737595
 GameObject:
   m_ObjectHideFlags: 0

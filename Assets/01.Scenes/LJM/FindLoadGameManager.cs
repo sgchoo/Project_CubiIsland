@@ -16,18 +16,27 @@ public class FindLoadGameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("Timer");
+        //StartCoroutine("Timer");
     }
 
+    private bool isStart = false;
     // Update is called once per frame
     void Update()
     {
-        if(startTimer) return;
+        if(!isStart && TouchManager.isTouch) 
+        {
+            gameOver = false;
+            missionPanel.SetActive(false);
+            isStart = true;
+            multiTarget.SetActive(true);
+            return;
+        }
+
+        if(gameOver) return;
         if(!gameOver && DestinationManager.clear)
         {
-            Debug.Log("클리어!!");
             successPanel.SetActive(true);
-            // GameData.Instance.currentGame = 0;
+            GameData.Instance.currentGame = 0;
             // // int count = GameData.Instance.mapLockList.Count;
             // Debug.Log("Count : " + count);
             // int randomCount = Random.Range(0, count);
@@ -35,7 +44,6 @@ public class FindLoadGameManager : MonoBehaviour
             // // Transform target = GameData.Instance.mapLockList[randomCount].transform;
             // Debug.Log("target : " + target.name);
             // target.Find("Locked").gameObject.SetActive(false);
-
             gameOver = true;
         }
     }
