@@ -6,7 +6,7 @@ using TMPro;
 
 public class FindKeyGameManager : MonoBehaviour
 {
-    public int keyToFind = 0;
+    public int keyToFind = 2;
     public static int currentKeyCount = 0;
     public GameObject successPanel;
     public TMP_Text unlockCharacterName;
@@ -18,7 +18,7 @@ public class FindKeyGameManager : MonoBehaviour
     private bool isStart = false;
     private void Start()
     {        
-        if (keyToFind == 0) keyToFind = 1;
+        if (keyToFind == 0) keyToFind = 2;
         currentKeyCount = 0;
         gameOver = true;
         isStart = false;

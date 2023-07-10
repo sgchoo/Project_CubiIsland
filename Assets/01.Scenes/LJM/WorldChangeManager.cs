@@ -22,16 +22,35 @@ public class WorldChangeManager : MonoBehaviour
             cube.enabled = true;
         }
 
+        if (GameData.Instance.currentGame == 1)
+        {
+            OpenBox[] boxes = player.GetComponentsInChildren<OpenBox>(true);
+            foreach(var box in boxes)
+            {
+                box.enabled = true;
+            }
+        }
+
         Transform surfaces = player.Find("Surfaces");
         surfaces.Find("MoveArea").gameObject.SetActive(true);
-        surfaces.Find("MoveArea").Find("Player").GetComponent<FindKeyPlayerMoveManager>().enabled=true;
         surfaces.Find("CameraRayDetectArea").gameObject.SetActive(true);
 
-        KeyObjectBehaviour[] keys = player.GetComponentsInChildren<KeyObjectBehaviour>(true);
-        foreach(var key in keys)
+        if(GameData.Instance.currentGame == 0)
         {
-            key.gameObject.SetActive(true);
+            surfaces.Find("MoveArea").Find("Player").GetComponent<FindKeyPlayerMoveManager>().enabled=true;
+
+            KeyObjectBehaviour[] keys = player.GetComponentsInChildren<KeyObjectBehaviour>(true);
+            foreach(var key in keys)
+            {
+                key.gameObject.SetActive(true);
+            }
         }
+        else if (GameData.Instance.currentGame == 1)
+        {
+            surfaces.Find("MoveArea").Find("Player").GetComponent<FindLoadPlayerMoveManager2>().enabled=true;
+            player.GetComponentsInChildren<DestinationManager>(true)[0].gameObject.SetActive(true);
+        }
+        
 
         //GetComponent<DefaultObserverEventHandler>().OnTargetFound = a();
     }
