@@ -27,29 +27,14 @@ public class MapListController_UI : MonoBehaviour
     // 맵 아이콘 리스트
     private GameObject[] IconList;
 
+    //
+    private GameObject BG;
+
     [Header("선택 된 맵")]
     public static GameObject CurrentMap;
 
     void Start()
     {
-        int count = Contents.transform.childCount;
-        int lockIdx = 0;
-        for(int idx = 0; idx < count; idx++)
-        {
-            GameObject target = Contents.transform.GetChild(idx).transform.Find("Locked").gameObject;
-            if(target.activeSelf)
-            {
-                if(!GameData.Instance.mapLockList[lockIdx].transform.Find("Locked").gameObject.activeSelf)
-                {
-                    target.SetActive(false);
-                    GameData.Instance.mapLockList.RemoveAt(lockIdx);
-                }
-                else
-                {
-                    lockIdx+=1;
-                }
-            }
-        }
         SetMapList_Image();
         SetIconList_Image();
     }
@@ -91,14 +76,15 @@ public class MapListController_UI : MonoBehaviour
         {
              // Content 자식의 갯수로 배열 만들기
             ContentNum = Contents.transform.childCount;
-            //MapList 객체 받아오기
-            list = new GameObject[ContentNum];
-
+            list = new GameObject[ContentNum];  
+            
             for (int i = 0; i < ContentNum; i++)
             {
                 //Content의 순서대로 MapList오브젝트 받아오기
-                list[i] = Contents.transform.GetChild(i).gameObject;
+                list[i] = Contents.transform.GetChild(i).transform.Find("BG").gameObject;
                 GameObject img = list[i].transform.GetChild(childIdx).gameObject;
+                //BG = list[i].transform.GetChild(0).gameObject;
+                //GameObject img = BG.transform.GetChild(i).gameObject;
                 //MapList의 이미지 컴포넌트를 받아오기
                 if (img.tag == currentTag)
                 {
@@ -109,10 +95,9 @@ public class MapListController_UI : MonoBehaviour
     }
 
     // 맵 이미지, 아이콘 바꾸기 
-    // (굳이 이렇게 안하고 직접 오브젝트의 이미지소스를 바꿔도 되지만..)
     private void SetMapList_Image()
     {
-        Settings(ref MapList, 0, "MAPIMG", MapSourceList);
+        Settings(ref MapList, 1, "MAPIMG", MapSourceList);
         // //컨텐츠 연결이 해제 된 경우
         // if (Contents == null) { Debug.Log("Contents 오브젝트를 찾을 수 없습니다."); }
         // else
@@ -142,7 +127,7 @@ public class MapListController_UI : MonoBehaviour
     }
     private void SetIconList_Image()
     {
-        Settings(ref IconList, 3, "MAPICON", IconSourceList);
+        Settings(ref IconList, 0, "MAPICON", IconSourceList);
 
         // //컨텐츠 연결이 해제 된 경우
         // if (Contents == null) { Debug.Log("Contents 오브젝트를 찾을 수 없습니다."); }
