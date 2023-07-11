@@ -29,25 +29,6 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private float diff;
     private Vector3 PressScaleVector;
 
-    private static bl_Joystick instance = null;
-    public static bl_Joystick Instance
-    {
-        get
-        {
-            if (null == instance) { return null; }
-            return instance;
-        }
-    }
-
-    private void Awake() 
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }    
-    }
-
-
     /// <summary>
     /// 
     /// </summary>
@@ -106,8 +87,6 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             isFree = false;
             StickRect.position = DeathArea;
         }
-
-        
     }
 
     /// <summary>
@@ -140,7 +119,6 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     /// <param name="data"></param>
     public void OnDrag(PointerEventData data)
     {
-        Debug.Log("GetThumbDirection()::" + GetThumbDirection());
         //If this touch id is the first touch in the event
         if (data.pointerId == lastId)
         {
@@ -253,28 +231,5 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             return (StickRect.position.y - DeathArea.y) / Radio;
         }
-    }
-
-    public Vector3 GetThumbDirection()
-    {
-        Vector3 direction = (StickRect.position - DeathArea).normalized;
-        Debug.Log("dir::" + direction);
-        float angle = Vector3.Angle(Vector3.right, direction);
-        if(direction == Vector3.zero) return Vector3.zero;
-        if (angle <= 45f || angle >= 315f) // 오른쪽 방향
-        {
-            return Vector3.right;
-        }
-        else if (angle > 45f && angle <= 135f) // 위, 아래쪽 방향
-        {
-            if(direction.y > 0) return Vector3.forward;
-            else if(direction.y < 0) return Vector3.down;
-        }
-        else if (angle > 135f && angle <= 225f) // 왼쪽 방향
-        {
-            return Vector3.left;
-        }
-
-        return Vector3.zero;
     }
 }
