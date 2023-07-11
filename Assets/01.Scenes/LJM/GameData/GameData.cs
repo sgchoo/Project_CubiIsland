@@ -43,16 +43,58 @@ public class GameData : MonoBehaviour
     public AudioSource bgmAudio;
     public AudioSource sfxAudio;
 
+    // current Game => 0 : FindKeyGame
+    // current Game => 1 : FindLoadGame
+    public int currentGame;
+
+    public GameObject plazaWorld;
+
+    public GameObject characterPref;
+    public GameObject mapPref;
+    // public List<GameObject> characterLockList;
+    // public List<GameObject> mapLockList;
     
     private void Start() 
     {
-        sfx = new Sound();
-        bgm = new Sound();
+        // characterLockList = new List<GameObject>();
+        // mapLockList = new List<GameObject>();
+        currentGame = 0;
+
+        // checkCharacterLock();
+        // checkMapLock();
         SetSound();
     }
 
+    // public void checkCharacterLock()
+    // {
+    //     int count = characterPref.transform.childCount;
+    //     for(int idx = 0; idx < count; idx++)
+    //     {
+    //         Transform target = characterPref.transform.GetChild(idx).transform;
+    //         if(target.Find("locked").gameObject.activeSelf)
+    //         {
+    //             characterLockList.Add(target.gameObject);
+    //         }
+    //     }
+    // }
+
+    // public void checkMapLock()
+    // {
+    //     int count = mapPref.transform.childCount;
+    //     for(int idx = 0; idx < count; idx++)
+    //     {
+    //         Transform target = mapPref.transform.GetChild(idx).transform;
+    //         if(target.Find("Locked").gameObject.activeSelf)
+    //         {
+    //             mapLockList.Add(target.gameObject);
+    //         }
+    //     }
+    // }
+
     private void SetSound()
     {
+        sfx = new Sound();
+        bgm = new Sound();
         sfx.LoadSound(KeyStore.sfxMuteKey, KeyStore.sfxVolumeKey);
         bgm.LoadSound(KeyStore.bgmMuteKey, KeyStore.bgmVolumeKey);
 

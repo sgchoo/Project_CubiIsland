@@ -31,23 +31,30 @@ public class GameLoading_UI : MonoBehaviour
         targetValue = 3.5f;
         currentValue = LoadingSlider.value;
         currentText = 0;
+        timer = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
+        Debug.Log("GameLoading_UI::Touch - " + TouchManager.isTouch);
+        // 터치했거나, 로딩시간이 10초가 지났을 경우 패널 비활성화
+        if (TouchManager.isTouch || timer >= 10f)
+        {
+            // gameObject.SetActive(false);
+            GameLoadingManager.isDetectPanel = true;
+            Debug.Log("GameLoading_UI::Touch - " + GameLoadingManager.isDetectPanel);
+            return;
+        }
         ActSlider();
         ActText();
     }
 
     private void ActSlider()
     {
-        // 터치했거나, 로딩시간이 10초가 지났을 경우 패널 비활성화
-        if (TouchCheck_UI.isTouch == true || timer >= 10f)
-        {
-            gameObject.SetActive(false);
-        }
+        Debug.Log("GameLoading_UI::ActSlider");
+        
 
         // 슬라이더 채우기
         // 만약 3초라면, 1초 기다렸다가 움직이기
@@ -65,6 +72,7 @@ public class GameLoading_UI : MonoBehaviour
     
      private void ActText()
     {
+        Debug.Log("GameLoading_UI::ActText");
         if (timer % textChangeTime <= 0.01f)
         {
             texts[currentText].gameObject.SetActive(false);
