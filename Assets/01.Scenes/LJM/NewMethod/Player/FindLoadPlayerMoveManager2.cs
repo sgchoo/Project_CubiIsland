@@ -15,10 +15,8 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
 
     public Transform axisObject;
 
-    public Button frontBtn;
-    public Button leftBtn;
-    public Button rightBtn;
-    public Button backBtn;
+
+    private Transform joystick;
 
     public void FrontButton()
     {
@@ -47,7 +45,7 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
         // uiTarget.Find("right").GetComponent<Button>().onClick.AddListener(RightButton);
         // uiTarget.Find("Back").GetComponent<Button>().onClick.AddListener(BackButton);
         // uiTarget.Find("left").GetComponent<Button>().onClick.AddListener(LeftButton);
-
+        joystick = GameObject.Find("Canvas09").transform.Find("PanelSafeArea").transform.Find("Fixed Joystick").transform;
         parent = this.transform.parent;
         childList = new List<Transform>();
         foreach(Transform child in parent)
@@ -61,7 +59,7 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
     void Update()
     {
         if(isRolling) return;
-        Vector3 getDir = bl_Joystick.Instance.GetThumbDirection();
+        Vector3 getDir = GetThumbDirection(joystick.GetComponent<Joystick>().Direction);
 
         if(getDir == Vector3.zero) return;
         StartCoroutine(Rolling(getDir));
@@ -69,6 +67,32 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
         // else if (Input.GetKeyDown(KeyCode.RightArrow))  StartCoroutine(Rolling(Vector3.right));
         // else if (Input.GetKeyDown(KeyCode.DownArrow))   StartCoroutine(Rolling(Vector3.down));
         // else if (Input.GetKeyDown(KeyCode.LeftArrow))   StartCoroutine(Rolling(Vector3.left));
+    }
+
+    public Vector3 GetThumbDirection(Vector2 dir)
+    {
+        float angle = Vector2.SignedAngle(Vector2.right, dir);
+        if(angle<0) angle+=360;
+
+        if(dir == Vector2.zero) return Vector3.zero;
+        if (angle <= 45f || angle >= 315f) // 오른쪽 방향
+        {
+            return Vector3.right;
+        }
+        else if (angle > 45f && angle <= 135f) // 위, 아래쪽 방향
+        {
+            return Vector3.forward;
+        }
+        else if (angle > 135f && angle <= 225f) // 왼쪽 방향
+        {
+            return Vector3.left;
+        }
+        else if (angle > 225f && angle < 360f)
+        {
+            return Vector3.down;
+        }
+
+        return Vector3.zero;
     }
 
 

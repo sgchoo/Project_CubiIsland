@@ -496,7 +496,6 @@ GameObject:
   m_Component:
   - component: {fileID: 147923170}
   - component: {fileID: 147923178}
-  - component: {fileID: 147923177}
   - component: {fileID: 147923176}
   - component: {fileID: 147923175}
   - component: {fileID: 147923174}
@@ -751,14 +750,6 @@ MonoBehaviour:
   m_LightEstimation: 0
   m_FacingDirection: 1
   m_RenderMode: 1
---- !u!81 &147923177
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147923169}
-  m_Enabled: 1
 --- !u!20 &147923178
 Camera:
   m_ObjectHideFlags: 0
@@ -790,7 +781,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 20
   field of view: 60
   orthographic: 0
@@ -3471,7 +3462,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1934754575}
   - component: {fileID: 1934754574}
-  - component: {fileID: 1934754573}
   - component: {fileID: 1934754576}
   m_Layer: 0
   m_Name: Main Camera
@@ -3519,7 +3509,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0
