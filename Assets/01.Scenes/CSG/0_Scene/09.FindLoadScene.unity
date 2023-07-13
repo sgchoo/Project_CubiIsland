@@ -276,7 +276,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &129010271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1065,6 +1065,10 @@ PrefabInstance:
     - target: {fileID: 5142343675394813906, guid: 6e211bce5fb9c1548bdac2f2d93fea54, type: 3}
       propertyPath: m_Name
       value: Map01_Forest
+      objectReference: {fileID: 0}
+    - target: {fileID: 5142343675394813906, guid: 6e211bce5fb9c1548bdac2f2d93fea54, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4026,6 +4030,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Map03_Desert
       objectReference: {fileID: 0}
+    - target: {fileID: 3701015501345566722, guid: 38f187ca8d57b404a8df56e434761c9d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5634790307225648398, guid: 38f187ca8d57b404a8df56e434761c9d, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -6153,6 +6161,10 @@ PrefabInstance:
     - target: {fileID: 5351336493904596031, guid: 651723ea2df859f4e85367b27427afdf, type: 3}
       propertyPath: m_Name
       value: Map02_Snow
+      objectReference: {fileID: 0}
+    - target: {fileID: 5351336493904596031, guid: 651723ea2df859f4e85367b27427afdf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8920931884095950184, guid: 651723ea2df859f4e85367b27427afdf, type: 3}
       propertyPath: m_RootOrder
