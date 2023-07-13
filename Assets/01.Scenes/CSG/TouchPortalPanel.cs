@@ -1,32 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
 public class TouchPortalPanel : MonoBehaviour
 {
-    public Transform placeObject;
-
     private ARRaycastManager raycastMgr; 
 
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
-
-    private bool touched = false;
-
-    private GameObject SelectedObj;
-
     [SerializeField] private Camera arCamera;
 
     public Transform point;
-    public GameObject checkOption;
+    public GameObject checkUI;
     public GameObject portal;
 
     void Start() 
     {
-        checkOption.SetActive(false);
+        checkUI.SetActive(false);
         point.gameObject.SetActive(false);
-        // AR Raycast Manager 초기화
         raycastMgr = GetComponent<ARRaycastManager>();
     }
 
@@ -53,19 +46,28 @@ public class TouchPortalPanel : MonoBehaviour
 
     public void EnterBtn()
     {
-        checkOption.SetActive(true);
+        checkUI.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void CreateBtn()
     {
         GameObject gate = Instantiate(portal);
+        GameData.Instance.plazaWorld = gate;
+        DontDestroyOnLoad(gate);
         gate.transform.position = hits[0].pose.position;
-        gate.transform.rotation = Quaternion.identity;
+        gate.transform.rotation = Quaternion.Euler(0, 180, 0);
+
+        Time.timeScale = 1f;
+        checkUI.SetActive(false);
+
+        SceneManager.LoadScene(KeyStore.plazaScene);
     }
 
     public void BackBtn()
     {
-        checkOption.SetActive(false);
+        Time.timeScale = 1f;
+        checkUI.SetActive(false);
     }
 
     //// 터치 & 드래그로 Portal 생성

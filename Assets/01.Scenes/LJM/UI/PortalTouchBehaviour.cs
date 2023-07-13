@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -43,6 +44,12 @@ public class PortalTouchBehaviour : MonoBehaviour
 
             if (Physics.Raycast(ray, out hit))
             {
+                if (EventSystem.current.IsPointerOverGameObject())
+                {
+                    Debug.Log(EventSystem.current.currentSelectedGameObject.name);
+                    //if(EventSystem.current.name == )
+                    return;
+                }
                 if(hit.collider.name == character.name)
                 {
                     SceneManager.LoadScene(KeyStore.characterSelectScene);
@@ -54,4 +61,5 @@ public class PortalTouchBehaviour : MonoBehaviour
             }
         }    
     }
+    
 }
