@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 
@@ -51,10 +52,14 @@ public class TouchPortalPanel : MonoBehaviour
     public void CreateBtn()
     {
         GameObject gate = Instantiate(portal);
+        GameData.Instance.plazaWorld = gate;
+        DontDestroyOnLoad(gate);
         gate.transform.position = hits[0].pose.position;
         gate.transform.rotation = Quaternion.Euler(0, 180, 0);
 
         checkUI.SetActive(false);
+
+        SceneManager.LoadScene(KeyStore.plazaScene);
     }
 
     public void BackBtn()
