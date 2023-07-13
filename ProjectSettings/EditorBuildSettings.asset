@@ -6,39 +6,45 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 0
+    path: Assets/01.Scenes/CSG/TestSceneCSG.unity
+    guid: dbf85cbb97e8dd84c8104589d44829c7
+  - enabled: 0
+    path: Assets/01.Scenes/CSG/ARFoundation.unity
+    guid: e9f9d0e02f9ae1f46b682a3328482e34
+  - enabled: 0
+    path: Assets/01.Scenes/CSG_2/0_Scenes/PortalTest.unity
+    guid: c3cd5e8dbf191e64b912fe860f1d5960
+  - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/01.TitleScene.unity
     guid: 8232544014de9db40888f47f00bf5e3f
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/02.LobbyScene.unity
     guid: a6834eb12a33aa0458fdfda621029a08
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/03.CreatePlazaScene.unity
     guid: 936225b2c5a05d94fa0f5989ce14b168
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/04.PlazaScene.unity
     guid: 131115531c69fc54e9d3ff96243db3f5
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/05.ChangeCharScene.unity
     guid: 902616f802a392e4e96c75529d85325e
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/06.ChangeMapScene.unity
     guid: f5bf71598b866834aae6973eb7df8baf
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/07.StartCheckScene.unity
     guid: f3a07fb199dcb9b498dca4e66a7b6723
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/07_2.LoadScene.unity
     guid: 7a6f3a6d0c324b6419fcd4f9d331e125
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/08.FindKeyScene.unity
     guid: 6c7abdc488e4d954fa682952992fec93
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/09.FindLoadScene.unity
     guid: 3d179104e58f2984facfa2c9ea69685d
   - enabled: 1
-    path: Assets/01.Scenes/CSG/0_Scene/09.FindLoadScene.unity
-    guid: 4b51b2f59831bba41b8a11601982e234
-  - enabled: 0
     path: Assets/01.Scenes/LJM/RealScene/99.OptionScene.unity
     guid: 48abecd9e1d720e4e831b3f855a8e340
   m_configObjects:
