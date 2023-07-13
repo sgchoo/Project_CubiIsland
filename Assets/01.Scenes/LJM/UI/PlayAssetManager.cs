@@ -73,7 +73,7 @@ public class PlayAssetManager : MonoBehaviour
             // currentWorld.localScale = new Vector3(0.08f,0.08f,0.08f);
             // currentWorld.gameObject.layer = 29;
             Settnigs(currentWorld, world, new Vector3(0.08f,0.08f,0.08f));
-            targetLayer = 0;
+            //targetLayer = 0;
         }    
     }
 
