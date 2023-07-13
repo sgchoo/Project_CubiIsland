@@ -39,17 +39,21 @@ public class PortalTouchBehaviour : MonoBehaviour
         // 한 번만 누를 때 활성화돰
         if (Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
+             if (EventSystem.current.IsPointerOverGameObject())
+            {
+                GameObject uiObj = EventSystem.current.currentSelectedGameObject;
+                if(uiObj != null)
+                {   
+                    return;
+                }
+                
+            }
+
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit hit;
 
             if (Physics.Raycast(ray, out hit))
             {
-                if (EventSystem.current.IsPointerOverGameObject())
-                {
-                    Debug.Log(EventSystem.current.currentSelectedGameObject.name);
-                    //if(EventSystem.current.name == )
-                    return;
-                }
                 if(hit.collider.name == character.name)
                 {
                     SceneManager.LoadScene(KeyStore.characterSelectScene);
