@@ -12,9 +12,15 @@ public class MoveUp : MonoBehaviour
 
     IEnumerator Move()
     {
+        this.transform.GetComponent<MeshRenderer>().enabled = false;
+
+        yield return new WaitForSeconds(0.5f);
+
+        this.transform.GetComponent<MeshRenderer>().enabled = true;
+
         yield return new WaitForSeconds(2.0f);
 
-        transform.DOMoveY(0.35f, 1.0f).SetEase(Ease.Unset).SetLoops(1).SetRelative();
+        transform.DOMoveZ(-0.5f, 1.0f).SetEase(Ease.Unset).SetLoops(1).SetRelative();
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -23,10 +29,10 @@ public class MoveUp : MonoBehaviour
         {
             this.gameObject.layer = 0;
             // 자식 오브젝트도 레이어 변경시키기
-            if(this.transform.GetChild(0) != null)
-            {
-                this.transform.GetChild(0).gameObject.layer = 0;
-            }
+            // if(this.transform.GetChild(0) != null)
+            // {
+            //     this.transform.GetChild(0).gameObject.layer = 0;
+            // }
         }
     }
 }
