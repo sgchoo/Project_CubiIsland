@@ -44,9 +44,12 @@ public class TouchPortalPanel : MonoBehaviour
         }
     }
 
+    private Vector3 hitPos;
+
     public void EnterBtn()
     {
         checkUI.SetActive(true);
+        hitPos = point.transform.position;
     }
 
     public void CreateBtn()
@@ -54,7 +57,7 @@ public class TouchPortalPanel : MonoBehaviour
         GameObject gate = Instantiate(portal);
         GameData.Instance.plazaWorld = gate;
         DontDestroyOnLoad(gate);
-        gate.transform.position = hits[0].pose.position;
+        gate.transform.position = hitPos;//hits[0].pose.position;
         gate.transform.rotation = Quaternion.Euler(0, 180, 0);
 
         checkUI.SetActive(false);

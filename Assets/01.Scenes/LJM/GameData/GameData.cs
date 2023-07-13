@@ -68,6 +68,21 @@ public class GameData : MonoBehaviour
         // checkCharacterLock();
         // checkMapLock();
         SetSound();
+
+        if(PlayerPrefs.HasKey(KeyStore.WORLDMAP_KEY))
+        {
+            string world = PlayerPrefs.GetString(KeyStore.WORLDMAP_KEY);
+            currentWorld = Resources.Load<GameObject>(world);
+        }
+
+        if(PlayerPrefs.HasKey(KeyStore.CHARACTER_KEY))
+        {
+            string character = PlayerPrefs.GetString(KeyStore.CHARACTER_KEY);
+            currentCharacter = Resources.Load<GameObject>(character);
+        }
+
+        
+        
     }
 
     private void SetTutorial()

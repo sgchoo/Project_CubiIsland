@@ -62,6 +62,7 @@ public class MapListController_UI : MonoBehaviour
             if (prefab.name == currentMapName)
             {
                 GameData.Instance.currentWorld = prefab; // 맵 프리팹을 UIController_UI.FinalMap에 저장
+                PlayerPrefs.SetString(KeyStore.WORLDMAP_KEY, GameData.Instance.currentWorld.name);
                 break;
             }
         }

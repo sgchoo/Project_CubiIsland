@@ -24,6 +24,10 @@ public static class KeyStore
     public const string sfxVolumeKey = "SFXVolume";
     public const string bgmVolumeKey = "BGMVolume";
 
+    // 플레이 관련 키
+    public const string CHARACTER_KEY = "character";
+    public const string WORLDMAP_KEY = "world";
+
 
     // 튜토리얼 관련 키
     public const string tutorialKey = "Tutorial";
