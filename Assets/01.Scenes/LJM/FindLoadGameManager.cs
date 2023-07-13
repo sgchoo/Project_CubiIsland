@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,15 +13,15 @@ public class FindLoadGameManager : MonoBehaviour
     public GameObject multiTarget;
     public bool startTimer = false;
     public GameObject successPanel;
+    private bool isStart = false;
     private bool gameOver = false;
-    // Start is called before the first frame update
+    public GameObject arrayImageTarget;
+    private GameObject imageTarget;
     void Start()
     {
         //StartCoroutine("Timer");
     }
 
-    private bool isStart = false;
-    // Update is called once per frame
     void Update()
     {
         if(!isStart && TouchManager.isTouch) 
@@ -61,5 +62,25 @@ public class FindLoadGameManager : MonoBehaviour
     
         multiTarget.SetActive(true);
         startTimer = false;
+    }
+
+    private void ActImageTarget()
+    {
+        int len = arrayImageTarget.transform.childCount;
+        for (int idx = 0; idx < len; idx++)
+        {
+            Transform target = arrayImageTarget.transform.GetChild(idx);
+            if (target.name == GameData.Instance.currentWorld.name)
+            {
+                imageTarget = target.gameObject;
+                imageTarget.SetActive(true);
+                break;
+            }
+        }
+        if (imageTarget == null)
+        {
+            Debug.Log("Error!!");
+        }
+        // isCameraOn = true;
     }
 }
