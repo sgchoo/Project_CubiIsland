@@ -14,7 +14,7 @@ public class PortalTouchBehaviour : MonoBehaviour
     void Start()
     {
         // Debug.Log("STart");
-        // Transform parent = GameObject.Find("CubiWorld_Final").transform.Find("InsideObject").transform.Find("TouchObject");
+        // Transform parent = GameObject.Find("CubiWorld_0711").transform.Find("InsideObject").transform.Find("TouchObject");
         // character = parent.Find("Character");
         // world = parent.Find("WorldMap");
         // Debug.Log("NAME : " + character.name + " " + world.name);
@@ -25,10 +25,10 @@ public class PortalTouchBehaviour : MonoBehaviour
     void Update()
     {
         // Debug.Log("UpdateSTart");
-        // if(!isDetect && GameObject.Find("CubiWorld_Final") != null)
+        // if(!isDetect && GameObject.Find("CubiWorld_0711") != null)
         // {
         //     Debug.Log("Update");
-        //     Transform parent = GameObject.Find("CubiWorld_Final").transform.Find("InsideObject").transform.Find("TouchObject");
+        //     Transform parent = GameObject.Find("CubiWorld_0711").transform.Find("InsideObject").transform.Find("TouchObject");
         //     character = parent.Find("Character").transform;
         //     world = parent.Find("WorldMap").transform;
         //     Debug.Log("NAME2 : " + character.name + " " + world.name);
