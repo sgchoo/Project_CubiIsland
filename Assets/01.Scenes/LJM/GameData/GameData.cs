@@ -62,7 +62,7 @@ public class GameData : MonoBehaviour
         // mapLockList = new List<GameObject>();
         currentGame = 0;
 
-        SetTutorial();
+        //SetTutorial();
         // tutorial = false;
 
         // checkCharacterLock();
