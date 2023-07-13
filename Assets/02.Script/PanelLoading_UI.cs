@@ -32,7 +32,7 @@ public class PanelLoading_UI : MonoBehaviour
     // 알파 값을 변화시켜 fadeout시키기위한 변수
     private CanvasGroup DisappearObject;
 
-    // ??
+    // 이미지 인식 씬에서 재탕
     private Image MapIcon;
 
     private bool fadeOut = false;
@@ -64,7 +64,7 @@ public class PanelLoading_UI : MonoBehaviour
     private void ActTouch()
     {
         // 터치모션 2초 뒤 켜기
-        if (!fadeOut && timer <= 2f)
+        if (!fadeOut && timer <= 1f)
         {
             timer += Time.deltaTime;
             return;

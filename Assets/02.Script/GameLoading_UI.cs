@@ -70,6 +70,7 @@ public class GameLoading_UI : MonoBehaviour
         }
     }
     
+    // 텍스트 출력 반복 돌리기
      private void ActText()
     {
         Debug.Log("GameLoading_UI::ActText");
