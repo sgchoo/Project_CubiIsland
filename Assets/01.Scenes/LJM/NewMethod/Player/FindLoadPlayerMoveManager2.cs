@@ -15,10 +15,6 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
 
     public Transform axisObject;
 
-    public Button frontBtn;
-    public Button leftBtn;
-    public Button rightBtn;
-    public Button backBtn;
 
     private Transform joystick;
 

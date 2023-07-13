@@ -32,7 +32,6 @@ public class PlayerDirectionManager : MonoBehaviour
     }
 
     public GameObject imageObject;
-    public Canvas canvas;
 
     public Direction RayForDirection()
     {

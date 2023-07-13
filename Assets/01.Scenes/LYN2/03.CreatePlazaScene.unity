@@ -696,7 +696,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 0.01
   far clip plane: 20
   field of view: 60
   orthographic: 0
@@ -876,9 +876,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3998435199983456131, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
-        m_TargetAssemblyTypeName: UIController2_UI, Assembly-CSharp
-        m_MethodName: btnPlaza
+      - m_Target: {fileID: 589056272}
+        m_TargetAssemblyTypeName: TouchPortalPanel, Assembly-CSharp
+        m_MethodName: EnterBtn
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1204,6 +1204,8 @@ GameObject:
   - component: {fileID: 589056268}
   - component: {fileID: 589056267}
   - component: {fileID: 589056266}
+  - component: {fileID: 589056272}
+  - component: {fileID: 589056273}
   m_Layer: 0
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1218,12 +1220,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 589056265}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 734a855b70081fe4b82df0a5e9b09a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlacedPrefab: {fileID: 2994669182123708780, guid: 09fe5b23557580d4196b6f37336f87b6, type: 3}
+  m_PlacedPrefab: {fileID: 7534553729896112417, guid: 82113f01b920a5340978b1aac3379042, type: 3}
 --- !u!114 &589056267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1236,7 +1238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1760703bbd54c04488a8d10600262ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlanePrefab: {fileID: 2695546290610411207, guid: 87798005b4e20c345b6b6c08d5e27817, type: 3}
+  m_PlanePrefab: {fileID: 5976681969393886848, guid: 2e6c6bf73e0520c429d3cf0bf3e11bd8, type: 3}
   m_DetectionMode: 1
 --- !u!114 &589056268
 MonoBehaviour:
@@ -1284,6 +1286,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &589056272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589056265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7bcf9a094f5219641aad831b583b9259, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placeObject: {fileID: 4718933233054702054, guid: 82113f01b920a5340978b1aac3379042, type: 3}
+  arCamera: {fileID: 147923178}
+  point: {fileID: 0}
+  checkOption: {fileID: 0}
+  portal: {fileID: 7534553729896112417, guid: 82113f01b920a5340978b1aac3379042, type: 3}
+--- !u!114 &589056273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589056265}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ab0e80cee9cc1d44928bfe488dd1e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PointCloudPrefab: {fileID: 2667673960005411524, guid: ee8b6915b1773224ca41d07d74d4e6ed, type: 3}
 --- !u!1 &593915163
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,6 +1663,7 @@ MonoBehaviour:
   MapIcons: []
   MapTitle: {fileID: 0}
   TouchMotion: {fileID: 536185401}
+  imageIcon: {fileID: 0}
 --- !u!114 &723589648
 MonoBehaviour:
   m_ObjectHideFlags: 0

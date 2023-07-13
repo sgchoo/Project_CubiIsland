@@ -54,16 +54,34 @@ public class GameData : MonoBehaviour
     // public List<GameObject> characterLockList;
     // public List<GameObject> mapLockList;
     
+    public bool tutorial = false;
+
     private void Start() 
     {
         // characterLockList = new List<GameObject>();
         // mapLockList = new List<GameObject>();
         currentGame = 0;
 
+        //SetTutorial();
+        // tutorial = false;
+
         // checkCharacterLock();
         // checkMapLock();
         SetSound();
     }
+
+    private void SetTutorial()
+    {
+        if(PlayerPrefs.HasKey(KeyStore.tutorialKey))
+        {
+            tutorial = false;
+        }
+        else 
+        {
+            tutorial = true;
+        }
+    }
+
 
     // public void checkCharacterLock()
     // {
