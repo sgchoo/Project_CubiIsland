@@ -46,7 +46,6 @@ public class TouchPortalPanel : MonoBehaviour
     public void EnterBtn()
     {
         checkUI.SetActive(true);
-        Time.timeScale = 0f;
     }
 
     public void CreateBtn()
@@ -55,13 +54,11 @@ public class TouchPortalPanel : MonoBehaviour
         gate.transform.position = hits[0].pose.position;
         gate.transform.rotation = Quaternion.Euler(0, 180, 0);
 
-        Time.timeScale = 1f;
         checkUI.SetActive(false);
     }
 
     public void BackBtn()
     {
-        Time.timeScale = 1f;
         checkUI.SetActive(false);
     }
 
