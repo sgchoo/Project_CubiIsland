@@ -47,6 +47,8 @@ public class FindLoadGameManager : MonoBehaviour
             // target.Find("Locked").gameObject.SetActive(false);
             gameOver = true;
         }
+
+        ActImageTarget();
     }
 
     private IEnumerator Timer()
@@ -77,6 +79,7 @@ public class FindLoadGameManager : MonoBehaviour
                 break;
             }
         }
+
         if (imageTarget == null)
         {
             Debug.Log("Error!!");
