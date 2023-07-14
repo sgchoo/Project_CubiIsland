@@ -62,8 +62,8 @@ public class GameData : MonoBehaviour
     {
         characterLockList = new List<GameObject>();
         mapLockList = new List<GameObject>();
-        characterUnLockIdx = 3;
-        worldUnLockIdx = 2;
+        characterUnLockIdx = 0;
+        worldUnLockIdx = 0;
         currentGame = 0;
 
         //SetTutorial();
@@ -144,7 +144,6 @@ public class GameData : MonoBehaviour
 
     public void lockCheck(GameObject pref, ref List<GameObject> list, int unlockIdx)
     {
-        list.Clear();
         int count = pref.transform.childCount;
         for(int idx = 0; idx < count; idx++)
         {

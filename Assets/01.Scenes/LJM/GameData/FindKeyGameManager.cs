@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using TMPro;
 
@@ -25,6 +26,8 @@ public class FindKeyGameManager : MonoBehaviour
         descriptionPanel.SetActive(true);
         successPanel.SetActive(false);
         multiView.SetActive(false); 
+
+        Debug.Log("FINDKEYGAMEMANAGER::"+GameData.Instance.characterLockList.Count);
     }
 
     
@@ -43,8 +46,18 @@ public class FindKeyGameManager : MonoBehaviour
         {
             successPanel.SetActive(true);
             GameData.Instance.currentGame = 1;
-            // int count = GameData.Instance.characterLockList.Count;
-            // int randomCount = Random.Range(0, count);
+            
+
+            Image unLockCharacter = successPanel.transform.Find("SuccessPanel").transform.Find("ImageItem").GetComponent<Image>();
+            unLockCharacter.sprite = GameData.Instance.characterLockList[GameData.Instance.characterUnLockIdx].transform.Find("Image").GetComponent<Image>().sprite;
+
+            GameData.Instance.characterUnLockIdx += 1;
+            PlayerPrefs.SetInt(KeyStore.CHARACTER_UNLOCK_INDEX, GameData.Instance.characterUnLockIdx);
+            PlayerPrefs.Save();
+            //unLockCharacter.sprite = 
+            //unlockCharacterImage.sprite = 
+            // int unLockcount = GameData.Instance.characterUnLockIdx;
+            // int idx
 
             // Transform target = GameData.Instance.characterLockList[randomCount].transform;
             // target.Find("locked").gameObject.SetActive(false);

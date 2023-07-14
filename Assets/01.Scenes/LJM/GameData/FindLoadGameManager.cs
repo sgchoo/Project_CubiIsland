@@ -17,6 +17,8 @@ public class FindLoadGameManager : MonoBehaviour
     private bool gameOver = false;
     public GameObject arrayImageTarget;
     private GameObject imageTarget;
+
+    public Sprite[] mapIcont;
     void Start()
     {
         gameOver = false;
@@ -51,6 +53,13 @@ public class FindLoadGameManager : MonoBehaviour
         {
             successPanel.SetActive(true);
             GameData.Instance.currentGame = 0;
+
+            Image unLockMap = successPanel.transform.Find("SuccessPanel").transform.Find("ImageItem").GetComponent<Image>();
+            unLockMap.sprite = mapIcont[GameData.Instance.worldUnLockIdx];
+
+            GameData.Instance.worldUnLockIdx += 1;
+            PlayerPrefs.SetInt(KeyStore.WORLD_UNLOCK_INDEX, GameData.Instance.worldUnLockIdx);
+            PlayerPrefs.Save();
             // // int count = GameData.Instance.mapLockList.Count;
             // Debug.Log("Count : " + count);
             // int randomCount = Random.Range(0, count);

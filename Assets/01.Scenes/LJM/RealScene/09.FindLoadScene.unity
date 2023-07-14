@@ -10063,6 +10063,12 @@ MonoBehaviour:
   startTimer: 0
   successPanel: {fileID: 308809052}
   arrayImageTarget: {fileID: 1032093611}
+  mapIcont:
+  - {fileID: -1837247022, guid: b5c10354ced92914e9104a047596e031, type: 3}
+  - {fileID: 522539564, guid: b5c10354ced92914e9104a047596e031, type: 3}
+  - {fileID: 57468099, guid: b5c10354ced92914e9104a047596e031, type: 3}
+  - {fileID: -1446708304, guid: b5c10354ced92914e9104a047596e031, type: 3}
+  - {fileID: 1532122330, guid: b5c10354ced92914e9104a047596e031, type: 3}
 --- !u!4 &2022430518
 Transform:
   m_ObjectHideFlags: 0
