@@ -42,6 +42,7 @@ public class PanelLoading_UI : MonoBehaviour
     
     void Start()
     {
+        
         fadeDuration = 1f;
         DisappearObject = GetComponent<CanvasGroup>();
         ActAR = false;
@@ -57,23 +58,17 @@ public class PanelLoading_UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        timer += Time.deltaTime;
         ActTouch();
     }
 
 
     private void ActTouch()
     {
-        // 터치모션 2초 뒤 켜기
-        if (!fadeOut && timer <= 1f)
+        if (Input.GetMouseButtonDown(0) || timer >= 2f)
         {
-            timer += Time.deltaTime;
-            return;
-        }
-        fadeOut = true;
-        // 터치하면 이미지 서서히 사라지고 AR카메라 활성화 하기
-        TouchMotion.SetActive(true);
-        if (TouchManager.isTouch)
-        {
+            print("터치");
+            ScanImage_UI.ScanimageAct = true;
             StartCoroutine(FadeOutIcon());
         }
         
@@ -88,15 +83,15 @@ public class PanelLoading_UI : MonoBehaviour
             elapsedTime += Time.deltaTime;
             float t = elapsedTime / fadeDuration;
 
-            // 패널 창의 투명도를 서서히 감소시킵니다.
+            // 패널 창의 투명도를 서서히 감소
             DisappearObject.alpha = Mathf.Lerp(startAlpha, 0f, t);
 
             yield return null;
         }
-        
         // Transition 효과 종료 후, 패널 창 완전히 비활성화
+        
         gameObject.SetActive(false);
-        ActAR = true;
+        
     }
     
     private void UpdateMapInfo(Sprite sprite, string text)

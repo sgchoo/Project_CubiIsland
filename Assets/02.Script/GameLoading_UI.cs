@@ -23,6 +23,8 @@ public class GameLoading_UI : MonoBehaviour
     // 하단 텍스트가 변경되는 시간(기본 3f)
     public float textChangeTime;
 
+    public static bool LoadingPanelIsAct;
+
 
     void Start()
     {
@@ -32,17 +34,21 @@ public class GameLoading_UI : MonoBehaviour
         currentValue = LoadingSlider.value;
         currentText = 0;
         timer = 0f;
+        LoadingPanelIsAct = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
+        //Debug.Log("GameLoading_UI::Touch - " + TouchManager.isTouch);
         // 터치했거나, 로딩시간이 10초가 지났을 경우 패널 비활성화
-        if (TouchManager.isTouch || timer >= 10f)
+        if (Input.GetMouseButtonDown(0) ||timer >= 9f)
         {
-            // gameObject.SetActive(false);
             GameLoadingManager.isDetectPanel = true;
+            gameObject.SetActive(false);
+            LoadingPanelIsAct = false;
+            //Debug.Log("GameLoading_UI::Touch - " + GameLoadingManager.isDetectPanel);
             return;
         }
         ActSlider();
@@ -51,6 +57,8 @@ public class GameLoading_UI : MonoBehaviour
 
     private void ActSlider()
     {
+        //Debug.Log("GameLoading_UI::ActSlider");
+        
         // 슬라이더 채우기
         // 만약 3초라면, 1초 기다렸다가 움직이기
         if (timer <= targetValue)
@@ -68,6 +76,7 @@ public class GameLoading_UI : MonoBehaviour
     // 텍스트 출력 반복 돌리기
      private void ActText()
     {
+        //Debug.Log("GameLoading_UI::ActText");
         if (timer % textChangeTime <= 0.01f)
         {
             texts[currentText].gameObject.SetActive(false);
