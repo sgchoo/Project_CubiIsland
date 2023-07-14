@@ -4503,7 +4503,6 @@ GameObject:
   - component: {fileID: 1975904876}
   - component: {fileID: 1975904875}
   - component: {fileID: 1975904874}
-  - component: {fileID: 1975904873}
   - component: {fileID: 1975904872}
   - component: {fileID: 1975904871}
   m_Layer: 0
@@ -4542,19 +4541,6 @@ MonoBehaviour:
   point: {fileID: 142995706}
   checkUI: {fileID: 24716941}
   portal: {fileID: 7534553729896112417, guid: 82113f01b920a5340978b1aac3379042, type: 3}
---- !u!114 &1975904873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1975904870}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 734a855b70081fe4b82df0a5e9b09a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_PlacedPrefab: {fileID: 7534553729896112417, guid: 82113f01b920a5340978b1aac3379042, type: 3}
 --- !u!114 &1975904874
 MonoBehaviour:
   m_ObjectHideFlags: 0

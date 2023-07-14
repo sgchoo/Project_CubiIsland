@@ -48,7 +48,6 @@ public class BGMSoundManager : MonoBehaviour
                 bgmPlay(gameBGM); break;
 
         }
-        Debug.Log("New scene loaded: " + scene.name);
     }
 
     

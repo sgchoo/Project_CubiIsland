@@ -10,7 +10,7 @@ public class FindLoadGameManager : MonoBehaviour
 
     public TMP_Text timerText;   
     public GameObject missionPanel;
-    public GameObject multiTarget;
+    //public GameObject multiTarget;
     public bool startTimer = false;
     public GameObject successPanel;
     private bool isStart = false;
@@ -19,6 +19,17 @@ public class FindLoadGameManager : MonoBehaviour
     private GameObject imageTarget;
     void Start()
     {
+        gameOver = false;
+        isStart = false;
+        successPanel.SetActive(false);
+        missionPanel.SetActive(true);
+        int len = arrayImageTarget.transform.childCount;
+        for (int idx = 0; idx < len; idx++)
+        {
+            Transform target = arrayImageTarget.transform.GetChild(idx);
+            target.gameObject.SetActive(false);
+        }
+        DestinationManager.clear = false;
         //StartCoroutine("Timer");
     }
 
@@ -29,7 +40,9 @@ public class FindLoadGameManager : MonoBehaviour
             gameOver = false;
             missionPanel.SetActive(false);
             isStart = true;
-            multiTarget.SetActive(true);
+            DestinationManager.clear = false;
+            ActImageTarget();
+            //multiTarget.SetActive(true);
             return;
         }
 
@@ -48,7 +61,7 @@ public class FindLoadGameManager : MonoBehaviour
             gameOver = true;
         }
 
-        ActImageTarget();
+        
     }
 
     private IEnumerator Timer()
@@ -62,7 +75,8 @@ public class FindLoadGameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         missionPanel.SetActive(false);
     
-        multiTarget.SetActive(true);
+        //multiTarget.SetActive(true);
+        ActImageTarget();
         startTimer = false;
     }
 

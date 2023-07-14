@@ -90,6 +90,7 @@ public class ChangeController_UI : MonoBehaviour
         GameObject selectedPrefab = CharPrefabs[selectedIndex];
         // FinalChar에 선택한 프리팹 할당
         GameData.Instance.currentCharacter = selectedPrefab;
+        PlayerPrefs.SetString(KeyStore.CHARACTER_KEY, GameData.Instance.currentCharacter.name);
         Debug.Log("B : " + GameData.Instance.currentCharacter.name);
         PlayAssetManager.isSet = false;
     }

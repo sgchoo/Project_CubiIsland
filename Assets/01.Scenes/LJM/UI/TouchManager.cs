@@ -43,12 +43,10 @@ public class TouchManager : MonoBehaviour
 
             if (touch.phase == TouchPhase.Began)
             {
-                Debug.Log("Touching");
                 isTouch = true;
             }
             else if (touch.phase == TouchPhase.Ended && isTouch)
             {
-                Debug.Log("NotTouching");
                 isTouch = false;
             }
         }
