@@ -12,23 +12,11 @@ public class ChangeBaseMap : MonoBehaviour
     private void Start() 
     {
         myRender = this.GetComponent<Renderer>();
-
     }
 
     private void Update() 
     {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            myRender.material.mainTexture = textures[0];
-        }
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            myRender.material.mainTexture = textures[1];
-        }
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            myRender.material.mainTexture = textures[2];
-        }
+        ChangeMainTexture();
     }
 
     private void ChangeMainTexture()
