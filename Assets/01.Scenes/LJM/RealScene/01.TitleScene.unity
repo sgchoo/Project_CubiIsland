@@ -2032,9 +2032,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: mapPref
+      value: 
+      objectReference: {fileID: 3961252739618774394, guid: 52ba96cc239d8b74abc63ef27bfe219a, type: 3}
+    - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: currentWorld
       value: 
       objectReference: {fileID: 5142343675394813906, guid: 6e211bce5fb9c1548bdac2f2d93fea54, type: 3}
+    - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: characterPref
+      value: 
+      objectReference: {fileID: 3681868744534295147, guid: 3e9e28d63b4823e4a9ea9a7dc36e2a6a, type: 3}
     - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: currentCharacter
       value: 
