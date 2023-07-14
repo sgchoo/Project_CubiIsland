@@ -915,6 +915,7 @@ GameObject:
   - component: {fileID: 1026889365}
   - component: {fileID: 1026889364}
   - component: {fileID: 1026889363}
+  - component: {fileID: 1026889366}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -1001,6 +1002,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1026889361}
   m_CullTransparentMesh: 1
+--- !u!114 &1026889366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026889361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5056f7aa516cf4d8eaca6f764d9e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotLeft: 0
+  RotRight: 0
+  rotationAmount: 1
+  animator: {fileID: 0}
 --- !u!1 &1060939387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +1030,7 @@ GameObject:
   - component: {fileID: 1060939390}
   - component: {fileID: 1060939389}
   - component: {fileID: 1060939391}
+  - component: {fileID: 1060939392}
   m_Layer: 5
   m_Name: Image (1)
   m_TagString: Untagged
@@ -1099,6 +1117,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1060939392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060939387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5056f7aa516cf4d8eaca6f764d9e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotLeft: 0
+  RotRight: 0
+  rotationAmount: 1
+  animator: {fileID: 0}
 --- !u!1 &1284098778
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,6 +1797,7 @@ GameObject:
   - component: {fileID: 1818445369}
   - component: {fileID: 1818445368}
   - component: {fileID: 1818445370}
+  - component: {fileID: 1818445371}
   m_Layer: 5
   m_Name: Image (2)
   m_TagString: Untagged
@@ -1849,6 +1884,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1818445371
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1818445366}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b5056f7aa516cf4d8eaca6f764d9e20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RotLeft: 0
+  RotRight: 0
+  rotationAmount: 1
+  animator: {fileID: 0}
 --- !u!1 &2023664906
 GameObject:
   m_ObjectHideFlags: 0

@@ -69,6 +69,7 @@ public class PanelLoading_UI : MonoBehaviour
         {
             print("터치");
             ScanImage_UI.ScanimageAct = true;
+            ActAR = true;
             StartCoroutine(FadeOutIcon());
         }
         
