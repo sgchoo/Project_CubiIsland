@@ -10,15 +10,28 @@ public class FindLoadGameManager : MonoBehaviour
 
     public TMP_Text timerText;   
     public GameObject missionPanel;
-    public GameObject multiTarget;
+    //public GameObject multiTarget;
     public bool startTimer = false;
     public GameObject successPanel;
     private bool isStart = false;
     private bool gameOver = false;
     public GameObject arrayImageTarget;
     private GameObject imageTarget;
+
+    public Sprite[] mapIcont;
     void Start()
     {
+        gameOver = false;
+        isStart = false;
+        successPanel.SetActive(false);
+        missionPanel.SetActive(true);
+        int len = arrayImageTarget.transform.childCount;
+        for (int idx = 0; idx < len; idx++)
+        {
+            Transform target = arrayImageTarget.transform.GetChild(idx);
+            target.gameObject.SetActive(false);
+        }
+        DestinationManager.clear = false;
         //StartCoroutine("Timer");
     }
 
@@ -29,7 +42,9 @@ public class FindLoadGameManager : MonoBehaviour
             gameOver = false;
             missionPanel.SetActive(false);
             isStart = true;
-            multiTarget.SetActive(true);
+            DestinationManager.clear = false;
+            ActImageTarget();
+            //multiTarget.SetActive(true);
             return;
         }
 
@@ -38,6 +53,13 @@ public class FindLoadGameManager : MonoBehaviour
         {
             successPanel.SetActive(true);
             GameData.Instance.currentGame = 0;
+
+            Image unLockMap = successPanel.transform.Find("SuccessPanel").transform.Find("ImageItem").GetComponent<Image>();
+            unLockMap.sprite = mapIcont[GameData.Instance.worldUnLockIdx];
+
+            GameData.Instance.worldUnLockIdx += 1;
+            PlayerPrefs.SetInt(KeyStore.WORLD_UNLOCK_INDEX, GameData.Instance.worldUnLockIdx);
+            PlayerPrefs.Save();
             // // int count = GameData.Instance.mapLockList.Count;
             // Debug.Log("Count : " + count);
             // int randomCount = Random.Range(0, count);
@@ -48,7 +70,7 @@ public class FindLoadGameManager : MonoBehaviour
             gameOver = true;
         }
 
-        ActImageTarget();
+        
     }
 
     private IEnumerator Timer()
@@ -62,7 +84,8 @@ public class FindLoadGameManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
         missionPanel.SetActive(false);
     
-        multiTarget.SetActive(true);
+        //multiTarget.SetActive(true);
+        ActImageTarget();
         startTimer = false;
     }
 

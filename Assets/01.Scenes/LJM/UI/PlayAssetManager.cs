@@ -66,6 +66,7 @@ public class PlayAssetManager : MonoBehaviour
             // currentCharacter.gameObject.layer = 29;
             Settnigs(currentCharacter, character, new Vector3(0.4f,0.4f,0.4f));
 
+            Debug.Log("D : " + "실행됨" + GameData.Instance.currentWorld.name);
             Transform currentWorld = Instantiate(GameData.Instance.currentWorld).transform;
             // currentWorld.parent = world;
             // currentWorld.position = world.position;
@@ -73,7 +74,7 @@ public class PlayAssetManager : MonoBehaviour
             // currentWorld.localScale = new Vector3(0.08f,0.08f,0.08f);
             // currentWorld.gameObject.layer = 29;
             Settnigs(currentWorld, world, new Vector3(0.08f,0.08f,0.08f));
-            targetLayer = 0;
+            //targetLayer = 0;
         }    
     }
 

@@ -41,6 +41,7 @@ public class PanelPopup_UI : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
+    // 패널 바깥영역 터치하면 패널 꺼지도록 하기 (옵션창, 큐브체크패널 등)
     public void OnPointerClick(PointerEventData eventData)
     {
         print("터치");

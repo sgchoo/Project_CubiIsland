@@ -5,18 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/01.Scenes/CSG/0_Scene/TutorialMapTestScene.unity
-    guid: dbf85cbb97e8dd84c8104589d44829c7
-  - enabled: 1
-    path: Assets/01.Scenes/CSG/0_Scene/TutorialScene_CSG.unity
-    guid: 6c4e76d1cbe2efc4c9776728c8746ae7
-  - enabled: 0
-    path: Assets/01.Scenes/CSG/0_Scene/ARFoundation.unity
-    guid: e9f9d0e02f9ae1f46b682a3328482e34
-  - enabled: 0
-    path: Assets/01.Scenes/CSG/0_Scene/PortalTest.unity
-    guid: c3cd5e8dbf191e64b912fe860f1d5960
   - enabled: 1
     path: Assets/01.Scenes/LJM/RealScene/01.TitleScene.unity
     guid: 8232544014de9db40888f47f00bf5e3f

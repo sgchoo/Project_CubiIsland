@@ -17,12 +17,20 @@ public static class KeyStore
     public const string optionScene = "99.OptionScene";
 
 
+    // etc
+    public const string lockTag = "locked";
 
     // 사운드 관련 키
     public const string sfxMuteKey = "SFXMute";
     public const string bgmMuteKey = "BGMMute";
     public const string sfxVolumeKey = "SFXVolume";
     public const string bgmVolumeKey = "BGMVolume";
+
+    // 플레이 관련 키
+    public const string CHARACTER_KEY = "character";
+    public const string WORLDMAP_KEY = "world";
+    public const string CHARACTER_UNLOCK_INDEX = "char_unlock";
+    public const string WORLD_UNLOCK_INDEX = "world_unlock";
 
 
     // 튜토리얼 관련 키
