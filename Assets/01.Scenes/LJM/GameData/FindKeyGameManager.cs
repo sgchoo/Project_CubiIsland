@@ -33,6 +33,7 @@ public class FindKeyGameManager : MonoBehaviour
     
     private void Update()
     {
+        Debug.Log("FINDKEYGAME::"+isStart + " Touch::" + TouchManager.isTouch + " " + (isStart == TouchManager.isTouch));
         if(!isStart && TouchManager.isTouch) 
         {
             gameOver = false;
