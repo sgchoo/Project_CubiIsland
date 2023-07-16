@@ -17,6 +17,7 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
 
 
     private Transform joystick;
+    public ParticleSystem[] particles;
 
     public void FrontButton()
     {
@@ -160,6 +161,8 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
             // Player 부모 초기화
             this.transform.parent = parent;
 
+            ParticlePlay();
+
             // 회전타겟 회전 정상화
             rotateTarget.rotation = prevRot;  
             if(flag)
@@ -167,8 +170,6 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
                 rotateTarget.localPosition = prevPos;
                 flag = false;
             }
-            
-
             
             SetAxis(prevRot);
         }
@@ -188,5 +189,19 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
         axisObject.localPosition = this.transform.localPosition;
         // 회전축들의 parent를 parentObject로 변경
         foreach(Transform child in childList) { child.parent = parent; }
+    }
+
+    private void ParticlePlay()
+    {
+        if(GameData.Instance.currentWorld.name == "Map01_Forest")
+        {
+            ParticleSystem particle = Instantiate(particles[0]);
+            particle.transform.position = this.transform.position;
+        }
+        else if(GameData.Instance.currentWorld.name == "Map02_Snow")
+        {
+            ParticleSystem particle = Instantiate(particles[1]);
+            particle.transform.position = this.transform.position;
+        }
     }
 }

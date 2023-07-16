@@ -9431,6 +9431,9 @@ MonoBehaviour:
   - {fileID: 1445266451}
   rotateSpeed: 50
   axisObject: {fileID: 1101496543}
+  particles:
+  - {fileID: 3732846138407400905, guid: c40e5085a7d05f641847fff07ffcfc8e, type: 3}
+  - {fileID: 3732846138407400905, guid: 6642d130f40c8ae4caa80c092f574f37, type: 3}
 --- !u!114 &456314449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9480,7 +9483,10 @@ MonoBehaviour:
   - {fileID: 110978415}
   rotateSpeed: 60.6
   arCamera: {fileID: 0}
+  axis: 0
   activateArea: {fileID: 1011419549}
+  setCoords: {x: 0, y: 0}
+  particles: []
   axisObject: {fileID: 1101496543}
 --- !u!54 &456314450
 Rigidbody:
@@ -14981,7 +14987,7 @@ MonoBehaviour:
   checkBtn: {fileID: 1056125217}
   tmpText: {fileID: 1731478771}
   cubiMove: {fileID: 456314449}
-  cubiMove2: {fileID: 0}
+  cubiMove2: {fileID: 456314448}
 --- !u!4 &774918357
 Transform:
   m_ObjectHideFlags: 0
@@ -41858,6 +41864,8 @@ MonoBehaviour:
   startTimer: 0
   successPanel: {fileID: 308809052}
   arrayImageTarget: {fileID: 1032093611}
+  guide03: {fileID: 0}
+  guide04: {fileID: 0}
   mapIcont:
   - {fileID: -1837247022, guid: b5c10354ced92914e9104a047596e031, type: 3}
   - {fileID: 522539564, guid: b5c10354ced92914e9104a047596e031, type: 3}

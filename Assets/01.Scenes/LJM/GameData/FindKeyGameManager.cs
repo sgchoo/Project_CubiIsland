@@ -45,6 +45,7 @@ public class FindKeyGameManager : MonoBehaviour
             if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 gameOver = false;
+                
                 guide01.SetActive(false);
                 //isStart = true;
                 //multiView.SetActive(true);    
