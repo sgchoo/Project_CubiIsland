@@ -17,6 +17,10 @@ public class FindKeyGameManager : MonoBehaviour
 
     public static bool gameOver;
     private bool isStart = false;
+    public GameObject guide01;
+    public GameObject guide02;
+
+
     private void Start()
     {        
         if (keyToFind == 0) keyToFind = 2;
@@ -24,21 +28,39 @@ public class FindKeyGameManager : MonoBehaviour
         gameOver = true;
         isStart = false;
         descriptionPanel.SetActive(true);
+        guide01.SetActive(true);
+        guide02.SetActive(true);
         successPanel.SetActive(false);
         multiView.SetActive(false); 
 
         Debug.Log("FINDKEYGAMEMANAGER::"+GameData.Instance.characterLockList.Count);
     }
 
+
     
     private void Update()
     {
-        if(!isStart && TouchManager.isTouch) 
+        if(!isStart && guide01.activeSelf) 
         {
-            gameOver = false;
-            descriptionPanel.SetActive(false);
-            isStart = true;
-            multiView.SetActive(true);
+            if(Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                gameOver = false;
+                guide01.SetActive(false);
+                //isStart = true;
+                //multiView.SetActive(true);    
+            }
+            return;
+        }
+        else if(!isStart && guide02.activeSelf)
+        {
+            if(Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                gameOver = false;
+                //guide02.SetActive(false);
+                descriptionPanel.SetActive(false);
+                isStart = true;
+                multiView.SetActive(true);
+            }
             return;
         }
         if(gameOver) return;
