@@ -16,7 +16,6 @@ public class TouchManager : MonoBehaviour
 
     void Update()
     {
-        Debug.Log("TouchManager::"+isTouch);
         touchBehaviour();   
     }
 
@@ -38,19 +37,17 @@ public class TouchManager : MonoBehaviour
 
     private void isTouching()
     {
-        if(Input.touchCount>0)
+        if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
             if (touch.phase == TouchPhase.Began)
             {
                 isTouch = true;
-                Debug.Log("Touching");
             }
-            else if (touch.phase == TouchPhase.Ended)
+            else if (touch.phase == TouchPhase.Ended && isTouch)
             {
                 isTouch = false;
-                Debug.Log("Not Touching");
             }
         }
     }

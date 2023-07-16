@@ -12,6 +12,7 @@ public class InformationZone : MonoBehaviour
     public GameObject infoUIGroup;
     public Button checkBtn;
     public FindKeyPlayerMoveManager cubiMove;
+    public FindLoadPlayerMoveManager2 cubiMove2;
 
     private void Start() 
     {
@@ -20,7 +21,7 @@ public class InformationZone : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) 
     {
-        if(other.transform.name == "Char_Bull")
+        if(other.transform.name == "Char_Bull" && TutorialGameManager.tutorialCnt == 0)
         {
             switch(TutorialGameManager.infoCnt)
             {
@@ -47,6 +48,39 @@ public class InformationZone : MonoBehaviour
 
                     tmpText.text = "";
                     coment = "가고싶은 방향으로 큐브를 돌려 방향을 바꿔보세용";
+                    
+                    InfoUIEnable();
+                    break;
+            }
+        }
+
+        else if(other.transform.name == "Char_Bull" && TutorialGameManager.tutorialCnt == 1)
+        {
+            switch(TutorialGameManager.infoCnt)
+            {
+                case 0:
+                    cubiMove2.rotateSpeed = 0.01f;
+
+                    tmpText.text = "";
+                    coment = "111111111111111";
+
+                    InfoUIEnable();
+                    break;
+
+                case 1:
+                    cubiMove2.rotateSpeed = 0.01f;
+
+                    tmpText.text = "";
+                    coment = "222222222222222222222";
+
+                    InfoUIEnable();
+                    break;
+
+                case 2:
+                    cubiMove2.rotateSpeed = 0.01f;
+
+                    tmpText.text = "";
+                    coment = "333333333333333333333";
                     
                     InfoUIEnable();
                     break;

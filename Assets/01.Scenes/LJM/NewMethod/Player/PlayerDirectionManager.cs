@@ -11,11 +11,11 @@ public class PlayerDirectionManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Vector3 viewportPoint = new Vector3(0.5f, 2f / 3f, 0f); // 화면 세로의 상단 부분에 해당하는 뷰포트 좌표 (0.5, 2/3, 0)
-        Ray ray = Camera.main.ViewportPointToRay(viewportPoint);
+        // Vector3 viewportPoint = new Vector3(0.5f, 2f / 3f, 0f); // 화면 세로의 상단 부분에 해당하는 뷰포트 좌표 (0.5, 2/3, 0)
+        // Ray ray = Camera.main.ViewportPointToRay(viewportPoint);
 
-        RectTransform imageRectTransform = imageObject.GetComponent<RectTransform>();
-        imageRectTransform.anchoredPosition = Camera.main.ViewportToScreenPoint(ray.origin);
+        // RectTransform imageRectTransform = imageObject.GetComponent<RectTransform>();
+        // imageRectTransform.anchoredPosition = Camera.main.ViewportToScreenPoint(ray.origin);
     }
 
     // Update is called once per frame
@@ -23,15 +23,19 @@ public class PlayerDirectionManager : MonoBehaviour
     {
         if(RayForDirection() == Direction.none)
         {
-            ColorSet(new Color(255,255,255));
+            //ColorSet(new Color(255,255,255));
+            SetActImage(false);
         }
         else 
         {
-            ColorSet(new Color(0,255,0));
+            //ColorSet(new Color(0,255,0));
+            SetActImage(true);
+
         }
     }
 
-    public GameObject imageObject;
+    public GameObject noneAct;
+    public GameObject act;
 
     public Direction RayForDirection()
     {
@@ -68,7 +72,13 @@ public class PlayerDirectionManager : MonoBehaviour
 
     private void ColorSet(Color color)
     {
-        imageObject.GetComponent<Image>().color = color;
+        noneAct.GetComponent<Image>().color = color;
+    }
+
+    private void SetActImage(bool actFlag)
+    {
+        noneAct.SetActive(!actFlag);
+        act.SetActive(actFlag);
     }
 
     private void OnDrawGizmosSelected() 

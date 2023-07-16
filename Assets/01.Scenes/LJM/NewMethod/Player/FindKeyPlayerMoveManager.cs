@@ -38,7 +38,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
     private bool isRolling = false;
 
     // 현재 플레이어가 있는 축을 알아내기 위해 Axis 변수 생성(x, y, z, mx, my, mz)
-    private Axis axis;
+    public Axis axis;
 
     private bool isChangeAxis = false;
 
@@ -51,16 +51,17 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
     private Vector2 detectCoords;
 
     public ActivateDirArea activateArea;
-
+    
+    public Vector2 setCoords;
 
     void Start()
     {
-        coords = new Vector2(2,2);
+        coords = setCoords;
 
         arCamera = Camera.main.transform;
         parent = this.transform.parent;
 
-        axis = Axis.y;
+        //axis = Axis.y;
         rotateAxis = Vector3.right;
 
         activateArea.ActivateArea(axis);

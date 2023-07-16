@@ -27,7 +27,6 @@ public class MapListController_UI : MonoBehaviour
     // 맵 아이콘 리스트
     private GameObject[] IconList;
 
-
     //
     private GameObject BG;
 
