@@ -14,6 +14,9 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private RectTransform rectTransform;
     public GameObject scrollbar, ButtonContent;
     public GameObject[] listBtns;               // 맵 리스트 표시 버튼 배열
+    public GameObject FinBtn;
+    public GameObject FinBtnEffect;
+
     float scroll_pos = 0;
     float[] pos;
     public void OnPointerDown(PointerEventData data)
@@ -69,9 +72,20 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             {
                 rectTransform.GetChild(i).localScale = Vector2.Lerp(rectTransform.GetChild(i).localScale, new Vector2(1.1f, 1.1f), 0.1f);
                 CurrentMap = rectTransform.GetChild(i).gameObject;
+
                 // 확대된 자식 객체 위치와 같은 위치(i)에 버튼 색상(yellow) 변경
                 listBtns[i].GetComponent<Image>().color = colors[0];
-                // Debug.Log(CurrentMap.name);
+                if(CurrentMap != null && CurrentMap.transform.Find("locked").gameObject.activeSelf)
+                {
+                    FinBtn.GetComponent<Button>().interactable = false;
+                    FinBtnEffect.SetActive(false);
+                }
+                else 
+                {
+                    FinBtn.GetComponent<Button>().interactable = true;
+                    FinBtnEffect.SetActive(true);
+                }
+
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)

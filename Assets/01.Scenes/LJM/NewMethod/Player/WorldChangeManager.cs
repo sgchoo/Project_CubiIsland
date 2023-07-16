@@ -9,7 +9,7 @@ public class WorldChangeManager : MonoBehaviour
     
     void Start()
     {
-        Debug.Log("A");
+//        Debug.Log("A");
         Transform player = Instantiate(GameData.Instance.currentWorld).transform;
         player.parent = this.transform;
         player.localPosition = new Vector3(0,0,0);

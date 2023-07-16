@@ -51,23 +51,67 @@ public class GameData : MonoBehaviour
 
     public GameObject characterPref;
     public GameObject mapPref;
-    // public List<GameObject> characterLockList;
-    // public List<GameObject> mapLockList;
+    public List<GameObject> characterLockList;
+    public List<GameObject> mapLockList;
+    public int characterUnLockIdx;
+    public int worldUnLockIdx;
     
     public bool tutorial = false;
 
     private void Start() 
     {
-        // characterLockList = new List<GameObject>();
-        // mapLockList = new List<GameObject>();
+        characterLockList = new List<GameObject>();
+        mapLockList = new List<GameObject>();
+        characterUnLockIdx = 0;
+        worldUnLockIdx = 0;
         currentGame = 0;
 
         //SetTutorial();
         // tutorial = false;
 
-        // checkCharacterLock();
-        // checkMapLock();
+        if(PlayerPrefs.HasKey(KeyStore.CHARACTER_UNLOCK_INDEX))
+        {
+            characterUnLockIdx = PlayerPrefs.GetInt(KeyStore.CHARACTER_UNLOCK_INDEX, 0);
+        }
+        if(PlayerPrefs.HasKey(KeyStore.WORLD_UNLOCK_INDEX))
+        {
+            worldUnLockIdx = PlayerPrefs.GetInt(KeyStore.WORLD_UNLOCK_INDEX, 0);
+        }
+
+        LockListUpdate();
+
         SetSound();
+
+        SetCharacter();
+        Debug.Log("GAMEDATA :: " + currentCharacter.name);
+        SetWorld();
+        Debug.Log("GAMEDATA :: " + currentWorld.name);
+        
+    }
+
+    private void SetPlayAsset()
+    {
+        
+    }
+
+    private void SetCharacter()
+    {
+        SetResource(KeyStore.CHARACTER_KEY, ref currentCharacter);
+    }
+
+    private void SetWorld()
+    {
+        SetResource(KeyStore.WORLDMAP_KEY, ref currentWorld);
+    }
+
+    private void SetResource(string key, ref GameObject target)
+    {
+        if(PlayerPrefs.HasKey(key))
+        {
+            string data = PlayerPrefs.GetString(key);
+            Debug.Log("GAMEDATA :: " + data);
+            target = Resources.Load<GameObject>(data);
+        }
     }
 
     private void SetTutorial()
@@ -82,32 +126,35 @@ public class GameData : MonoBehaviour
         }
     }
 
+    public void LockListUpdate()
+    {
+        CheckCharacterLock();
+        CheckMapLock();
+    }
 
-    // public void checkCharacterLock()
-    // {
-    //     int count = characterPref.transform.childCount;
-    //     for(int idx = 0; idx < count; idx++)
-    //     {
-    //         Transform target = characterPref.transform.GetChild(idx).transform;
-    //         if(target.Find("locked").gameObject.activeSelf)
-    //         {
-    //             characterLockList.Add(target.gameObject);
-    //         }
-    //     }
-    // }
+    public void CheckCharacterLock()
+    {
+        lockCheck(characterPref, ref characterLockList, characterUnLockIdx);
+    }
 
-    // public void checkMapLock()
-    // {
-    //     int count = mapPref.transform.childCount;
-    //     for(int idx = 0; idx < count; idx++)
-    //     {
-    //         Transform target = mapPref.transform.GetChild(idx).transform;
-    //         if(target.Find("Locked").gameObject.activeSelf)
-    //         {
-    //             mapLockList.Add(target.gameObject);
-    //         }
-    //     }
-    // }
+    public void CheckMapLock()
+    {
+        lockCheck(mapPref, ref mapLockList, worldUnLockIdx);
+    }
+
+    public void lockCheck(GameObject pref, ref List<GameObject> list, int unlockIdx)
+    {
+        int count = pref.transform.childCount;
+        for(int idx = 0; idx < count; idx++)
+        {
+            Transform target = pref.transform.GetChild(idx).transform;
+            if(target.Find(KeyStore.lockTag).gameObject.activeSelf)
+            {
+                if(unlockIdx-- > 0) continue;
+                list.Add(target.gameObject);
+            }
+        }
+    }
 
     private void SetSound()
     {

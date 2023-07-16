@@ -1711,6 +1711,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UIController2
       objectReference: {fileID: 0}
+    - target: {fileID: 1180388538220592331, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2761766965677840001, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -3031,7 +3035,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1684167065
 MonoBehaviour:
