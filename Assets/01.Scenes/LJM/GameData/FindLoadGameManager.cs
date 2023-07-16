@@ -95,8 +95,9 @@ public class FindLoadGameManager : MonoBehaviour
         for (int idx = 0; idx < len; idx++)
         {
             Transform target = arrayImageTarget.transform.GetChild(idx);
-            if (target.name == GameData.Instance.currentWorld.name)
+            if (target.name == "Map01_Forest"/*GameData.Instance.currentWorld.name*/)
             {
+                Debug.Log("qwe");
                 imageTarget = target.gameObject;
                 imageTarget.SetActive(true);
                 break;

@@ -1,0 +1,11 @@
+fileFormatVersion: 2
+guid: 66835bdb7f6fb8c45af2261e6345c53e
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures:
+  - _AtlasPtc: {fileID: 2800000, guid: 753a651f502e89241b8e075cff943491, type: 3}
+  - _DissolveMask: {fileID: 2800000, guid: 427d49edbf9e3dc4a80cf09db4542712, type: 3}
+  nonModifiableTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: M_PTC_Custom_07
+  m_Shader: {fileID: 4800000, guid: 3eac10d2d85af044684b0b59e0361ce1, type: 3}
+  m_ShaderKeywords: _GRADIENTCOLOR_ON _HORIZVERTGRADIENTCOLOR_ON _HORIZVERTGRADIENT_ON
+    _OUTLINE_ON _SHAPESMODE_ON
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AtlasPtc:
+        m_Texture: {fileID: 2800000, guid: e4225b72fb30c24488375a63b20c96f0, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveMask:
+        m_Texture: {fileID: 2800000, guid: fdd2c6a1e7dc0fd469968f5e66f7c452, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MaskA_Text:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _texcoord:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Columns: 4
+    - _Dissolve: 0
+    - _EmissiveMult: 5
+    - _Grad_Min: 0
+    - _Grad_Min_Color: 0.177
+    - _GradientColor: 1
+    - _GradientFaloff: 1
+    - _GradientFaloff_Color: 0.035
+    - _GradientMode: 0
+    - _HorizVertGradient: 1
+    - _HorizVertGradientColor: 1
+    - _MaskA_OffsetX: 0
+    - _MaskA_OffsetY: 0
+    - _Outline: 1
+    - _OutlineIntensity: 10
+    - _OutlineOnly: 0
+    - _Rows: 4
+    - _Shape: 3
+    - _Shape_Index: 3
+    - _ShapesMode: 1
+    - __dirty: 1
+    m_Colors:
+    - _GradientColorA: {r: 1, g: 0.6249809, b: 0, a: 0}
+    - _GradientColorB: {r: 0.6132076, g: 0.16893397, b: 0, a: 0}
+    - _MaskScaleOffset: {r: 1, g: 1, b: 0, a: 0}
+    - _ScaleOffset: {r: 1, g: 1, b: 0, a: 0}
