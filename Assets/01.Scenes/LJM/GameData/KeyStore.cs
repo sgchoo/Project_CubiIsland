@@ -35,6 +35,9 @@ public static class KeyStore
 
     // 튜토리얼 관련 키
     public const string tutorialKey = "Tutorial";
+    public const string TUTORIAL_PLAZA_KEY = "tutorial_plaza";
+    public const string TUTORIAL_CHARACTER_KEY = "tutorial_character";
+    public const string TUTORIAL_MAP_KEY = "tutorial_map";
 
     public const string tutorialPlaza = "01.TutorialPlazaScene";
     public const string tutorialStartCheckFirst = "02.TutorialStartCheckScene";

@@ -28,10 +28,7 @@ public class UIController : MonoBehaviour
     public void btnCreatePlaza() { SceneMove(KeyStore.createPlazaScene); }
 
     // 광장 Scene 이동 버튼 로직
-    public void btnPlaza() { 
-        if(GameData.Instance.tutorial) SceneMove(KeyStore.tutorialPlaza);
-        else SceneMove(KeyStore.plazaScene); 
-    }
+    public void btnPlaza() { SceneMove(KeyStore.plazaScene); }
 
     // 본 게임 시작 전 큐브 체크 Scene 이동 버튼 로직
     public void btnStartCheck() { SceneMove(KeyStore.startCheckScene); }

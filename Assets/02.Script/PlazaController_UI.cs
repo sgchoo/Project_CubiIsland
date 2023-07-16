@@ -18,9 +18,18 @@ public class PlazaController_UI : MonoBehaviour
         {
             GameData.Instance.plazaWorld.SetActive(true);
         }
+        if(GameData.Instance.tutorialPlaza)
+        {
+            Invoke("DelayLoadAsyncTutorial", 2f);
+        }
         // Debug.Log("4번씬");
         // SetChar();
         // SetMap();
+    }
+
+    public void DelayLoadAsyncTutorial()
+    {
+        SceneManager.LoadSceneAsync(KeyStore.tutorialPlaza, LoadSceneMode.Additive);
     }
 
     // Update is called once per frame
