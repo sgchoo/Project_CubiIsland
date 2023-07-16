@@ -7,56 +7,12 @@
         <ImageTarget name="03_MapDesert" size="0.100000 0.099602"/>
         <ImageTarget name="02_MapSnow" size="0.100000 0.100400"/>
         <ImageTarget name="01_MapForest" size="0.100000 0.100400"/>
-        <ImageTarget name="TutorialCubiIsland.Left" size="0.040000 0.040160"/>
-        <ImageTarget name="TutorialCubiIsland.Bottom" size="0.040000 0.040000"/>
-        <ImageTarget name="TutorialCubiIsland.Front" size="0.040000 0.040160"/>
-        <ImageTarget name="TutorialCubiIsland.Right" size="0.040000 0.039841"/>
-        <ImageTarget name="TutorialCubiIsland.Back" size="0.040000 0.040000"/>
-        <ImageTarget name="TutorialCubiIsland.Top" size="0.040000 0.040000"/>
-        <ImageTarget name="CubiIsland_ver3.Left" size="0.040000 0.039841"/>
-        <ImageTarget name="CubiIsland_ver3.Bottom" size="0.040000 0.040000"/>
-        <ImageTarget name="CubiIsland_ver3.Front" size="0.040000 0.040000"/>
         <ImageTarget name="CubiIsland_ver3.Right" size="0.040000 0.040160"/>
+        <ImageTarget name="CubiIsland_ver3.Left" size="0.040000 0.039841"/>
+        <ImageTarget name="CubiIsland_ver3.Front" size="0.040000 0.040000"/>
         <ImageTarget name="CubiIsland_ver3.Back" size="0.040000 0.040160"/>
         <ImageTarget name="CubiIsland_ver3.Top" size="0.040000 0.040000"/>
-        <ImageTarget name="cube.Left" size="0.040000 0.040000"/>
-        <ImageTarget name="cube.Bottom" size="0.040000 0.040000"/>
-        <ImageTarget name="cube.Front" size="0.040000 0.040000"/>
-        <ImageTarget name="cube.Right" size="0.040000 0.040000"/>
-        <ImageTarget name="cube.Back" size="0.040000 0.040000"/>
-        <ImageTarget name="cube.Top" size="0.040000 0.040000"/>
-        <ImageTarget name="asdqwr.Left" size="0.040000 0.040000"/>
-        <ImageTarget name="asdqwr.Bottom" size="0.040000 0.040000"/>
-        <ImageTarget name="asdqwr.Front" size="0.040000 0.040000"/>
-        <ImageTarget name="asdqwr.Right" size="0.040000 0.040000"/>
-        <ImageTarget name="asdqwr.Back" size="0.040000 0.040000"/>
-        <ImageTarget name="asdqwr.Top" size="0.040000 0.040000"/>
-        <ImageTarget name="NewImage.Left" size="9.000000 9.000000"/>
-        <ImageTarget name="NewImage.Bottom" size="9.000000 9.000000"/>
-        <ImageTarget name="NewImage.Front" size="9.000000 9.000000"/>
-        <ImageTarget name="NewImage.Right" size="9.000000 9.000000"/>
-        <ImageTarget name="NewImage.Back" size="9.000000 9.000000"/>
-        <ImageTarget name="NewImage.Top" size="9.000000 9.000000"/>
-        <ImageTarget name="forTest.Left" size="9.000000 9.000000"/>
-        <ImageTarget name="forTest.Bottom" size="9.000000 9.000000"/>
-        <ImageTarget name="forTest.Front" size="9.000000 9.000000"/>
-        <ImageTarget name="forTest.Right" size="9.000000 9.000000"/>
-        <ImageTarget name="forTest.Back" size="9.000000 9.000000"/>
-        <ImageTarget name="forTest.Top" size="9.000000 9.000000"/>
-        <ImageTarget name="SizeTest.Left" size="0.045000 0.045000"/>
-        <ImageTarget name="SizeTest.Bottom" size="0.045000 0.045000"/>
-        <ImageTarget name="SizeTest.Front" size="0.045000 0.045000"/>
-        <ImageTarget name="SizeTest.Right" size="0.045000 0.045000"/>
-        <ImageTarget name="SizeTest.Back" size="0.045000 0.045000"/>
-        <ImageTarget name="SizeTest.Top" size="0.045000 0.045000"/>
-        <MultiTarget name="TutorialCubiIsland">
-            <Part name="TutorialCubiIsland.Left" translation="-0.019999999552965164 0 0" rotation="AD: 0 1 0 -90"/>
-            <Part name="TutorialCubiIsland.Right" translation="0.019999999552965164 0 0" rotation="AD: 0 1 0 90"/>
-            <Part name="TutorialCubiIsland.Front" translation="0 0 0.019999999552965164" rotation="AD: 1 0 0 0"/>
-            <Part name="TutorialCubiIsland.Back" translation="0 0 -0.019999999552965164" rotation="AD: 0 1 0 180"/>
-            <Part name="TutorialCubiIsland.Top" translation="0 0.019999999552965164 0" rotation="AD: 1 0 0 -90"/>
-            <Part name="TutorialCubiIsland.Bottom" translation="0 -0.019999999552965164 0" rotation="AD: 1 0 0 90"/>
-        </MultiTarget>
+        <ImageTarget name="CubiIsland_ver3.Bottom" size="0.040000 0.040000"/>
         <MultiTarget name="CubiIsland_ver3">
             <Part name="CubiIsland_ver3.Left" translation="-0.019999999552965164 0 0" rotation="AD: 0 1 0 -90"/>
             <Part name="CubiIsland_ver3.Right" translation="0.019999999552965164 0 0" rotation="AD: 0 1 0 90"/>
@@ -64,46 +20,6 @@
             <Part name="CubiIsland_ver3.Back" translation="0 0 -0.019999999552965164" rotation="AD: 0 1 0 180"/>
             <Part name="CubiIsland_ver3.Top" translation="0 0.019999999552965164 0" rotation="AD: 1 0 0 -90"/>
             <Part name="CubiIsland_ver3.Bottom" translation="0 -0.019999999552965164 0" rotation="AD: 1 0 0 90"/>
-        </MultiTarget>
-        <MultiTarget name="CubeIsland_ver2">
-            <Part name="cube.Left" translation="-0.019999999552965164 0 0" rotation="AD: 0 1 0 -90"/>
-            <Part name="cube.Right" translation="0.019999999552965164 0 0" rotation="AD: 0 1 0 90"/>
-            <Part name="cube.Front" translation="0 0 0.019999999552965164" rotation="AD: 1 0 0 0"/>
-            <Part name="cube.Back" translation="0 0 -0.019999999552965164" rotation="AD: 0 1 0 180"/>
-            <Part name="cube.Top" translation="0 0.019999999552965164 0" rotation="AD: 1 0 0 -90"/>
-            <Part name="cube.Bottom" translation="0 -0.019999999552965164 0" rotation="AD: 1 0 0 90"/>
-        </MultiTarget>
-        <MultiTarget name="asdqwr">
-            <Part name="asdqwr.Left" translation="-0.019999999552965164 0 0" rotation="AD: 0 1 0 -90"/>
-            <Part name="asdqwr.Right" translation="0.019999999552965164 0 0" rotation="AD: 0 1 0 90"/>
-            <Part name="asdqwr.Front" translation="0 0 0.019999999552965164" rotation="AD: 1 0 0 0"/>
-            <Part name="asdqwr.Back" translation="0 0 -0.019999999552965164" rotation="AD: 0 1 0 180"/>
-            <Part name="asdqwr.Top" translation="0 0.019999999552965164 0" rotation="AD: 1 0 0 -90"/>
-            <Part name="asdqwr.Bottom" translation="0 -0.019999999552965164 0" rotation="AD: 1 0 0 90"/>
-        </MultiTarget>
-        <MultiTarget name="NewImage">
-            <Part name="NewImage.Left" translation="-4.5 0 0" rotation="AD: 0 1 0 -90"/>
-            <Part name="NewImage.Right" translation="4.5 0 0" rotation="AD: 0 1 0 90"/>
-            <Part name="NewImage.Front" translation="0 0 4.5" rotation="AD: 1 0 0 0"/>
-            <Part name="NewImage.Back" translation="0 0 -4.5" rotation="AD: 0 1 0 180"/>
-            <Part name="NewImage.Top" translation="0 4.5 0" rotation="AD: 1 0 0 -90"/>
-            <Part name="NewImage.Bottom" translation="0 -4.5 0" rotation="AD: 1 0 0 90"/>
-        </MultiTarget>
-        <MultiTarget name="forTest">
-            <Part name="forTest.Left" translation="-4.5 0 0" rotation="AD: 0 1 0 -90"/>
-            <Part name="forTest.Right" translation="4.5 0 0" rotation="AD: 0 1 0 90"/>
-            <Part name="forTest.Front" translation="0 0 4.5" rotation="AD: 1 0 0 0"/>
-            <Part name="forTest.Back" translation="0 0 -4.5" rotation="AD: 0 1 0 180"/>
-            <Part name="forTest.Top" translation="0 4.5 0" rotation="AD: 1 0 0 -90"/>
-            <Part name="forTest.Bottom" translation="0 -4.5 0" rotation="AD: 1 0 0 90"/>
-        </MultiTarget>
-        <MultiTarget name="SizeTest">
-            <Part name="SizeTest.Left" translation="-0.02250000089406967 0 0" rotation="AD: 0 1 0 -90"/>
-            <Part name="SizeTest.Right" translation="0.02250000089406967 0 0" rotation="AD: 0 1 0 90"/>
-            <Part name="SizeTest.Front" translation="0 0 0.02250000089406967" rotation="AD: 1 0 0 0"/>
-            <Part name="SizeTest.Back" translation="0 0 -0.02250000089406967" rotation="AD: 0 1 0 180"/>
-            <Part name="SizeTest.Top" translation="0 0.02250000089406967 0" rotation="AD: 1 0 0 -90"/>
-            <Part name="SizeTest.Bottom" translation="0 -0.02250000089406967 0" rotation="AD: 1 0 0 90"/>
         </MultiTarget>
     </Tracking>
 </QCARConfig>

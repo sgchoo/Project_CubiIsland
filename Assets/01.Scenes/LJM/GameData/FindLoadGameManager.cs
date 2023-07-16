@@ -18,6 +18,9 @@ public class FindLoadGameManager : MonoBehaviour
     public GameObject arrayImageTarget;
     private GameObject imageTarget;
 
+    public GameObject guide03;
+    public GameObject guide04;
+
     public Sprite[] mapIcont;
     void Start()
     {
@@ -25,6 +28,8 @@ public class FindLoadGameManager : MonoBehaviour
         isStart = false;
         successPanel.SetActive(false);
         missionPanel.SetActive(true);
+        guide03.SetActive(true);
+        guide04.SetActive(true);
         int len = arrayImageTarget.transform.childCount;
         for (int idx = 0; idx < len; idx++)
         {
@@ -37,16 +42,26 @@ public class FindLoadGameManager : MonoBehaviour
 
     void Update()
     {
-        if(!isStart && TouchManager.isTouch) 
+        if(!isStart && guide03.activeSelf) 
         {
-            gameOver = false;
-            missionPanel.SetActive(false);
-            isStart = true;
-            DestinationManager.clear = false;
-            ActImageTarget();
-            //multiTarget.SetActive(true);
+            if(Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                gameOver = false;
+                guide03.SetActive(false);
+            }
             return;
         }
+        else if(!isStart && guide04.activeSelf)
+        {
+            if(Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                missionPanel.SetActive(false);  
+                isStart = true;
+                DestinationManager.clear = false;
+                ActImageTarget();
+            }
+        }
+
 
         if(gameOver) return;
         if(!gameOver && DestinationManager.clear)

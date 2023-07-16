@@ -15,6 +15,7 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public GameObject scrollbar, ButtonContent;
     public GameObject[] listBtns;               // 맵 리스트 표시 버튼 배열
     public GameObject FinBtn;
+    public GameObject FinBtnEffect;
 
     float scroll_pos = 0;
     float[] pos;
@@ -77,8 +78,14 @@ public class swipe_UI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 if(CurrentMap != null && CurrentMap.transform.Find("locked").gameObject.activeSelf)
                 {
                     FinBtn.GetComponent<Button>().interactable = false;
+                    FinBtnEffect.SetActive(false);
                 }
-                else FinBtn.GetComponent<Button>().interactable = true;
+                else 
+                {
+                    FinBtn.GetComponent<Button>().interactable = true;
+                    FinBtnEffect.SetActive(true);
+                }
+
                 for (int j = 0; j < pos.Length; j++)
                 {
                     if (j != i)
