@@ -202,10 +202,10 @@ TextureImporter:
       name: EtcImage_3
       rect:
         serializedVersion: 2
-        x: 87
-        y: 121
-        width: 356
-        height: 136
+        x: 89
+        y: 120
+        width: 351
+        height: 135
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

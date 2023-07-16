@@ -27,7 +27,6 @@ public class MapListController_UI : MonoBehaviour
     // 맵 아이콘 리스트
     private GameObject[] IconList;
 
-
     //
     private GameObject BG;
 
@@ -36,19 +35,6 @@ public class MapListController_UI : MonoBehaviour
 
     void Start()
     {
-        int count = Contents.transform.childCount;
-        int lockIdx = GameData.Instance.worldUnLockIdx;
-        for(int idx = 0; idx < count; idx++)
-        {
-            GameObject target = Contents.transform.GetChild(idx).transform.Find("locked").gameObject;
-            if(target.activeSelf)
-            {
-                if(lockIdx-->0)
-                {
-                    target.SetActive(false);
-                }
-            }
-        }
         SetMapList_Image();
         SetIconList_Image();
     }
@@ -76,9 +62,7 @@ public class MapListController_UI : MonoBehaviour
             if (prefab.name == currentMapName)
             {
                 GameData.Instance.currentWorld = prefab; // 맵 프리팹을 UIController_UI.FinalMap에 저장
-                Debug.Log("MapListController_UI::"+GameData.Instance.currentWorld.name + " " + currentMapName);
-                PlayerPrefs.SetString(KeyStore.WORLDMAP_KEY, currentMapName);
-                PlayerPrefs.Save();
+                PlayerPrefs.SetString(KeyStore.WORLDMAP_KEY, GameData.Instance.currentWorld.name);
                 break;
             }
         }

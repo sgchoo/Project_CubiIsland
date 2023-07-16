@@ -30,29 +30,24 @@ public class ChangeController_UI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int count = Contents.Length;
-        int lockIdx = GameData.Instance.characterUnLockIdx;
-        for(int idx = 0; idx < count; idx++)
-        {
-            GameObject target = Contents[idx].transform.Find("locked").gameObject;
-            if(target.activeSelf)
-            {
-                if(lockIdx-->0)
-                {
-                    target.SetActive(false);
-                }
-
-                // if(!GameData.Instance.characterLockList[lockIdx].transform.Find("locked").gameObject.activeSelf)
-                // {
-                //     target.SetActive(false);
-                //     GameData.Instance.characterLockList.RemoveAt(lockIdx);
-                // }
-                // else
-                // {
-                //     lockIdx+=1;
-                // }
-            }
-        }
+        // int count = Contents.Length;
+        // int lockIdx = 0;
+        // for(int idx = 0; idx < count; idx++)
+        // {
+        //     GameObject target = Contents[idx].transform.Find("locked").gameObject;
+        //     if(target.activeSelf)
+        //     {
+        //         if(!GameData.Instance.characterLockList[lockIdx].transform.Find("locked").gameObject.activeSelf)
+        //         {
+        //             target.SetActive(false);
+        //             GameData.Instance.characterLockList.RemoveAt(lockIdx);
+        //         }
+        //         else
+        //         {
+        //             lockIdx+=1;
+        //         }
+        //     }
+        // }
         PreviewChar();
     }
 
@@ -64,6 +59,7 @@ public class ChangeController_UI : MonoBehaviour
             Debug.Log("Update : UI프리팹 소실");
             return;
         }
+        ChooseCharacter();
     }
 
 
@@ -94,14 +90,10 @@ public class ChangeController_UI : MonoBehaviour
         GameObject selectedPrefab = CharPrefabs[selectedIndex];
         // FinalChar에 선택한 프리팹 할당
         GameData.Instance.currentCharacter = selectedPrefab;
-        PlayerPrefs.SetString(KeyStore.CHARACTER_KEY, selectedPrefab.name);
-        PlayerPrefs.Save();
+        PlayerPrefs.SetString(KeyStore.CHARACTER_KEY, GameData.Instance.currentCharacter.name);
         Debug.Log("B : " + GameData.Instance.currentCharacter.name);
         PlayAssetManager.isSet = false;
     }
-
-
-    private bool isLock = false;
 
     // 버튼 하나씩 메서드 만들기 싫어서 만든 코드
     public void ButtonClicked(GameObject clickedBtn)
@@ -115,22 +107,12 @@ public class ChangeController_UI : MonoBehaviour
             Transform child = Contents.GetChild(i);
             if (child.gameObject == clickedBtn)
             {
-                if(child.Find("locked").gameObject.activeSelf)
-                {
-                    isLock = true;
-                    break;
-                }
                 // 일치하는 버튼을 찾았을 때 인덱스 기록
                 selectedIndex = i;
                 break;
             }
         }
-        if(!isLock)
-        {
-            CharChange();
-            ChooseCharacter();
-        }
-        isLock = false;
+        CharChange();
     }
 
     public void CharChange()
@@ -149,7 +131,6 @@ public class ChangeController_UI : MonoBehaviour
         if(checkBtnName == "ButtonChoose") return;    
         if(checkBtnName == "ButtonBack") return;    
         if(checkBtnName == "ButtonOption") return;    
-        if(checkBtnName == "ToggleRotate") return;    
         //EventSystem 클래스 내 현재 선택된(클릭한) 오브젝트를 가져와서 변수에 저장한다.
         selectedObject = EventSystem.current.currentSelectedGameObject;
         //저장된 변수의 이름을 TMP_Text에 출력한다.

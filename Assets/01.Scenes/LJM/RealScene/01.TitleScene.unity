@@ -1016,7 +1016,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotLeft: 0
   RotRight: 0
-  rotationAmount: 1
   animator: {fileID: 0}
 --- !u!1 &1060939387
 GameObject:
@@ -1131,7 +1130,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotLeft: 0
   RotRight: 0
-  rotationAmount: 1
   animator: {fileID: 0}
 --- !u!1 &1284098778
 GameObject:
@@ -1898,7 +1896,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotLeft: 0
   RotRight: 0
-  rotationAmount: 1
   animator: {fileID: 0}
 --- !u!1 &2023664906
 GameObject:
@@ -2097,7 +2094,7 @@ PrefabInstance:
     - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: currentCharacter
       value: 
-      objectReference: {fileID: 7958428679398752027, guid: 1486112fe7401a64a80c6bf9708cce85, type: 3}
+      objectReference: {fileID: 7014728878657084425, guid: e7aa718d4b8a50e47b2c98c537376a02, type: 3}
     - target: {fileID: 4007884624939222145, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: m_Name
       value: GameDataController

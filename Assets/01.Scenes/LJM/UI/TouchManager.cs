@@ -37,7 +37,7 @@ public class TouchManager : MonoBehaviour
 
     private void isTouching()
     {
-        if(Input.GetMouseButtonDown(0))
+        if(Input.touchCount > 0)
         {
             Touch touch = Input.GetTouch(0);
 
