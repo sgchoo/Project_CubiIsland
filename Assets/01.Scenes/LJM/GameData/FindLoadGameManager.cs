@@ -44,7 +44,7 @@ public class FindLoadGameManager : MonoBehaviour
     {
         if(!isStart && guide03.activeSelf) 
         {
-            if(Input.GetTouch(0).phase == TouchPhase.Began)
+            if(Input.touchCount>0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 gameOver = false;
                 guide03.SetActive(false);
@@ -53,7 +53,7 @@ public class FindLoadGameManager : MonoBehaviour
         }
         else if(!isStart && guide04.activeSelf)
         {
-            if(Input.GetTouch(0).phase == TouchPhase.Began)
+            if(Input.touchCount>0 &&Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 missionPanel.SetActive(false);  
                 isStart = true;
