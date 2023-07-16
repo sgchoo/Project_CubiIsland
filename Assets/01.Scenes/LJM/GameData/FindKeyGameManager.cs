@@ -42,7 +42,7 @@ public class FindKeyGameManager : MonoBehaviour
     {
         if(!isStart && guide01.activeSelf) 
         {
-            if(Input.GetTouch(0).phase == TouchPhase.Began)
+            if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 gameOver = false;
                 guide01.SetActive(false);
@@ -53,7 +53,7 @@ public class FindKeyGameManager : MonoBehaviour
         }
         else if(!isStart && guide02.activeSelf)
         {
-            if(Input.GetTouch(0).phase == TouchPhase.Began)
+            if(Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
                 gameOver = false;
                 //guide02.SetActive(false);

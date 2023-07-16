@@ -7242,6 +7242,8 @@ MonoBehaviour:
   - {fileID: 1849341813}
   - {fileID: 894651844}
   - {fileID: 894651844}
+  FinBtn: {fileID: 1310439490}
+  FinBtnEffect: {fileID: 1365350384}
 --- !u!114 &1294567396
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -2086,7 +2086,7 @@ PrefabInstance:
     - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: currentWorld
       value: 
-      objectReference: {fileID: 5142343675394813906, guid: 6e211bce5fb9c1548bdac2f2d93fea54, type: 3}
+      objectReference: {fileID: 971587478552120352, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
     - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: characterPref
       value: 
