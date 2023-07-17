@@ -96,8 +96,18 @@ public class GameLoadingManager : MonoBehaviour
 
         switch(GameData.Instance.currentGame)
         {
-            case 0 : target = KeyStore.findKeyScene; break;
-            case 1 : target = KeyStore.findLoadScene; break;
+            case 0 : 
+                if(GameData.Instance.tutorialFindKey)
+                    target = KeyStore.tutorialFindKeyGame; 
+                else 
+                    target = KeyStore.findKeyScene; 
+                break;
+            case 1 : 
+                if(GameData.Instance.tutorialFindRoad)
+                    target = KeyStore.tutorialFindRoadGame; 
+                else
+                    target = KeyStore.findLoadScene; 
+                    break;
             default : Debug.Log("Error!"); target = KeyStore.findKeyScene; break;
         }
         SceneManager.LoadScene(target);
