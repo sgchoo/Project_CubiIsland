@@ -40,11 +40,7 @@ public static class KeyStore
     public const string TUTORIAL_MAP_KEY = "tutorial_map";
 
     public const string tutorialPlaza = "01.TutorialPlazaScene";
-    public const string tutorialStartCheckFirst = "02.TutorialStartCheckScene";
-    public const string tutorialLoadSceneFirst = "03.TutorialLoadScene";
-    public const string tutorialFindKeyGame = "04.TutorialFindKeyScene";
-    public const string tutorialPlazaSecond = "05.TutorialPlazaScene";
-    public const string tutorialChangeChar = "06.TutorialChangeCharScene";
+    public const string tutorialChangeChar = "02.TutorialChangeCharScene";
     public const string tutorialStartCheckSecond = "07.TutorialStartCheckScene";
     public const string tutorialLoadSceneSecond= "08.TutorialLoadScene";
     public const string tutorialFindLoadGame = "09.TutorialFindLoadScene";

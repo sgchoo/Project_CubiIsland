@@ -56,10 +56,12 @@ public class PortalTouchBehaviour : MonoBehaviour
             {
                 if(hit.collider.name == character.name)
                 {
+                    if(GameData.Instance.tutorial && TutorialScriptController.tutorialCount == 2) return;
                     SceneManager.LoadScene(KeyStore.characterSelectScene);
                 }
                 else if (hit.collider.name == world.name)
                 {
+                    if(GameData.Instance.tutorial && TutorialScriptController.tutorialCount == 1) return;
                     SceneManager.LoadScene(KeyStore.worldSelectScene);
                 }
             }
