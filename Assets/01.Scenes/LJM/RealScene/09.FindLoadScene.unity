@@ -660,6 +660,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1168494349}
+  - {fileID: 918547567}
   - {fileID: 454980226}
   - {fileID: 394187173}
   - {fileID: 507509129}
@@ -1602,7 +1603,9 @@ MonoBehaviour:
   - {fileID: 1740310713}
   rotateSpeed: 60.6
   arCamera: {fileID: 0}
+  axis: 0
   activateArea: {fileID: 1681496626}
+  setCoords: {x: 0, y: 0}
   axisObject: {fileID: 1440456692}
 --- !u!54 &259702232
 Rigidbody:
@@ -2247,7 +2250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &394187173
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2524,7 +2527,6 @@ RectTransform:
   - {fileID: 1547630726}
   - {fileID: 485771071}
   - {fileID: 1866156891}
-  - {fileID: 918547567}
   m_Father: {fileID: 129010274}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4713,7 +4715,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 454980226}
+    m_TransformParent: {fileID: 129010274}
     m_Modifications:
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_Pivot.x
@@ -4793,11 +4795,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -35
+      value: -100
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 35
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
