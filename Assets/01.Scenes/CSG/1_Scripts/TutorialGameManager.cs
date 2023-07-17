@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
 
@@ -12,6 +13,7 @@ public class TutorialGameManager : MonoBehaviour
     public static bool isFinish;
     private string coment;
     public GameObject infoUIGroup;
+    public GameObject successUIGroup;
     public Button checkBtn;
     public TMP_Text tmpText;
     public FindKeyPlayerMoveManager cubiMove;
@@ -21,17 +23,9 @@ public class TutorialGameManager : MonoBehaviour
     {
         if(getKeyCount != 0)
         {
-            GameObject[] joints = GameObject.FindGameObjectsWithTag("Joint");
-
-            foreach (var joint in joints)
-            {
-                tutorialCnt = 1;
-                joint.GetComponent<OpenBox>().enabled = true;
-                // 성공 UI
-
-                // 씬 넘기기
-
-            }
+            tutorialCnt = 1;
+            // 성공 UI
+            successUIGroup.SetActive(true);
         }
     }
 
@@ -42,9 +36,7 @@ public class TutorialGameManager : MonoBehaviour
             tutorialCnt = 0;
             isFinish = false;
             // 성공 UI
-
-            // 씬 넘기기
-
+            successUIGroup.SetActive(true);
         }
     }
 
@@ -55,5 +47,15 @@ public class TutorialGameManager : MonoBehaviour
         cubiMove2.rotateSpeed = 50f;
         checkBtn.gameObject.SetActive(false);
         infoUIGroup.SetActive(false);
+    }
+
+    public void MainFindKeyGame()
+    {
+        SceneManager.LoadScene(KeyStore.findKeyScene);
+    }
+
+    public void MainFindRoadGame()
+    {
+        SceneManager.LoadScene(KeyStore.findLoadScene);
     }
 }
