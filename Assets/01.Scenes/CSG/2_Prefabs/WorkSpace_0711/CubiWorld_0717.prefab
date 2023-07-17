@@ -2421,7 +2421,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &767380640453492832
 Transform:
   m_ObjectHideFlags: 0
@@ -3109,7 +3109,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2613629532723254408
 Transform:
   m_ObjectHideFlags: 0
@@ -8150,7 +8150,7 @@ Transform:
   - {fileID: 4435207089808856031}
   - {fileID: 8107966361086259289}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6903013703873362883
 Animator:
@@ -8524,8 +8524,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198634378383955756, guid: 64b10ade785cbf345ae1f6146cd2a37c, type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198634378383955756, guid: 64b10ade785cbf345ae1f6146cd2a37c, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 198634378383955756, guid: 64b10ade785cbf345ae1f6146cd2a37c, type: 3}
       propertyPath: InitialModule.startSizeY.scalar
@@ -8908,8 +8912,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198634378383955756, guid: 64b10ade785cbf345ae1f6146cd2a37c, type: 3}
+      propertyPath: InitialModule.size3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198634378383955756, guid: 64b10ade785cbf345ae1f6146cd2a37c, type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.2
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 198634378383955756, guid: 64b10ade785cbf345ae1f6146cd2a37c, type: 3}
       propertyPath: InitialModule.startSizeY.scalar
