@@ -38,13 +38,11 @@ public static class KeyStore
     public const string TUTORIAL_PLAZA_KEY = "tutorial_plaza";
     public const string TUTORIAL_CHARACTER_KEY = "tutorial_character";
     public const string TUTORIAL_MAP_KEY = "tutorial_map";
+    public const string TUTORIAL_FIND_KEYGAME_KEY = "tutorial_find_key";
+    public const string TUTORIAL_FIND_ROAD_KEY = "tutorial_find_road";
 
     public const string tutorialPlaza = "01.TutorialPlazaScene";
     public const string tutorialChangeChar = "02.TutorialChangeCharScene";
-    public const string tutorialStartCheckSecond = "07.TutorialStartCheckScene";
-    public const string tutorialLoadSceneSecond= "08.TutorialLoadScene";
-    public const string tutorialFindLoadGame = "09.TutorialFindLoadScene";
-    public const string tutorialPlazaThird = "10.TutorialPlazaScene";
-    public const string tutorialChangeWorld = "11.TutorialChangeMapScene";
-    public const string tutorialPlazaFourth = "12.TutorialPlazaScene";
+    public const string tutorialFindKeyGame = "03.TutorialFindKeyScene";
+    public const string tutorialFindRoadGame = "04.TutorialFindRoadScene";
 }
