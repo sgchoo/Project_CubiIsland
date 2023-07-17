@@ -60,6 +60,8 @@ public class GameData : MonoBehaviour
     public bool tutorialPlaza = false;
     public bool tutorialCharacter = false;
     public bool tutorialMap = false;
+    public bool tutorialFindKey = false;
+    public bool tutorialFindRoad = false;
     
 
     private void Start() 
@@ -120,10 +122,12 @@ public class GameData : MonoBehaviour
 
     private void SetTutorial()
     {
-        tutorial =          PlayerPrefs.HasKey(KeyStore.tutorialKey)            ? false : true;
-        tutorialPlaza =     PlayerPrefs.HasKey(KeyStore.TUTORIAL_PLAZA_KEY)     ? false : true;
-        tutorialCharacter = PlayerPrefs.HasKey(KeyStore.TUTORIAL_CHARACTER_KEY) ? false : true;
-        tutorialMap =       PlayerPrefs.HasKey(KeyStore.TUTORIAL_MAP_KEY)       ? false : true;        
+        tutorial =          PlayerPrefs.HasKey(KeyStore.tutorialKey)                ? false : true;
+        tutorialPlaza =     PlayerPrefs.HasKey(KeyStore.TUTORIAL_PLAZA_KEY)         ? false : true;
+        tutorialCharacter = PlayerPrefs.HasKey(KeyStore.TUTORIAL_CHARACTER_KEY)     ? false : true;
+        tutorialMap =       PlayerPrefs.HasKey(KeyStore.TUTORIAL_MAP_KEY)           ? false : true;        
+        tutorialFindKey =   PlayerPrefs.HasKey(KeyStore.TUTORIAL_FIND_KEYGAME_KEY)  ? false : true;        
+        tutorialFindRoad =  PlayerPrefs.HasKey(KeyStore.TUTORIAL_FIND_ROAD_KEY)     ? false : true;        
     }
 
     public void LockListUpdate()
