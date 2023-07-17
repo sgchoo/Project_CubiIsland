@@ -18,8 +18,8 @@ public class TutorialYesOrNo : MonoBehaviour
         {
             if(GameData.Instance.tutorialFindKey)
             {
-                currentUI.SetActive(false);
-                gameManager.SetActive(false);
+                // currentUI.SetActive(false);
+                // gameManager.SetActive(false);
                 yesOrNoCanvas.SetActive(true);
                 moveSceneName = KeyStore.tutorialFindKeyGame;
             }
@@ -28,16 +28,16 @@ public class TutorialYesOrNo : MonoBehaviour
         {
             if(GameData.Instance.tutorialFindRoad)
             {
-                currentUI.SetActive(false);
-                gameManager.SetActive(false);
+                // currentUI.SetActive(false);
+                // gameManager.SetActive(false);
                 yesOrNoCanvas.SetActive(true);
                 moveSceneName = KeyStore.tutorialFindRoadGame;
             }
         }
         else
         {
-            currentUI.SetActive(true);
-            gameManager.SetActive(true);
+            // currentUI.SetActive(true);
+            // gameManager.SetActive(true);
             yesOrNoCanvas.SetActive(false);
             this.gameObject.SetActive(false);
         }
@@ -56,8 +56,8 @@ public class TutorialYesOrNo : MonoBehaviour
 
     public void OnClickNo()
     {
-        currentUI.SetActive(true);
-        gameManager.SetActive(true);
+        // currentUI.SetActive(true);
+        // gameManager.SetActive(true);
         yesOrNoCanvas.SetActive(false);
         this.gameObject.SetActive(false);
 }
