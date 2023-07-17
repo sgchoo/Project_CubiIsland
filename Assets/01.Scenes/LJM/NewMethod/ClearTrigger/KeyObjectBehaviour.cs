@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class KeyObjectBehaviour : MonoBehaviour
 {
+    public GameObject ps;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +22,7 @@ public class KeyObjectBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             FindKeyGameManager.GetKey();
+            Instantiate(ps, this.transform.position + new Vector3(0, 0.01f, 0), Quaternion.Euler(-90, 0, 0));
             Destroy(this.gameObject);
         }
     }

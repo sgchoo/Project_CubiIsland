@@ -53,6 +53,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
     public ActivateDirArea activateArea;
     
     public Vector2 setCoords;
+    public ParticleSystem[] particles;
 
     void Start()
     {
@@ -185,6 +186,8 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
             // Player 부모 초기화
             this.transform.parent = parent;
 
+            ParticlePlay();
+
             // 회전타겟 회전 정상화
             rotateTarget.rotation = prevRot;  
 
@@ -235,5 +238,17 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
         return isTurn;
     }
 
-
+    private void ParticlePlay()
+    {
+        if(GameData.Instance.currentWorld.name == "Map01_Forest")
+        {
+            ParticleSystem particle = Instantiate(particles[0]);
+            particle.transform.position = this.transform.position;
+        }
+        else if(GameData.Instance.currentWorld.name == "Map02_Snow")
+        {
+            ParticleSystem particle = Instantiate(particles[1]);
+            particle.transform.position = this.transform.position;
+        }
+    }
 }

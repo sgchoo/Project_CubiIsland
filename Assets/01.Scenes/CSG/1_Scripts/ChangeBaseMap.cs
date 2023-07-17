@@ -5,8 +5,8 @@ using UnityEngine;
 public class ChangeBaseMap : MonoBehaviour
 {
     public Texture2D[] textures;
+    public GameObject[] weather;
     private Renderer myRender;
-
     private Material curMat;
 
     private void Start() 
@@ -17,18 +17,7 @@ public class ChangeBaseMap : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            myRender.material.mainTexture = textures[0];
-        }
-        if(Input.GetKeyDown(KeyCode.S))
-        {
-            myRender.material.mainTexture = textures[1];
-        }
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            myRender.material.mainTexture = textures[2];
-        }
+        ChangeMainTexture();
     }
 
     private void ChangeMainTexture()
@@ -37,10 +26,14 @@ public class ChangeBaseMap : MonoBehaviour
         {
             case "Map01_Forest":
                 myRender.material.mainTexture = textures[0];
+                weather[0].SetActive(true);
+                weather[1].SetActive(false);
                 break;
 
             case "Map02_Snow":
                 myRender.material.mainTexture = textures[1];
+                weather[0].SetActive(false);
+                weather[1].SetActive(true);
                 break;
 
             case "Map03_Desert":
