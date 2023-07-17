@@ -583,7 +583,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &129010271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1553,6 +1553,7 @@ MonoBehaviour:
   - {fileID: 1352963691}
   rotateSpeed: 50
   axisObject: {fileID: 1440456692}
+  particles: []
 --- !u!114 &259702231
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1605,6 +1606,7 @@ MonoBehaviour:
   axis: 0
   activateArea: {fileID: 1681496626}
   setCoords: {x: 0, y: 0}
+  particles: []
   axisObject: {fileID: 1440456692}
 --- !u!54 &259702232
 Rigidbody:
@@ -1997,33 +1999,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 693796264}
     m_Modifications:
-    - target: {fileID: 292917736863060802, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1543329536188768063, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
       propertyPath: m_Name
       value: Map02_Snow
       objectReference: {fileID: 0}
-    - target: {fileID: 2855466464071886181, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3826522956205156269, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5880988464094433463, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6538202579202584567, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8554189957437064646, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 8554189957437064646, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2064,18 +2046,6 @@ PrefabInstance:
     - target: {fileID: 8554189957437064646, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8620107987120312763, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8890655284466793999, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8890655284466793999, guid: 9862c9748e483ae45bd748a45fceac08, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3155,7 +3125,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &586328958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7781,21 +7751,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1907844565}
     m_Modifications:
-    - target: {fileID: 615388521501414600, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 971587478552120352, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
       propertyPath: m_Name
       value: Map01_Forest
       objectReference: {fileID: 0}
-    - target: {fileID: 1625654974984615822, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1686144433972630756, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1686144433972630756, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7815,15 +7777,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1686144433972630756, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1686144433972630756, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1686144433972630756, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1686144433972630756, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -7836,38 +7798,6 @@ PrefabInstance:
     - target: {fileID: 1686144433972630756, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1789808882416122456, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3083104997063193994, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3541456825047231618, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3550923168547706521, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4424290721955405139, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 6.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4774095817136660669, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5299890530717605393, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8827395857668914867, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9004,7 +8934,7 @@ GameObject:
   - component: {fileID: 1907844565}
   - component: {fileID: 1907844568}
   - component: {fileID: 1907844567}
-  - component: {fileID: 1907844566}
+  - component: {fileID: 1907844569}
   m_Layer: 0
   m_Name: Map01_Forest
   m_TagString: Untagged
@@ -9028,25 +8958,6 @@ Transform:
   m_Father: {fileID: 1032093612}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1907844566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1907844564}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mObserverBehaviour: {fileID: 1907844568}
-  mHiddenRoot: {fileID: 0}
-  mTargetName: Map01_Forest
-  mDatasetName: Vuforia/--- EMPTY ---.xml
-  mCastedBehaviour: {fileID: 1907844568}
-  mMeshFilter: {fileID: 0}
-  mMeshRenderer: {fileID: 0}
 --- !u!114 &1907844567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9129,7 +9040,26 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1907844566}
+  mPreview: {fileID: 1907844569}
+--- !u!114 &1907844569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907844564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1778676317, guid: 8a9a760f95896c34689febc965510927, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mObserverBehaviour: {fileID: 1907844568}
+  mHiddenRoot: {fileID: 0}
+  mTargetName: Map01_Forest
+  mDatasetName: Vuforia/--- EMPTY ---.xml
+  mCastedBehaviour: {fileID: 1907844568}
+  mMeshFilter: {fileID: 0}
+  mMeshRenderer: {fileID: 0}
 --- !u!1 &1909015212
 GameObject:
   m_ObjectHideFlags: 0
