@@ -57,6 +57,10 @@ public class GameData : MonoBehaviour
     public int worldUnLockIdx;
     
     public bool tutorial = false;
+    public bool tutorialPlaza = false;
+    public bool tutorialCharacter = false;
+    public bool tutorialMap = false;
+    
 
     private void Start() 
     {
@@ -66,7 +70,7 @@ public class GameData : MonoBehaviour
         worldUnLockIdx = 0;
         currentGame = 0;
 
-        //SetTutorial();
+        SetTutorial();
         // tutorial = false;
 
         if(PlayerPrefs.HasKey(KeyStore.CHARACTER_UNLOCK_INDEX))
@@ -83,9 +87,9 @@ public class GameData : MonoBehaviour
         SetSound();
 
         SetCharacter();
-        Debug.Log("GAMEDATA :: " + currentCharacter.name);
+        //Debug.Log("GAMEDATA :: " + currentCharacter.name);
         SetWorld();
-        Debug.Log("GAMEDATA :: " + currentWorld.name);
+        //Debug.Log("GAMEDATA :: " + currentWorld.name);
         
     }
 
@@ -116,14 +120,10 @@ public class GameData : MonoBehaviour
 
     private void SetTutorial()
     {
-        if(PlayerPrefs.HasKey(KeyStore.tutorialKey))
-        {
-            tutorial = false;
-        }
-        else 
-        {
-            tutorial = true;
-        }
+        tutorial =          PlayerPrefs.HasKey(KeyStore.tutorialKey)            ? false : true;
+        tutorialPlaza =     PlayerPrefs.HasKey(KeyStore.TUTORIAL_PLAZA_KEY)     ? false : true;
+        tutorialCharacter = PlayerPrefs.HasKey(KeyStore.TUTORIAL_CHARACTER_KEY) ? false : true;
+        tutorialMap =       PlayerPrefs.HasKey(KeyStore.TUTORIAL_MAP_KEY)       ? false : true;        
     }
 
     public void LockListUpdate()
