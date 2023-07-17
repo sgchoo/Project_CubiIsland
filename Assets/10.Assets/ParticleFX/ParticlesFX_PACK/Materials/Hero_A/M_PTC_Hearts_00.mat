@@ -2,21 +2,31 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!21 &2100000
 Material:
-  serializedVersion: 6
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: M_PTC_Hearts_00
   m_Shader: {fileID: 4800000, guid: 66835bdb7f6fb8c45af2261e6345c53e, type: 3}
-  m_ShaderKeywords: _GRADIENTCOLOR_ON _HORIZVERTGRADIENTCOLOR_ON _HORIZVERTGRADIENT_ON
-    _MIRROR_ON _OUTLINE_ON _SHAPESMODE_ON _USESHAPEALPHA_ON
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords:
+  - _HORIZVERTGRADIENTCOLOR_ON
+  - _HORIZVERTGRADIENT_ON
+  m_InvalidKeywords:
+  - _GRADIENTCOLOR_ON
+  - _MIRROR_ON
+  - _OUTLINE_ON
+  - _SHAPESMODE_ON
+  - _USESHAPEALPHA_ON
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
   stringTagMap: {}
   disabledShaderPasses: []
+  m_LockedProperties: 
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -60,6 +70,7 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    m_Ints: []
     m_Floats:
     - _AlphaCutoff: 0.5
     - _Dissolve: 0
@@ -110,7 +121,7 @@ Material:
     - _ScrollingSpeed: 1
     - _ScrollingSpeedX: 0
     - _ScrollingSpeedY: 0
-    - _Shape: 1
+    - _Shape: 0
     - _ShapesMode: 1
     - _Sides: 3
     - _TileX: 1
@@ -126,8 +137,9 @@ Material:
     - _Color0: {r: 0, g: 0.77576303, b: 1, a: 0}
     - _ColorMult: {r: 11.984314, g: 6.5254903, b: 0, a: 0}
     - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
-    - _GradientColorA: {r: 0.9339623, g: 0.2548452, b: 0.18062477, a: 0}
-    - _GradientColorB: {r: 0.59607846, g: 0, b: 0.24575412, a: 0}
+    - _GradientColorA: {r: 0.20044464, g: 0.94509804, b: 0.10588235, a: 1}
+    - _GradientColorB: {r: 0.19072749, g: 0.9056604, b: 0.13243146, a: 1}
     - _MaskScaleOffset: {r: 1, g: 1, b: 0, a: 0}
     - _ScaleOffset: {r: 1, g: 1, b: 0, a: 0}
     - _Vector0: {r: 2, g: 2, b: 0, a: 0}
+  m_BuildTextureStacks: []
