@@ -471,6 +471,7 @@ GameObject:
   - component: {fileID: 276836283}
   - component: {fileID: 276836285}
   - component: {fileID: 276836284}
+  - component: {fileID: 276836286}
   m_Layer: 5
   m_Name: ImageBG
   m_TagString: Untagged
@@ -536,6 +537,35 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276836282}
   m_CullTransparentMesh: 1
+--- !u!114 &276836286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 276836282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 8620966083692781069, guid: f4261987559efeb469e21ded97ba481b, type: 3}
+          m_TargetAssemblyTypeName: UIController, Assembly-CSharp
+          m_MethodName: btnOptionUnLoad
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &306417434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,9 +2056,9 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1193701713}
-        m_TargetAssemblyTypeName: SwitchToggle_UI, Assembly-CSharp
-        m_MethodName: BGMTogisOn
+      - m_Target: {fileID: 1260766358}
+        m_TargetAssemblyTypeName: OptionManager, Assembly-CSharp
+        m_MethodName: SetBGMMute
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2991,8 +3021,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f535fce47d35c4d44b10177208a1a754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  On: {fileID: -1247561253, guid: 071356fa4efa68a449707b3f1d1435ed, type: 3}
-  Off: {fileID: 173948147, guid: 071356fa4efa68a449707b3f1d1435ed, type: 3}
+  On: {fileID: 173948147, guid: 071356fa4efa68a449707b3f1d1435ed, type: 3}
+  Off: {fileID: -1247561253, guid: 071356fa4efa68a449707b3f1d1435ed, type: 3}
   SFXTog: {fileID: 1433700708}
   BGMTog: {fileID: 708856827}
 --- !u!4 &1193701714
@@ -6010,7 +6040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1180388538220592331, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2761766965677840001, guid: 0c27ad5ccf0ff29448c8308d7326ac11, type: 3}
       propertyPath: m_RootOrder

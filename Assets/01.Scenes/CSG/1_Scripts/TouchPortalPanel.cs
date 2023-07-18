@@ -21,6 +21,12 @@ public class TouchPortalPanel : MonoBehaviour
         checkUI.SetActive(false);
         point.gameObject.SetActive(false);
         raycastMgr = GetComponent<ARRaycastManager>();
+        if(GameData.Instance.plazaWorld != null)
+        {
+            Destroy(GameData.Instance.plazaWorld);
+            GameData.Instance.plazaWorld = null;
+        }
+
     }
 
     private void Update() 
