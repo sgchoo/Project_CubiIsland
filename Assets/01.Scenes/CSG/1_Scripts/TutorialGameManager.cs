@@ -19,10 +19,16 @@ public class TutorialGameManager : MonoBehaviour
     public FindKeyPlayerMoveManager cubiMove;
     public FindLoadPlayerMoveManager2 cubiMove2;
 
+    private string sceneName;
+    private void Start() 
+    {
+        sceneName = SceneManager.GetActiveScene().name;
+    }
+
     private void Update() 
     {
-        SpreadOut();
-        FinishTutorialGame();
+        if      (KeyStore.tutorialFindKeyGame == sceneName)  SpreadOut();
+        else if (KeyStore.tutorialFindRoadGame == sceneName) FinishTutorialGame();
     }
 
     private void SpreadOut()
