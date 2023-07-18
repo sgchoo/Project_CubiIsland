@@ -65532,6 +65532,7 @@ GameObject:
   - component: {fileID: 6060094839354701445}
   - component: {fileID: 3274616278911897313}
   - component: {fileID: 3128867244636520169}
+  - component: {fileID: 4921175890466978285}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -65787,6 +65788,18 @@ MonoBehaviour:
   rotateSpeed: 50
   axisObject: {fileID: 1385425567675859144}
   particles: []
+--- !u!114 &4921175890466978285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6601393389072922599}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb20521cadbd67148af558dff508415a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6633475219734534426
 GameObject:
   m_ObjectHideFlags: 0
