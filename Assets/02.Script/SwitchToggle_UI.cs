@@ -25,12 +25,10 @@ public class SwitchToggle_UI : MonoBehaviour
     {
         if (SFXTog.isOn)
         {
-            print("SFXTog 켜짐");
             Settings(ref SFXTog, On);
         }
         if (!SFXTog.isOn)
         {
-            print("SFXTog 껴ㅓㅓㅓ짐");
             Settings(ref SFXTog, Off);
         }
         if (BGMTog.isOn)
@@ -48,7 +46,6 @@ public class SwitchToggle_UI : MonoBehaviour
         // toggle이 켜져있다면. == 음소거임
         // 게임오브젝트의 child (0)을 가져옴
         // 그것의 스프라이트 이미지를 바꿈
-        print ("Settings 실행");
         GameObject BG = tog.transform.GetChild(0).gameObject;
         ChangeImg = BG.GetComponent<Image>();
         ChangeImg.sprite = img;

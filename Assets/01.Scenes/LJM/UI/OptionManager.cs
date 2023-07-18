@@ -54,7 +54,6 @@ public class OptionManager : MonoBehaviour
 
     public void GoLink()
     {
-        Debug.Log("Go");
         // ImageDownloadManager downloadManager = new ImageDownloadManager();
         // downloadManager.DownloadImage();
         new ImageDownloadManager().DownloadObject();
@@ -62,7 +61,6 @@ public class OptionManager : MonoBehaviour
 
     public void SettingSounds()
     {
-        Debug.Log("로딩");
         SFXTog.isOn = GameData.Instance.sfx.mute;
         BGMTog.isOn = GameData.Instance.bgm.mute;
 
