@@ -12,12 +12,14 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
 {
     public Transform[] roller;
     public float rotateSpeed;
-    private Transform parent;
+    public Transform parent;
     private bool isRolling = false;
     private float jumpPower;
     Rigidbody rigid;
 
     private List<Transform> childList;
+    private List<Vector3> originPos;
+    private List<Quaternion> originRot;
 
     public Transform axisObject;
 
@@ -27,28 +29,55 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
 
     void Start()
     {
-        parent = this.transform.parent;
         childList = new List<Transform>();
+        originPos = new List<Vector3>();
+        originRot = new List<Quaternion>();
         foreach(Transform child in parent)
         {   
             if(child == this.transform || child == axisObject) continue;
             childList.Add(child);
+            originPos.Add(child.transform.localPosition);
+            originRot.Add(child.transform.localRotation);
         }
 
         SetDirection();
     }
 
-    // Update is called once per frame
+    private void OnEnable() 
+    {
+        this.transform.SetParent(parent);
+        this.transform.localPosition = Vector3.zero;
+        this.transform.rotation = Quaternion.identity;
+
+        axisObject.localPosition = this.transform.localPosition;
+
+        for(int i = 0; i < childList.Count; i++)
+        {
+            childList[i].transform.localPosition = originPos[i];
+            childList[i].transform.localRotation = originRot[i];
+        }
+
+        isRolling = false;
+    }
+
+    private void OnDisable() 
+    {
+        StopAllCoroutines();
+    }
+
     void Update()
     {
         FallingZoneRay();
+        
+        if(isActiveAndEnabled)
+        {
+            if(isRolling) return;
 
-        if(isRolling) return;
-
-        if      (random.ranVal == 0)     StartCoroutine(Rolling(Vector3.forward));
-        else if (random.ranVal == 1)     StartCoroutine(Rolling(Vector3.right));
-        else if (random.ranVal == 2)     StartCoroutine(Rolling(Vector3.down));
-        else if (random.ranVal == 3)     StartCoroutine(Rolling(Vector3.left));
+            if      (random.ranVal == 0)     StartCoroutine(Rolling(Vector3.forward));
+            else if (random.ranVal == 1)     StartCoroutine(Rolling(Vector3.right));
+            else if (random.ranVal == 2)     StartCoroutine(Rolling(Vector3.down));
+            else if (random.ranVal == 3)     StartCoroutine(Rolling(Vector3.left));
+        }
     }
 
     private bool doubleMoveFlag = false;
@@ -106,7 +135,6 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
             {
                 float rotateAngle = Time.deltaTime * rotateSpeed;
                 if(rotateAngle >= angle) rotateAngle = angle;
-
                 rotateTarget.Rotate(rotateAxis, rotateAngle, Space.Self);
                 angle -= rotateAngle;
                 yield return null;
@@ -121,9 +149,8 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
             {
                 rotateTarget.localPosition = prevPos;
                 flag = false;
-            }
-            
 
+            }
             
             SetAxis(prevRot);
         }
