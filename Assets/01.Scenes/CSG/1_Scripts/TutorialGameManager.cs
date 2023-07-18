@@ -29,6 +29,7 @@ public class TutorialGameManager : MonoBehaviour
     {
         if      (KeyStore.tutorialFindKeyGame == sceneName)  SpreadOut();
         else if (KeyStore.tutorialFindRoadGame == sceneName) FinishTutorialGame();
+        Debug.Log(tutorialCnt);
     }
 
     private void SpreadOut()
@@ -36,6 +37,7 @@ public class TutorialGameManager : MonoBehaviour
         if(getKeyCount != 0)
         {
             tutorialCnt = 1;
+            infoCnt = 0;
             // 성공 UI
             successUIGroup.SetActive(true);
         }
@@ -46,6 +48,7 @@ public class TutorialGameManager : MonoBehaviour
         if(isFinish)
         {
             tutorialCnt = 0;
+            infoCnt = 0;
             isFinish = false;
             // 성공 UI
             successUIGroup.SetActive(true);

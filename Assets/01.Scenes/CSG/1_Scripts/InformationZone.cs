@@ -6,7 +6,7 @@ using TMPro;
 
 public class InformationZone : MonoBehaviour
 {
-    [SerializeField] private float delayText = 0.3f;
+    [SerializeField] private float delayText = 0.03f;
     public TMP_Text tmpText;
     private string coment;
     public GameObject infoUIGroup;

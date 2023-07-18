@@ -70,7 +70,7 @@ public class GameData : MonoBehaviour
         mapLockList = new List<GameObject>();
         characterUnLockIdx = 0;
         worldUnLockIdx = 0;
-        currentGame = 1;
+        currentGame = 0;
 
         SetTutorial();
         // tutorial = false;
