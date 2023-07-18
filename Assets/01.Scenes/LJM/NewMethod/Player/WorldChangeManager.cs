@@ -20,6 +20,7 @@ public class WorldChangeManager : MonoBehaviour
         foreach(var cube in cubes)
         {
             cube.enabled = true;
+            cube.transform.Find("ZoneBlue").gameObject.SetActive(false);
         }
 
         if (GameData.Instance.currentGame == 1)

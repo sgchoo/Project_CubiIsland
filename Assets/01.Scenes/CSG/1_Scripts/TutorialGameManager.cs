@@ -19,6 +19,12 @@ public class TutorialGameManager : MonoBehaviour
     public FindKeyPlayerMoveManager cubiMove;
     public FindLoadPlayerMoveManager2 cubiMove2;
 
+    private void Update() 
+    {
+        SpreadOut();
+        FinishTutorialGame();
+    }
+
     private void SpreadOut()
     {
         if(getKeyCount != 0)
@@ -51,11 +57,15 @@ public class TutorialGameManager : MonoBehaviour
 
     public void MainFindKeyGame()
     {
+        PlayerPrefs.SetInt(KeyStore.TUTORIAL_FIND_KEYGAME_KEY, 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(KeyStore.findKeyScene);
     }
 
     public void MainFindRoadGame()
     {
+        PlayerPrefs.SetInt(KeyStore.TUTORIAL_FIND_ROAD_KEY, 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(KeyStore.findLoadScene);
     }
 }
