@@ -40,12 +40,14 @@ public class TouchPortalPanel : MonoBehaviour
 
         if(raycastMgr.Raycast(screenSize, hits, TrackableType.PlaneWithinPolygon))
         {
+            PortalDetectTextBehaviour.mode = 1;
             point.gameObject.SetActive(true);
             point.transform.position = hits[0].pose.position;
         }
 
         else
         {
+            PortalDetectTextBehaviour.mode = 0;
             point.gameObject.SetActive(false);
         }
     }

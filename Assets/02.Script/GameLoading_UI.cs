@@ -43,7 +43,8 @@ public class GameLoading_UI : MonoBehaviour
         timer += Time.deltaTime;
         //Debug.Log("GameLoading_UI::Touch - " + TouchManager.isTouch);
         // 터치했거나, 로딩시간이 10초가 지났을 경우 패널 비활성화
-        if (Input.GetMouseButtonDown(0) ||timer >= 9f)
+        // if (Input.GetMouseButtonDown(0) ||timer >= 9f)
+        if(timer >= 9f)
         {
             GameLoadingManager.isDetectPanel = true;
             gameObject.SetActive(false);

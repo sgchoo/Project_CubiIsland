@@ -66,6 +66,7 @@ public class TutorialGameManager : MonoBehaviour
 
     public void MainFindKeyGame()
     {
+        GameData.Instance.tutorialFindKey = false;
         PlayerPrefs.SetInt(KeyStore.TUTORIAL_FIND_KEYGAME_KEY, 1);
         PlayerPrefs.Save();
         SceneManager.LoadScene(KeyStore.findKeyScene);
@@ -73,6 +74,7 @@ public class TutorialGameManager : MonoBehaviour
 
     public void MainFindRoadGame()
     {
+        GameData.Instance.tutorialFindRoad = false;
         PlayerPrefs.SetInt(KeyStore.TUTORIAL_FIND_ROAD_KEY, 1);
         PlayerPrefs.Save();
         SceneManager.LoadScene(KeyStore.findLoadScene);
