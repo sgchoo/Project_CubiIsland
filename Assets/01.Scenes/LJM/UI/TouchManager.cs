@@ -21,7 +21,6 @@ public class TouchManager : MonoBehaviour
 
     private void touchBehaviour()
     {
-        Debug.Log(isTouch);
         isTouching();
         if (Input.GetMouseButtonDown(0) && isSFXPlaying == false)
         {
