@@ -31,6 +31,9 @@ public class GameLoadingManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("GameLoadingManager::isDetectPanel:" + isDetectPanel);
+        Debug.Log("GameLoadingManager::PanelLoading_UI.ActAR:" + PanelLoading_UI.ActAR);
+        Debug.Log("GameLoadingManager::isCameraOn:" + isCameraOn);
         // if(sliderLoadingPanel.activeSelf) return; 
         // if(!isAct && imageLoadingPanel.activeSelf)
         // {
@@ -41,18 +44,14 @@ public class GameLoadingManager : MonoBehaviour
         //         isAct = true;
         //     }
         // }
-        if(isDetectPanel && !PanelLoading_UI.ActAR)
+        if(isDetectPanel)
         {
             sliderLoadingPanel.SetActive(false);
             imageLoadingPanel.SetActive(true);
         }
-        else if(!isCameraOn && PanelLoading_UI.ActAR)
+        else if(!isCameraOn)
         {
             ActImageTarget();
-        }
-        else if(isCameraOn)
-        {
-            //FocusedImage();
         }
     }
 

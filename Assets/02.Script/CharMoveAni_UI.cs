@@ -34,7 +34,6 @@ public class CharMoveAni_UI : MonoBehaviour
 
     private void PlayRotate()
     {
-        print("회전 실행");
         float rotationSpeed = isMovingLeft ? rotationAmount : -rotationAmount;
         rotationSpeed *= Time.deltaTime;
 
