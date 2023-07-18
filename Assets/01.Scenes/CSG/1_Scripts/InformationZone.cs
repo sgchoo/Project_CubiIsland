@@ -54,7 +54,7 @@ public class InformationZone : MonoBehaviour
             }
         }
 
-        else if(other.transform.name == "Char_Bull" && TutorialGameManager.tutorialCnt == 1)
+        if(other.transform.name == "Char_Bull" && TutorialGameManager.tutorialCnt == 1)
         {
             switch(TutorialGameManager.infoCnt)
             {
