@@ -177,7 +177,7 @@ Transform:
   - {fileID: 9121063734828123780}
   - {fileID: 6179509433298015452}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3669450020455394727
 MonoBehaviour:
@@ -201,6 +201,14 @@ MonoBehaviour:
   mapPref: {fileID: 3372669391436050778, guid: 58bf73bcb7a32094d9ec0cbab2f02177, type: 3}
   characterLockList: []
   mapLockList: []
+  characterUnLockIdx: 0
+  worldUnLockIdx: 0
+  tutorial: 0
+  tutorialPlaza: 0
+  tutorialCharacter: 0
+  tutorialMap: 0
+  tutorialFindKey: 0
+  tutorialFindRoad: 0
 --- !u!114 &5833889562476895664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,6 +268,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   touchSound: {fileID: 8300000, guid: abfb5cf0710f2b04fb32ea16f08deafa, type: 3}
+  landingSounds:
+  - {fileID: 8300000, guid: c5a311f2928e33b4ebf7aafed632374f, type: 3}
+  - {fileID: 8300000, guid: 839576dc4069f9440a755ba3ffd37b29, type: 3}
+  rollSound: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
 --- !u!82 &3781022212727750140
 AudioSource:
   m_ObjectHideFlags: 0

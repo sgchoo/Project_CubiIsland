@@ -27,7 +27,7 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
 
     Vector3 rayDir;
 
-    void Start()
+    void Awake()
     {
         childList = new List<Transform>();
         originPos = new List<Vector3>();
@@ -39,7 +39,11 @@ public class FindLoadPlayerMoveManager : MonoBehaviour
             originPos.Add(child.transform.localPosition);
             originRot.Add(child.transform.localRotation);
         }
+    }
 
+    void Start()
+    {
+        
         SetDirection();
     }
 
