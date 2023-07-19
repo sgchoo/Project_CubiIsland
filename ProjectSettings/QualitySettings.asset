@@ -154,5 +154,5 @@ QualitySettings:
   m_PerPlatformDefaultQuality:
     Android: 1
     Server: 0
-    Standalone: 1
+    Standalone: 2
     iPhone: 1
