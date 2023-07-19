@@ -47,7 +47,6 @@ public class PanelLoading_UI : MonoBehaviour
         DisappearObject = GetComponent<CanvasGroup>();
         ActAR = false;
 
-        Debug.Log("PanelLoading_UI::CHECK!"+SceneManager.GetActiveScene().name == KeyStore.loadScene);
         if (SceneManager.GetActiveScene().name == KeyStore.loadScene)
         {
             Debug.Log("PanelLoading_UI::Complete");
@@ -110,7 +109,6 @@ public class PanelLoading_UI : MonoBehaviour
             case "Map01_Forest" : UpdateMapInfo(MapIcons[0], "FOREST"); break;
             case "Map02_Snow"   : UpdateMapInfo(MapIcons[1], "SNOW");   break;
             case "Map03_Desert" : UpdateMapInfo(MapIcons[2], "DESERT"); break;
-            
         }
         // if (GameData.Instance.currentWorld.name == "Map01_Forest")
         // {

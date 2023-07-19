@@ -44,10 +44,14 @@ public class PortalTouchBehaviour : MonoBehaviour
                 GameObject uiObj = EventSystem.current.currentSelectedGameObject;
                 if(uiObj != null)
                 {   
+                    Debug.Log("PortalTouchBehaviour.cs::"+uiObj.name);
                     return;
                 }
                 
             }
+
+            if(GameData.Instance.tutorialPlaza && !TutorialScriptController.interactionActive) return;
+            //if(tutorial)
 
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit hit;

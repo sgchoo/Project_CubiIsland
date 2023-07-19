@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
@@ -21,6 +22,8 @@ public class TutorialScriptController : MonoBehaviour
     public List<string> scripts;
     private List<int> videoSequence;
     private int sequence = 0;
+
+    public static bool interactionActive = false;
 
     public void OnClick()
     {
@@ -52,6 +55,7 @@ public class TutorialScriptController : MonoBehaviour
                     guideScreen.SetActive(true);
 
                 }
+                interactionActive = true;
                 return;
             }
             scriptIdx+=1;
@@ -96,6 +100,7 @@ public class TutorialScriptController : MonoBehaviour
         guideScreen.SetActive(false);
         selectCharGuideScreen.SetActive(false);
         selectWorldGuideScreen.SetActive(false);
+        interactionActive = false;
         if(tutorialCount == 0)
         {
             scripts = TutorialScripts.plaza01;
@@ -115,9 +120,6 @@ public class TutorialScriptController : MonoBehaviour
             scriptIdx = 0;
             text.text = scripts[scriptIdx];
         }
-                
-                
-        
     }
 
        
