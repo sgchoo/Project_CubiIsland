@@ -19,11 +19,25 @@ public class TutorialGameManager : MonoBehaviour
     public FindKeyPlayerMoveManager cubiMove;
     public FindLoadPlayerMoveManager2 cubiMove2;
 
+    private string sceneName;
+    private void Start() 
+    {
+        sceneName = SceneManager.GetActiveScene().name;
+    }
+
+    private void Update() 
+    {
+        if      (KeyStore.tutorialFindKeyGame == sceneName)  SpreadOut();
+        else if (KeyStore.tutorialFindRoadGame == sceneName) FinishTutorialGame();
+        Debug.Log(tutorialCnt);
+    }
+
     private void SpreadOut()
     {
         if(getKeyCount != 0)
         {
             tutorialCnt = 1;
+            infoCnt = 0;
             // 성공 UI
             successUIGroup.SetActive(true);
         }
@@ -34,6 +48,7 @@ public class TutorialGameManager : MonoBehaviour
         if(isFinish)
         {
             tutorialCnt = 0;
+            infoCnt = 0;
             isFinish = false;
             // 성공 UI
             successUIGroup.SetActive(true);
@@ -51,11 +66,17 @@ public class TutorialGameManager : MonoBehaviour
 
     public void MainFindKeyGame()
     {
+        GameData.Instance.tutorialFindKey = false;
+        PlayerPrefs.SetInt(KeyStore.TUTORIAL_FIND_KEYGAME_KEY, 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(KeyStore.findKeyScene);
     }
 
     public void MainFindRoadGame()
     {
+        GameData.Instance.tutorialFindRoad = false;
+        PlayerPrefs.SetInt(KeyStore.TUTORIAL_FIND_ROAD_KEY, 1);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(KeyStore.findLoadScene);
     }
 }

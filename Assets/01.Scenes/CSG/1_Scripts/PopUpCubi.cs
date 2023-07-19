@@ -10,7 +10,8 @@ public class PopUpCubi : MonoBehaviour
 
     public Transform playerPrefab;
     public Transform[] players;
-    FindLoadPlayerMoveManager rollCS;
+    private FindLoadPlayerMoveManager rollCS;
+    private static bool isPopUp;
 
     private void Awake() 
     {
@@ -19,10 +20,13 @@ public class PopUpCubi : MonoBehaviour
 
     private void Start() 
     {
-        if(this.transform == players[0])      StartCoroutine(PopUp(0.21f, 0.4f));
-        if(this.transform == players[1])      StartCoroutine(PopUp(0.21f, 0.4f));
-        if(this.transform == players[2])      StartCoroutine(PopUp(0.21f, -0.4f)); 
-        if(this.transform == players[3])      StartCoroutine(PopUp(0.21f, -0.4f)); 
+        if(!isPopUp)
+        {
+            if(this.transform == players[0])      StartCoroutine(PopUp(0.21f, 0.4f));
+            if(this.transform == players[1])      StartCoroutine(PopUp(0.21f, 0.4f));
+            if(this.transform == players[2])      StartCoroutine(PopUp(0.21f, -0.4f)); 
+            if(this.transform == players[3])      StartCoroutine(PopUp(0.21f, -0.4f)); 
+        }
     }
 
     private void OnTriggerEnter(Collider other) 
@@ -43,5 +47,6 @@ public class PopUpCubi : MonoBehaviour
         yield return new WaitForSeconds(2.2f);
 
         rollCS.enabled = true;
+        isPopUp = true;
     }
 }

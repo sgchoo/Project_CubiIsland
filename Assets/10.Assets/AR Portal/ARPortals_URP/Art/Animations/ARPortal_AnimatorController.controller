@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!1107 &-7632487591509165204
 AnimatorStateMachine:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -27,7 +27,7 @@ AnimatorStateMachine:
   m_DefaultState: {fileID: -1098778943054960127}
 --- !u!1102 &-2369088404842600220
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -53,7 +53,7 @@ AnimatorState:
   m_TimeParameter: 
 --- !u!1102 &-1098778943054960127
 AnimatorState:
-  serializedVersion: 5
+  serializedVersion: 6
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -72,7 +72,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 553d6f633b3295a4f8d22b5c8cbc84b4, type: 2}
+  m_Motion: {fileID: 7400000, guid: e1223dc2b7a0064418950fdbaa9655f0, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

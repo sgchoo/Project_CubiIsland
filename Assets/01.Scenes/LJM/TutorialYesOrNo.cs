@@ -9,56 +9,34 @@ public class TutorialYesOrNo : MonoBehaviour
     public GameObject currentUI;
     public GameObject yesOrNoCanvas;
     private string moveSceneName;
+
+    public void tutoBtnClick()
+    {
+        yesOrNoCanvas.SetActive(true);
+    }
     // Start is called before the first frame update
-    void Start()
+    void OnClickYes()
     {
         moveSceneName = "";
         string name = SceneManager.GetActiveScene().name;
         if(name == KeyStore.findKeyScene)
         {
-            if(GameData.Instance.tutorialFindKey)
-            {
-                // currentUI.SetActive(false);
-                // gameManager.SetActive(false);
-                yesOrNoCanvas.SetActive(true);
-                moveSceneName = KeyStore.tutorialFindKeyGame;
-            }
+            moveSceneName = KeyStore.tutorialFindKeyGame;
         }
         else if (name == KeyStore.findLoadScene) 
         {
-            if(GameData.Instance.tutorialFindRoad)
-            {
-                // currentUI.SetActive(false);
-                // gameManager.SetActive(false);
-                yesOrNoCanvas.SetActive(true);
-                moveSceneName = KeyStore.tutorialFindRoadGame;
-            }
+            moveSceneName = KeyStore.tutorialFindRoadGame;
         }
         else
         {
-            // currentUI.SetActive(true);
-            // gameManager.SetActive(true);
-            yesOrNoCanvas.SetActive(false);
-            this.gameObject.SetActive(false);
+            Debug.Log("TutorialYesOrNo::Error-no relationship");
+            return;
         }
-        
-    }
-
-    private void SceneMove(string name)
-    {
-        SceneManager.LoadScene(name);
-    }
-
-    public void OnClickYes()
-    {
-        SceneMove(moveSceneName);
+        SceneManager.LoadScene(moveSceneName);
     }
 
     public void OnClickNo()
     {
-        // currentUI.SetActive(true);
-        // gameManager.SetActive(true);
         yesOrNoCanvas.SetActive(false);
-        this.gameObject.SetActive(false);
-}
+    }
 }

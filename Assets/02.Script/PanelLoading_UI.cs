@@ -47,8 +47,10 @@ public class PanelLoading_UI : MonoBehaviour
         DisappearObject = GetComponent<CanvasGroup>();
         ActAR = false;
 
+        Debug.Log("PanelLoading_UI::CHECK!"+SceneManager.GetActiveScene().name == KeyStore.loadScene);
         if (SceneManager.GetActiveScene().name == KeyStore.loadScene)
         {
+            Debug.Log("PanelLoading_UI::Complete");
             // 교체할 맵 아이콘 받아오기
             MapIcon = imageIcon.GetComponent<Image>();
             SetMapIcon();
@@ -65,9 +67,8 @@ public class PanelLoading_UI : MonoBehaviour
 
     private void ActTouch()
     {
-        if (Input.GetMouseButtonDown(0) || timer >= 2f)
+        if (TouchManager.isTouch || timer >= 2f)
         {
-            print("터치");
             ScanImage_UI.ScanimageAct = true;
             ActAR = true;
             StartCoroutine(FadeOutIcon());
@@ -103,10 +104,11 @@ public class PanelLoading_UI : MonoBehaviour
 
     private void SetMapIcon()
     {
+        Debug.Log("PanelLoading_UI::"+GameData.Instance.currentWorld.name);
         switch(GameData.Instance.currentWorld.name)
         {
             case "Map01_Forest" : UpdateMapInfo(MapIcons[0], "FOREST"); break;
-            case "Map02_Snow" :   UpdateMapInfo(MapIcons[1], "SNOW");   break;
+            case "Map02_Snow"   : UpdateMapInfo(MapIcons[1], "SNOW");   break;
             case "Map03_Desert" : UpdateMapInfo(MapIcons[2], "DESERT"); break;
             
         }

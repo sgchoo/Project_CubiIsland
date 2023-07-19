@@ -2079,6 +2079,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: rollSound
+      value: 
+      objectReference: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: moveSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: landingSounds.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: moveSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c5a311f2928e33b4ebf7aafed632374f, type: 3}
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: moveSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: landingSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: c5a311f2928e33b4ebf7aafed632374f, type: 3}
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: landingSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 839576dc4069f9440a755ba3ffd37b29, type: 3}
     - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: mapPref
       value: 
@@ -2086,7 +2114,7 @@ PrefabInstance:
     - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: currentWorld
       value: 
-      objectReference: {fileID: 971587478552120352, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
+      objectReference: {fileID: 4770825984521667959, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
     - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: characterPref
       value: 

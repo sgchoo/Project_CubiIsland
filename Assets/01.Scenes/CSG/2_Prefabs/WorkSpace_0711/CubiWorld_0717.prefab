@@ -114,6 +114,7 @@ MonoBehaviour:
   - {fileID: 1973480938031259036}
   - {fileID: 6588387931424434731}
   rotateSpeed: 50
+  parent: {fileID: 5053381107829644936}
   axisObject: {fileID: 6463591499367703730}
 --- !u!1 &55444313272692843
 GameObject:
@@ -870,6 +871,7 @@ MonoBehaviour:
   - {fileID: 3314230698620283573}
   - {fileID: 370078023981345798}
   rotateSpeed: 50
+  parent: {fileID: 3493315205310532399}
   axisObject: {fileID: 3161242152919939419}
 --- !u!1 &422703545942158854
 GameObject:
@@ -984,7 +986,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 422703545942158854}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9f43eae5befd3cb4e971b8d8419595eb, type: 3}
   m_Name: 
@@ -1110,6 +1112,7 @@ MonoBehaviour:
   - {fileID: 7321529788673578009}
   - {fileID: 5838725088567132305}
   rotateSpeed: 50
+  parent: {fileID: 6683070533767910480}
   axisObject: {fileID: 6026850388651479242}
 --- !u!1 &626639177106074724
 GameObject:
@@ -2421,7 +2424,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &767380640453492832
 Transform:
   m_ObjectHideFlags: 0
@@ -3109,7 +3112,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2613629532723254408
 Transform:
   m_ObjectHideFlags: 0
@@ -4078,6 +4081,7 @@ MonoBehaviour:
   - {fileID: 2862120317061085031}
   - {fileID: 2795524749817555125}
   rotateSpeed: 50
+  parent: {fileID: 2269904577615385099}
   axisObject: {fileID: 2741115636882963678}
 --- !u!1 &4023054343457403931
 GameObject:
@@ -5445,7 +5449,7 @@ GameObject:
   - component: {fileID: 5034831150625633505}
   - component: {fileID: 1659944717788583088}
   m_Layer: 29
-  m_Name: Bear
+  m_Name: Lion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5473,7 +5477,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6003320352792292278}
-  m_Mesh: {fileID: -3154644803963151841, guid: 7188760728a98a642aa93fbf1f68a974, type: 3}
+  m_Mesh: {fileID: -938521090852414663, guid: 905d7e178112d00478f09af1f60badbe, type: 3}
 --- !u!23 &1659944717788583088
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -7578,7 +7582,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8380819155838278356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba8f9ffd32774fc4ebef8d30e0fbbd99, type: 3}
   m_Name: 
@@ -8125,7 +8129,7 @@ GameObject:
   - component: {fileID: 6925442676933737502}
   - component: {fileID: 8974657762854103250}
   - component: {fileID: 4610876560812791952}
-  - component: {fileID: 2324623087271572304}
+  - component: {fileID: 4637967202731639542}
   m_Layer: 0
   m_Name: CubiWorld_0717
   m_TagString: Untagged
@@ -8150,7 +8154,7 @@ Transform:
   - {fileID: 4435207089808856031}
   - {fileID: 8107966361086259289}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6903013703873362883
 Animator:
@@ -8193,7 +8197,7 @@ MonoBehaviour:
   mSelectedStageType: 1
   mPlaneReference: {fileID: 0}
   mMidAirReference: {fileID: 0}
-  mPreview: {fileID: 2324623087271572304}
+  mPreview: {fileID: 4637967202731639542}
 --- !u!114 &6925442676933737502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8213,7 +8217,7 @@ PositionConstraint:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8727242339436429772}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Weight: 1
   m_TranslationAtRest: {x: 0, y: 0, z: 0}
@@ -8236,7 +8240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773320d53dda5394480d37c2324972b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2324623087271572304
+--- !u!114 &4637967202731639542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
