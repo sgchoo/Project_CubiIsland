@@ -7582,7 +7582,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8380819155838278356}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ba8f9ffd32774fc4ebef8d30e0fbbd99, type: 3}
   m_Name: 
@@ -8129,7 +8129,7 @@ GameObject:
   - component: {fileID: 6925442676933737502}
   - component: {fileID: 8974657762854103250}
   - component: {fileID: 4610876560812791952}
-  - component: {fileID: 9167748732529765041}
+  - component: {fileID: 4637967202731639542}
   m_Layer: 0
   m_Name: CubiWorld_0717
   m_TagString: Untagged
@@ -8154,7 +8154,7 @@ Transform:
   - {fileID: 4435207089808856031}
   - {fileID: 8107966361086259289}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &6903013703873362883
 Animator:
@@ -8197,7 +8197,7 @@ MonoBehaviour:
   mSelectedStageType: 1
   mPlaneReference: {fileID: 0}
   mMidAirReference: {fileID: 0}
-  mPreview: {fileID: 9167748732529765041}
+  mPreview: {fileID: 4637967202731639542}
 --- !u!114 &6925442676933737502
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8240,7 +8240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 773320d53dda5394480d37c2324972b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &9167748732529765041
+--- !u!114 &4637967202731639542
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
