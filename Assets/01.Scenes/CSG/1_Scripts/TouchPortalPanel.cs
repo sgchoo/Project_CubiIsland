@@ -7,20 +7,25 @@ using UnityEngine.XR.ARSubsystems;
 
 public class TouchPortalPanel : MonoBehaviour
 {
-    private ARRaycastManager raycastMgr; 
-
+    private ARRaycastManager raycastMgr;
+    private ARAnchorManager anchorMgr;
+    private ARPlaneManager planeMgr;
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
+    private List<ARAnchor> anchors = new List<ARAnchor>();
     [SerializeField] private Camera arCamera;
 
     public Transform point;
     public GameObject checkUI;
     public GameObject portal;
-
+    public static Vector3 anchorPos;
     void Start() 
     {
         checkUI.SetActive(false);
         point.gameObject.SetActive(false);
         raycastMgr = GetComponent<ARRaycastManager>();
+        anchorMgr = GetComponent<ARAnchorManager>();
+        planeMgr = GetComponent<ARPlaneManager>();
+
         if(GameData.Instance.plazaWorld != null)
         {
             Destroy(GameData.Instance.plazaWorld);
@@ -43,6 +48,7 @@ public class TouchPortalPanel : MonoBehaviour
             PortalDetectTextBehaviour.mode = 1;
             point.gameObject.SetActive(true);
             point.transform.position = hits[0].pose.position;
+
         }
 
         else
@@ -62,12 +68,16 @@ public class TouchPortalPanel : MonoBehaviour
 
     public void CreateBtn()
     {
+        var anchor = anchorMgr.AttachAnchor(planeMgr.GetPlane(hits[0].trackableId), hits[0].pose);
+        anchor.destroyOnRemoval = false;
+        anchorPos = anchor.transform.position;
+
         GameObject gate = Instantiate(portal);
         GameData.Instance.plazaWorld = gate;
         DontDestroyOnLoad(gate);
-        gate.transform.position = hitPos;//hits[0].pose.position;
+        gate.transform.position = anchor.transform.position;
         gate.transform.rotation = Quaternion.Euler(0, 180, 0);
-
+        
         checkUI.SetActive(false);
 
         SceneManager.LoadScene(KeyStore.plazaScene);
@@ -78,49 +88,4 @@ public class TouchPortalPanel : MonoBehaviour
         checkUI.SetActive(false);
     }
 
-    //// 터치 & 드래그로 Portal 생성
-    // void Update() 
-    // { 
-    //     if (Input.touchCount == 0) return; 
-
-    //     Touch touch = Input.GetTouch(0); 
-
-    //     //터치 시작시
-    //     if (touch.phase == TouchPhase.Began) 
-    //     {
-    //         Ray ray;
-
-    //         RaycastHit hitobj;
-
-    //         ray = arCamera.ScreenPointToRay(touch.position);
-
-    //         //Ray를 통한 오브젝트 인식
-    //         if(Physics.Raycast(ray, out hitobj))
-    //         {
-    //             //터치한 곳에 오브젝트 이름이 Cube를 포함하면
-    //             if (hitobj.collider.name.Contains("PortalPanel"))
-    //             {
-    //                 //그 오브젝트를 SelectObj에 놓는다
-    //                 SelectedObj = hitobj.collider.gameObject;
-    //                 touched = true;
-    //             }
-    //         }
-    //     } 
-
-    //     //터치가 끝나면 터치 끝.
-    //     if(touch.phase == TouchPhase.Ended)
-    //     {
-    //         touched = false;
-    //         placeObject.GetChild(0).gameObject.SetActive(true);
-    //     }
-
-    //     if (raycastMgr.Raycast(touch.position, hits, TrackableType.PlaneWithinPolygon))
-    //     {
-    //         //터치 시 해당 오브젝트 위치 초기화
-    //         if (touched)
-    //         {
-    //             SelectedObj.transform.position = hits[0].pose.position;
-    //         }
-    //     }
-    // }
 }
