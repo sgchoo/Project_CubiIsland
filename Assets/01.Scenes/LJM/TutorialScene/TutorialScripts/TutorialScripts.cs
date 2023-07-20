@@ -5,8 +5,8 @@ public static class TutorialScripts
 {
     public static readonly List<string> plaza01 = new List<string>()
     {
-        "안녕!, 나는 큐비라고 해!\n큐비 아일랜드 문을 연게 너구나?",
-        "정말 반가워!\n문 안쪽으로 들어오면 큐비 아일랜드를 구경할 수 있어!",
+        "안녕! 나는 큐비라고 해!\n큐비아일랜드 문을 연게 너구나?",
+        "정말 반가워!\n문 안쪽으로 들어오면 큐비아일랜드를 구경할 수 있어!",
         "좋아! 그럼 모험을 떠나기 전에 내 옷을 골라줄래?\n나를 한번 눌러봐!",
     };
 
