@@ -44,13 +44,16 @@ public class GameLoadingManager : MonoBehaviour
         //         isAct = true;
         //     }
         // }
-        if(isDetectPanel)
+        if(!isCameraOn && !sliderLoadingPanel.activeSelf)
         {
-            sliderLoadingPanel.SetActive(false);
+            Debug.Log("?!");
             imageLoadingPanel.SetActive(true);
+            isCameraOn = true;
         }
-        else if(!isCameraOn)
+        else if(isCameraOn)
         {
+            Debug.Log("?");
+            arrayImageTarget.SetActive(true);
             ActImageTarget();
         }
     }
@@ -67,6 +70,10 @@ public class GameLoadingManager : MonoBehaviour
                 imageTarget = target.gameObject;
                 imageTarget.SetActive(true);
                 break;
+            }
+            else
+            {
+                target.gameObject.SetActive(false);
             }
         }
         if (imageTarget == null)

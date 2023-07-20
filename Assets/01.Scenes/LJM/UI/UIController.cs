@@ -48,6 +48,32 @@ public class UIController : MonoBehaviour
     // 튜토리얼 출력 버튼 로직
     public void btnTutorial() { Debug.Log("튜토리얼 출력"); }
 
+    public void btnTutorialPlazaEnd() 
+    {
+        GameData.Instance.tutorial = false;
+        GameData.Instance.tutorialPlaza = false;
+        PlayerPrefs.SetInt(KeyStore.TUTORIAL_PLAZA_KEY, 1);
+        PlayerPrefs.Save();
+        SceneManager.UnloadSceneAsync(KeyStore.tutorialPlaza);
+        SceneManager.LoadScene(KeyStore.plazaScene);
+    }
+
+    public void btnTutorialFindKeyGameEnd() 
+    {
+        GameData.Instance.tutorialFindKey = false;
+        PlayerPrefs.SetInt(KeyStore.TUTORIAL_FIND_KEYGAME_KEY, 1);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(KeyStore.findKeyScene);
+    }
+    
+    public void btnTutorialFindRoadGameEnd() 
+    {
+        GameData.Instance.tutorialFindRoad = false;
+        PlayerPrefs.SetInt(KeyStore.TUTORIAL_FIND_ROAD_KEY, 1);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(KeyStore.findLoadScene);
+    }
+ 
  
 
 

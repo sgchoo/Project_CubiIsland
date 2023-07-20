@@ -25,6 +25,8 @@ public class ChangeController_UI : MonoBehaviour
     [Header("캐릭터 프리팹, 직접 연결")]
     public GameObject[] CharPrefabs;
 
+    public UIController uIController;
+
     private int selectedIndex;
 
     // Start is called before the first frame update
@@ -122,6 +124,12 @@ public class ChangeController_UI : MonoBehaviour
                 }
                 // 일치하는 버튼을 찾았을 때 인덱스 기록
                 selectedIndex = i;
+
+                if(CurrentChar!=null && CharPrefabs[selectedIndex].name == CurrentChar.name.Split("(Clone)")[0])
+                {
+                    btnFinalChar();
+                    uIController.btnPlaza();
+                }
                 break;
             }
         }

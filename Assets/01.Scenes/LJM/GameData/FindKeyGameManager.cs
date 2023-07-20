@@ -19,6 +19,8 @@ public class FindKeyGameManager : MonoBehaviour
     private bool isStart = false;
     public GameObject guide01;
     public GameObject guide02;
+    public TMP_Text keyCountText;
+    public TMP_Text getCharName;
 
 
     private void Start()
@@ -73,6 +75,7 @@ public class FindKeyGameManager : MonoBehaviour
 
             Image unLockCharacter = successPanel.transform.Find("SuccessPanel").transform.Find("ImageItem").GetComponent<Image>();
             unLockCharacter.sprite = GameData.Instance.characterLockList[GameData.Instance.characterUnLockIdx].transform.Find("Image").GetComponent<Image>().sprite;
+            getCharName.text=GameData.Instance.characterLockList[GameData.Instance.characterUnLockIdx].name;
 
             GameData.Instance.characterUnLockIdx += 1;
             PlayerPrefs.SetInt(KeyStore.CHARACTER_UNLOCK_INDEX, GameData.Instance.characterUnLockIdx);
@@ -87,6 +90,8 @@ public class FindKeyGameManager : MonoBehaviour
             // unlockCharacterName.text = target.gameObject.name;
             gameOver = true;
         }
+
+        keyCountText.text = "Key : " + currentKeyCount + "/" + keyToFind;
     }
 
     public static void GetKey()

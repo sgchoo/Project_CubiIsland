@@ -197,7 +197,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
 
             sfxManager.PlayLandingSound();
 
-            //ParticlePlay();
+            ParticlePlay();
 
             // 회전타겟 회전 정상화
             rotateTarget.rotation = prevRot;  

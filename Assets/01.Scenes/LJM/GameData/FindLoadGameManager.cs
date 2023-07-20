@@ -20,7 +20,9 @@ public class FindLoadGameManager : MonoBehaviour
 
     public GameObject guide03;
     public GameObject guide04;
+    public TMP_Text getMapName;
 
+    public List<string> unLockName = new List<string>(){"Snow", "Desert", "Beach", "City", "Playground"};
     public Sprite[] mapIcont;
     void Start()
     {
@@ -71,6 +73,7 @@ public class FindLoadGameManager : MonoBehaviour
 
             Image unLockMap = successPanel.transform.Find("SuccessPanel").transform.Find("ImageItem").GetComponent<Image>();
             unLockMap.sprite = mapIcont[GameData.Instance.worldUnLockIdx];
+            getMapName.text = unLockName[GameData.Instance.worldUnLockIdx];
 
             GameData.Instance.worldUnLockIdx += 1;
             PlayerPrefs.SetInt(KeyStore.WORLD_UNLOCK_INDEX, GameData.Instance.worldUnLockIdx);

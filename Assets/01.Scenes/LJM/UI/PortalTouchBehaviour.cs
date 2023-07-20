@@ -44,10 +44,14 @@ public class PortalTouchBehaviour : MonoBehaviour
                 GameObject uiObj = EventSystem.current.currentSelectedGameObject;
                 if(uiObj != null)
                 {   
+                    Debug.Log("PortalTouchBehaviour.cs::"+uiObj.name);
                     return;
                 }
                 
             }
+
+            if(GameData.Instance.tutorialPlaza && !TutorialScriptController.interactionActive) return;
+            //if(tutorial)
 
             Ray ray = Camera.main.ScreenPointToRay(Input.GetTouch(0).position);
             RaycastHit hit;
@@ -58,11 +62,13 @@ public class PortalTouchBehaviour : MonoBehaviour
                 {
                     if(GameData.Instance.tutorial && TutorialScriptController.tutorialCount == 2) return;
                     SceneManager.LoadScene(KeyStore.characterSelectScene);
+                    Handheld.Vibrate();
                 }
                 else if (hit.collider.name == world.name)
                 {
                     if(GameData.Instance.tutorial && TutorialScriptController.tutorialCount == 1) return;
                     SceneManager.LoadScene(KeyStore.worldSelectScene);
+                    Handheld.Vibrate();
                 }
             }
         }    
