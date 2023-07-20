@@ -29,9 +29,7 @@ public class InformationZone : MonoBehaviour
                     cubiMove.rotateSpeed = 0.01f;
 
                     tmpText.text = "";
-                    coment = "이번 여정은 주변에 흩어져있는 열쇠를 찾아야해!!"
-                             + "네모난 세상을 네모난 틀에 맞추면 위에 화살표의 색이 바뀔거야!"
-                             + "그럼 우린 앞으로 갈 수 있어! 한 번 해볼까?";
+                    coment = "아일랜드의 신비한 비밀을 보려면, 열쇠가 필요해!\n네모난 틀에 아일랜드를 맞춰서, 나를 앞으로 움직여줘!";
 
                     InfoUIEnable();
                     break;
@@ -40,9 +38,7 @@ public class InformationZone : MonoBehaviour
                     cubiMove.rotateSpeed = 0.01f;
 
                     tmpText.text = "";
-                    coment = "내 바로 앞이 낭떨어지같지만 아니야!"
-                             + "내 밑에 땅에 장애물이 없으면 나는 다음 땅으로 넘어갈 수 있어!"
-                             + "한 번 해볼까?";
+                    coment = "앞이 낭떠러지 같지만, 나는 떨어지지 않아!\n계속 가볼까?";
 
                     InfoUIEnable();
                     break;
@@ -51,9 +47,7 @@ public class InformationZone : MonoBehaviour
                     cubiMove.rotateSpeed = 0.01f;
 
                     tmpText.text = "";
-                    coment = "내 앞이 가로막혀있다면 움직일 수 없어."
-                             + "내가 가고싶은 방향으로 네모난 세상을 돌리면"
-                             + "원하는 방향으로 바꿀 수 있어!";
+                    coment = "앞이 막혔어!\n앞으로 갈 수 있게 아일랜드를 돌려줘!";
                     
                     InfoUIEnable();
                     break;
@@ -68,8 +62,8 @@ public class InformationZone : MonoBehaviour
                     cubiMove2.rotateSpeed = 0.01f;
 
                     tmpText.text = "";
-                    coment = "이번에는 다른 세상으로 갈 수 있는 길을 찾는 여정이야!"
-                             + "오른쪽에 보이는 조이스틱으로 움직여서 노란색 포탈을 찾아줘!";
+                    coment = "우와! 아일랜드가 펼쳐졌어!\n이제 다른곳으로 떠나볼까?"
+                            + "\n아일랜드를 바닥에 놓으면 더 편하게 이동할 수 있어!\n이제 앞으로 가볼까? 방향키를 움직여봐!";
 
                     InfoUIEnable();
                     break;
@@ -78,9 +72,7 @@ public class InformationZone : MonoBehaviour
                     cubiMove2.rotateSpeed = 0.01f;
 
                     tmpText.text = "";
-                    coment = "여기는 앞에 장애물이 있다고 하더라도 멈추지 않아도 돼" 
-                            + "위에 네모난 표식이 되어있는 장애물은 넘어갈 수 있어!"
-                            + "조이스틱으로 가던 방향으로 계속 움직여볼까?";
+                    coment = "빛나는 바닥은 넘어갈 수 있어\n계속 앞으로 가볼까?";
 
                     InfoUIEnable();
                     break;
@@ -89,9 +81,7 @@ public class InformationZone : MonoBehaviour
                     cubiMove2.rotateSpeed = 0.01f;
 
                     tmpText.text = "";
-                    coment = "이제 노란색 포탈이 보이는 것 같아!"
-                             + "내가 포탈을 타고 이동하게 된다면 멀미날거 같아..."
-                             + "내 얼굴이 바닥을 향하게 도착하지 않게 해줄래?";
+                    coment = "이제 다 왔어!\n얼굴이 도착지에 닿으면 새로운 세상으로 이동할 수 없으니 조심해줘!";
                     
                     InfoUIEnable();
                     break;

@@ -66,7 +66,7 @@ public class PanelLoading_UI : MonoBehaviour
 
     private void ActTouch()
     {
-        if (TouchManager.isTouch || timer >= 2f)
+        if (TouchManager.isTouch || timer >= 3f)
         {
             ScanImage_UI.ScanimageAct = true;
             ActAR = true;
