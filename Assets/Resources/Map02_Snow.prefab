@@ -34829,7 +34829,7 @@ MonoBehaviour:
   - {fileID: 8479909081690638712}
   - {fileID: 335798430754994879}
   - {fileID: 2740622976560050102}
-  rotateSpeed: 60.6
+  rotateSpeed: 100
   arCamera: {fileID: 0}
   axis: 0
   activateArea: {fileID: 6512810242240330075}
@@ -34859,7 +34859,7 @@ MonoBehaviour:
   - {fileID: 46222432630933135}
   - {fileID: 2164020422020764766}
   - {fileID: 7209657763433767815}
-  rotateSpeed: 50
+  rotateSpeed: 100
   axisObject: {fileID: 4597697683427627479}
   particles: []
 --- !u!114 &538918254246793655
