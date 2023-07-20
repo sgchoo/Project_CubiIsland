@@ -79,4 +79,6 @@ public class TutorialGameManager : MonoBehaviour
         PlayerPrefs.Save();
         SceneManager.LoadScene(KeyStore.findLoadScene);
     }
+
+
 }
