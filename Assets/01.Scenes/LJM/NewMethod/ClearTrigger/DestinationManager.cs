@@ -22,6 +22,7 @@ public class DestinationManager : MonoBehaviour
         }    
         else if (other.gameObject.CompareTag("Player"))
         {
+            Handheld.Vibrate();
             clear = true;
         }
     }

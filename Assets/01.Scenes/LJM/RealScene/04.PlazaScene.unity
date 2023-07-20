@@ -734,7 +734,7 @@ MonoBehaviour:
   onValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 768981560}
         m_TargetAssemblyTypeName: ScreenMode_UI, Assembly-CSharp
         m_MethodName: SetScreenMode
         m_Mode: 1

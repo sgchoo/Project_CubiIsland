@@ -23,6 +23,7 @@ public class KeyObjectBehaviour : MonoBehaviour
         {
             FindKeyGameManager.GetKey();
             Instantiate(ps, this.transform.position + new Vector3(0, 0.01f, 0), Quaternion.Euler(-90, 0, 0));
+            Handheld.Vibrate();
             Destroy(this.gameObject);
         }
     }
