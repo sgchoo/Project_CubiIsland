@@ -1,12 +1,12 @@
 fileFormatVersion: 2
-guid: 5a8a970923b17104495adf5cd0806a49
+guid: 7526d241f3ac57142a50832aebfb71c0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 12
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -37,13 +37,13 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 0
-    wrapV: 0
+    wrapU: 1
+    wrapV: 1
     wrapW: 0
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -52,9 +52,9 @@ TextureImporter:
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   flipbookRows: 1
@@ -134,18 +134,62 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Panel_Create_0
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 98
+        width: 1968
+        height: 1968
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 66, y: 79, z: 69, w: 92}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4c637d2f9d93064498c946ef8c12b9f
+      internalID: 1329018391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Panel_Create_1
+      rect:
+        serializedVersion: 2
+        x: 2211
+        y: 100
+        width: 1968
+        height: 1966
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 77, y: 77, z: 71, w: 77}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0125c62a1e23af41a8365dd58efdd6d
+      internalID: -2116214085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 3fe62aee38b4aa0429d7df0fb60fbf49
     internalID: 0
     vertices: []
     indices: 
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Panel_Create_0: 1329018391
+      Panel_Create_1: -2116214085
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
