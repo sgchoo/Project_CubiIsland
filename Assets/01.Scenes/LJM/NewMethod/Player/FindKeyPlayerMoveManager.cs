@@ -205,9 +205,11 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
             SetAxis(prevRot);
             
             isChangeAxis = isTurn;
+            
+            yield return new WaitForSeconds(0.5f);
         }
 
-
+        
         isRolling = false;
     }
 

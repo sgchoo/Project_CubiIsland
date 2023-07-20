@@ -58,8 +58,8 @@ public class TutorialGameManager : MonoBehaviour
     public void CheckBtn()
     {
         infoCnt++;
-        cubiMove.rotateSpeed = 60.6f;
-        cubiMove2.rotateSpeed = 50f;
+        cubiMove.rotateSpeed = 80f;
+        cubiMove2.rotateSpeed = 80f;
         checkBtn.gameObject.SetActive(false);
         infoUIGroup.SetActive(false);
     }
