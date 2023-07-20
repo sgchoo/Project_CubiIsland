@@ -29,6 +29,7 @@ public class MapListController_UI : MonoBehaviour
 
     //
     private GameObject BG;
+    public UIController controller;
 
     [Header("선택 된 맵")]
     public static GameObject CurrentMap;
@@ -82,6 +83,31 @@ public class MapListController_UI : MonoBehaviour
             }
         }
         PlayAssetManager.isSet = false;
+    }
+
+    public void btnFinalMapClick(string name)
+    {
+        // 현재 선택된 맵 가져오기
+        CurrentMap = swipe_UI.CurrentMap;
+        Debug.Log(CurrentMap.name + " " + name);
+        if(CurrentMap.name != name) return;
+
+        // 현재 선택된 맵의 이름 저장
+        string currentMapName = CurrentMap.name;
+
+        foreach (GameObject prefab in MapPrefabs)
+        {
+            if (prefab.name == currentMapName)
+            {
+                GameData.Instance.currentWorld = prefab; // 맵 프리팹을 UIController_UI.FinalMap에 저장
+                Debug.Log("MapListController_UI::"+GameData.Instance.currentWorld.name + " " + currentMapName);
+                PlayerPrefs.SetString(KeyStore.WORLDMAP_KEY, currentMapName);
+                PlayerPrefs.Save();
+                break;
+            }
+        }
+        PlayAssetManager.isSet = false;
+        controller.btnPlaza();
     }
 
     // 맵 이미지, 아이콘 이미지 바꾸기 메인 기능
