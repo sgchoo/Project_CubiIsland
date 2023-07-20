@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 646375100}
   m_HandleRect: {fileID: 646375099}
   m_Direction: 3
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6472,8 +6472,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -10927,7 +10927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1503878485, guid: 623be1e48b9f0a34bbd9223e49039844, type: 3}
+  m_Sprite: {fileID: 21300000, guid: da30044b566a25e408d95b0a7b7d97f0, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12219,7 +12219,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1879720555}
   m_Direction: 0
   m_Value: 1
-  m_Size: 0.39810428
+  m_Size: 0.3981043
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
