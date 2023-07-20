@@ -4475,7 +4475,7 @@ MonoBehaviour:
   arCamera: {fileID: 1118861545}
   point: {fileID: 142995706}
   checkUI: {fileID: 24716941}
-  portal: {fileID: 8727242339436429772, guid: c1520291832199149bd1313b1b215a0d, type: 3}
+  portal: {fileID: 7551378157964814560, guid: d811dc9c174fec340815ba3e6bab9e25, type: 3}
 --- !u!114 &1975904874
 MonoBehaviour:
   m_ObjectHideFlags: 0

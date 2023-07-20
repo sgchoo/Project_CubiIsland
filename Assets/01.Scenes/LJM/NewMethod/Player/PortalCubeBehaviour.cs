@@ -1,19 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.ARFoundation;
+using UnityEngine.XR.ARSubsystems;
 using UnityEngine.SceneManagement;
 
 public class PortalCubeBehaviour : MonoBehaviour
 {
+    private Animator anim;
+    private AnimationClip animClip;
 
-    
-
-    // Start is called before the first frame update
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-    }
+        //애니메이션 역재생을 위한 초기화
+        anim = GetComponent<Animator>();
+        animClip = anim.GetCurrentAnimatorClipInfo(0)[0].clip;
 
+
+    }
+    
     public void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {   
         string name = scene.name;
@@ -31,13 +37,13 @@ public class PortalCubeBehaviour : MonoBehaviour
             case KeyStore.startCheckScene : 
             case KeyStore.findKeyScene :
             case KeyStore.findLoadScene :
+                anim.StartPlayback();
                 this.gameObject.SetActive(false);
                 break;
 
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         
