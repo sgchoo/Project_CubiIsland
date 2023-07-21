@@ -172,12 +172,13 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
             }
             
             SetAxis(prevRot);
+
+            yield return new WaitForSeconds(0.5f);
         }
         else
         {
             Debug.Log("막힘");
         }
-
         isRolling = false;
     }
 
