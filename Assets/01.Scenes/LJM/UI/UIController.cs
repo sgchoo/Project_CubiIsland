@@ -33,6 +33,12 @@ public class UIController : MonoBehaviour
         SceneMove(KeyStore.plazaScene); 
     }
 
+    public void btnPlazaCheck()
+    {
+        if(GameData.Instance.plazaWorld != null) SceneMove(KeyStore.plazaScene);
+        else SceneMove(KeyStore.createPlazaScene);
+    }
+
     public void btnBackPlaza()
     {
         if (GameData.Instance.plazaWorld != null) SceneMove(KeyStore.plazaScene);
@@ -44,6 +50,18 @@ public class UIController : MonoBehaviour
 
     // FindKeyGame Scene 이동 버튼 로직
     public void btnLoadScene() { SceneMove(KeyStore.loadScene); }
+
+    public void btnFindKeyScene() 
+    {
+        if(GameData.Instance.tutorialFindKey) SceneMove(KeyStore.tutorialFindKeyGame);
+        else SceneMove(KeyStore.findKeyScene);
+    }
+
+    public void btnFindRoadScene() 
+    {
+        if(GameData.Instance.tutorialFindRoad) SceneMove(KeyStore.tutorialFindRoadGame);
+        else SceneMove(KeyStore.findLoadScene);
+    }
 
     // 튜토리얼 출력 버튼 로직
     public void btnTutorial() { Debug.Log("튜토리얼 출력"); }

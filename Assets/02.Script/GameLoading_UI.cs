@@ -30,7 +30,7 @@ public class GameLoading_UI : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        targetValue = 3.5f;
+        targetValue = 3f;
         currentValue = LoadingSlider.value;
         currentText = 0;
         timer = 0f;

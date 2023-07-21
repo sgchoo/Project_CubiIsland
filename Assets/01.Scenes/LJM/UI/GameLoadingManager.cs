@@ -50,7 +50,7 @@ public class GameLoadingManager : MonoBehaviour
             imageLoadingPanel.SetActive(true);
             isCameraOn = true;
         }
-        else if(isCameraOn)
+        else if(isCameraOn && !imageLoadingPanel.activeSelf)
         {
             Debug.Log("?");
             arrayImageTarget.SetActive(true);
@@ -87,7 +87,7 @@ public class GameLoadingManager : MonoBehaviour
     {
         if (isCameraOn)
         {
-            Invoke("DelayLoadScene", 1f);
+            Invoke("DelayLoadScene", 2f);
         }
         // if (imageTarget.GetComponentInParent<ObserverBehaviour>().TargetName == GameData.Instance.currentWorld.name)
         // {
