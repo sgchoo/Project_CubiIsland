@@ -75,7 +75,7 @@ public class TouchPortalPanel : MonoBehaviour
         GameObject gate = Instantiate(portal);
         GameData.Instance.plazaWorld = gate;
         DontDestroyOnLoad(gate);
-        gate.transform.position = anchor.transform.position;
+        gate.transform.position = hitPos;
         gate.transform.rotation = Quaternion.Euler(0, 180, 0);
         
         checkUI.SetActive(false);

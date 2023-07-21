@@ -2351,7 +2351,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1118861553}
   - component: {fileID: 1118861545}
-  - component: {fileID: 1118861552}
   - component: {fileID: 1118861551}
   - component: {fileID: 1118861550}
   - component: {fileID: 1118861549}
@@ -2642,14 +2641,6 @@ MonoBehaviour:
   m_LightEstimation: 0
   m_FacingDirection: 1
   m_RenderMode: 1
---- !u!81 &1118861552
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1118861544}
-  m_Enabled: 1
 --- !u!4 &1118861553
 Transform:
   m_ObjectHideFlags: 0
