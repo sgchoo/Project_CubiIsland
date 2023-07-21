@@ -28,11 +28,11 @@ public class MoveUp : MonoBehaviour
         if(other.gameObject.layer == 30)
         {
             this.gameObject.layer = 0;
-            // 자식 오브젝트도 레이어 변경시키기
-            // if(this.transform.GetChild(0) != null)
-            // {
-            //     this.transform.GetChild(0).gameObject.layer = 0;
-            // }
+
+            if(this.transform.GetChild(0) != null)
+            {
+                this.transform.GetChild(0).gameObject.layer = 0;
+            }
         }
     }
 }
