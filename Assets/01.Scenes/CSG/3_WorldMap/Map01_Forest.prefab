@@ -3083,7 +3083,10 @@ MonoBehaviour:
   - {fileID: 3547810323544804066}
   rotateSpeed: 60.6
   arCamera: {fileID: 0}
+  axis: 0
   activateArea: {fileID: 1284784869513816106}
+  setCoords: {x: 0, y: 0}
+  particles: []
   axisObject: {fileID: 8165974069239301663}
 --- !u!114 &649195970740875153
 MonoBehaviour:
@@ -3108,6 +3111,7 @@ MonoBehaviour:
   - {fileID: 8347248816359030454}
   rotateSpeed: 50
   axisObject: {fileID: 8165974069239301663}
+  particles: []
 --- !u!1 &542787703565359995
 GameObject:
   m_ObjectHideFlags: 0
@@ -7910,6 +7914,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6965d18659918e498680651f0863e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ps: {fileID: 0}
 --- !u!54 &8341424642391519320
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -14538,6 +14543,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6965d18659918e498680651f0863e46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ps: {fileID: 0}
 --- !u!54 &1798057183991148522
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -30155,7 +30161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5967131073160095744
 Transform:
   m_ObjectHideFlags: 0
