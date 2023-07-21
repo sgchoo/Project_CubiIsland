@@ -80,6 +80,11 @@ public class TouchPortalPanel : MonoBehaviour
         
         checkUI.SetActive(false);
 
+        Invoke("DelayMove", 3f);
+    }
+
+    public void DelayMove()
+    {
         SceneManager.LoadScene(KeyStore.plazaScene);
     }
 
