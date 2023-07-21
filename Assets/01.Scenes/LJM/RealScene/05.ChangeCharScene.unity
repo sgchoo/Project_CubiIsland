@@ -3054,7 +3054,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1779135435}
   m_HandleRect: {fileID: 1779135434}
   m_Direction: 3
-  m_Value: 1
+  m_Value: 0.9999999
   m_Size: 0.44262296
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -6651,7 +6651,7 @@ MonoBehaviour:
   - {fileID: 2003259275}
   - {fileID: 1491189930}
   CharPrefabs:
-  - {fileID: 7014728878657084425, guid: e7aa718d4b8a50e47b2c98c537376a02, type: 3}
+  - {fileID: 2386976236719238003, guid: e7aa718d4b8a50e47b2c98c537376a02, type: 3}
   - {fileID: 6361882699475610393, guid: c48a9fc9b6b93a745817b8e98951a1ee, type: 3}
   - {fileID: 6403195650908741626, guid: deb95c56b280e0844ab9b26a1b75e4e3, type: 3}
   - {fileID: 1861836319908876241, guid: bec02e09f58e7da49acce8faf567b920, type: 3}
