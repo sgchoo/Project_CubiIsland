@@ -6,6 +6,7 @@ public class CollisionCheck : MonoBehaviour
 {
     public bool collide = false;
     public bool isDoubleMove = false;
+    public bool isDownZone = false;
 
     public void Check()
     {
@@ -24,6 +25,10 @@ public class CollisionCheck : MonoBehaviour
         {
             isDoubleMove = true;
         }
+        if(other.gameObject.CompareTag("DownZone"))
+        {
+            isDownZone = true;
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -35,6 +40,10 @@ public class CollisionCheck : MonoBehaviour
         if(other.gameObject.CompareTag("DoubleMove"))
         {
             isDoubleMove = false;
+        }
+        if(other.gameObject.CompareTag("DownZone"))
+        {
+            isDownZone = false;
         }
     }
 }

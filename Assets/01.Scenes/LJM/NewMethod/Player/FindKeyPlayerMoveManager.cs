@@ -57,6 +57,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
     public ParticleSystem[] particles;
     private SFXSoundManager sfxManager;
 
+    public static bool isTensionActive =false;
     private void Awake() 
     {
         sfxManager = GameObject.Find("GameDataController").transform.GetChild(1).GetComponent<SFXSoundManager>();
@@ -80,12 +81,14 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
             if(child == this.transform || child == axisObject) continue;
             childList.Add(child);
         }
+        isTensionActive = false;
     }    
 
     void Update()
     {
         if(FindKeyGameManager.gameOver) return;
         if(isRolling) return;
+        isTensionActive = true;
         if(isChangeAxis) 
         { 
             ChangeMoveAxis();
@@ -149,7 +152,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
     private IEnumerator Rolling(Vector3 dir)
     {
         sfxManager.PlayRollSound();
-
+        isTensionActive= false;
         isRolling = true;
         
         float angle = 90f;
@@ -206,7 +209,9 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
             
             isChangeAxis = isTurn;
             
+            isTensionActive = true;
             yield return new WaitForSeconds(0.3f);
+            isTensionActive = false;
         }
 
         

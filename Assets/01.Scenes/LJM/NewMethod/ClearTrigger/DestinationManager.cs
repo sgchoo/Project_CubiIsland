@@ -6,6 +6,7 @@ public class DestinationManager : MonoBehaviour
 {
     public static bool clear = false;
     // Start is called before the first frame update
+    private bool noneFlag = false;
     
     private void Start() 
     {
@@ -18,13 +19,22 @@ public class DestinationManager : MonoBehaviour
         Debug.Log(other.gameObject.name);
         if(other.gameObject.CompareTag("None"))
         {
+            noneFlag =true;
             return;
         }    
-        else if (other.gameObject.CompareTag("Player"))
+        if (!noneFlag && other.gameObject.CompareTag("Player"))
         {
             Handheld.Vibrate();
             clear = true;
         }
+    }
+
+    private void OnTriggerExit(Collider other) 
+    {
+        if(other.gameObject.CompareTag("None"))
+        {
+            noneFlag =false;
+        }   
     }
 
     // private void OnTriggerEnter(Collision other) 

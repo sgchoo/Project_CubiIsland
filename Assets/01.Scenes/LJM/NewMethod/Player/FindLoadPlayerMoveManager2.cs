@@ -15,7 +15,7 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
 
     public Transform axisObject;
 
-
+    public static bool isTensionActive =false;
     private Transform joystick;
     public ParticleSystem[] particles;
 
@@ -54,12 +54,14 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
             if(child == this.transform || child == axisObject) continue;
             childList.Add(child);
         }
+        isTensionActive = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(isRolling) return;
+        isTensionActive = true;
         Vector3 getDir = GetThumbDirection(joystick.GetComponent<Joystick>().Direction);
 
         if(getDir == Vector3.zero) return;
@@ -101,6 +103,7 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
     private bool flag = false;
     private IEnumerator Rolling(Vector3 dir)
     {
+        isTensionActive= false;
         isRolling = true;
 
         float angle = 90f;
@@ -119,6 +122,7 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
         if(!rotateTarget.GetComponent<CollisionCheck>().collide)
         {
             bool isDoubleMove = rotateTarget.GetComponent<CollisionCheck>().isDoubleMove;
+            bool isDownZone = rotateTarget.GetComponent<CollisionCheck>().isDownZone;
             
             if(!doubleMoveFlag && isDoubleMove)
             {
@@ -128,7 +132,12 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
                 
                 rotateAxis = Vector3.left;
             }
-            else if (doubleMoveFlag) 
+            else if (doubleMoveFlag && isDoubleMove)
+            {
+                // 아무것도 안하기
+                Debug.Log("A");
+            }
+            else if (doubleMoveFlag || (isDownZone&&doubleMoveFlag)) 
             {
                 flag = true;
                 doubleMoveFlag = false;
@@ -150,7 +159,7 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
 
             while (angle > 0)
             {
-                float rotateAngle = Time.deltaTime * rotateSpeed;
+                float rotateAngle = Time.deltaTime * rotateSpeed * 1.4f;
                 if(rotateAngle >= angle) rotateAngle = angle;
 
                 rotateTarget.Rotate(rotateAxis, rotateAngle, Space.Self);
@@ -172,8 +181,9 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
             }
             
             SetAxis(prevRot);
-
+            isTensionActive = true;
             yield return new WaitForSeconds(0.5f);
+            isTensionActive = false;
         }
         else
         {

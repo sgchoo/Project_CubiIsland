@@ -11,6 +11,7 @@ TagManager:
   - MAPIMG
   - Key
   - None
+  - DownZone
   layers:
   - Default
   - TransparentFX
