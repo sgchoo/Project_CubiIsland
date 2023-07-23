@@ -38,6 +38,8 @@ public class ChangeBaseMap : MonoBehaviour
 
             case "Map03_Desert":
                 myRender.material.mainTexture = textures[2];
+                weather[0].SetActive(false);
+                weather[1].SetActive(false);
                 break;
         }
     }
