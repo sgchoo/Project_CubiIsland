@@ -80,7 +80,7 @@ public class TouchPortalPanel : MonoBehaviour
         
         checkUI.SetActive(false);
 
-        Invoke("DelayMove", 3f);
+        Invoke("DelayMove", 0.1f);
     }
 
     public void DelayMove()

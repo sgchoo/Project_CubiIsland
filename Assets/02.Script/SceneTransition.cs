@@ -22,7 +22,7 @@ public class SceneTransition : MonoBehaviour
         canvasGroup = GetComponent<CanvasGroup>();
 
         sceneName = SceneManager.GetActiveScene().name;
-        if ((sceneName == KeyStore.createPlazaScene) || (sceneName == KeyStore.loadScene))
+        if ((sceneName == KeyStore.createPlazaScene) || (sceneName == KeyStore.loadScene) || (sceneName == KeyStore.plazaScene))
         {
             if (canvasGroup != null)
             {
