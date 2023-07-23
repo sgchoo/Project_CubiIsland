@@ -81,6 +81,7 @@ public class UIController : MonoBehaviour
         GameData.Instance.tutorialFindKey = false;
         PlayerPrefs.SetInt(KeyStore.TUTORIAL_FIND_KEYGAME_KEY, 1);
         PlayerPrefs.Save();
+        TutorialGameManager.infoCnt = 0;
         SceneManager.LoadScene(KeyStore.findKeyScene);
     }
     
@@ -89,6 +90,7 @@ public class UIController : MonoBehaviour
         GameData.Instance.tutorialFindRoad = false;
         PlayerPrefs.SetInt(KeyStore.TUTORIAL_FIND_ROAD_KEY, 1);
         PlayerPrefs.Save();
+        TutorialGameManager.infoCnt = 0;
         SceneManager.LoadScene(KeyStore.findLoadScene);
     }
  

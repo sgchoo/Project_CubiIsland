@@ -17,7 +17,7 @@ public class KeyObjectBehaviour : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             FindKeyGameManager.GetKey();
-            Instantiate(ps, this.transform.position + new Vector3(0, 0.01f, 0), Quaternion.Euler(-90, 0, 0));
+            Instantiate(ps, this.transform.position + new Vector3(0, 0, 0), Quaternion.Euler(0, 0, 0));
             SFXSoundManager.Instance.GetItemSound();
             Handheld.Vibrate();
             Destroy(this.gameObject);

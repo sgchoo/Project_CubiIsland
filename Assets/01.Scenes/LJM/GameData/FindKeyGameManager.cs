@@ -71,7 +71,7 @@ public class FindKeyGameManager : MonoBehaviour
         if(gameOver) return;
         if(keyToFind == currentKeyCount)
         {
-            successPanel.SetActive(true);
+            Invoke("DelayOpenPanel", 1f);
             SFXSoundManager.Instance.MainGameClearSound();
             
             GameData.Instance.currentGame = 1;
@@ -98,6 +98,11 @@ public class FindKeyGameManager : MonoBehaviour
         }
 
         keyCountText.text = "Key : " + currentKeyCount + "/" + keyToFind;
+    }
+
+    public void DelayOpenPanel()
+    {
+        successPanel.SetActive(true);
     }
 
     public static void GetKey()

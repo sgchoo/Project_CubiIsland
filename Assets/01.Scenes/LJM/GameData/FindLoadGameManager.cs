@@ -71,7 +71,7 @@ public class FindLoadGameManager : MonoBehaviour
         if(gameOver) return;
         if(!gameOver && DestinationManager.clear)
         {
-            successPanel.SetActive(true);
+            Invoke("DelayOpenPanel",1f);
             SFXSoundManager.Instance.MainGameClearSound();
             
             GameData.Instance.currentGame = 0;
@@ -132,4 +132,9 @@ public class FindLoadGameManager : MonoBehaviour
         }
         // isCameraOn = true;
     }
+    public void DelayOpenPanel()
+    {
+        successPanel.SetActive(true);
+    }
+
 }

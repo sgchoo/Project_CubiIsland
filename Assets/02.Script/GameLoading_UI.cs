@@ -15,6 +15,7 @@ public class GameLoading_UI : MonoBehaviour
     public TextMeshProUGUI[] texts;
 
     private float timer = 0f;
+    private float textTimer = 0f;
 
     private float currentValue;
     private float targetValue;
@@ -34,6 +35,7 @@ public class GameLoading_UI : MonoBehaviour
         currentValue = LoadingSlider.value;
         currentText = 0;
         timer = 0f;
+        textTimer = 0f;
         LoadingPanelIsAct = true;
     }
 
@@ -41,6 +43,7 @@ public class GameLoading_UI : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
+        textTimer += Time.deltaTime;
         //Debug.Log("GameLoading_UI::Touch - " + TouchManager.isTouch);
         // 터치했거나, 로딩시간이 10초가 지났을 경우 패널 비활성화
         // if (Input.GetMouseButtonDown(0) ||timer >= 9f)
@@ -77,11 +80,15 @@ public class GameLoading_UI : MonoBehaviour
     // 텍스트 출력 반복 돌리기
      private void ActText()
     {
-        //Debug.Log("GameLoading_UI::ActText");
-        if (timer % textChangeTime <= 0.01f)
+        if (textTimer >= textChangeTime)
         {
+            textTimer = 0f;
+            Debug.Log("GameLoading_UI::ActText1");
             texts[currentText].gameObject.SetActive(false);
             currentText = (currentText + 1) % texts.Length;
+            //currentText += 1;
+            //if(currentText >= texts.Length) currentText = 0;
+
             // 1 % 3 => 1
             // 2 % 3 => 2
             // 3 % 3 => 0
@@ -89,6 +96,7 @@ public class GameLoading_UI : MonoBehaviour
         }
         else 
         {
+            Debug.Log("GameLoading_UI::ActText2");
             texts[currentText].gameObject.SetActive(true);
         }
     }

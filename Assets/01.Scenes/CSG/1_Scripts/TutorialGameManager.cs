@@ -42,6 +42,7 @@ public class TutorialGameManager : MonoBehaviour
         {
             tutorialCnt = 1;
             infoCnt = 0;
+            getKeyCount=0;
             // 성공 UI
             successUIGroup.SetActive(true);
             
