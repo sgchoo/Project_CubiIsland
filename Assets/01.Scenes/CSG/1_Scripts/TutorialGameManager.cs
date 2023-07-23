@@ -44,10 +44,15 @@ public class TutorialGameManager : MonoBehaviour
             infoCnt = 0;
             getKeyCount=0;
             // 성공 UI
-            successUIGroup.SetActive(true);
+            Invoke("DelayMoveScene",1f);
             
             SFXSoundManager.Instance.TutorialClearSound();
         }
+    }
+
+    public void DelayMoveScene()
+    {
+        successUIGroup.SetActive(true);
     }
 
     private void FinishTutorialGame()
@@ -58,7 +63,7 @@ public class TutorialGameManager : MonoBehaviour
             infoCnt = 0;
             isFinish = false;
             // 성공 UI
-            successUIGroup.SetActive(true);
+            Invoke("DelayMoveScene",1f);
 
             SFXSoundManager.Instance.TutorialClearSound();
         }

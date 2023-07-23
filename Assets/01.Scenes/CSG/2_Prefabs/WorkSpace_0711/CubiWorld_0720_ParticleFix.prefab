@@ -141,6 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &101906535442631451
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &265409008042462554
 GameObject:
   m_ObjectHideFlags: 0
@@ -5497,6 +5499,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &548361456578370812
 GameObject:
   m_ObjectHideFlags: 0
@@ -5602,6 +5605,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &822146399336715394
 GameObject:
   m_ObjectHideFlags: 0
@@ -10681,6 +10685,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &975493668790778218
 GameObject:
   m_ObjectHideFlags: 0
@@ -10933,6 +10938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &1453907857098597870
 GameObject:
   m_ObjectHideFlags: 0
@@ -11038,6 +11044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &1481181989698368701
 GameObject:
   m_ObjectHideFlags: 0
@@ -11143,6 +11150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &1569006929149664889
 GameObject:
   m_ObjectHideFlags: 0
@@ -21360,6 +21368,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &1925758616419915821
 GameObject:
   m_ObjectHideFlags: 0
@@ -21465,6 +21474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &1934012201237200134
 GameObject:
   m_ObjectHideFlags: 0
@@ -21770,6 +21780,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &2258400021277758426
 GameObject:
   m_ObjectHideFlags: 0
@@ -22059,6 +22070,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &2619517417720139281
 GameObject:
   m_ObjectHideFlags: 0
@@ -22164,6 +22176,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &2727980734773633993
 GameObject:
   m_ObjectHideFlags: 0
@@ -22269,6 +22282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &2769065504062042632
 GameObject:
   m_ObjectHideFlags: 0
@@ -22298,7 +22312,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2769065504062042632}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.52, z: -0.3160001}
+  m_LocalPosition: {x: 0, y: 0.4892, z: -0.3160001}
   m_LocalScale: {x: 0.12, y: 0.12, z: 0.12}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -22520,6 +22534,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &3071666192886798853
 GameObject:
   m_ObjectHideFlags: 0
@@ -22710,6 +22725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &3258824286536056706
 GameObject:
   m_ObjectHideFlags: 0
@@ -22815,6 +22831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &3264129504877296124
 GameObject:
   m_ObjectHideFlags: 0
@@ -23192,6 +23209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &3416569180074836604
 GameObject:
   m_ObjectHideFlags: 0
@@ -23332,6 +23350,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &3607892566837958918
 GameObject:
   m_ObjectHideFlags: 0
@@ -23437,6 +23456,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &3656061044163071638
 GameObject:
   m_ObjectHideFlags: 0
@@ -23542,6 +23562,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &3819216554490698119
 GameObject:
   m_ObjectHideFlags: 0
@@ -23647,6 +23668,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &3982217221870988780
 GameObject:
   m_ObjectHideFlags: 0
@@ -23835,6 +23857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &4315923326613811474
 GameObject:
   m_ObjectHideFlags: 0
@@ -24016,6 +24039,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &4618464695022382273
 GameObject:
   m_ObjectHideFlags: 0
@@ -24121,6 +24145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &4679223471966610746
 GameObject:
   m_ObjectHideFlags: 0
@@ -29312,6 +29337,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &5153722956194227909
 GameObject:
   m_ObjectHideFlags: 0
@@ -29533,6 +29559,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &5298629892940221950
 GameObject:
   m_ObjectHideFlags: 0
@@ -29684,6 +29711,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &5401736637730326710
 GameObject:
   m_ObjectHideFlags: 0
@@ -29789,6 +29817,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &5430105514609103019
 GameObject:
   m_ObjectHideFlags: 0
@@ -29894,6 +29923,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &5431546617960077062
 GameObject:
   m_ObjectHideFlags: 0
@@ -29999,6 +30029,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &5566246792007985329
 GameObject:
   m_ObjectHideFlags: 0
@@ -30240,6 +30271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &5838210918933607339
 GameObject:
   m_ObjectHideFlags: 0
@@ -30470,6 +30502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &5987384142406977988
 GameObject:
   m_ObjectHideFlags: 0
@@ -30575,6 +30608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &6125744007367175749
 GameObject:
   m_ObjectHideFlags: 0
@@ -35563,6 +35597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &6276338022793338246
 GameObject:
   m_ObjectHideFlags: 0
@@ -35703,6 +35738,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &6543642845856984196
 GameObject:
   m_ObjectHideFlags: 0
@@ -35839,6 +35875,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &6736863977202144400
 GameObject:
   m_ObjectHideFlags: 0
@@ -35944,6 +35981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &6769239207541293785
 GameObject:
   m_ObjectHideFlags: 0
@@ -46334,6 +46372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &7519619484536560160
 GameObject:
   m_ObjectHideFlags: 0
@@ -46697,6 +46736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &7773207614056834403
 GameObject:
   m_ObjectHideFlags: 0
@@ -46802,6 +46842,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &7870628135397963474
 GameObject:
   m_ObjectHideFlags: 0
@@ -46940,6 +46981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &7930016633104762659
 GameObject:
   m_ObjectHideFlags: 0
@@ -47045,6 +47087,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &8160755223628228746
 GameObject:
   m_ObjectHideFlags: 0
@@ -57060,6 +57103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &8334217848142165300
 GameObject:
   m_ObjectHideFlags: 0
@@ -57165,6 +57209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &8348851117417135080
 GameObject:
   m_ObjectHideFlags: 0
@@ -57270,6 +57315,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &8909684432229235375
 GameObject:
   m_ObjectHideFlags: 0
@@ -57408,6 +57454,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
 --- !u!1 &9125461444572122625
 GameObject:
   m_ObjectHideFlags: 0
@@ -57513,3 +57560,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   collide: 0
   isDoubleMove: 0
+  isDownZone: 0
