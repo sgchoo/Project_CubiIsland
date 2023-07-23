@@ -4,7 +4,15 @@ using UnityEngine;
 
 public class SFXSoundManager : MonoBehaviour
 {
-    public static SFXSoundManager Instance = null;
+    private static SFXSoundManager instance = null;
+    public static SFXSoundManager Instance
+    {
+        get
+        {
+            if (null == instance) { return null; }
+            return instance;
+        }
+    }
 
     private AudioSource audioSource;
     public AudioClip touchSound;
@@ -17,9 +25,9 @@ public class SFXSoundManager : MonoBehaviour
 
     private void Awake() 
     {
-        if(Instance == null)
+        if(instance == null)
         {
-            Instance = this;
+            instance = this;
         }
     }
     

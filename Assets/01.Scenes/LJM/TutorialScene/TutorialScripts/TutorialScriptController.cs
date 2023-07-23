@@ -101,6 +101,7 @@ public class TutorialScriptController : MonoBehaviour
         selectCharGuideScreen.SetActive(false);
         selectWorldGuideScreen.SetActive(false);
         interactionActive = false;
+        SFXSoundManager.Instance.ActiveUIPanelSound();
         if(tutorialCount == 0)
         {
             scripts = TutorialScripts.plaza01;
