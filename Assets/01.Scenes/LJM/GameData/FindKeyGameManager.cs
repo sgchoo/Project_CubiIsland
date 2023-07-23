@@ -21,6 +21,7 @@ public class FindKeyGameManager : MonoBehaviour
     public GameObject guide02;
     public TMP_Text keyCountText;
     public TMP_Text getCharName;
+    public GameObject particle;
 
 
     private void Start()
@@ -39,7 +40,7 @@ public class FindKeyGameManager : MonoBehaviour
     }
 
 
-    
+    private GameObject prevPraticle;
     private void Update()
     {
         if(!isStart && guide01.activeSelf) 
@@ -63,6 +64,7 @@ public class FindKeyGameManager : MonoBehaviour
                 descriptionPanel.SetActive(false);
                 isStart = true;
                 multiView.SetActive(true);
+                prevPraticle = Instantiate(particle, new Vector3(0,0,2.5f), Quaternion.Euler(0,0,0));
             }
             return;
         }
@@ -70,7 +72,11 @@ public class FindKeyGameManager : MonoBehaviour
         if(keyToFind == currentKeyCount)
         {
             successPanel.SetActive(true);
+            SFXSoundManager.Instance.MainGameClearSound();
+            
             GameData.Instance.currentGame = 1;
+
+            Destroy(prevPraticle);
             
 
             Image unLockCharacter = successPanel.transform.Find("SuccessPanel").transform.Find("ImageItem").GetComponent<Image>();

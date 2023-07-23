@@ -4,10 +4,24 @@ using UnityEngine;
 
 public class SFXSoundManager : MonoBehaviour
 {
+    public static SFXSoundManager Instance = null;
+
     private AudioSource audioSource;
     public AudioClip touchSound;
     public AudioClip[] landingSounds;
     public AudioClip rollSound;
+    public AudioClip uiPanelSound;
+    public AudioClip itemSound;
+    public AudioClip tutorialClear;
+    public AudioClip mainGameClear;
+
+    private void Awake() 
+    {
+        if(Instance == null)
+        {
+            Instance = this;
+        }
+    }
     
 
     private void Start() 
@@ -35,5 +49,25 @@ public class SFXSoundManager : MonoBehaviour
     public void PlayRollSound()
     {
         audioSource.PlayOneShot(rollSound);
+    }
+
+    public void ActiveUIPanelSound()
+    {
+        audioSource.PlayOneShot(uiPanelSound);
+    }
+
+    public void GetItemSound()
+    {
+        audioSource.PlayOneShot(itemSound);   
+    }
+
+    public void TutorialClearSound()
+    {
+        audioSource.PlayOneShot(tutorialClear);
+    }
+
+    public void MainGameClearSound()
+    {
+        audioSource.PlayOneShot(mainGameClear);
     }
 }

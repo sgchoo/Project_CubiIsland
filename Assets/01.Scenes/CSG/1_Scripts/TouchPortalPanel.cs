@@ -12,14 +12,20 @@ public class TouchPortalPanel : MonoBehaviour
     private ARPlaneManager planeMgr;
     private List<ARRaycastHit> hits = new List<ARRaycastHit>();
     private List<ARAnchor> anchors = new List<ARAnchor>();
+    public GameObject particle;
     [SerializeField] private Camera arCamera;
 
     public Transform point;
     public GameObject checkUI;
     public GameObject portal;
     public static Vector3 anchorPos;
+    private GameObject particleObj;
+    public GameObject rayPoint;
+    private bool createFlag = false;
+
     void Start() 
     {
+        createFlag = false;
         checkUI.SetActive(false);
         point.gameObject.SetActive(false);
         raycastMgr = GetComponent<ARRaycastManager>();
@@ -36,7 +42,7 @@ public class TouchPortalPanel : MonoBehaviour
 
     private void Update() 
     {
-        RayPointer();
+        if(!createFlag) RayPointer();
     }
 
     private void RayPointer()
@@ -72,20 +78,25 @@ public class TouchPortalPanel : MonoBehaviour
         anchor.destroyOnRemoval = false;
         anchorPos = anchor.transform.position;
 
+        
+        point.gameObject.SetActive(false);
+        createFlag = true;
+        checkUI.SetActive(false);
+        particleObj = Instantiate(particle, hitPos, Quaternion.Euler(0,0,0));
+
+        Invoke("DelayMove", 2f);
+    }
+
+    public void DelayMove()
+    {
         GameObject gate = Instantiate(portal);
         GameData.Instance.plazaWorld = gate;
         DontDestroyOnLoad(gate);
         gate.transform.position = hitPos;
         gate.transform.rotation = Quaternion.Euler(0, 180, 0);
-        
-        checkUI.SetActive(false);
-
-        Invoke("DelayMove", 0.1f);
-    }
-
-    public void DelayMove()
-    {
+        Destroy(particleObj);
         SceneManager.LoadScene(KeyStore.plazaScene);
+        
     }
 
     public void BackBtn()

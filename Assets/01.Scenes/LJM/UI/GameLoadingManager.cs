@@ -18,6 +18,8 @@ public class GameLoadingManager : MonoBehaviour
     public GameObject arrayImageTarget;
     private GameObject imageTarget;
 
+    public GameObject particle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,13 +48,11 @@ public class GameLoadingManager : MonoBehaviour
         // }
         if(!isCameraOn && !sliderLoadingPanel.activeSelf)
         {
-            Debug.Log("?!");
             imageLoadingPanel.SetActive(true);
             isCameraOn = true;
         }
         else if(isCameraOn && !imageLoadingPanel.activeSelf)
         {
-            Debug.Log("?");
             arrayImageTarget.SetActive(true);
             ActImageTarget();
         }
@@ -83,11 +83,15 @@ public class GameLoadingManager : MonoBehaviour
         isCameraOn = true;
     }
 
+
+    private GameObject saveParticle01;
+    private GameObject saveParticle02;
     public void FocusedImage()
     {
         if (isCameraOn)
         {
-            Invoke("DelayLoadScene", 2f);
+            saveParticle01 = Instantiate(particle.transform.GetChild(0).gameObject, imageTarget.transform);
+            Invoke("DelayLoadScene", 4f);
         }
         // if (imageTarget.GetComponentInParent<ObserverBehaviour>().TargetName == GameData.Instance.currentWorld.name)
         // {
@@ -100,6 +104,8 @@ public class GameLoadingManager : MonoBehaviour
     {
         string target = "";
 
+        Destroy(saveParticle01);
+        saveParticle02 = Instantiate(particle.transform.GetChild(1).gameObject, imageTarget.transform);
         switch(GameData.Instance.currentGame)
         {
             case 0 : 
@@ -116,6 +122,7 @@ public class GameLoadingManager : MonoBehaviour
                     break;
             default : Debug.Log("Error!"); target = KeyStore.findKeyScene; break;
         }
+        Destroy(saveParticle02);
         SceneManager.LoadScene(target);
     }
 }
