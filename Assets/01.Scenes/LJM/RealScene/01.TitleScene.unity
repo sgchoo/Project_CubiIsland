@@ -2080,9 +2080,25 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: itemSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 225ffda922d1b8d4ab6b2b7441f12f98, type: 3}
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: rollSound
       value: 
       objectReference: {fileID: 8300000, guid: df7087e4d8a8bb546bc08ce68632903f, type: 3}
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: uiPanelSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 56a35c09d670adf47b1efe9333a35263, type: 3}
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: mainGameClear
+      value: 
+      objectReference: {fileID: 8300000, guid: 6b936f27b5353784f84026625930dfed, type: 3}
+    - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
+      propertyPath: tutorialClear
+      value: 
+      objectReference: {fileID: 8300000, guid: adbb031ebe608b04a96fa1b9feb3b06f, type: 3}
     - target: {fileID: 1202935724542784940, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: moveSounds.Array.size
       value: 2

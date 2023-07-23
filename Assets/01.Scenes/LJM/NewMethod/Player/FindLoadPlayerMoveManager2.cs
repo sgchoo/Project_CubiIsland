@@ -101,6 +101,8 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
     private bool flag = false;
     private IEnumerator Rolling(Vector3 dir)
     {
+        SFXSoundManager.Instance.PlayRollSound();
+
         isRolling = true;
 
         float angle = 90f;
@@ -160,6 +162,8 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
 
             // Player 부모 초기화
             this.transform.parent = parent;
+
+            SFXSoundManager.Instance.PlayLandingSound();
 
             ParticlePlay();
 

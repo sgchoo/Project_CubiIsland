@@ -127,6 +127,8 @@ public class InformationZone : MonoBehaviour
     {
         infoUIGroup.SetActive(true);
 
+        SFXSoundManager.Instance.ActiveUIPanelSound();
+
         StartCoroutine(InfoText(delayText));
     }
 
