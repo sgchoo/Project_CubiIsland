@@ -570,7 +570,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -20, y: -50}
+  m_AnchoredPosition: {x: -19.999939, y: -50}
   m_SizeDelta: {x: 311.808, y: 390.74}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &829839021
@@ -2127,7 +2127,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bbefa411f2e59cd4f912af135ea6e486, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b3bba9ab672d8c5429d29624f5050ad8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2171,8 +2171,8 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2039572686}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 53}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -2181,8 +2181,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 60, y: 0}
-  m_SizeDelta: {x: 406.9629, y: 372.08}
+  m_AnchoredPosition: {x: 83, y: 0}
+  m_SizeDelta: {x: 406, y: 372}
   m_Pivot: {x: 1, y: 0}
 --- !u!95 &2039572688
 Animator:
@@ -2225,7 +2225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 858a5b96f5b62f44cb2dba132da6f084, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99ce561a0e7062f48973ddd1399dab9d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2400,7 +2400,7 @@ PrefabInstance:
     - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: currentWorld
       value: 
-      objectReference: {fileID: 4770825984521667959, guid: 84e9a9e28ae57d144b99ce7a9a31462d, type: 3}
+      objectReference: {fileID: 4770825984521667959, guid: 69e1bae3ad41b254e911cde86d0de411, type: 3}
     - target: {fileID: 3669450020455394727, guid: 096ed9775c7a58d4ebfdf0b1b072fc26, type: 3}
       propertyPath: characterPref
       value: 

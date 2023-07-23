@@ -135,12 +135,7 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
                 
                 rotateAxis = Vector3.left;
             }
-            else if (doubleMoveFlag && isDoubleMove)
-            {
-                // 아무것도 안하기
-                Debug.Log("A");
-            }
-            else if (doubleMoveFlag || (isDownZone&&doubleMoveFlag)) 
+            else if (isDownZone&&doubleMoveFlag) 
             {
                 flag = true;
                 doubleMoveFlag = false;

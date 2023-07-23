@@ -21,13 +21,13 @@ public class CollisionCheck : MonoBehaviour
         {
             collide = true;
         }
-        if(other.gameObject.CompareTag("DoubleMove"))
-        {
-            isDoubleMove = true;
-        }
         if(other.gameObject.CompareTag("DownZone"))
         {
             isDownZone = true;
+        }
+        else if(other.gameObject.CompareTag("DoubleMove"))
+        {
+            isDoubleMove = true;
         }
     }
 
