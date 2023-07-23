@@ -55,13 +55,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
     
     public Vector2 setCoords;
     public ParticleSystem[] particles;
-    private SFXSoundManager sfxManager;
-
     public static bool isTensionActive =false;
-    private void Awake() 
-    {
-        sfxManager = GameObject.Find("GameDataController").transform.GetChild(1).GetComponent<SFXSoundManager>();
-    }
 
     void Start()
     {
@@ -151,8 +145,8 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
     
     private IEnumerator Rolling(Vector3 dir)
     {
-        sfxManager.PlayRollSound();
-        isTensionActive= false;
+        SFXSoundManager.Instance.PlayRollSound();
+
         isRolling = true;
         
         float angle = 90f;
@@ -198,7 +192,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
             // Player 부모 초기화
             this.transform.parent = parent;
 
-            sfxManager.PlayLandingSound();
+            SFXSoundManager.Instance.PlayLandingSound();
 
             ParticlePlay();
 

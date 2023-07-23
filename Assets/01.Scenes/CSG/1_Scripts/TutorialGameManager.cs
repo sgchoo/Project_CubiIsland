@@ -44,6 +44,8 @@ public class TutorialGameManager : MonoBehaviour
             infoCnt = 0;
             // 성공 UI
             successUIGroup.SetActive(true);
+            
+            SFXSoundManager.Instance.TutorialClearSound();
         }
     }
 
@@ -56,6 +58,8 @@ public class TutorialGameManager : MonoBehaviour
             isFinish = false;
             // 성공 UI
             successUIGroup.SetActive(true);
+
+            SFXSoundManager.Instance.TutorialClearSound();
         }
     }
 

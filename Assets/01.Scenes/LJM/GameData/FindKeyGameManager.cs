@@ -72,6 +72,8 @@ public class FindKeyGameManager : MonoBehaviour
         if(keyToFind == currentKeyCount)
         {
             successPanel.SetActive(true);
+            SFXSoundManager.Instance.MainGameClearSound();
+            
             GameData.Instance.currentGame = 1;
 
             Destroy(prevPraticle);

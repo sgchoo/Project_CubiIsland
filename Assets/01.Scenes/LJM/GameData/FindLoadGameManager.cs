@@ -72,6 +72,8 @@ public class FindLoadGameManager : MonoBehaviour
         if(!gameOver && DestinationManager.clear)
         {
             successPanel.SetActive(true);
+            SFXSoundManager.Instance.MainGameClearSound();
+            
             GameData.Instance.currentGame = 0;
 
             Image unLockMap = successPanel.transform.Find("SuccessPanel").transform.Find("ImageItem").GetComponent<Image>();
