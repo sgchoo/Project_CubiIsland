@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0040707146, g: 0.00010477291, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.004044762, g: 0.00010314078, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -176,6 +176,7 @@ MonoBehaviour:
   guide02: {fileID: 365551959}
   keyCountText: {fileID: 2141921375}
   getCharName: {fileID: 2060166883}
+  particle: {fileID: 7349625051997993184, guid: 1343cbbc9567de14689a5b7f86e4b33d, type: 3}
 --- !u!1 &28720109
 GameObject:
   m_ObjectHideFlags: 0

@@ -22,6 +22,9 @@ public class FindLoadGameManager : MonoBehaviour
     public GameObject guide04;
     public TMP_Text getMapName;
 
+    public GameObject particle;
+    private GameObject prevParticle;
+
     public List<string> unLockName = new List<string>(){"Snow", "Desert", "Beach", "City", "Playground"};
     public Sprite[] mapIcont;
     void Start()

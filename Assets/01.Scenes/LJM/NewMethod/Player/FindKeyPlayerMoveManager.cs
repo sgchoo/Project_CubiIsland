@@ -55,6 +55,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
     
     public Vector2 setCoords;
     public ParticleSystem[] particles;
+    public static bool isTensionActive =false;
 
     void Start()
     {
@@ -74,12 +75,14 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
             if(child == this.transform || child == axisObject) continue;
             childList.Add(child);
         }
+        isTensionActive = false;
     }    
 
     void Update()
     {
         if(FindKeyGameManager.gameOver) return;
         if(isRolling) return;
+        isTensionActive = true;
         if(isChangeAxis) 
         { 
             ChangeMoveAxis();
@@ -178,7 +181,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
 
             while (angle > 0)
             {
-                float rotateAngle = Time.deltaTime * rotateSpeed;
+                float rotateAngle = Time.deltaTime * rotateSpeed * 1.4f;
                 if(rotateAngle >= angle) rotateAngle = angle;
 
                 rotateTarget.Rotate(rotateAxis, rotateAngle, Space.Self);
@@ -200,7 +203,9 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
             
             isChangeAxis = isTurn;
             
-            yield return new WaitForSeconds(0.5f);
+            isTensionActive = true;
+            yield return new WaitForSeconds(0.3f);
+            isTensionActive = false;
         }
 
         
@@ -251,11 +256,29 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
         {
             ParticleSystem particle = Instantiate(particles[0]);
             particle.transform.position = this.transform.position;
+            switch(axis)
+            {
+                case Axis.y:
+                case Axis.my:
+                    particle.transform.rotation = Quaternion.Euler(-90f,0,0);
+                    break;
+                case Axis.z:
+                case Axis.mz:
+                    particle.transform.rotation = Quaternion.Euler(0,-90f,-90f);
+                    break;
+                case Axis.x:
+                case Axis.mx:
+                    particle.transform.rotation = Quaternion.Euler(0,0,-90f);
+                    break;
+
+            }
+
         }
         else if(GameData.Instance.currentWorld.name == "Map02_Snow")
         {
             ParticleSystem particle = Instantiate(particles[1]);
-            particle.transform.position = this.transform.position;
+            particle.transform.localPosition = this.transform.localPosition;
+            particle.transform.localRotation = this.transform.localRotation;
         }
     }
 }
