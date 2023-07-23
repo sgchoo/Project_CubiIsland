@@ -36,16 +36,19 @@ public class TutorialScriptController : MonoBehaviour
 
                 if(tutorialCount == 0)
                 {
+                    SFXSoundManager.plazaIdx = 0;
                     selectCharGuideScreen.SetActive(true);
                     tutorialCount = 1;
                 }
                 else if(tutorialCount == 1)
                 {
+                    SFXSoundManager.plazaIdx = 0;
                     selectWorldGuideScreen.SetActive(true);
                     tutorialCount = 2;
                 }
                 else if(tutorialCount == 2)
                 {
+                    SFXSoundManager.plazaIdx = 0;
                     tutorialCount = 0;
                     GameData.Instance.tutorial = false;
                     GameData.Instance.tutorialPlaza = false;
@@ -60,6 +63,7 @@ public class TutorialScriptController : MonoBehaviour
             }
             scriptIdx+=1;
             text.text = scripts[scriptIdx];
+            SFXSoundManager.Instance.TutorialPlazaPlay();
             // if(scriptIdx+1 == scripts.Count)
             // {
             //     infoParent.SetActive(false);
@@ -121,6 +125,7 @@ public class TutorialScriptController : MonoBehaviour
             scriptIdx = 0;
             text.text = scripts[scriptIdx];
         }
+        SFXSoundManager.Instance.TutorialPlazaPlay();
     }
 
        

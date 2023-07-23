@@ -23,6 +23,45 @@ public class SFXSoundManager : MonoBehaviour
     public AudioClip tutorialClear;
     public AudioClip mainGameClear;
 
+    public List<AudioClip> cubiTutoPlazaSound1;
+    public List<AudioClip> cubiTutoPlazaSound2;
+    public List<AudioClip> cubiTutoPlazaSound3;
+    public static int plazaIdx = 0;
+
+    public List<AudioClip> cubiTutoFindKeySound;
+    public List<AudioClip> cubiTutoFindRoadSound;
+
+    public void TutorialFindKeyPlay(int idx)
+    {
+        audioSource.Stop();
+        audioSource.PlayOneShot( cubiTutoFindKeySound[idx] );
+    }
+    
+    public void TutorialFindRoadPlay(int idx)
+    {
+        audioSource.Stop();
+        audioSource.PlayOneShot( cubiTutoFindRoadSound[idx] );
+    }
+
+    public void TutorialPlazaPlay()
+    {
+        if(TutorialScriptController.tutorialCount == 0)
+        {
+            audioSource.Stop();
+            audioSource.PlayOneShot(cubiTutoPlazaSound1[plazaIdx++]);
+        }
+        else if(TutorialScriptController.tutorialCount == 1)
+        {
+            audioSource.Stop();
+            audioSource.PlayOneShot(cubiTutoPlazaSound2[plazaIdx++]);
+        }
+        else if(TutorialScriptController.tutorialCount == 2)
+        {
+            audioSource.Stop();
+            audioSource.PlayOneShot(cubiTutoPlazaSound3[plazaIdx++]);
+        }
+    }
+
     private void Awake() 
     {
         if(instance == null)

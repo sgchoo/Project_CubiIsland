@@ -39,7 +39,6 @@ public class PlayAssetManager : MonoBehaviour
     
     public void DestroyChild(Transform target)
     {
-        Debug.Log("D : " + target.name + " 자식 객체 삭제 대기");
         int count = target.childCount;
         if ( count != 0 )
         {
@@ -53,28 +52,15 @@ public class PlayAssetManager : MonoBehaviour
 
     public void SetAsset()
     {
-        Debug.Log("D : " + "에셋설정시작");
         if (GameData.Instance.CheckAssets())
         {
-            Debug.Log("D : " + "실행됨" + GameData.Instance.currentCharacter.name);
             isSet = true;
             Transform currentCharacter = Instantiate(GameData.Instance.currentCharacter).transform;
-            // currentCharacter.parent = character;
-            // currentCharacter.position = character.position;
-            // currentCharacter.localRotation = Quaternion.Euler(0,0,0);
-            // currentCharacter.localScale = new Vector3(0.4f,0.4f,0.4f);
-            // currentCharacter.gameObject.layer = 29;
             Settnigs(currentCharacter, character, new Vector3(0.33f,0.33f,0.33f));
 
-            Debug.Log("D : " + "실행됨" + GameData.Instance.currentWorld.name);
             Transform currentWorld = Instantiate(GameData.Instance.currentWorld).transform;
-            // currentWorld.parent = world;
-            // currentWorld.position = world.position;
-            // currentWorld.localRotation = Quaternion.Euler(0,0,0);
-            // currentWorld.localScale = new Vector3(0.08f,0.08f,0.08f);
-            // currentWorld.gameObject.layer = 29;
             Settnigs(currentWorld, world, new Vector3(0.074f,0.074f,0.074f));
-            //targetLayer = 0;
+            targetLayer = 0;
         }    
     }
 
