@@ -27051,7 +27051,7 @@ GameObject:
   - component: {fileID: 3328743825245767412}
   - component: {fileID: 7766311837729467265}
   - component: {fileID: 7990630111624141266}
-  - component: {fileID: 6875779594932616073}
+  - component: {fileID: 1819577501275186874}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -27274,37 +27274,29 @@ MonoBehaviour:
   - {fileID: 3373491027855769767}
   - {fileID: 9108954980777128143}
   - {fileID: 790644590081602391}
-  rotateSpeed: 742.2
+  rotateSpeed: 80
   arCamera: {fileID: 0}
   axis: 0
   activateArea: {fileID: 4574290704628762176}
   setCoords: {x: 0, y: 0}
   particles: []
   axisObject: {fileID: 1553606894161615788}
---- !u!114 &6875779594932616073
+--- !u!114 &1819577501275186874
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4332667551790653703}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3bbf9d72573b965428439ad1d6bc8fa2, type: 3}
+  m_Script: {fileID: 11500000, guid: 2c69203120f58b5478cfa8bb598a4b41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  roller:
-  - {fileID: 3288262870618293154}
-  - {fileID: 7773842117682917284}
-  - {fileID: 977508171004145787}
-  - {fileID: 3963148195536863898}
-  - {fileID: 894499962259675242}
-  - {fileID: 7963325186376303880}
-  - {fileID: 2225438668461763683}
-  - {fileID: 2220467212741974387}
-  rotateSpeed: 652
-  parent: {fileID: 0}
-  axisObject: {fileID: 1553606894161615788}
+  roller: []
+  rotateSpeed: 0
+  axisObject: {fileID: 0}
+  particles: []
 --- !u!1 &4342560967493994688
 GameObject:
   m_ObjectHideFlags: 0
