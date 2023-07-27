@@ -157,7 +157,7 @@ public class FindLoadPlayerMoveManager2 : MonoBehaviour
 
             while (angle > 0)
             {
-                float rotateAngle = Time.deltaTime * rotateSpeed * 1.4f;
+                float rotateAngle = Time.deltaTime * rotateSpeed * 1.9f;
                 if(rotateAngle >= angle) rotateAngle = angle;
 
                 rotateTarget.Rotate(rotateAxis, rotateAngle, Space.Self);

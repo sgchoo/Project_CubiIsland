@@ -181,7 +181,7 @@ public class FindKeyPlayerMoveManager : MonoBehaviour
 
             while (angle > 0)
             {
-                float rotateAngle = Time.deltaTime * rotateSpeed * 1.4f;
+                float rotateAngle = Time.deltaTime * rotateSpeed * 1.7f;
                 if(rotateAngle >= angle) rotateAngle = angle;
 
                 rotateTarget.Rotate(rotateAxis, rotateAngle, Space.Self);
