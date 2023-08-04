@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig>
+    <Tracking>
+        <ImageTarget name="image_img_snow" size="0.039158 0.039158"/>
+        <ImageTarget name="image_img_sun" size="0.039158 0.039158"/>
+        <ImageTarget name="image_img_tree" size="0.039158 0.039158"/>
+        <ImageTarget name="image_img_snow_w" size="0.039158 0.039158"/>
+        <ImageTarget name="image_img_sun_w" size="0.039158 0.039158"/>
+        <ImageTarget name="image_tree_w_bg" size="0.039158 0.039158"/>
+        <ImageTarget name="FindKeyGame.Top" size="9.000000 9.000000"/>
+        <ImageTarget name="FindKeyGame.Bottom" size="9.000000 9.000000"/>
+        <ImageTarget name="FindKeyGame.Front" size="9.000000 9.000000"/>
+        <ImageTarget name="FindKeyGame.Back" size="9.000000 9.000000"/>
+        <ImageTarget name="FindKeyGame.Right" size="9.000000 9.000000"/>
+        <ImageTarget name="FindKeyGame.Left" size="9.000000 9.000000"/>
+        <MultiTarget name="FindKeyGame">
+            <Part name="FindKeyGame.Left" translation="-4.5 0 0" rotation="AD: 0 1 0 -90"/>
+            <Part name="FindKeyGame.Right" translation="4.5 0 0" rotation="AD: 0 1 0 90"/>
+            <Part name="FindKeyGame.Front" translation="0 0 4.5" rotation="AD: 1 0 0 0"/>
+            <Part name="FindKeyGame.Back" translation="0 0 -4.5" rotation="AD: 0 1 0 180"/>
+            <Part name="FindKeyGame.Top" translation="0 4.5 0" rotation="AD: 1 0 0 -90"/>
+            <Part name="FindKeyGame.Bottom" translation="0 -4.5 0" rotation="AD: 1 0 0 90"/>
+        </MultiTarget>
+    </Tracking>
+</QCARConfig>
